@@ -36,13 +36,13 @@ final class OAgeButton: UIButton {
 private extension OAgeButton {
     func update() {
         let attrs = TextAttributes()
-            .textColor(marked ? Appearance.white : Appearance.black)
+            .textColor(Appearance.black)
             .font(Fonts.PlusJakartaSans.semiBold(size: 16.scale))
             .lineHeight(24.scale)
             .letterSpacing(-0.17.scale)
         ageLabel.attributedText = age.attributed(with: attrs)
         
-        backgroundColor = marked ? Appearance.primaryGreen : Appearance.white
+        backgroundColor = marked ? Appearance.primaryYellow : Appearance.white
     }
 }
 

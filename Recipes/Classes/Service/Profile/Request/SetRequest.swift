@@ -11,7 +11,7 @@ struct SetRequest: APIRequestBody {
     let userToken: String
     let goal: Int
     let categories: [Int]
-    let quantity: Int
+    let diet: Int
     let pace: Int
     let time: Int
     let pushToken: String?
@@ -31,7 +31,7 @@ struct SetRequest: APIRequestBody {
             "_user_token": userToken,
             "goal": goal,
             "categories": categories,
-            "quantity": quantity,
+            "diet_id": diet,
             "pace": pace,
             "time": time
         ] as [String : Any]

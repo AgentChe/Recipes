@@ -39,7 +39,7 @@ private extension TabItemView {
         
         switch mode {
         case .selected:
-            color = Appearance.primaryGreen
+            color = Appearance.primaryYellow
             alpha = 1
         case .deselected:
             color = Appearance.black

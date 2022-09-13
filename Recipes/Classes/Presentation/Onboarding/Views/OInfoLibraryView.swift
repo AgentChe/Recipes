@@ -118,7 +118,7 @@ private extension OInfoLibraryView {
             .letterSpacing(-0.17.scale)
         
         let view = UIButton()
-        view.backgroundColor = Appearance.primaryGreen
+        view.backgroundColor = Appearance.primaryYellow
         view.layer.cornerRadius = 16.scale
         view.setAttributedTitle("Onboarding.InfoLibrary.Button".localized.attributed(with: attrs), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false

@@ -130,12 +130,12 @@ private extension OBriefView {
     
     func makeNextButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.black)
             .font(Fonts.PlusJakartaSans.semiBold(size: 16.scale))
             .letterSpacing(-0.17.scale)
         
         let view = TapAreaButton()
-        view.backgroundColor = Appearance.primaryGreen
+        view.backgroundColor = Appearance.primaryYellow
         view.layer.cornerRadius = 16.scale
         view.setAttributedTitle("Continue".localized.attributed(with: attrs), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false

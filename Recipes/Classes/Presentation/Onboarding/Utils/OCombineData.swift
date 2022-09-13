@@ -8,7 +8,7 @@
 struct OCombineData {
     let goal: Int
     let categories: [Int]
-    let quantity: Int
+    let diet: Int
     let pace: Int
     let time: Int
     let pushToken: String?
@@ -18,7 +18,7 @@ struct OCombineData {
 final class OnboardingCombineData {
     private var goal: OGoalButton.Goal?
     private var categories: [OCategoriesCollectionElement]?
-    private var quantity: OQuantityButton.Quantity?
+    private var diet: Diet?
     private var pace: Int?
     private var time: OTimeButton.Time?
     private var pushToken: String?
@@ -28,7 +28,7 @@ final class OnboardingCombineData {
         guard
             let goal = goal,
             let categories = categories,
-            let quantity = quantity,
+            let diet = diet,
             let pace = pace,
             let time = time
         else {
@@ -38,7 +38,7 @@ final class OnboardingCombineData {
         return OCombineData(
             goal: goal.code,
             categories: categories.map { $0.id },
-            quantity: quantity.code,
+            diet: diet.id,
             pace: pace,
             time: time.code,
             pushToken: pushToken,
@@ -58,13 +58,6 @@ extension OnboardingCombineData: OGoalViewDelegate {
 extension OnboardingCombineData: OCategoriesViewDelegate {
     func categoriesViewDidSelected(elements: [OCategoriesCollectionElement]) {
         self.categories = elements
-    }
-}
-
-// MARK: OQuantityViewDelegate
-extension OnboardingCombineData: OQuantityViewDelegate {
-    func quantityViewDidSelected(quantity: OQuantityButton.Quantity) {
-        self.quantity = quantity
     }
 }
 

@@ -59,12 +59,6 @@ final class SplashViewController: UIViewController {
             }
         }
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        mainView.animateView.start()
-    }
 }
 
 // MARK: Make

@@ -81,7 +81,7 @@ private extension ONotificationsSwitch {
         let view = UISwitch()
         view.thumbTintColor = Appearance.white
         view.tintColor = Appearance.secondary5
-        view.onTintColor = Appearance.primaryGreen
+        view.onTintColor = Appearance.primaryYellow
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

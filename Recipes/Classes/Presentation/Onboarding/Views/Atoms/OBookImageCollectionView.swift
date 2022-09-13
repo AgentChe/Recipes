@@ -19,7 +19,7 @@ final class OBookImageCollectionView: UIView {
     private lazy var waitingToBeDisplayedBooks = [BookCover]()
     private lazy var likedBooks = [BookCover]()
     
-    private lazy var imageViews = [BookCover: BookImageView]()
+    private lazy var imageViews = [BookCover: UIImageView]()
     
     private var frontBook: BookCover?
     private var middleBook: BookCover?
@@ -186,8 +186,8 @@ private extension OBookImageCollectionView {
         }
     }
     
-    func makeImageView(book: BookCover) -> BookImageView {
-        let view = BookImageView()
+    func makeImageView(book: BookCover) -> UIImageView {
+        let view = UIImageView()
         view.kf.setImage(with: book.imageUrl)
         addSubview(view)
         imageViews[book] = view

@@ -113,13 +113,13 @@ private extension OInfoView {
     
     func makeButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.black)
             .font(Fonts.PlusJakartaSans.semiBold(size: 16.scale))
             .letterSpacing(-0.17.scale)
         
         let view = UIButton()
         view.setAttributedTitle("Continue".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.primaryGreen
+        view.backgroundColor = Appearance.primaryYellow
         view.layer.cornerRadius = 16.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addTarget(self, action: #selector(onNext), for: .touchUpInside)

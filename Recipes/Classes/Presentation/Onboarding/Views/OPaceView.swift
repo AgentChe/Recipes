@@ -167,9 +167,9 @@ private extension OPaceView {
         let view = UISlider()
         view.minimumValue = 1
         view.maximumValue = 3
-        view.thumbTintColor = Appearance.primaryGreen
+        view.thumbTintColor = Appearance.primaryYellow
         view.maximumTrackTintColor = Appearance.secondary5
-        view.minimumTrackTintColor = Appearance.primaryGreen
+        view.minimumTrackTintColor = Appearance.primaryYellow
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addTarget(self, action: #selector(update(sender:)), for: .valueChanged)
         addSubview(view)
@@ -240,7 +240,7 @@ private extension OPaceView {
             .letterSpacing(-0.17.scale)
         
         let view = UIButton()
-        view.backgroundColor = Appearance.primaryGreen
+        view.backgroundColor = Appearance.primaryYellow
         view.layer.cornerRadius = 16.scale
         view.setAttributedTitle("Onboarding.Pace.Button".localized.attributed(with: attrs), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false

@@ -227,7 +227,7 @@ private extension PaygateView {
         
         let view = UIButton()
         view.setAttributedTitle("Continue".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.primaryGreen
+        view.backgroundColor = Appearance.primaryYellow
         view.layer.cornerRadius = 16.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

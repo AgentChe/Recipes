@@ -43,7 +43,7 @@ final class OTimeButton: UIButton {
 private extension OTimeButton {
     func update() {
         layer.borderWidth = marked ? 2.scale : 0
-        layer.borderColor = marked ? Appearance.primaryGreen.cgColor : UIColor.clear.cgColor
+        layer.borderColor = marked ? Appearance.primaryYellow.cgColor : UIColor.clear.cgColor
     }
 }
 

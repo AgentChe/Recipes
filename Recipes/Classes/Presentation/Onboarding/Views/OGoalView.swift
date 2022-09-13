@@ -11,6 +11,7 @@ protocol OGoalViewDelegate: AnyObject {
     func goalViewDidSelected(goal: OGoalButton.Goal)
 }
 
+// TODO: Figma images
 final class OGoalView: OSlideView {
     weak var goalDelegate: OGoalViewDelegate?
     

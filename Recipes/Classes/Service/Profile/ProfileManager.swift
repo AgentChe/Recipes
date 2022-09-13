@@ -10,7 +10,7 @@ import RxSwift
 protocol ProfileManagerProtocol {
     func set(goal: Int,
              categories: [Int],
-             quantity: Int,
+             diet: Int,
              pace: Int,
              time: Int,
              pushToken: String?,
@@ -35,7 +35,7 @@ final class ProfileManager: ProfileManagerProtocol {
 extension ProfileManager {
     func set(goal: Int,
              categories: [Int],
-             quantity: Int,
+             diet: Int,
              pace: Int,
              time: Int,
              pushToken: String?,
@@ -47,7 +47,7 @@ extension ProfileManager {
         let request = SetRequest(userToken: userToken,
                                  goal: goal,
                                  categories: categories,
-                                 quantity: quantity,
+                                 diet: diet,
                                  pace: pace,
                                  time: time,
                                  pushToken: pushToken,

@@ -57,7 +57,7 @@ final class OProgressView: OSlideView {
 // MARK: Private
 private extension OProgressView {
     func initialize() {
-        backgroundColor = Appearance.primaryGreen
+        backgroundColor = Appearance.primaryYellow
     }
     
     func request() {
@@ -69,7 +69,7 @@ private extension OProgressView {
             profileManager
                 .set(goal: data.goal,
                      categories: data.categories,
-                     quantity: data.quantity,
+                     diet: data.diet,
                      pace: data.pace,
                      time: data.time,
                      pushToken: data.pushToken,

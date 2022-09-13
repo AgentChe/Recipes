@@ -41,7 +41,7 @@ extension OCategoriesCollectionCell {
             .lineHeight(16.8.scale)
         label.attributedText = element.title.attributed(with: attrs)
         
-        container.backgroundColor = element.selected ? Appearance.primaryGreen : Appearance.white
+        container.backgroundColor = element.selected ? Appearance.primaryYellow : Appearance.white
     }
 }
 

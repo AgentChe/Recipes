@@ -174,7 +174,7 @@ private extension ONotificationsView {
             .letterSpacing(-0.17.scale)
         
         let view = UIButton()
-        view.backgroundColor = Appearance.primaryGreen
+        view.backgroundColor = Appearance.primaryYellow
         view.layer.cornerRadius = 16.scale
         view.setAttributedTitle("Onboarding.Notifications.SaveButton".localized.attributed(with: attrs), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false

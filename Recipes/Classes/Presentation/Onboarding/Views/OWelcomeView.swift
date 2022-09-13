@@ -43,15 +43,15 @@ private extension OWelcomeView {
 private extension OWelcomeView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 269.scale),
-            imageView.heightAnchor.constraint(equalToConstant: 327.scale),
+            imageView.widthAnchor.constraint(equalToConstant: 375.scale),
+            imageView.heightAnchor.constraint(equalToConstant: 340.scale),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 137.scale : 37.scale)
+            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 93.scale : 33.scale)
         ])
         
         NSLayoutConstraint.activate([
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 31.scale)
+            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 62.scale : 22.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -113,13 +113,13 @@ private extension OWelcomeView {
     
     func makeButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.black)
             .font(Fonts.PlusJakartaSans.semiBold(size: 16.scale))
             .letterSpacing(-0.17.scale)
         
         let view = UIButton()
         view.setAttributedTitle("Onboarding.Welcome.Button".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.primaryGreen
+        view.backgroundColor = Appearance.primaryYellow
         view.layer.cornerRadius = 16.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addTarget(self, action: #selector(onNext), for: .touchUpInside)

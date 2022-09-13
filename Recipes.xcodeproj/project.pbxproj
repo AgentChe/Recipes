@@ -48,7 +48,6 @@
 		DE54ACBC28D09F26004F1514 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC8E28D09F25004F1514 /* PaddingLabel.swift */; };
 		DE54ACBD28D09F26004F1514 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC8F28D09F25004F1514 /* CircleView.swift */; };
 		DE54ACBE28D09F26004F1514 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC9028D09F25004F1514 /* GradientView.swift */; };
-		DE54ACBF28D09F26004F1514 /* BookImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC9128D09F25004F1514 /* BookImageView.swift */; };
 		DE54ACC028D09F26004F1514 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC9328D09F25004F1514 /* UIDevice+Extension.swift */; };
 		DE54ACC128D09F26004F1514 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC9428D09F25004F1514 /* UIColor+Extension.swift */; };
 		DE54ACC228D09F26004F1514 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC9528D09F25004F1514 /* Collection+Extension.swift */; };
@@ -138,7 +137,6 @@
 		DE54ADAF28D0A011004F1514 /* SplashSDKInitialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD6F28D0A011004F1514 /* SplashSDKInitialize.swift */; };
 		DE54ADB028D0A011004F1514 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD7028D0A011004F1514 /* SplashViewModel.swift */; };
 		DE54ADB128D0A011004F1514 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD7128D0A011004F1514 /* SplashView.swift */; };
-		DE54ADB228D0A011004F1514 /* SplashAnimateLampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD7328D0A011004F1514 /* SplashAnimateLampView.swift */; };
 		DE54ADB328D0A011004F1514 /* OCombineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD7628D0A011004F1514 /* OCombineData.swift */; };
 		DE54ADB428D0A011004F1514 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD7728D0A011004F1514 /* OnboardingViewController.swift */; };
 		DE54ADB528D0A012004F1514 /* OProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD7928D0A011004F1514 /* OProgressView.swift */; };
@@ -156,7 +154,6 @@
 		DE54ADC128D0A012004F1514 /* OCategoriesCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD8728D0A011004F1514 /* OCategoriesCollectionElement.swift */; };
 		DE54ADC228D0A012004F1514 /* OCategoriesCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD8828D0A011004F1514 /* OCategoriesCollectionLayout.swift */; };
 		DE54ADC328D0A012004F1514 /* OGoalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD8928D0A011004F1514 /* OGoalButton.swift */; };
-		DE54ADC428D0A012004F1514 /* OQuantityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD8A28D0A011004F1514 /* OQuantityView.swift */; };
 		DE54ADC528D0A012004F1514 /* OBriefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD8B28D0A011004F1514 /* OBriefView.swift */; };
 		DE54ADC628D0A012004F1514 /* OWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD8C28D0A011004F1514 /* OWelcomeView.swift */; };
 		DE54ADC728D0A012004F1514 /* OInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD8D28D0A011004F1514 /* OInfoView.swift */; };
@@ -177,6 +174,10 @@
 		DE54ADD828D0A012004F1514 /* MainViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54ADA228D0A011004F1514 /* MainViewCoordinator.swift */; };
 		DE54ADDD28D0A2CC004F1514 /* TryAgainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54ADDB28D0A2CC004F1514 /* TryAgainView.swift */; };
 		DE54ADDE28D0A2CC004F1514 /* TryAgainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54ADDC28D0A2CC004F1514 /* TryAgainViewController.swift */; };
+		DE54ADE028D0AAE4004F1514 /* ODietsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54ADDF28D0AAE4004F1514 /* ODietsView.swift */; };
+		DE54ADE228D0AE52004F1514 /* Diet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54ADE128D0AE52004F1514 /* Diet.swift */; };
+		DE54ADE528D0AE78004F1514 /* GetDietsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54ADE428D0AE78004F1514 /* GetDietsRequest.swift */; };
+		DE54ADE728D0AEC2004F1514 /* GetDietsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54ADE628D0AEC2004F1514 /* GetDietsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -224,7 +225,6 @@
 		DE54AC8E28D09F25004F1514 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		DE54AC8F28D09F25004F1514 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		DE54AC9028D09F25004F1514 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		DE54AC9128D09F25004F1514 /* BookImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookImageView.swift; sourceTree = "<group>"; };
 		DE54AC9328D09F25004F1514 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		DE54AC9428D09F25004F1514 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		DE54AC9528D09F25004F1514 /* Collection+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
@@ -314,7 +314,6 @@
 		DE54AD6F28D0A011004F1514 /* SplashSDKInitialize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashSDKInitialize.swift; sourceTree = "<group>"; };
 		DE54AD7028D0A011004F1514 /* SplashViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		DE54AD7128D0A011004F1514 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		DE54AD7328D0A011004F1514 /* SplashAnimateLampView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashAnimateLampView.swift; sourceTree = "<group>"; };
 		DE54AD7628D0A011004F1514 /* OCombineData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCombineData.swift; sourceTree = "<group>"; };
 		DE54AD7728D0A011004F1514 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		DE54AD7928D0A011004F1514 /* OProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OProgressView.swift; sourceTree = "<group>"; };
@@ -332,7 +331,6 @@
 		DE54AD8728D0A011004F1514 /* OCategoriesCollectionElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCategoriesCollectionElement.swift; sourceTree = "<group>"; };
 		DE54AD8828D0A011004F1514 /* OCategoriesCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCategoriesCollectionLayout.swift; sourceTree = "<group>"; };
 		DE54AD8928D0A011004F1514 /* OGoalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OGoalButton.swift; sourceTree = "<group>"; };
-		DE54AD8A28D0A011004F1514 /* OQuantityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OQuantityView.swift; sourceTree = "<group>"; };
 		DE54AD8B28D0A011004F1514 /* OBriefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OBriefView.swift; sourceTree = "<group>"; };
 		DE54AD8C28D0A011004F1514 /* OWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWelcomeView.swift; sourceTree = "<group>"; };
 		DE54AD8D28D0A011004F1514 /* OInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OInfoView.swift; sourceTree = "<group>"; };
@@ -354,6 +352,10 @@
 		DE54ADD928D0A0BC004F1514 /* Recipes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Recipes.entitlements; sourceTree = "<group>"; };
 		DE54ADDB28D0A2CC004F1514 /* TryAgainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryAgainView.swift; sourceTree = "<group>"; };
 		DE54ADDC28D0A2CC004F1514 /* TryAgainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryAgainViewController.swift; sourceTree = "<group>"; };
+		DE54ADDF28D0AAE4004F1514 /* ODietsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODietsView.swift; sourceTree = "<group>"; };
+		DE54ADE128D0AE52004F1514 /* Diet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diet.swift; sourceTree = "<group>"; };
+		DE54ADE428D0AE78004F1514 /* GetDietsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDietsRequest.swift; sourceTree = "<group>"; };
+		DE54ADE628D0AEC2004F1514 /* GetDietsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDietsResponse.swift; sourceTree = "<group>"; };
 		F4B1960D8CA301E439814FB2 /* Pods-Recipes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipes.release.xcconfig"; path = "Target Support Files/Pods-Recipes/Pods-Recipes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -531,8 +533,8 @@
 		DE54AC8228D09F25004F1514 /* PushNotifications */ = {
 			isa = PBXGroup;
 			children = (
-				DE54AC8328D09F25004F1514 /* PushNotificationsManager.swift */,
 				DE54AC8428D09F25004F1514 /* Models */,
+				DE54AC8328D09F25004F1514 /* PushNotificationsManager.swift */,
 			);
 			path = PushNotifications;
 			sourceTree = "<group>";
@@ -556,7 +558,6 @@
 				DE54AC8E28D09F25004F1514 /* PaddingLabel.swift */,
 				DE54AC8F28D09F25004F1514 /* CircleView.swift */,
 				DE54AC9028D09F25004F1514 /* GradientView.swift */,
-				DE54AC9128D09F25004F1514 /* BookImageView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -586,6 +587,7 @@
 		DE54AC9928D09F25004F1514 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DE54ACA128D09F25004F1514 /* Error */,
 				DE54AC9A28D09F25004F1514 /* Scalable.swift */,
 				DE54AC9B28D09F25004F1514 /* NumberLaunches.swift */,
 				DE54AC9C28D09F25004F1514 /* TextAttributes.swift */,
@@ -593,7 +595,6 @@
 				DE54AC9E28D09F25004F1514 /* ObservableRetrySingle.swift */,
 				DE54AC9F28D09F25004F1514 /* XOREncryption.swift */,
 				DE54ACA028D09F25004F1514 /* Fonts.swift */,
-				DE54ACA128D09F25004F1514 /* Error */,
 				DE54ACA528D09F25004F1514 /* Weak.swift */,
 			);
 			path = Utils;
@@ -744,6 +745,7 @@
 				DE54ACF928D09F68004F1514 /* LocalBook.swift */,
 				DE54ACFA28D09F68004F1514 /* BookChapter.swift */,
 				DE54ACFB28D09F68004F1514 /* BookReadingProgress.swift */,
+				DE54ADE128D0AE52004F1514 /* Diet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -751,6 +753,7 @@
 		DE54ACFC28D09F68004F1514 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				DE54ADE328D0AE6B004F1514 /* GetDiets */,
 				DE54ACFD28D09F68004F1514 /* GetBookKit */,
 				DE54AD0028D09F68004F1514 /* Feedback */,
 				DE54AD0328D09F68004F1514 /* GetRanking */,
@@ -921,7 +924,6 @@
 			isa = PBXGroup;
 			children = (
 				DE54AD6C28D0A011004F1514 /* Utils */,
-				DE54AD7228D0A011004F1514 /* Views */,
 				DE54AD6B28D0A011004F1514 /* SplashViewController.swift */,
 				DE54AD7028D0A011004F1514 /* SplashViewModel.swift */,
 				DE54AD7128D0A011004F1514 /* SplashView.swift */,
@@ -937,14 +939,6 @@
 				DE54AD6F28D0A011004F1514 /* SplashSDKInitialize.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		DE54AD7228D0A011004F1514 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DE54AD7328D0A011004F1514 /* SplashAnimateLampView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		DE54AD7428D0A011004F1514 /* Onboarding */ = {
@@ -971,20 +965,20 @@
 			isa = PBXGroup;
 			children = (
 				DE54AD7B28D0A011004F1514 /* Atoms */,
-				DE54AD7928D0A011004F1514 /* OProgressView.swift */,
-				DE54AD7A28D0A011004F1514 /* ONotificationsView.swift */,
-				DE54AD8A28D0A011004F1514 /* OQuantityView.swift */,
-				DE54AD8B28D0A011004F1514 /* OBriefView.swift */,
+				DE54AD8E28D0A011004F1514 /* OSlideView.swift */,
 				DE54AD8C28D0A011004F1514 /* OWelcomeView.swift */,
 				DE54AD8D28D0A011004F1514 /* OInfoView.swift */,
-				DE54AD8E28D0A011004F1514 /* OSlideView.swift */,
-				DE54AD8F28D0A011004F1514 /* OBooksView.swift */,
-				DE54AD9028D0A011004F1514 /* OPaceView.swift */,
-				DE54AD9128D0A011004F1514 /* OInfoLibraryView.swift */,
-				DE54AD9228D0A011004F1514 /* OCategoriesView.swift */,
-				DE54AD9328D0A011004F1514 /* OTimeView.swift */,
 				DE54AD9428D0A011004F1514 /* OGoalView.swift */,
 				DE54AD9528D0A011004F1514 /* OAgeView.swift */,
+				DE54AD8B28D0A011004F1514 /* OBriefView.swift */,
+				DE54AD9228D0A011004F1514 /* OCategoriesView.swift */,
+				DE54ADDF28D0AAE4004F1514 /* ODietsView.swift */,
+				DE54AD9028D0A011004F1514 /* OPaceView.swift */,
+				DE54AD9328D0A011004F1514 /* OTimeView.swift */,
+				DE54AD7A28D0A011004F1514 /* ONotificationsView.swift */,
+				DE54AD9128D0A011004F1514 /* OInfoLibraryView.swift */,
+				DE54AD8F28D0A011004F1514 /* OBooksView.swift */,
+				DE54AD7928D0A011004F1514 /* OProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1052,6 +1046,15 @@
 				DE54ADDB28D0A2CC004F1514 /* TryAgainView.swift */,
 			);
 			path = TryAgain;
+			sourceTree = "<group>";
+		};
+		DE54ADE328D0AE6B004F1514 /* GetDiets */ = {
+			isa = PBXGroup;
+			children = (
+				DE54ADE428D0AE78004F1514 /* GetDietsRequest.swift */,
+				DE54ADE628D0AEC2004F1514 /* GetDietsResponse.swift */,
+			);
+			path = GetDiets;
 			sourceTree = "<group>";
 		};
 		EA376C6929CCF2A010D8692E /* Frameworks */ = {
@@ -1254,7 +1257,6 @@
 				DE54AD2728D09F68004F1514 /* LoginRequest.swift in Sources */,
 				DE54AD3228D09F68004F1514 /* IAPErrorHelper.swift in Sources */,
 				DE54ADC228D0A012004F1514 /* OCategoriesCollectionLayout.swift in Sources */,
-				DE54ADB228D0A011004F1514 /* SplashAnimateLampView.swift in Sources */,
 				DE54ACC128D09F26004F1514 /* UIColor+Extension.swift in Sources */,
 				DE54ADD328D0A012004F1514 /* MainView.swift in Sources */,
 				DE54ADBE28D0A012004F1514 /* OAgeButton.swift in Sources */,
@@ -1268,7 +1270,7 @@
 				DE54ADAE28D0A011004F1514 /* SplashReceiptValidationObserver.swift in Sources */,
 				DE54ADC028D0A012004F1514 /* OCategoriesCollectionCell.swift in Sources */,
 				DE54ADC828D0A012004F1514 /* OSlideView.swift in Sources */,
-				DE54ACBF28D09F26004F1514 /* BookImageView.swift in Sources */,
+				DE54ADE728D0AEC2004F1514 /* GetDietsResponse.swift in Sources */,
 				DE54ADD528D0A012004F1514 /* TabView.swift in Sources */,
 				DE54ADC528D0A012004F1514 /* OBriefView.swift in Sources */,
 				DE54ACA728D09F25004F1514 /* AmplitudeManager.swift in Sources */,
@@ -1279,7 +1281,6 @@
 				DE54AD3A28D09F68004F1514 /* Author.swift in Sources */,
 				DE54ACA828D09F25004F1514 /* FirebaseManager.swift in Sources */,
 				DE54ACBC28D09F26004F1514 /* PaddingLabel.swift in Sources */,
-				DE54ADC428D0A012004F1514 /* OQuantityView.swift in Sources */,
 				DE54AD5528D09F69004F1514 /* RemoveSavedBookRequest.swift in Sources */,
 				DE54AD3528D09F68004F1514 /* BookKit.swift in Sources */,
 				DE54AD5228D09F69004F1514 /* SearchBooksRequest.swift in Sources */,
@@ -1312,12 +1313,14 @@
 				DE54AD4628D09F69004F1514 /* FeedbackResponse.swift in Sources */,
 				DE54ADBB28D0A012004F1514 /* OBookImageCollectionView.swift in Sources */,
 				DE54ADBD28D0A012004F1514 /* OBookButton.swift in Sources */,
+				DE54ADE228D0AE52004F1514 /* Diet.swift in Sources */,
 				DE54AD3728D09F68004F1514 /* ExploreKit.swift in Sources */,
 				DE54AD5728D09F69004F1514 /* SaveRemoveBookResponse.swift in Sources */,
 				DE54AD4328D09F69004F1514 /* GetBookKitResponse.swift in Sources */,
 				DE54ACB728D09F25004F1514 /* NavigationControllerSettings.swift in Sources */,
 				DE54ACCE28D09F26004F1514 /* NetworkError.swift in Sources */,
 				DE54ACC728D09F26004F1514 /* NumberLaunches.swift in Sources */,
+				DE54ADE028D0AAE4004F1514 /* ODietsView.swift in Sources */,
 				DE54ADB828D0A012004F1514 /* OQuantityButton.swift in Sources */,
 				DE54ADCF28D0A012004F1514 /* OAgeView.swift in Sources */,
 				DE54ACC228D09F26004F1514 /* Collection+Extension.swift in Sources */,
@@ -1332,6 +1335,7 @@
 				DE54ACAD28D09F25004F1514 /* Toast.swift in Sources */,
 				DE54ADC328D0A012004F1514 /* OGoalButton.swift in Sources */,
 				DE54AC2628D09BF9004F1514 /* SceneDelegate.swift in Sources */,
+				DE54ADE528D0AE78004F1514 /* GetDietsRequest.swift in Sources */,
 				DE54ADD028D0A012004F1514 /* OnboardingView.swift in Sources */,
 				DE54ADB028D0A011004F1514 /* SplashViewModel.swift in Sources */,
 				DE54ADCA28D0A012004F1514 /* OPaceView.swift in Sources */,

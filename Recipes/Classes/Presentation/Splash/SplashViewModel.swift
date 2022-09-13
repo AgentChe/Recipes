@@ -110,8 +110,11 @@ private extension SplashViewModel {
             let ranking = contentManager
                 .obtainRankings(forceUpdate: true)
             
+            let diets = contentManager
+                .obtainDiets(forceUpdate: true)
+            
             return Single
-                .zip(categories, ranking)
+                .zip(categories, ranking, diets)
                 .mapToVoid()
         }
         

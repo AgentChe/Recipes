@@ -43,7 +43,7 @@ final class OGoalButton: UIButton {
 // MARK: Private
 private extension OGoalButton {
     func update() {
-        layer.borderColor = marked ? Appearance.primaryGreen.cgColor : UIColor.clear.cgColor
+        layer.borderColor = marked ? Appearance.primaryYellow.cgColor : UIColor.clear.cgColor
         layer.borderWidth = marked ? 2.scale : 0
     }
 }
