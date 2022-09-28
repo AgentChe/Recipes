@@ -1,14 +1,14 @@
 //
 //  ForYouKit.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 12.07.2022.
 //
 
 struct ForYouKit: Codable, Hashable {
-    let freeBook: BookCover
+    let freeRecipe: BookCover
     let todaysHotSummaries: [BookCover]
     let challenges: [ChallengeCover]
     let youMayLike: [BookCover]
-    let rankings: [RankingBooksGroup]
+    let rankings: [RankingRecipesGroup]
 }

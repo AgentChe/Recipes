@@ -1,6 +1,6 @@
 //
 //  ContentMediator.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 12.07.2022.
 //
@@ -9,12 +9,10 @@ import RxSwift
 import RxCocoa
 
 protocol ContentMediatorDelegate: AnyObject {
-    func contentMediatorDidSaved(book: BookCover)
-    func contentMediatorDidRemovedSaved(book: BookCover)
-    func contentMediatorDidUpdated(bookReadingProgress: BookReadingProgress)
-    func contentMediatorDidRemovedProgress(bookId: Int)
-    func contentMediatorDidDownloaded(localBook: LocalBook)
-    func contentMediatorDidRemovedDownload(bookId: Int)
+    func contentMediatorDidSaved(recipe: BookCover)
+    func contentMediatorDidRemovedSaved(recipe: BookCover)
+    func contentMediatorDidUpdated(recipeReadingProgress: BookReadingProgress)
+    func contentMediatorDidRemovedProgress(recipeId: Int)
 }
 
 final class ContentMediator {
@@ -22,103 +20,73 @@ final class ContentMediator {
     
     private var delegates = [Weak<ContentMediatorDelegate>]()
     
-    private lazy var bookDidSavedTrigger = PublishRelay<BookCover>()
-    private lazy var bookDidRemoveFromSavedTrigger = PublishRelay<BookCover>()
-    private lazy var bookReadingProgressUpdatedTrigger = PublishRelay<BookReadingProgress>()
-    private lazy var bookDidRemovedProgressTrigger = PublishRelay<Int>()
-    private lazy var bookDownloadedTrigger = PublishRelay<LocalBook>()
-    private lazy var bookDidRemovedDownloadTrigger = PublishRelay<Int>()
+    private lazy var recipeDidSavedTrigger = PublishRelay<BookCover>()
+    private lazy var recipeDidRemoveFromSavedTrigger = PublishRelay<BookCover>()
+    private lazy var recipeReadingProgressUpdatedTrigger = PublishRelay<BookReadingProgress>()
+    private lazy var recipeDidRemovedProgressTrigger = PublishRelay<Int>()
     
     private init() {}
 }
 
 // MARK: Public
 extension ContentMediator {
-    func notifyAboutSaved(book: BookCover) {
+    func notifyAboutSaved(recipe: BookCover) {
         DispatchQueue.main.async { [weak self] in
             self?.delegates.forEach {
-                $0.weak?.contentMediatorDidSaved(book: book)
+                $0.weak?.contentMediatorDidSaved(recipe: recipe)
             }
             
-            self?.bookDidSavedTrigger.accept(book)
+            self?.recipeDidSavedTrigger.accept(recipe)
         }
     }
     
-    func notifyAboutRemoveSaved(book: BookCover) {
+    func notifyAboutRemoveSaved(recipe: BookCover) {
         DispatchQueue.main.async { [weak self] in
             self?.delegates.forEach {
-                $0.weak?.contentMediatorDidRemovedSaved(book: book)
+                $0.weak?.contentMediatorDidRemovedSaved(recipe: recipe)
             }
             
-            self?.bookDidRemoveFromSavedTrigger.accept(book)
+            self?.recipeDidRemoveFromSavedTrigger.accept(recipe)
         }
     }
     
-    func notifyAboutUpdate(bookReadingProgress: BookReadingProgress) {
+    func notifyAboutUpdate(recipeReadingProgress: BookReadingProgress) {
         DispatchQueue.main.async { [weak self] in
             self?.delegates.forEach {
-                $0.weak?.contentMediatorDidUpdated(bookReadingProgress: bookReadingProgress)
+                $0.weak?.contentMediatorDidUpdated(recipeReadingProgress: recipeReadingProgress)
             }
             
-            self?.bookReadingProgressUpdatedTrigger.accept(bookReadingProgress)
+            self?.recipeReadingProgressUpdatedTrigger.accept(recipeReadingProgress)
         }
     }
     
-    func notifyAboutUpdateRemovedProgress(bookId: Int) {
+    func notifyAboutUpdateRemovedProgress(recipeId: Int) {
         DispatchQueue.main.async { [weak self] in
             self?.delegates.forEach {
-                $0.weak?.contentMediatorDidRemovedProgress(bookId: bookId)
+                $0.weak?.contentMediatorDidRemovedProgress(recipeId: recipeId)
             }
             
-            self?.bookDidRemovedProgressTrigger.accept(bookId)
-        }
-    }
-    
-    func notifyAboutUpdate(bookDownloaded: LocalBook) {
-        DispatchQueue.main.async { [weak self] in
-            self?.delegates.forEach {
-                $0.weak?.contentMediatorDidDownloaded(localBook: bookDownloaded)
-            }
-            
-            self?.bookDownloadedTrigger.accept(bookDownloaded)
-        }
-    }
-    
-    func notifyAboutRemovedDownload(bookId: Int) {
-        DispatchQueue.main.async { [weak self] in
-            self?.delegates.forEach {
-                $0.weak?.contentMediatorDidRemovedDownload(bookId: bookId)
-            }
-            
-            self?.bookDidRemovedDownloadTrigger.accept(bookId)
+            self?.recipeDidRemovedProgressTrigger.accept(recipeId)
         }
     }
 }
 
 // MARK: Public (Triggers)
 extension ContentMediator {
-    var bookDidSaved: Signal<BookCover> {
-        bookDidSavedTrigger.asSignal()
+    var recipeDidSaved: Signal<BookCover> {
+        recipeDidSavedTrigger.asSignal()
     }
     
-    var bookDidRemoveFromSaved: Signal<BookCover> {
-        bookDidRemoveFromSavedTrigger.asSignal()
+    var recipeDidRemoveFromSaved: Signal<BookCover> {
+        recipeDidRemoveFromSavedTrigger.asSignal()
     }
     
-    var bookReadingProgressUpdated: Signal<BookReadingProgress> {
-        bookReadingProgressUpdatedTrigger.asSignal()
+    var recipeReadingProgressUpdated: Signal<BookReadingProgress> {
+        recipeReadingProgressUpdatedTrigger.asSignal()
     }
     
-    var bookDidRemovedProgress: Signal<Int> {
-        bookDidRemovedProgressTrigger.asSignal()
-    }
-    
-    var bookDownloaded: Signal<LocalBook> {
-        bookDownloadedTrigger.asSignal()
-    }
-    
-    var bookDidRemovedDownload: Signal<Int> {
-        bookDidRemovedDownloadTrigger.asSignal()
+    var recipeDidRemovedProgress: Signal<Int> {
+        recipeDidRemovedProgressTrigger.asSignal()
     }
 }
 

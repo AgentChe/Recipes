@@ -1,6 +1,6 @@
 //
 //  OCategoriesCollectionCell.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 23.08.2022.
 //
@@ -36,7 +36,7 @@ extension OCategoriesCollectionCell {
     
     func setup(element: OCategoriesCollectionElement) {
         let attrs = TextAttributes()
-            .textColor(element.selected ? Appearance.white : Appearance.black)
+            .textColor(Appearance.black)
             .font(Fonts.PlusJakartaSans.regular(size: 14.scale))
             .lineHeight(16.8.scale)
         label.attributedText = element.title.attributed(with: attrs)

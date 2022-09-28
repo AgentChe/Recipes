@@ -1,6 +1,6 @@
 //
 //  OGoalButton.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 23.08.2022.
 //

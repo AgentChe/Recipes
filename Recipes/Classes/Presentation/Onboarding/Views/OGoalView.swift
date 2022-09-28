@@ -1,6 +1,6 @@
 //
 //  OGoalView.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 23.08.2022.
 //
@@ -11,7 +11,6 @@ protocol OGoalViewDelegate: AnyObject {
     func goalViewDidSelected(goal: OGoalButton.Goal)
 }
 
-// TODO: Figma images
 final class OGoalView: OSlideView {
     weak var goalDelegate: OGoalViewDelegate?
     

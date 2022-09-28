@@ -1,6 +1,6 @@
 //
 //  OnboardingView.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 23.08.2022.
 //
@@ -9,7 +9,7 @@ import UIKit
 
 final class OnboardingView: UIView {
     enum Step: Int {
-        case welcome, info, goal, age, brief, categories, diets, pace, time, notifications, infoLibrary, books, progress
+        case welcome, info, goal, age, brief, categories, diets, pace, time, notifications, infoLibrary, recipes, progress
     }
     
     var didFinish: (() -> Void)?
@@ -20,7 +20,7 @@ final class OnboardingView: UIView {
     private lazy var paceView = OPaceView(step: .pace)
     private lazy var timeView = OTimeView(step: .time)
     private lazy var notificationsView = ONotificationsView(step: .notifications)
-    private lazy var booksView = OBooksView(step: .books)
+    private lazy var recipesView = ORecipesView(step: .recipes)
     private lazy var progressView = OProgressView(step: .progress, combineData: combineData)
 
     private lazy var contentViews: [OSlideView] = {
@@ -36,7 +36,7 @@ final class OnboardingView: UIView {
             timeView,
             notificationsView,
             OInfoLibraryView(step: .infoLibrary),
-            booksView,
+            recipesView,
             progressView
         ]
     }()
@@ -105,11 +105,12 @@ private extension OnboardingView {
         
         goalView.goalDelegate = combineData
         categoriesView.add(observer: combineData)
-        categoriesView.add(observer: booksView)
+        categoriesView.add(observer: recipesView)
+        dietsView.dietsDelegate = combineData
         paceView.paceDelegate = combineData
         timeView.timeDelegate = combineData
         notificationsView.notificationsDelegate = combineData
-        booksView.vc = vc
+        recipesView.vc = vc
         progressView.vc = vc
     }
     

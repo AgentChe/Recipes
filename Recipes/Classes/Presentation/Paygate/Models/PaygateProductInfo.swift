@@ -1,6 +1,6 @@
 //
 //  PaygateProductInfo.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 02.09.2022.
 //

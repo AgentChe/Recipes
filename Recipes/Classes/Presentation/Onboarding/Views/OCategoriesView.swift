@@ -1,6 +1,6 @@
 //
 //  OCategoriesView.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 23.08.2022.
 //
@@ -68,8 +68,9 @@ private extension OCategoriesView {
             self?.checkEnabled()
         }
         
+        // TODO: forceUpdate false
         contentManager
-            .obtainCategories(forceUpdate: false)
+            .obtainCategories(forceUpdate: true)
             .asDriver(onErrorJustReturn: [])
             .drive(Binder(collectionView) { base, categories in
                 let elements = categories.map { category -> OCategoriesCollectionElement in

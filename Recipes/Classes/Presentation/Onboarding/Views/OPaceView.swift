@@ -1,6 +1,6 @@
 //
 //  OPaceView.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 24.08.2022.
 //
@@ -79,23 +79,23 @@ private extension OPaceView {
         ])
         
         NSLayoutConstraint.activate([
-            icon1View.widthAnchor.constraint(equalToConstant: 50.scale),
-            icon1View.heightAnchor.constraint(equalToConstant: 51.scale),
-            icon1View.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24.scale),
-            icon1View.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 469.scale : 350.scale)
+            icon1View.widthAnchor.constraint(equalToConstant: 70.scale),
+            icon1View.heightAnchor.constraint(equalToConstant: 70.scale),
+            icon1View.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20.scale),
+            icon1View.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 436.scale : 330.scale)
         ])
         
         NSLayoutConstraint.activate([
-            icon2View.widthAnchor.constraint(equalToConstant: 50.scale),
-            icon2View.heightAnchor.constraint(equalToConstant: 52.scale),
-            icon2View.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 166.scale),
+            icon2View.widthAnchor.constraint(equalToConstant: 70.scale),
+            icon2View.heightAnchor.constraint(equalToConstant: 70.scale),
+            icon2View.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 152.scale),
             icon2View.centerYAnchor.constraint(equalTo: icon1View.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            icon3View.widthAnchor.constraint(equalToConstant: 50.scale),
-            icon3View.heightAnchor.constraint(equalToConstant: 34.scale),
-            icon3View.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 317.scale),
+            icon3View.widthAnchor.constraint(equalToConstant: 70.scale),
+            icon3View.heightAnchor.constraint(equalToConstant: 70.scale),
+            icon3View.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 285.scale),
             icon3View.centerYAnchor.constraint(equalTo: icon1View.centerYAnchor)
         ])
         
@@ -235,7 +235,7 @@ private extension OPaceView {
     
     func makeNextButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.black)
             .font(Fonts.PlusJakartaSans.semiBold(size: 16.scale))
             .letterSpacing(-0.17.scale)
         

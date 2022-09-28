@@ -1,6 +1,6 @@
 //
 //  ContentManager.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 12.07.2022.
 //
@@ -11,27 +11,23 @@ import Foundation
 protocol ContentManagerProtocol: AnyObject {
     func obtainCategories(forceUpdate: Bool) -> Single<[Category]>
     func obtainRankings(forceUpdate: Bool) -> Single<[Ranking]>
-    func obtainDiets(forceUpdate: Bool) -> Single<[Diet]>
-    func obtainBookKit(bookId: Int) -> Single<BookKit?>
+    func obtainDiets(forceUpdate: Bool) -> Single<[Category]>
     func obtainForYouKit() -> Single<ForYouKit?>
-    func save(book: BookCover) -> Single<Bool>
-    func removeSaved(book: BookCover) -> Single<Bool>
-    func obtainSavedBooksCover() -> Single<[BookCover]>
+    func save(recipe: BookCover) -> Single<Bool>
+    func removeSaved(recipe: BookCover) -> Single<Bool>
+    func obtainSavedRecipesCover() -> Single<[BookCover]>
     func obtainExploreKit() -> Single<ExploreKit?>
-    func searchBooks(at: String) -> Single<[BookCover]>
-    func obtainCategoryBooksCover(categoryId: Int) -> Single<[BookCover]>
-    func obtainRankingBooksCover(rankingId: Int) -> Single<[BookCover]>
-    func obtainReadingBooks() -> Single<[BookReadingProgress]>
-    func set(bookReadingProgress: BookReadingProgress) -> Single<Void>
-    func removeBookProgress(bookId: Int) -> Single<Void>
-    func feedback(bookId: Int,
+    func searchRecipes(at: String) -> Single<[BookCover]>
+    func obtainCategoryRecipesCover(categoryId: Int) -> Single<[BookCover]>
+    func obtainRankingRecipesCover(rankingId: Int) -> Single<[BookCover]>
+    func obtainReadingRecipes() -> Single<[BookReadingProgress]>
+    func set(recipeReadingProgress: BookReadingProgress) -> Single<Void>
+    func removeRecipeProgress(recipeId: Int) -> Single<Void>
+    func feedback(recipeId: Int,
                   rating: Int,
                   improves: [Int],
                   whatBetter: String?,
                   whatLearn: String?) -> Single<Bool>
-    func obtainDownloadBooks() -> Single<[LocalBook]>
-    func download(book: Book, delegate: DownloadBookDelegate?) -> Single<LocalBook?>
-    func removeDownload(bookId: Int) -> Single<Void>
     func obtainChallenge(id: Int) -> Single<Challenge?>
 }
 
@@ -40,8 +36,7 @@ final class ContentManager: ContentManagerProtocol {
         static let categoriesKey = "content_manager_categories_key"
         static let rankingKey = "content_manager_ranking_key"
         static let dietsKey = "content_manager_diets_key"
-        static let readingBooksKey = "content_manager_reading_books_key"
-        static let downloadBooksKey = "content_manager_download_books_key"
+        static let readingRecipesKey = "content_manager_reading_recipes_key"
     }
     
     private lazy var defaultRequestWrapper = DefaultRequestWrapper()
@@ -59,20 +54,8 @@ extension ContentManager {
         forceUpdate ? loadRankings() : cachedRankings()
     }
     
-    func obtainDiets(forceUpdate: Bool) -> Single<[Diet]> {
+    func obtainDiets(forceUpdate: Bool) -> Single<[Category]> {
         forceUpdate ? loadDiets() : cachedDiets()
-    }
-    
-    func obtainBookKit(bookId: Int) -> Single<BookKit?> {
-        guard let userToken = sessionManager.getSession()?.userToken else {
-            return .error(SignError.tokenNotFound)
-        }
-        
-        let request = GetBookKitRequest(userToken: userToken, bookId: bookId)
-        
-        return defaultRequestWrapper
-            .callServerApi(requestBody: request)
-            .map { GetBookKitResponse.map(from: $0) }
     }
     
     func obtainForYouKit() -> Single<ForYouKit?> {
@@ -87,50 +70,50 @@ extension ContentManager {
             .map { GetForYouResponse.map(from: $0) }
     }
     
-    func save(book: BookCover) -> Single<Bool> {
+    func save(recipe: BookCover) -> Single<Bool> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
         
-        let request = SaveBookRequest(userToken: userToken, bookId: book.id)
+        let request = SaveRecipeRequest(userToken: userToken, recipeId: recipe.id)
         
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
-            .map { SaveRemoveBookResponse.map(from: $0) }
+            .map { SaveRemoveRecipeResponse.map(from: $0) }
             .do(onSuccess: { success in
                 if success {
-                    ContentMediator.shared.notifyAboutSaved(book: book)
+                    ContentMediator.shared.notifyAboutSaved(recipe: recipe)
                 }
             })
     }
     
-    func removeSaved(book: BookCover) -> Single<Bool> {
+    func removeSaved(recipe: BookCover) -> Single<Bool> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
         
-        let request = RemoveSavedBookRequest(userToken: userToken, bookId: book.id)
+        let request = RemoveSavedRecipeRequest(userToken: userToken, recipeId: recipe.id)
         
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
-            .map { SaveRemoveBookResponse.map(from: $0) }
+            .map { SaveRemoveRecipeResponse.map(from: $0) }
             .do(onSuccess: { success in
                 if success {
-                    ContentMediator.shared.notifyAboutRemoveSaved(book: book)
+                    ContentMediator.shared.notifyAboutRemoveSaved(recipe: recipe)
                 }
             })
     }
     
-    func obtainSavedBooksCover() -> Single<[BookCover]> {
+    func obtainSavedRecipesCover() -> Single<[BookCover]> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
         
-        let request = GetSavedBooksRequest(userToken: userToken)
+        let request = GetSavedRecipesRequest(userToken: userToken)
         
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
-            .map { GetSavedBooksResponse.map(from: $0) }
+            .map { GetSavedRecipesResponse.map(from: $0) }
     }
     
     func obtainExploreKit() -> Single<ExploreKit?> {
@@ -145,74 +128,124 @@ extension ContentManager {
             .map { GetExploreKitResponse.map(from: $0) }
     }
     
-    func searchBooks(at: String) -> Single<[BookCover]> {
+    func searchRecipes(at: String) -> Single<[BookCover]> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
         
-        let request = SearchBooksRequest(userToken: userToken, search: at)
+        let request = SearchRecipesRequest(userToken: userToken, search: at)
         
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
-            .map { SearchBooksResponse.map(from: $0) }
+            .map { SearchRecipesResponse.map(from: $0) }
     }
     
-    func obtainCategoryBooksCover(categoryId: Int) -> Single<[BookCover]> {
+    // TODO
+    func obtainCategoryRecipesCover(categoryId: Int) -> Single<[BookCover]> {
+        Single<[BookCover]>
+            .create { event in
+                let recipes = [
+                    BookCover(id: 1,
+                              name: "Poke with salmon 1",
+                              time: 10,
+                              author: Author(name: "", photoUrl: URL(string: "www.google.com")!),
+                              imageUrl: URL(string: "https://img.povar.ru/main/71/a7/1b/ab/salat_quotolivequot_klassicheskii_s_kolbasoi-286788.JPG")!,
+                              rankingId: 1,
+                              shareLink: URL(string: "www.google.com")!,
+                              paid: false),
+                    BookCover(id: 2,
+                              name: "Poke with salmon 2",
+                              time: 10,
+                              author: Author(name: "", photoUrl: URL(string: "www.google.com")!),
+                              imageUrl: URL(string: "https://img.povar.ru/main/71/a7/1b/ab/salat_quotolivequot_klassicheskii_s_kolbasoi-286788.JPG")!,
+                              rankingId: 1,
+                              shareLink: URL(string: "www.google.com")!,
+                              paid: false),
+                    BookCover(id: 3,
+                              name: "Poke with salmon 3",
+                              time: 10,
+                              author: Author(name: "", photoUrl: URL(string: "www.google.com")!),
+                              imageUrl: URL(string: "https://img.povar.ru/main/71/a7/1b/ab/salat_quotolivequot_klassicheskii_s_kolbasoi-286788.JPG")!,
+                              rankingId: 1,
+                              shareLink: URL(string: "www.google.com")!,
+                              paid: false),
+                    BookCover(id: 4,
+                              name: "Poke with salmon 4",
+                              time: 10,
+                              author: Author(name: "", photoUrl: URL(string: "www.google.com")!),
+                              imageUrl: URL(string: "https://img.povar.ru/main/71/a7/1b/ab/salat_quotolivequot_klassicheskii_s_kolbasoi-286788.JPG")!,
+                              rankingId: 1,
+                              shareLink: URL(string: "www.google.com")!,
+                              paid: false),
+                    BookCover(id: 5,
+                              name: "Poke with salmon 5",
+                              time: 10,
+                              author: Author(name: "", photoUrl: URL(string: "www.google.com")!),
+                              imageUrl: URL(string: "https://img.povar.ru/main/71/a7/1b/ab/salat_quotolivequot_klassicheskii_s_kolbasoi-286788.JPG")!,
+                              rankingId: 1,
+                              shareLink: URL(string: "www.google.com")!,
+                              paid: false)
+                ]
+                event(.success(recipes))
+                
+                return Disposables.create()
+            }
+        
+//        guard let userToken = sessionManager.getSession()?.userToken else {
+//            return .error(SignError.tokenNotFound)
+//        }
+//
+//        let request = GetCategoryRecipesRequest(userToken: userToken, categoryId: categoryId)
+//
+//        return defaultRequestWrapper
+//            .callServerApi(requestBody: request)
+//            .map { GetCategoryRecipesResponse.map(from: $0) }
+    }
+    
+    func obtainRankingRecipesCover(rankingId: Int) -> Single<[BookCover]> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
         
-        let request = GetCategoryBooksRequest(userToken: userToken, categoryId: categoryId)
+        let request = GetRankingRecipesRequest(userToken: userToken, rankingId: rankingId)
         
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
-            .map { GetCategoryBooksResponse.map(from: $0) }
+            .map { GetRankingRecipesResponse.map(from: $0) }
     }
     
-    func obtainRankingBooksCover(rankingId: Int) -> Single<[BookCover]> {
-        guard let userToken = sessionManager.getSession()?.userToken else {
-            return .error(SignError.tokenNotFound)
-        }
-        
-        let request = GetRankingBooksRequest(userToken: userToken, rankingId: rankingId)
-        
-        return defaultRequestWrapper
-            .callServerApi(requestBody: request)
-            .map { GetRankingBooksResponse.map(from: $0) }
-    }
-    
-    func obtainReadingBooks() -> Single<[BookReadingProgress]> {
+    func obtainReadingRecipes() -> Single<[BookReadingProgress]> {
         Single<[BookReadingProgress]>.create { event in
             guard
-                let data = UserDefaults.standard.data(forKey: Constants.readingBooksKey),
-                let books = try? JSONDecoder().decode([BookReadingProgress].self, from: data)
+                let data = UserDefaults.standard.data(forKey: Constants.readingRecipesKey),
+                let recipes = try? JSONDecoder().decode([BookReadingProgress].self, from: data)
             else {
                 event(.success([]))
                 return Disposables.create()
             }
             
-            event(.success(books))
+            event(.success(recipes))
             
             return Disposables.create()
         }
     }
     
-    func set(bookReadingProgress: BookReadingProgress) -> Single<Void> {
-        obtainReadingBooks()
-            .flatMap { readingBooks -> Single<Void> in
+    func set(recipeReadingProgress: BookReadingProgress) -> Single<Void> {
+        obtainReadingRecipes()
+            .flatMap { readingRecipes -> Single<Void> in
                 Single<Void>.create { event in
-                    var result = readingBooks
+                    var result = readingRecipes
                     
-                    if let index = result.firstIndex(where: { $0.book.id == bookReadingProgress.book.id }) {
-                        result[index] = bookReadingProgress
+                    if let index = result.firstIndex(where: { $0.book.id == recipeReadingProgress.book.id }) {
+                        result[index] = recipeReadingProgress
                     } else {
-                        result.append(bookReadingProgress)
+                        result.append(recipeReadingProgress)
                     }
                     
                     if let data = try? JSONEncoder().encode(result) {
-                        UserDefaults.standard.set(data, forKey: Constants.readingBooksKey)
+                        UserDefaults.standard.set(data, forKey: Constants.readingRecipesKey)
                         
-                        ContentMediator.shared.notifyAboutUpdate(bookReadingProgress: bookReadingProgress)
+                        ContentMediator.shared.notifyAboutUpdate(recipeReadingProgress: recipeReadingProgress)
                     }
                     
                     event(.success(Void()))
@@ -222,19 +255,19 @@ extension ContentManager {
             }
     }
     
-    func removeBookProgress(bookId: Int) -> Single<Void> {
-        obtainReadingBooks()
-            .flatMap { readingBooks -> Single<Void> in
+    func removeRecipeProgress(recipeId: Int) -> Single<Void> {
+        obtainReadingRecipes()
+            .flatMap { readingRecipes -> Single<Void> in
                 Single<Void>.create { event in
-                    var result = readingBooks
+                    var result = readingRecipes
                     
-                    if let index = result.firstIndex(where: { $0.book.id == bookId }) {
+                    if let index = result.firstIndex(where: { $0.book.id == recipeId }) {
                         result.remove(at: index)
                         
                         if let data = try? JSONEncoder().encode(result) {
-                            UserDefaults.standard.set(data, forKey: Constants.readingBooksKey)
+                            UserDefaults.standard.set(data, forKey: Constants.readingRecipesKey)
                             
-                            ContentMediator.shared.notifyAboutUpdateRemovedProgress(bookId: bookId)
+                            ContentMediator.shared.notifyAboutUpdateRemovedProgress(recipeId: recipeId)
                         }
                     }
                     
@@ -245,7 +278,7 @@ extension ContentManager {
             }
     }
     
-    func feedback(bookId: Int,
+    func feedback(recipeId: Int,
                   rating: Int,
                   improves: [Int],
                   whatBetter: String?,
@@ -255,7 +288,7 @@ extension ContentManager {
         }
         
         let request = FeedbackRequest(userToken: userToken,
-                                      bookId: bookId,
+                                      recipeId: recipeId,
                                       rating: rating,
                                       improves: improves,
                                       whatBetter: whatBetter,
@@ -264,81 +297,6 @@ extension ContentManager {
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
             .map { FeedbackResponse.map(from: $0) }
-    }
-    
-    func obtainDownloadBooks() -> Single<[LocalBook]> {
-        Single<[LocalBook]>.create { event in
-            guard
-                let data = UserDefaults.standard.data(forKey: Constants.downloadBooksKey),
-                let books = try? JSONDecoder().decode([LocalBook].self, from: data)
-            else {
-                event(.success([]))
-                return Disposables.create()
-            }
-            
-            event(.success(books))
-            
-            return Disposables.create()
-        }
-    }
-    
-    func download(book: Book, delegate: DownloadBookDelegate?) -> Single<LocalBook?> {
-        Single<LocalBook?>
-            .create { event in
-                DownloadBooksQueue.shared.download(book: book, delegate: delegate) { localBook in
-                    guard let localBook = localBook else {
-                        event(.success(nil))
-                        return
-                    }
-
-                    var books = [LocalBook]()
-                    
-                    if let data = UserDefaults.standard.data(forKey: Constants.downloadBooksKey) {
-                        let decoded = try? JSONDecoder().decode([LocalBook].self, from: data)
-                        books = decoded ?? []
-                    }
-                    
-                    if let index = books.firstIndex(of: localBook) {
-                        books[index] = localBook
-                    } else {
-                        books.append(localBook)
-                    }
-                    
-                    if let data = try? JSONEncoder().encode(books) {
-                        UserDefaults.standard.set(data, forKey: Constants.downloadBooksKey)
-                    }
-                    
-                    ContentMediator.shared.notifyAboutUpdate(bookDownloaded: localBook)
-                    
-                    event(.success(localBook))
-                }
-                
-                return Disposables.create()
-            }
-    }
-    
-    func removeDownload(bookId: Int) -> Single<Void> {
-        obtainDownloadBooks()
-            .flatMap { downloadedBooks -> Single<Void> in
-                Single<Void>
-                    .create { event in
-                        var result = downloadedBooks
-                        
-                        if let index = result.firstIndex(where: { $0.original.id == bookId }) {
-                            result.remove(at: index)
-                            
-                            if let data = try? JSONEncoder().encode(result) {
-                                UserDefaults.standard.set(data, forKey: Constants.downloadBooksKey)
-                                
-                                ContentMediator.shared.notifyAboutRemovedDownload(bookId: bookId)
-                            }
-                        }
-                        
-                        event(.success(Void()))
-                        
-                        return Disposables.create()
-                    }
-            }
     }
     
     func obtainChallenge(id: Int) -> Single<Challenge?> {
@@ -465,18 +423,18 @@ private extension ContentManager {
     }
     
     // TODO
-    func loadDiets() -> Single<[Diet]> {
+    func loadDiets() -> Single<[Category]> {
         Single.create { event in
             let diets = [
-                Diet(id: 1, name: "Dairy-free"),
-                Diet(id: 2, name: "Gluten-free"),
-                Diet(id: 3, name: "Low sugar"),
-                Diet(id: 4, name: "Low-carb"),
-                Diet(id: 5, name: "Low-fat"),
-                Diet(id: 6, name: "Pescatarian"),
-                Diet(id: 7, name: "Vegan"),
-                Diet(id: 8, name: "Vegetarian"),
-                Diet(id: 9, name: "None of these")
+                Category(id: 1, name: "Dairy-free", imageUrl: URL(string: "www.google.com")!),
+                Category(id: 2, name: "Gluten-free", imageUrl: URL(string: "www.google.com")!),
+                Category(id: 3, name: "Low sugar", imageUrl: URL(string: "www.google.com")!),
+                Category(id: 4, name: "Low-carb", imageUrl: URL(string: "www.google.com")!),
+                Category(id: 5, name: "Low-fat", imageUrl: URL(string: "www.google.com")!),
+                Category(id: 6, name: "Pescatarian", imageUrl: URL(string: "www.google.com")!),
+                Category(id: 7, name: "Vegan", imageUrl: URL(string: "www.google.com")!),
+                Category(id: 8, name: "Vegetarian", imageUrl: URL(string: "www.google.com")!),
+                Category(id: 9, name: "None of these", imageUrl: URL(string: "www.google.com")!)
             ]
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
                 event(.success(diets))
@@ -502,15 +460,15 @@ private extension ContentManager {
 //            })
     }
     
-    func cachedDiets() -> Single<[Diet]> {
-        Single<[Diet]>
+    func cachedDiets() -> Single<[Category]> {
+        Single<[Category]>
             .create { event in
                 guard let data = UserDefaults.standard.data(forKey: Constants.dietsKey) else {
                     event(.success([]))
                     return Disposables.create()
                 }
                 
-                let diets = try? JSONDecoder().decode([Diet].self, from: data)
+                let diets = try? JSONDecoder().decode([Category].self, from: data)
                 
                 event(.success(diets ?? []))
                 

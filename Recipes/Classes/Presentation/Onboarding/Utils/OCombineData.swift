@@ -1,6 +1,6 @@
 //
 //  OCombineData.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 23.08.2022.
 //
@@ -8,7 +8,7 @@
 struct OCombineData {
     let goal: Int
     let categories: [Int]
-    let diet: Int
+    let diets: [Int]
     let pace: Int
     let time: Int
     let pushToken: String?
@@ -18,7 +18,7 @@ struct OCombineData {
 final class OnboardingCombineData {
     private var goal: OGoalButton.Goal?
     private var categories: [OCategoriesCollectionElement]?
-    private var diet: Diet?
+    private var diets: [Category]?
     private var pace: Int?
     private var time: OTimeButton.Time?
     private var pushToken: String?
@@ -28,7 +28,7 @@ final class OnboardingCombineData {
         guard
             let goal = goal,
             let categories = categories,
-            let diet = diet,
+            let diets = diets,
             let pace = pace,
             let time = time
         else {
@@ -38,7 +38,7 @@ final class OnboardingCombineData {
         return OCombineData(
             goal: goal.code,
             categories: categories.map { $0.id },
-            diet: diet.id,
+            diets: diets.map { $0.id },
             pace: pace,
             time: time.code,
             pushToken: pushToken,
@@ -58,6 +58,13 @@ extension OnboardingCombineData: OGoalViewDelegate {
 extension OnboardingCombineData: OCategoriesViewDelegate {
     func categoriesViewDidSelected(elements: [OCategoriesCollectionElement]) {
         self.categories = elements
+    }
+}
+
+// MARK: ODietsViewDelegate
+extension OnboardingCombineData: ODietsViewDelegate {
+    func dietsViewDidSelected(diets: [Category]) {
+        self.diets = diets
     }
 }
 

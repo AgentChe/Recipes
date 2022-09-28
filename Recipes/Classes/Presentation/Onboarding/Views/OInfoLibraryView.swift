@@ -1,6 +1,6 @@
 //
 //  OInfoLibraryView.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 24.08.2022.
 //
@@ -43,10 +43,10 @@ private extension OInfoLibraryView {
 private extension OInfoLibraryView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 177.scale),
-            imageView.heightAnchor.constraint(equalToConstant: 139.scale),
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24.scale),
-            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 256.scale : 176.scale)
+            imageView.widthAnchor.constraint(equalToConstant: 327.scale),
+            imageView.heightAnchor.constraint(equalToConstant: 318.scale),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 77.scale : 60.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -113,7 +113,7 @@ private extension OInfoLibraryView {
     
     func makeButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.black)
             .font(Fonts.PlusJakartaSans.semiBold(size: 16.scale))
             .letterSpacing(-0.17.scale)
         

@@ -1,6 +1,6 @@
 //
 //  GetExploreKitResponse.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 12.07.2022.
 //
@@ -21,6 +21,7 @@ final class GetExploreKitResponse {
             guard
                 let id = coverJSON["id"] as? Int,
                 let name = coverJSON["name"] as? String,
+                let time = coverJSON["time_min"] as? Int,
                 let authorJSON = coverJSON["author"] as? [String: Any],
                 let authorName = authorJSON["name"] as? String,
                 let authorImagePath = authorJSON["photo_url"] as? String,
@@ -40,6 +41,7 @@ final class GetExploreKitResponse {
             
             return BookCover(id: id,
                              name: name,
+                             time: time,
                              author: author,
                              imageUrl: imageUrl,
                              rankingId: rankingId,

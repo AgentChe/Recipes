@@ -1,6 +1,6 @@
 //
 //  OBottomProgressView.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 26.08.2022.
 //
@@ -204,7 +204,7 @@ private extension OBottomProgressView {
     
     func makeNormalAttrs() -> TextAttributes {
         TextAttributes()
-            .textColor(Appearance.secondary5)
+            .textColor(Appearance.black)
             .font(Fonts.PlusJakartaSans.semiBold(size: 16.scale))
             .lineHeight(24.scale)
             .letterSpacing(-0.17.scale)
@@ -213,7 +213,7 @@ private extension OBottomProgressView {
     
     func makeDimAttrs() -> TextAttributes {
         TextAttributes()
-            .textColor(Appearance.secondary5.withAlphaComponent(0.5))
+            .textColor(Appearance.black.withAlphaComponent(0.5))
             .font(Fonts.PlusJakartaSans.semiBold(size: 14.scale))
             .lineHeight(21.scale)
             .letterSpacing(-0.17.scale)

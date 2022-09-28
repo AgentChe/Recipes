@@ -1,6 +1,6 @@
 //
 //  FeedbackRequest.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 18.07.2022.
 //
@@ -10,7 +10,7 @@ import RushSDK
 
 struct FeedbackRequest: APIRequestBody {
     let userToken: String
-    let bookId: Int
+    let recipeId: Int
     let rating: Int
     let improves: [Int]
     let whatBetter: String?
@@ -28,7 +28,7 @@ struct FeedbackRequest: APIRequestBody {
         var params: [String: Any] = [
             "_api_key": GlobalDefinitions.apiKey,
             "_user_token": userToken,
-            "book_id": bookId,
+            "unit_id": recipeId,
             "rating": rating,
             "improves": improves
         ]

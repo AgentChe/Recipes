@@ -1,6 +1,6 @@
 //
 //  PaddingTextField.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 19.07.2022.
 //

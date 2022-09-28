@@ -2,7 +2,7 @@
 //  GetDietsRequest.swift
 //  Recipes
 //
-//  Created by Андрей Чернышев on 13.09.2022.
+//  Created by Андрей Чернышев on 27.09.2022.
 //
 
 import Alamofire

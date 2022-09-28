@@ -1,6 +1,6 @@
 //
 //  GetChallengeResponse.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 12.08.2022.
 //
@@ -27,11 +27,12 @@ final class GetChallengeResponse {
             return nil
         }
         
-        let booksArray = data["books"] as? [[String: Any]] ?? []
-        let books = booksArray.compactMap { coverJSON -> BookCover? in
+        let recipesArray = data["units"] as? [[String: Any]] ?? []
+        let recipes = recipesArray.compactMap { coverJSON -> BookCover? in
             guard
                 let id = coverJSON["id"] as? Int,
                 let name = coverJSON["name"] as? String,
+                let time = coverJSON["time_min"] as? Int,
                 let authorJSON = coverJSON["author"] as? [String: Any],
                 let authorName = authorJSON["name"] as? String,
                 let authorImagePath = authorJSON["photo_url"] as? String,
@@ -51,6 +52,7 @@ final class GetChallengeResponse {
             
             return BookCover(id: id,
                              name: name,
+                             time: time,
                              author: author,
                              imageUrl: imageUrl,
                              rankingId: rankingId,
@@ -63,22 +65,6 @@ final class GetChallengeResponse {
                          title: title,
                          text: text,
                          imageUrl: imageUrl,
-                         books: books)
-    }
-}
-
-// MARK: Private
-private extension GetBookKitResponse {
-    static func map(introductionJSON: [String: Any]) -> BookChapter? {
-        guard
-            let title = introductionJSON["title"] as? String,
-            let text = introductionJSON["text"] as? String
-        else {
-            return nil
-        }
-        
-        return BookChapter(shortDescription: "",
-                           title: title,
-                           text: text)
+                         recipes: recipes)
     }
 }

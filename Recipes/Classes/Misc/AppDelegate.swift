@@ -12,6 +12,7 @@ import RushSDK
 // TODO: GoogleService-Info
 // TODO: GlobalDefinitions
 // TODO: info.plist
+// TODO: Отказ от RushSDK
 @main
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var sdkProvider = SDKProvider()

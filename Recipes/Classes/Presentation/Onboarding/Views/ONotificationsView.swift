@@ -1,6 +1,6 @@
 //
 //  ONotificationsView.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 24.08.2022.
 //
@@ -169,7 +169,7 @@ private extension ONotificationsView {
     
     func makeSaveButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.black)
             .font(Fonts.PlusJakartaSans.semiBold(size: 16.scale))
             .letterSpacing(-0.17.scale)
         

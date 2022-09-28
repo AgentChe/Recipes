@@ -1,6 +1,6 @@
 //
 //  GetChallengeRequest.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 12.08.2022.
 //

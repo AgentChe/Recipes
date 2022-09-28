@@ -1,6 +1,6 @@
 //
 //  OProgressView.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 26.08.2022.
 //
@@ -69,7 +69,7 @@ private extension OProgressView {
             profileManager
                 .set(goal: data.goal,
                      categories: data.categories,
-                     diet: data.diet,
+                     diets: data.diets,
                      pace: data.pace,
                      time: data.time,
                      pushToken: data.pushToken,
@@ -215,7 +215,7 @@ private extension OProgressView {
     
     func makeTitleAttrs() -> TextAttributes {
         TextAttributes()
-            .textColor(Appearance.secondary5)
+            .textColor(Appearance.black)
             .font(Fonts.PlusJakartaSans.bold(size: 28.scale))
             .lineHeight(36.4.scale)
             .letterSpacing(-0.37.scale)

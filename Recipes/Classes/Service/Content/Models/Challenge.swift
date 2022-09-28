@@ -1,6 +1,6 @@
 //
 //  Challenge.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 12.08.2022.
 //
@@ -13,5 +13,5 @@ struct Challenge: Codable, Hashable {
     let title: String
     let text: String
     let imageUrl: URL
-    let books: [BookCover]
+    let recipes: [BookCover]
 }

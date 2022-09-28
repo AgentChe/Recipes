@@ -1,6 +1,6 @@
 //
 //  SplashView.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 05.07.2022.
 //

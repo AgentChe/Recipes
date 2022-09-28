@@ -1,6 +1,6 @@
 //
 //  OCircleProgressView.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 26.08.2022.
 //
@@ -56,7 +56,7 @@ private extension OCircleProgressView {
         circleLayer.lineWidth = 3.scale
         trackLayer.strokeStart = 0
         trackLayer.strokeEnd = 1
-        circleLayer.strokeColor = Appearance.secondary5.withAlphaComponent(0.1).cgColor
+        circleLayer.strokeColor = Appearance.black.withAlphaComponent(0.1).cgColor
         
         trackLayer.path = circularPath.cgPath
         trackLayer.fillColor = UIColor.clear.cgColor
@@ -64,7 +64,7 @@ private extension OCircleProgressView {
         trackLayer.lineWidth = 3.scale
         trackLayer.strokeStart = 0
         trackLayer.strokeEnd = 0
-        trackLayer.strokeColor = Appearance.secondary5.cgColor
+        trackLayer.strokeColor = Appearance.black.cgColor
 
         layer.addSublayer(circleLayer)
         layer.addSublayer(trackLayer)
@@ -92,7 +92,7 @@ private extension OCircleProgressView {
     
     func makeAttrs() -> TextAttributes {
         TextAttributes()
-            .textColor(Appearance.secondary5)
+            .textColor(Appearance.black)
             .font(Fonts.PlusJakartaSans.extraBold(size: 34.scale))
             .lineHeight(40.8.scale)
             .letterSpacing(-1.scale)

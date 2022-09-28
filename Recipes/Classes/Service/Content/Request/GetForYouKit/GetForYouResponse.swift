@@ -1,6 +1,6 @@
 //
 //  GetForYouResponse.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 12.07.2022.
 //
@@ -12,8 +12,8 @@ final class GetForYouResponse {
         guard
             let json = response as? [String: Any],
             let data = json["_data"] as? [String: Any],
-            let freeBookJSON = data["free_book"] as? [String: Any],
-            let freeBook = map(coverJSON: freeBookJSON)
+            let freeRecipeJSON = data["free_unit"] as? [String: Any],
+            let freeRecipe = map(coverJSON: freeRecipeJSON)
         else {
             return nil
         }
@@ -49,22 +49,22 @@ final class GetForYouResponse {
         }
         
         let rankingArray = data["ranking"] as? [[String: Any]] ?? []
-        let rankings = rankingArray.compactMap { rankingJSON -> RankingBooksGroup? in
+        let rankings = rankingArray.compactMap { rankingJSON -> RankingRecipesGroup? in
             guard
                 let id = rankingJSON["ranking_id"] as? Int,
-                let booksArray = rankingJSON["books"] as? [[String: Any]]
+                let recipesArray = rankingJSON["units"] as? [[String: Any]]
             else {
                 return nil
             }
             
-            let books = booksArray.compactMap { coverJSON -> BookCover? in
+            let recipes = recipesArray.compactMap { coverJSON -> BookCover? in
                 map(coverJSON: coverJSON)
             }
             
-            return RankingBooksGroup(rankingId: id, books: books)
+            return RankingRecipesGroup(rankingId: id, recipes: recipes)
         }
         
-        return ForYouKit(freeBook: freeBook,
+        return ForYouKit(freeRecipe: freeRecipe,
                          todaysHotSummaries: todaysHotSummaries,
                          challenges: challenges,
                          youMayLike: youMayLike,
@@ -78,6 +78,7 @@ private extension GetForYouResponse {
         guard
             let id = coverJSON["id"] as? Int,
             let name = coverJSON["name"] as? String,
+            let time = coverJSON["time_min"] as? Int,
             let authorJSON = coverJSON["author"] as? [String: Any],
             let authorName = authorJSON["name"] as? String,
             let authorImagePath = authorJSON["photo_url"] as? String,
@@ -97,6 +98,7 @@ private extension GetForYouResponse {
         
         return BookCover(id: id,
                          name: name,
+                         time: time,
                          author: author,
                          imageUrl: imageUrl,
                          rankingId: rankingId,

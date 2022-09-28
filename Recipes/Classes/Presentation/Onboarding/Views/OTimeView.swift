@@ -1,6 +1,6 @@
 //
 //  OTimeView.swift
-//  BookSummaries
+//  Recipes
 //
 //  Created by Андрей Чернышев on 24.08.2022.
 //
@@ -18,7 +18,6 @@ final class OTimeView: OSlideView {
     lazy var button1 = makeButton1()
     lazy var button2 = makeButton2()
     lazy var button3 = makeButton3()
-    lazy var button4 = makeButton4()
     lazy var button5 = makeButton5()
     lazy var backButton = makeBackButton()
     lazy var nextButton = makeNextButton()
@@ -27,7 +26,6 @@ final class OTimeView: OSlideView {
         button1,
         button2,
         button3,
-        button4,
         button5
     ]
     
@@ -118,17 +116,10 @@ private extension OTimeView {
         ])
         
         NSLayoutConstraint.activate([
-            button4.widthAnchor.constraint(equalToConstant: 305.scale),
-            button4.heightAnchor.constraint(equalToConstant: 72.scale),
-            button4.centerXAnchor.constraint(equalTo: centerXAnchor),
-            button4.topAnchor.constraint(equalTo: button3.bottomAnchor, constant: 16.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
             button5.widthAnchor.constraint(equalToConstant: 305.scale),
             button5.heightAnchor.constraint(equalToConstant: 72.scale),
             button5.centerXAnchor.constraint(equalTo: centerXAnchor),
-            button5.topAnchor.constraint(equalTo: button4.bottomAnchor, constant: 16.scale)
+            button5.topAnchor.constraint(equalTo: button3.bottomAnchor, constant: 16.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -202,23 +193,6 @@ private extension OTimeView {
         let time = OTimeButton.Time(code: 2,
                                     icon: "Onboarding.Time.3",
                                     title: "Onboarding.Time.Cell3".localized)
-        let view = OTimeButton(time: time)
-        view.backgroundColor = Appearance.white
-        view.layer.cornerRadius = 20.scale
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOpacity = 0.08
-        view.layer.shadowOffset = .zero
-        view.layer.shadowRadius = 6.scale
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.addTarget(self, action: #selector(timeTapped(sender:)), for: .touchUpInside)
-        addSubview(view)
-        return view
-    }
-    
-    func makeButton4() -> OTimeButton {
-        let time = OTimeButton.Time(code: 3,
-                                    icon: "Onboarding.Time.4",
-                                    title: "Onboarding.Time.Cell4".localized)
         let view = OTimeButton(time: time)
         view.backgroundColor = Appearance.white
         view.layer.cornerRadius = 20.scale
