@@ -9,14 +9,14 @@ import UIKit
 
 final class OBottomProgressView: UIView {
     lazy var profileLabel = makeLabel()
-    lazy var bookPreferencesLabel = makeLabel()
+    lazy var recipePreferencesLabel = makeLabel()
     lazy var planLabel = makeLabel()
     
     private lazy var normatAttrs = makeNormalAttrs()
     private lazy var dimAttrs = makeDimAttrs()
     
     private lazy var profileBottomConstraint = NSLayoutConstraint()
-    private lazy var bookPreferencesBottomConstraint = NSLayoutConstraint()
+    private lazy var recipePreferencesBottomConstraint = NSLayoutConstraint()
     private lazy var planBottomConstraint = NSLayoutConstraint()
     
     private var currentStage: Stage?
@@ -52,7 +52,7 @@ extension OBottomProgressView {
 // MARK: Private
 private extension OBottomProgressView {
     enum Stage {
-        case profile, bookPreferences, plan
+        case profile, recipePreferences, plan
     }
     
     func updateProgress(stage: Stage, totalPercent: Int) {
@@ -64,7 +64,7 @@ private extension OBottomProgressView {
     
     func hiddenLabelIfNeeded(stage: Stage) {
         switch stage {
-        case .profile, .bookPreferences:
+        case .profile, .recipePreferences:
             break
         case .plan:
             profileLabel.alpha = 0
@@ -113,7 +113,7 @@ private extension OBottomProgressView {
         case .profile:
             stageTotalProgress = 33
             stageCurrentProgress = totalPercent
-        case .bookPreferences:
+        case .recipePreferences:
             stageTotalProgress = 33
             stageCurrentProgress = totalPercent - 33
         case .plan:
@@ -129,8 +129,8 @@ private extension OBottomProgressView {
         switch stage {
         case .profile:
             return profileLabel
-        case .bookPreferences:
-            return bookPreferencesLabel
+        case .recipePreferences:
+            return recipePreferencesLabel
         case .plan:
             return planLabel
         }
@@ -140,8 +140,8 @@ private extension OBottomProgressView {
         switch stage {
         case .profile:
             return profileBottomConstraint
-        case .bookPreferences:
-            return bookPreferencesBottomConstraint
+        case .recipePreferences:
+            return recipePreferencesBottomConstraint
         case .plan:
             return planBottomConstraint
         }
@@ -151,7 +151,7 @@ private extension OBottomProgressView {
         switch stage {
         case .profile:
             return String(format: "Onboarding.Progress.Bottom1".localized, percent)
-        case .bookPreferences:
+        case .recipePreferences:
             return String(format: "Onboarding.Progress.Bottom2".localized, percent)
         case .plan:
             return String(format: "Onboarding.Progress.Bottom3".localized, percent)
@@ -162,7 +162,7 @@ private extension OBottomProgressView {
         if percent <= 33 {
             return .profile
         } else if percent <= 66 {
-            return .bookPreferences
+            return .recipePreferences
         } else {
             return .plan
         }
@@ -178,10 +178,10 @@ private extension OBottomProgressView {
             profileBottomConstraint
         ])
         
-        bookPreferencesBottomConstraint = bookPreferencesLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
+        recipePreferencesBottomConstraint = recipePreferencesLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         NSLayoutConstraint.activate([
-            bookPreferencesLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            bookPreferencesBottomConstraint
+            recipePreferencesLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            recipePreferencesBottomConstraint
         ])
         
         planBottomConstraint = planLabel.bottomAnchor.constraint(equalTo: bottomAnchor)

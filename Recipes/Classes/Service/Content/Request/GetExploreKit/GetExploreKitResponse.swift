@@ -17,7 +17,7 @@ final class GetExploreKitResponse {
         }
         
         let trendingSearchesArray = data["trending_searches"] as? [[String: Any]] ?? []
-        let trendingSearches = trendingSearchesArray.compactMap { coverJSON -> BookCover? in
+        let trendingSearches = trendingSearchesArray.compactMap { coverJSON -> RecipeCover? in
             guard
                 let id = coverJSON["id"] as? Int,
                 let name = coverJSON["name"] as? String,
@@ -39,7 +39,7 @@ final class GetExploreKitResponse {
             let author = Author(name: authorName,
                                 photoUrl: authorImageUrl)
             
-            return BookCover(id: id,
+            return RecipeCover(id: id,
                              name: name,
                              time: time,
                              author: author,

@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 protocol ORecipeImageCollectionViewDelegate: AnyObject {
-    func recipeImageCollectionDidChange(frontRecipe: BookCover)
+    func recipeImageCollectionDidChange(frontRecipe: RecipeCover)
 }
 
 final class ORecipeImageCollectionView: UIView {
@@ -22,16 +22,16 @@ final class ORecipeImageCollectionView: UIView {
     private lazy var backRect = CGRect(origin: CGPoint(x: 30.scale, y: -32.scale),
                                        size: CGSize(width: 181.scale, height: 187.scale))
     
-    private lazy var waitingToBeDisplayedRecipes = [BookCover]()
-    private lazy var likedRecipes = [BookCover]()
+    private lazy var waitingToBeDisplayedRecipes = [RecipeCover]()
+    private lazy var likedRecipes = [RecipeCover]()
     
-    private lazy var imageViews = [BookCover: UIImageView]()
+    private lazy var imageViews = [RecipeCover: UIImageView]()
     
-    private var frontRecipe: BookCover?
-    private var middleRecipe: BookCover?
-    private var backRecipe: BookCover?
+    private var frontRecipe: RecipeCover?
+    private var middleRecipe: RecipeCover?
+    private var backRecipe: RecipeCover?
     
-    private var completion: (([BookCover]) -> Void)?
+    private var completion: (([RecipeCover]) -> Void)?
     
     override var intrinsicContentSize: CGSize {
         frontRect.size
@@ -40,7 +40,7 @@ final class ORecipeImageCollectionView: UIView {
 
 // MARK: Public
 extension ORecipeImageCollectionView {
-    func setup(recipes: [BookCover], completion: @escaping ([BookCover]) -> Void) {
+    func setup(recipes: [RecipeCover], completion: @escaping ([RecipeCover]) -> Void) {
         self.completion = completion
         
         initialize(recipes: recipes)
@@ -171,7 +171,7 @@ private extension ORecipeImageCollectionView {
         })
     }
     
-    func initialize(recipes: [BookCover]) {
+    func initialize(recipes: [RecipeCover]) {
         let limit = Array(recipes.shuffled().prefix(6))
         
         let display = Array(limit.prefix(3))
@@ -202,7 +202,7 @@ private extension ORecipeImageCollectionView {
         }
     }
     
-    func makeImageView(recipe: BookCover) -> UIImageView {
+    func makeImageView(recipe: RecipeCover) -> UIImageView {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.layer.cornerRadius = 20.scale

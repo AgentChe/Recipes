@@ -9,8 +9,8 @@ import RxSwift
 import RxCocoa
 
 protocol ContentMediatorDelegate: AnyObject {
-    func contentMediatorDidSaved(recipe: BookCover)
-    func contentMediatorDidRemovedSaved(recipe: BookCover)
+    func contentMediatorDidSaved(recipe: RecipeCover)
+    func contentMediatorDidRemovedSaved(recipe: RecipeCover)
     func contentMediatorDidUpdated(recipeReadingProgress: BookReadingProgress)
     func contentMediatorDidRemovedProgress(recipeId: Int)
 }
@@ -20,8 +20,8 @@ final class ContentMediator {
     
     private var delegates = [Weak<ContentMediatorDelegate>]()
     
-    private lazy var recipeDidSavedTrigger = PublishRelay<BookCover>()
-    private lazy var recipeDidRemoveFromSavedTrigger = PublishRelay<BookCover>()
+    private lazy var recipeDidSavedTrigger = PublishRelay<RecipeCover>()
+    private lazy var recipeDidRemoveFromSavedTrigger = PublishRelay<RecipeCover>()
     private lazy var recipeReadingProgressUpdatedTrigger = PublishRelay<BookReadingProgress>()
     private lazy var recipeDidRemovedProgressTrigger = PublishRelay<Int>()
     
@@ -30,7 +30,7 @@ final class ContentMediator {
 
 // MARK: Public
 extension ContentMediator {
-    func notifyAboutSaved(recipe: BookCover) {
+    func notifyAboutSaved(recipe: RecipeCover) {
         DispatchQueue.main.async { [weak self] in
             self?.delegates.forEach {
                 $0.weak?.contentMediatorDidSaved(recipe: recipe)
@@ -40,7 +40,7 @@ extension ContentMediator {
         }
     }
     
-    func notifyAboutRemoveSaved(recipe: BookCover) {
+    func notifyAboutRemoveSaved(recipe: RecipeCover) {
         DispatchQueue.main.async { [weak self] in
             self?.delegates.forEach {
                 $0.weak?.contentMediatorDidRemovedSaved(recipe: recipe)
@@ -73,11 +73,11 @@ extension ContentMediator {
 
 // MARK: Public (Triggers)
 extension ContentMediator {
-    var recipeDidSaved: Signal<BookCover> {
+    var recipeDidSaved: Signal<RecipeCover> {
         recipeDidSavedTrigger.asSignal()
     }
     
-    var recipeDidRemoveFromSaved: Signal<BookCover> {
+    var recipeDidRemoveFromSaved: Signal<RecipeCover> {
         recipeDidRemoveFromSavedTrigger.asSignal()
     }
     

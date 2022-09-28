@@ -6,6 +6,6 @@
 //
 
 struct ExploreKit: Codable, Hashable {
-    let trendingSearches: [BookCover]
+    let trendingSearches: [RecipeCover]
     let popularRequests: [String]
 }

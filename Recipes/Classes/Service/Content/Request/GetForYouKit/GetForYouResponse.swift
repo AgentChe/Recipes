@@ -19,7 +19,7 @@ final class GetForYouResponse {
         }
         
         let todaysHotSummariesArray = data["todays_hot_summaries"] as? [[String: Any]] ?? []
-        let todaysHotSummaries = todaysHotSummariesArray.compactMap { coverJSON -> BookCover? in
+        let todaysHotSummaries = todaysHotSummariesArray.compactMap { coverJSON -> RecipeCover? in
             map(coverJSON: coverJSON)
         }
         
@@ -44,7 +44,7 @@ final class GetForYouResponse {
         }
         
         let youMayLikeArray = data["you_may_like"] as? [[String: Any]] ?? []
-        let youMayLike = youMayLikeArray.compactMap { coverJSON -> BookCover? in
+        let youMayLike = youMayLikeArray.compactMap { coverJSON -> RecipeCover? in
             map(coverJSON: coverJSON)
         }
         
@@ -57,7 +57,7 @@ final class GetForYouResponse {
                 return nil
             }
             
-            let recipes = recipesArray.compactMap { coverJSON -> BookCover? in
+            let recipes = recipesArray.compactMap { coverJSON -> RecipeCover? in
                 map(coverJSON: coverJSON)
             }
             
@@ -74,7 +74,7 @@ final class GetForYouResponse {
 
 // MARK: Private
 private extension GetForYouResponse {
-    static func map(coverJSON: [String: Any]) -> BookCover? {
+    static func map(coverJSON: [String: Any]) -> RecipeCover? {
         guard
             let id = coverJSON["id"] as? Int,
             let name = coverJSON["name"] as? String,
@@ -96,7 +96,7 @@ private extension GetForYouResponse {
         let author = Author(name: authorName,
                             photoUrl: authorImageUrl)
         
-        return BookCover(id: id,
+        return RecipeCover(id: id,
                          name: name,
                          time: time,
                          author: author,

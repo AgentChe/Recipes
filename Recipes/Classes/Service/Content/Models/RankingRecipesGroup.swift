@@ -7,5 +7,5 @@
 
 struct RankingRecipesGroup: Codable, Hashable {
     let rankingId: Int
-    let recipes: [BookCover]
+    let recipes: [RecipeCover]
 }

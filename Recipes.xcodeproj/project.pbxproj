@@ -142,7 +142,7 @@
 		DEF40C2228E3509D00C2EB67 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE928E3509D00C2EB67 /* Author.swift */; };
 		DEF40C2328E3509D00C2EB67 /* ForYouKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BEA28E3509D00C2EB67 /* ForYouKit.swift */; };
 		DEF40C2528E3509D00C2EB67 /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BEC28E3509D00C2EB67 /* Ranking.swift */; };
-		DEF40C2628E3509D00C2EB67 /* BookCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BED28E3509D00C2EB67 /* BookCover.swift */; };
+		DEF40C2628E3509D00C2EB67 /* RecipeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BED28E3509D00C2EB67 /* RecipeCover.swift */; };
 		DEF40C2728E3509D00C2EB67 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BEE28E3509D00C2EB67 /* Category.swift */; };
 		DEF40C2928E3509D00C2EB67 /* BookChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BF028E3509D00C2EB67 /* BookChapter.swift */; };
 		DEF40C2A28E3509D00C2EB67 /* BookReadingProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BF128E3509D00C2EB67 /* BookReadingProgress.swift */; };
@@ -316,7 +316,7 @@
 		DEF40BE928E3509D00C2EB67 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		DEF40BEA28E3509D00C2EB67 /* ForYouKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForYouKit.swift; sourceTree = "<group>"; };
 		DEF40BEC28E3509D00C2EB67 /* Ranking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
-		DEF40BED28E3509D00C2EB67 /* BookCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCover.swift; sourceTree = "<group>"; };
+		DEF40BED28E3509D00C2EB67 /* RecipeCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCover.swift; sourceTree = "<group>"; };
 		DEF40BEE28E3509D00C2EB67 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		DEF40BF028E3509D00C2EB67 /* BookChapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookChapter.swift; sourceTree = "<group>"; };
 		DEF40BF128E3509D00C2EB67 /* BookReadingProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookReadingProgress.swift; sourceTree = "<group>"; };
@@ -892,7 +892,7 @@
 				DEF40BEA28E3509D00C2EB67 /* ForYouKit.swift */,
 				DEF40BEC28E3509D00C2EB67 /* Ranking.swift */,
 				DEF40C5428E48E1B00C2EB67 /* Book.swift */,
-				DEF40BED28E3509D00C2EB67 /* BookCover.swift */,
+				DEF40BED28E3509D00C2EB67 /* RecipeCover.swift */,
 				DEF40BEE28E3509D00C2EB67 /* Category.swift */,
 				DEF40BF028E3509D00C2EB67 /* BookChapter.swift */,
 				DEF40BF128E3509D00C2EB67 /* BookReadingProgress.swift */,
@@ -1306,7 +1306,7 @@
 				DEF40C2128E3509D00C2EB67 /* RankingRecipesGroup.swift in Sources */,
 				DEF40C3328E3509D00C2EB67 /* GetChallengeRequest.swift in Sources */,
 				DE54ACAD28D09F25004F1514 /* Toast.swift in Sources */,
-				DEF40C2628E3509D00C2EB67 /* BookCover.swift in Sources */,
+				DEF40C2628E3509D00C2EB67 /* RecipeCover.swift in Sources */,
 				DE54ADC328D0A012004F1514 /* OGoalButton.swift in Sources */,
 				DE54AC2628D09BF9004F1514 /* SceneDelegate.swift in Sources */,
 				DE54ADD028D0A012004F1514 /* OnboardingView.swift in Sources */,

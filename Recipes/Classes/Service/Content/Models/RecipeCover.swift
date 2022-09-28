@@ -1,5 +1,5 @@
 //
-//  BookCover.swift
+//  RecipeCover.swift
 //  Recipes
 //
 //  Created by Андрей Чернышев on 07.07.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BookCover: Codable, Hashable {
+struct RecipeCover: Codable, Hashable {
     let id: Int
     let name: String
     let time: Int

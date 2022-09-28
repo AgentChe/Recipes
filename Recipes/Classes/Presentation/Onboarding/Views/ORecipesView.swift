@@ -22,7 +22,7 @@ final class ORecipesView: OSlideView {
     lazy var preloader = makePreloader()
     
     private lazy var selectedCategoriesIds = PublishRelay<[Int]>()
-    private lazy var likedRecipes = PublishRelay<[BookCover]>()
+    private lazy var likedRecipes = PublishRelay<[RecipeCover]>()
     
     private lazy var recipes = makeRecipes()
     private lazy var liked = makeLiked()
@@ -64,7 +64,7 @@ extension ORecipesView: OCategoriesViewDelegate {
 
 // MARK: ORecipeImageCollectionViewDelegate
 extension ORecipesView: ORecipeImageCollectionViewDelegate {
-    func recipeImageCollectionDidChange(frontRecipe: BookCover) {
+    func recipeImageCollectionDidChange(frontRecipe: RecipeCover) {
         let nameAttrs = TextAttributes()
             .textColor(Appearance.black)
             .font(Fonts.PlusJakartaSans.bold(size: 20.scale))
@@ -120,21 +120,21 @@ private extension ORecipesView {
             .disposed(by: disposeBag)
     }
     
-    func makeRecipes() -> Driver<[BookCover]> {
+    func makeRecipes() -> Driver<[RecipeCover]> {
         selectedCategoriesIds
-            .flatMapLatest { [weak self] ids -> Observable<[BookCover]> in
+            .flatMapLatest { [weak self] ids -> Observable<[RecipeCover]> in
                 guard let self = self else {
                     return .never()
                 }
                 
-                func source() -> Single<[BookCover]> {
-                    let zipped = ids.map { id -> Single<[BookCover]> in
+                func source() -> Single<[RecipeCover]> {
+                    let zipped = ids.map { id -> Single<[RecipeCover]> in
                         self.contentManager
                             .obtainCategoryRecipesCover(categoryId: id)
                     }
                     return Single
                         .zip(zipped)
-                        .map { recipes -> [BookCover] in
+                        .map { recipes -> [RecipeCover] in
                             recipes.reduce([]) { $0 + $1 }
                         }
                 }

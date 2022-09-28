@@ -6,9 +6,9 @@
 //
 
 struct ForYouKit: Codable, Hashable {
-    let freeRecipe: BookCover
-    let todaysHotSummaries: [BookCover]
+    let freeRecipe: RecipeCover
+    let todaysHotSummaries: [RecipeCover]
     let challenges: [ChallengeCover]
-    let youMayLike: [BookCover]
+    let youMayLike: [RecipeCover]
     let rankings: [RankingRecipesGroup]
 }

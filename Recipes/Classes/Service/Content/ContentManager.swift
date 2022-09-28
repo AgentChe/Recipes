@@ -13,13 +13,13 @@ protocol ContentManagerProtocol: AnyObject {
     func obtainRankings(forceUpdate: Bool) -> Single<[Ranking]>
     func obtainDiets(forceUpdate: Bool) -> Single<[Category]>
     func obtainForYouKit() -> Single<ForYouKit?>
-    func save(recipe: BookCover) -> Single<Bool>
-    func removeSaved(recipe: BookCover) -> Single<Bool>
-    func obtainSavedRecipesCover() -> Single<[BookCover]>
+    func save(recipe: RecipeCover) -> Single<Bool>
+    func removeSaved(recipe: RecipeCover) -> Single<Bool>
+    func obtainSavedRecipesCover() -> Single<[RecipeCover]>
     func obtainExploreKit() -> Single<ExploreKit?>
-    func searchRecipes(at: String) -> Single<[BookCover]>
-    func obtainCategoryRecipesCover(categoryId: Int) -> Single<[BookCover]>
-    func obtainRankingRecipesCover(rankingId: Int) -> Single<[BookCover]>
+    func searchRecipes(at: String) -> Single<[RecipeCover]>
+    func obtainCategoryRecipesCover(categoryId: Int) -> Single<[RecipeCover]>
+    func obtainRankingRecipesCover(rankingId: Int) -> Single<[RecipeCover]>
     func obtainReadingRecipes() -> Single<[BookReadingProgress]>
     func set(recipeReadingProgress: BookReadingProgress) -> Single<Void>
     func removeRecipeProgress(recipeId: Int) -> Single<Void>
@@ -70,7 +70,7 @@ extension ContentManager {
             .map { GetForYouResponse.map(from: $0) }
     }
     
-    func save(recipe: BookCover) -> Single<Bool> {
+    func save(recipe: RecipeCover) -> Single<Bool> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
@@ -87,7 +87,7 @@ extension ContentManager {
             })
     }
     
-    func removeSaved(recipe: BookCover) -> Single<Bool> {
+    func removeSaved(recipe: RecipeCover) -> Single<Bool> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
@@ -104,7 +104,7 @@ extension ContentManager {
             })
     }
     
-    func obtainSavedRecipesCover() -> Single<[BookCover]> {
+    func obtainSavedRecipesCover() -> Single<[RecipeCover]> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
@@ -128,7 +128,7 @@ extension ContentManager {
             .map { GetExploreKitResponse.map(from: $0) }
     }
     
-    func searchRecipes(at: String) -> Single<[BookCover]> {
+    func searchRecipes(at: String) -> Single<[RecipeCover]> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
@@ -141,11 +141,11 @@ extension ContentManager {
     }
     
     // TODO
-    func obtainCategoryRecipesCover(categoryId: Int) -> Single<[BookCover]> {
-        Single<[BookCover]>
+    func obtainCategoryRecipesCover(categoryId: Int) -> Single<[RecipeCover]> {
+        Single<[RecipeCover]>
             .create { event in
                 let recipes = [
-                    BookCover(id: 1,
+                    RecipeCover(id: 1,
                               name: "Poke with salmon 1",
                               time: 10,
                               author: Author(name: "", photoUrl: URL(string: "www.google.com")!),
@@ -153,7 +153,7 @@ extension ContentManager {
                               rankingId: 1,
                               shareLink: URL(string: "www.google.com")!,
                               paid: false),
-                    BookCover(id: 2,
+                    RecipeCover(id: 2,
                               name: "Poke with salmon 2",
                               time: 10,
                               author: Author(name: "", photoUrl: URL(string: "www.google.com")!),
@@ -161,7 +161,7 @@ extension ContentManager {
                               rankingId: 1,
                               shareLink: URL(string: "www.google.com")!,
                               paid: false),
-                    BookCover(id: 3,
+                    RecipeCover(id: 3,
                               name: "Poke with salmon 3",
                               time: 10,
                               author: Author(name: "", photoUrl: URL(string: "www.google.com")!),
@@ -169,7 +169,7 @@ extension ContentManager {
                               rankingId: 1,
                               shareLink: URL(string: "www.google.com")!,
                               paid: false),
-                    BookCover(id: 4,
+                    RecipeCover(id: 4,
                               name: "Poke with salmon 4",
                               time: 10,
                               author: Author(name: "", photoUrl: URL(string: "www.google.com")!),
@@ -177,7 +177,7 @@ extension ContentManager {
                               rankingId: 1,
                               shareLink: URL(string: "www.google.com")!,
                               paid: false),
-                    BookCover(id: 5,
+                    RecipeCover(id: 5,
                               name: "Poke with salmon 5",
                               time: 10,
                               author: Author(name: "", photoUrl: URL(string: "www.google.com")!),
@@ -202,7 +202,7 @@ extension ContentManager {
 //            .map { GetCategoryRecipesResponse.map(from: $0) }
     }
     
-    func obtainRankingRecipesCover(rankingId: Int) -> Single<[BookCover]> {
+    func obtainRankingRecipesCover(rankingId: Int) -> Single<[RecipeCover]> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }

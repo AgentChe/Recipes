@@ -28,7 +28,7 @@ final class GetChallengeResponse {
         }
         
         let recipesArray = data["units"] as? [[String: Any]] ?? []
-        let recipes = recipesArray.compactMap { coverJSON -> BookCover? in
+        let recipes = recipesArray.compactMap { coverJSON -> RecipeCover? in
             guard
                 let id = coverJSON["id"] as? Int,
                 let name = coverJSON["name"] as? String,
@@ -50,7 +50,7 @@ final class GetChallengeResponse {
             let author = Author(name: authorName,
                                 photoUrl: authorImageUrl)
             
-            return BookCover(id: id,
+            return RecipeCover(id: id,
                              name: name,
                              time: time,
                              author: author,

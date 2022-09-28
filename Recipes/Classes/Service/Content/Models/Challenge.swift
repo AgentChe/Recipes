@@ -13,5 +13,5 @@ struct Challenge: Codable, Hashable {
     let title: String
     let text: String
     let imageUrl: URL
-    let recipes: [BookCover]
+    let recipes: [RecipeCover]
 }

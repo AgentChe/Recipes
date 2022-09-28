@@ -8,7 +8,7 @@
 import Foundation
 
 final class SearchRecipesResponse {
-    static func map(from response: Any) -> [BookCover] {
+    static func map(from response: Any) -> [RecipeCover] {
         guard
             let json = response as? [String: Any],
             let data = json["_data"] as? [[String: Any]]
@@ -16,7 +16,7 @@ final class SearchRecipesResponse {
             return []
         }
         
-        return data.compactMap { coverJSON -> BookCover? in
+        return data.compactMap { coverJSON -> RecipeCover? in
             guard
                 let id = coverJSON["id"] as? Int,
                 let name = coverJSON["name"] as? String,
@@ -38,7 +38,7 @@ final class SearchRecipesResponse {
             let author = Author(name: authorName,
                                 photoUrl: authorImageUrl)
             
-            return BookCover(id: id,
+            return RecipeCover(id: id,
                              name: name,
                              time: time,
                              author: author,
