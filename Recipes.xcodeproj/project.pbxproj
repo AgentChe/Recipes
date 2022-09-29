@@ -144,8 +144,8 @@
 		DEF40C2528E3509D00C2EB67 /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BEC28E3509D00C2EB67 /* Ranking.swift */; };
 		DEF40C2628E3509D00C2EB67 /* RecipeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BED28E3509D00C2EB67 /* RecipeCover.swift */; };
 		DEF40C2728E3509D00C2EB67 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BEE28E3509D00C2EB67 /* Category.swift */; };
-		DEF40C2928E3509D00C2EB67 /* BookChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BF028E3509D00C2EB67 /* BookChapter.swift */; };
-		DEF40C2A28E3509D00C2EB67 /* BookReadingProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BF128E3509D00C2EB67 /* BookReadingProgress.swift */; };
+		DEF40C2928E3509D00C2EB67 /* RecipeStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BF028E3509D00C2EB67 /* RecipeStep.swift */; };
+		DEF40C2A28E3509D00C2EB67 /* RecipeReadingProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BF128E3509D00C2EB67 /* RecipeReadingProgress.swift */; };
 		DEF40C2D28E3509D00C2EB67 /* FeedbackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BF728E3509D00C2EB67 /* FeedbackRequest.swift */; };
 		DEF40C2E28E3509D00C2EB67 /* FeedbackResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BF828E3509D00C2EB67 /* FeedbackResponse.swift */; };
 		DEF40C2F28E3509D00C2EB67 /* GetRankingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BFA28E3509D00C2EB67 /* GetRankingResponse.swift */; };
@@ -173,7 +173,7 @@
 		DEF40C4F28E4545800C2EB67 /* ODietsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40C4E28E4545800C2EB67 /* ODietsTableView.swift */; };
 		DEF40C5128E454C800C2EB67 /* ODietsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40C5028E454C800C2EB67 /* ODietsTableCell.swift */; };
 		DEF40C5328E456BD00C2EB67 /* ODietsTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40C5228E456BD00C2EB67 /* ODietsTableElement.swift */; };
-		DEF40C5528E48E1B00C2EB67 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40C5428E48E1B00C2EB67 /* Book.swift */; };
+		DEF40C5528E48E1B00C2EB67 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40C5428E48E1B00C2EB67 /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -318,8 +318,8 @@
 		DEF40BEC28E3509D00C2EB67 /* Ranking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
 		DEF40BED28E3509D00C2EB67 /* RecipeCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCover.swift; sourceTree = "<group>"; };
 		DEF40BEE28E3509D00C2EB67 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		DEF40BF028E3509D00C2EB67 /* BookChapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookChapter.swift; sourceTree = "<group>"; };
-		DEF40BF128E3509D00C2EB67 /* BookReadingProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookReadingProgress.swift; sourceTree = "<group>"; };
+		DEF40BF028E3509D00C2EB67 /* RecipeStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeStep.swift; sourceTree = "<group>"; };
+		DEF40BF128E3509D00C2EB67 /* RecipeReadingProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeReadingProgress.swift; sourceTree = "<group>"; };
 		DEF40BF728E3509D00C2EB67 /* FeedbackRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackRequest.swift; sourceTree = "<group>"; };
 		DEF40BF828E3509D00C2EB67 /* FeedbackResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackResponse.swift; sourceTree = "<group>"; };
 		DEF40BFA28E3509D00C2EB67 /* GetRankingResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRankingResponse.swift; sourceTree = "<group>"; };
@@ -347,7 +347,7 @@
 		DEF40C4E28E4545800C2EB67 /* ODietsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODietsTableView.swift; sourceTree = "<group>"; };
 		DEF40C5028E454C800C2EB67 /* ODietsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODietsTableCell.swift; sourceTree = "<group>"; };
 		DEF40C5228E456BD00C2EB67 /* ODietsTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODietsTableElement.swift; sourceTree = "<group>"; };
-		DEF40C5428E48E1B00C2EB67 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		DEF40C5428E48E1B00C2EB67 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		F4B1960D8CA301E439814FB2 /* Pods-Recipes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipes.release.xcconfig"; path = "Target Support Files/Pods-Recipes/Pods-Recipes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -891,11 +891,11 @@
 				DEF40BE928E3509D00C2EB67 /* Author.swift */,
 				DEF40BEA28E3509D00C2EB67 /* ForYouKit.swift */,
 				DEF40BEC28E3509D00C2EB67 /* Ranking.swift */,
-				DEF40C5428E48E1B00C2EB67 /* Book.swift */,
+				DEF40C5428E48E1B00C2EB67 /* Recipe.swift */,
 				DEF40BED28E3509D00C2EB67 /* RecipeCover.swift */,
 				DEF40BEE28E3509D00C2EB67 /* Category.swift */,
-				DEF40BF028E3509D00C2EB67 /* BookChapter.swift */,
-				DEF40BF128E3509D00C2EB67 /* BookReadingProgress.swift */,
+				DEF40BF028E3509D00C2EB67 /* RecipeStep.swift */,
+				DEF40BF128E3509D00C2EB67 /* RecipeReadingProgress.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1187,11 +1187,11 @@
 				DE54ACBB28D09F26004F1514 /* PaddingTextField.swift in Sources */,
 				DE54AD2D28D09F68004F1514 /* PurchaseValidationObserver.swift in Sources */,
 				DE54ADA728D0A011004F1514 /* PaygateInteractor.swift in Sources */,
-				DEF40C2A28E3509D00C2EB67 /* BookReadingProgress.swift in Sources */,
+				DEF40C2A28E3509D00C2EB67 /* RecipeReadingProgress.swift in Sources */,
 				DE54ADD128D0A012004F1514 /* OnboardingViewModel.swift in Sources */,
 				DE54ADB128D0A011004F1514 /* SplashView.swift in Sources */,
 				DE54AD2928D09F68004F1514 /* SetRequest.swift in Sources */,
-				DEF40C2928E3509D00C2EB67 /* BookChapter.swift in Sources */,
+				DEF40C2928E3509D00C2EB67 /* RecipeStep.swift in Sources */,
 				DEF40C4F28E4545800C2EB67 /* ODietsTableView.swift in Sources */,
 				DE54ADC128D0A012004F1514 /* OCategoriesCollectionElement.swift in Sources */,
 				DE54ACAF28D09F25004F1514 /* XORRequestWrapper.swift in Sources */,
@@ -1220,7 +1220,7 @@
 				DE54ADA628D0A011004F1514 /* PaygateViewControllerDelegate.swift in Sources */,
 				DE54ADB628D0A012004F1514 /* ONotificationsView.swift in Sources */,
 				DE54ADDE28D0A2CC004F1514 /* TryAgainViewController.swift in Sources */,
-				DEF40C5528E48E1B00C2EB67 /* Book.swift in Sources */,
+				DEF40C5528E48E1B00C2EB67 /* Recipe.swift in Sources */,
 				DE54ACCB28D09F26004F1514 /* XOREncryption.swift in Sources */,
 				DE54ACB128D09F25004F1514 /* RestAPITransport.swift in Sources */,
 				DE54AD2F28D09F68004F1514 /* IAPActionResult.swift in Sources */,

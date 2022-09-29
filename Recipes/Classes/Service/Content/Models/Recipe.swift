@@ -1,5 +1,5 @@
 //
-//  Book.swift
+//  Recipe.swift
 //  Recipes
 //
 //  Created by Андрей Чернышев on 11.07.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Book: Codable, Hashable {
+struct Recipe: Codable, Hashable {
     let id: Int
     let name: String
     let imageUrl: URL
@@ -17,7 +17,7 @@ struct Book: Codable, Hashable {
     let audioUrl: URL
     let shareLink: URL
     let isSaved: Bool
-    let introduction: BookChapter?
-    let chapters: [BookChapter]
+    let introduction: RecipeStep?
+    let steps: [RecipeStep]
     let whatAbout: String
 }

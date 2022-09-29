@@ -20,8 +20,8 @@ protocol ContentManagerProtocol: AnyObject {
     func searchRecipes(at: String) -> Single<[RecipeCover]>
     func obtainCategoryRecipesCover(categoryId: Int) -> Single<[RecipeCover]>
     func obtainRankingRecipesCover(rankingId: Int) -> Single<[RecipeCover]>
-    func obtainReadingRecipes() -> Single<[BookReadingProgress]>
-    func set(recipeReadingProgress: BookReadingProgress) -> Single<Void>
+    func obtainReadingRecipes() -> Single<[RecipeReadingProgress]>
+    func set(recipeReadingProgress: RecipeReadingProgress) -> Single<Void>
     func removeRecipeProgress(recipeId: Int) -> Single<Void>
     func feedback(recipeId: Int,
                   rating: Int,
@@ -214,11 +214,11 @@ extension ContentManager {
             .map { GetRankingRecipesResponse.map(from: $0) }
     }
     
-    func obtainReadingRecipes() -> Single<[BookReadingProgress]> {
-        Single<[BookReadingProgress]>.create { event in
+    func obtainReadingRecipes() -> Single<[RecipeReadingProgress]> {
+        Single<[RecipeReadingProgress]>.create { event in
             guard
                 let data = UserDefaults.standard.data(forKey: Constants.readingRecipesKey),
-                let recipes = try? JSONDecoder().decode([BookReadingProgress].self, from: data)
+                let recipes = try? JSONDecoder().decode([RecipeReadingProgress].self, from: data)
             else {
                 event(.success([]))
                 return Disposables.create()
@@ -230,13 +230,13 @@ extension ContentManager {
         }
     }
     
-    func set(recipeReadingProgress: BookReadingProgress) -> Single<Void> {
+    func set(recipeReadingProgress: RecipeReadingProgress) -> Single<Void> {
         obtainReadingRecipes()
             .flatMap { readingRecipes -> Single<Void> in
                 Single<Void>.create { event in
                     var result = readingRecipes
                     
-                    if let index = result.firstIndex(where: { $0.book.id == recipeReadingProgress.book.id }) {
+                    if let index = result.firstIndex(where: { $0.recipe.id == recipeReadingProgress.recipe.id }) {
                         result[index] = recipeReadingProgress
                     } else {
                         result.append(recipeReadingProgress)
@@ -261,7 +261,7 @@ extension ContentManager {
                 Single<Void>.create { event in
                     var result = readingRecipes
                     
-                    if let index = result.firstIndex(where: { $0.book.id == recipeId }) {
+                    if let index = result.firstIndex(where: { $0.recipe.id == recipeId }) {
                         result.remove(at: index)
                         
                         if let data = try? JSONEncoder().encode(result) {
