@@ -94,9 +94,6 @@ private extension SplashViewModel {
                     let session = Session(userToken: otterScaleID)
                     self.sessionManager.store(session: session)
                     
-                    SDKStorage.shared.featureAppMediator.notifyAboutUpdate(userId: otterScaleID,
-                                                                           userToken: otterScaleID)
-                    
                     return .deferred { .just(Void()) }
                 }
         }

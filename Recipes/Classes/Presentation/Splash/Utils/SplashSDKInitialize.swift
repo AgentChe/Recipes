@@ -17,10 +17,7 @@ final class SplashSDKInitialize {
     
     private var handler: ((Progress) -> Void)?
     
-    private lazy var disposeBag = DisposeBag()
     private var combineDisposable: Disposable?
-    
-    private lazy var refreshRushProviderTrigger = PublishRelay<Void>()
     
     private lazy var validationObserver = SplashReceiptValidationObserver()
     
@@ -48,49 +45,26 @@ extension SplashSDKInitialize {
                     return
                 }
 
-                if successInitializeSDK {
-                    self.send(progress: .complete)
-                } else {
-                    self.send(progress: .error)
-                    self.openError()
-                }
+                self.send(progress: .complete)
             })
     }
 }
 
 // MARK: Private
 private extension SplashSDKInitialize {
-    func combine() -> Signal<Bool> {
+    func combine() -> Signal<Void> {
         let rushSDKComplete = makeRushSDKComplete()
         let validationObserve = makeValidationObserve()
         
-        return Signal.combineLatest(validationObserve, rushSDKComplete)
-            .map { $0 && $1 }
+        return Signal.zip(validationObserve, rushSDKComplete)
+            .map { result in Void() }
     }
     
-    func makeRushSDKComplete() -> Signal<Bool> {
-        let refresh = refreshRushProviderTrigger
-            .flatMapLatest { _ -> Single<Bool> in
-                Single<Bool>
-                    .create { event in
-                        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
-                            event(.success(false))
-                            return Disposables.create()
-                        }
-                        
-                        delegate.sdkProvider.refreshInstallUserToken { success in
-                            event(.success(success))
-                        }
-                        
-                        return Disposables.create()
-                    }
-            }
-            .asSignal(onErrorJustReturn: false)
-        
-        let initialize = Single<Bool>
+    func makeRushSDKComplete() -> Signal<Void> {
+        Single<Void>
             .create { [weak self] event in
                 guard let self = self, let delegate = UIApplication.shared.delegate as? AppDelegate else {
-                    event(.success(false))
+                    event(.success(Void()))
                     return Disposables.create()
                 }
                 
@@ -110,43 +84,29 @@ private extension SplashSDKInitialize {
                                            featureAppBackendApiKey: nil,
                                            appleAppID: GlobalDefinitions.appleAppID)
                 
-                delegate.sdkProvider.initialize(settings: settings) { success in
-                    event(.success(true))
-                }
+                delegate.sdkProvider.initialize(settings: settings)
+                
+                event(.success(Void()))
                 
                 return Disposables.create()
             }
             .asSignal(onErrorSignalWith: .never())
-        
-        return Signal.merge(initialize, refresh)
     }
     
-    func makeValidationObserve() -> Signal<Bool> {
-        Single<Bool>
+    func makeValidationObserve() -> Signal<Void> {
+        Single<Void>
             .create { [weak self] event in
                 guard let self = self else {
                     return Disposables.create()
                 }
                 
                 self.validationObserver.observe {
-                    event(.success(true))
+                    event(.success(Void()))
                 }
                 
                 return Disposables.create()
             }
-            .asSignal(onErrorJustReturn: false)
-    }
-    
-    func openError() {
-        let tryAgainVC = TryAgainViewController.make { [weak self] in
-            guard let self = self else {
-                return
-            }
-            
-            self.send(progress: .initializing)
-            self.refreshRushProviderTrigger.accept(Void())
-        }
-        vc?.present(tryAgainVC, animated: true)
+            .asSignal(onErrorJustReturn: Void())
     }
     
     func send(progress: Progress) {
