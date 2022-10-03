@@ -9,12 +9,14 @@ import UIKit
 
 final class TabView: UIView {
     enum Tab {
-        case forYou, library, explore
+        case forYou, shopping, myRecipes, explore
     }
     
     lazy var forYouItem = makeItem(name: "Main.ForYou")
-    lazy var libraryItem = makeItem(name: "Main.Library")
+    lazy var shoppingItem = makeItem(name: "Main.Shopping")
+    lazy var myRecipesItem = makeItem(name: "Main.MyRecipes")
     lazy var exploreItem = makeItem(name: "Main.Explore")
+    lazy var separator = makeSeparator()
     
     var selectedTab = Tab.forYou {
         didSet {
@@ -38,7 +40,8 @@ private extension TabView {
     func update() {
         [
             forYouItem,
-            libraryItem,
+            shoppingItem,
+            myRecipesItem,
             exploreItem
         ]
         .forEach {
@@ -48,8 +51,10 @@ private extension TabView {
         switch selectedTab {
         case .forYou:
             forYouItem.mode = .selected
-        case .library:
-            libraryItem.mode = .selected
+        case .shopping:
+            shoppingItem.mode = .selected
+        case .myRecipes:
+            myRecipesItem.mode = .selected
         case .explore:
             exploreItem.mode = .selected
         }
@@ -63,21 +68,35 @@ private extension TabView {
             forYouItem.leadingAnchor.constraint(equalTo: leadingAnchor),
             forYouItem.bottomAnchor.constraint(equalTo: bottomAnchor),
             forYouItem.topAnchor.constraint(equalTo: topAnchor),
-            forYouItem.widthAnchor.constraint(equalTo: libraryItem.widthAnchor)
+            forYouItem.widthAnchor.constraint(equalTo: shoppingItem.widthAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            libraryItem.leadingAnchor.constraint(equalTo: forYouItem.trailingAnchor),
-            libraryItem.bottomAnchor.constraint(equalTo: bottomAnchor),
-            libraryItem.topAnchor.constraint(equalTo: topAnchor),
-            libraryItem.widthAnchor.constraint(equalTo: exploreItem.widthAnchor)
+            shoppingItem.leadingAnchor.constraint(equalTo: forYouItem.trailingAnchor),
+            shoppingItem.bottomAnchor.constraint(equalTo: bottomAnchor),
+            shoppingItem.topAnchor.constraint(equalTo: topAnchor),
+            shoppingItem.widthAnchor.constraint(equalTo: myRecipesItem.widthAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            exploreItem.leadingAnchor.constraint(equalTo: libraryItem.trailingAnchor),
+            myRecipesItem.leadingAnchor.constraint(equalTo: shoppingItem.trailingAnchor),
+            myRecipesItem.bottomAnchor.constraint(equalTo: bottomAnchor),
+            myRecipesItem.topAnchor.constraint(equalTo: topAnchor),
+            myRecipesItem.widthAnchor.constraint(equalTo: exploreItem.widthAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            exploreItem.leadingAnchor.constraint(equalTo: myRecipesItem.trailingAnchor),
             exploreItem.bottomAnchor.constraint(equalTo: bottomAnchor),
             exploreItem.topAnchor.constraint(equalTo: topAnchor),
             exploreItem.trailingAnchor.constraint(equalTo: trailingAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            separator.leadingAnchor.constraint(equalTo: leadingAnchor),
+            separator.trailingAnchor.constraint(equalTo: trailingAnchor),
+            separator.topAnchor.constraint(equalTo: topAnchor),
+            separator.heightAnchor.constraint(equalToConstant: 1.scale)
         ])
     }
 }
@@ -96,6 +115,14 @@ private extension TabView {
         view.backgroundColor = UIColor.clear
         view.iconView.image = UIImage(named: name)
         view.label.attributedText = name.localized.attributed(with: attrs)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeSeparator() -> UIView {
+        let view = UIView()
+        view.backgroundColor = Appearance.secondary5
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

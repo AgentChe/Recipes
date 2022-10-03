@@ -50,8 +50,11 @@ private extension MainViewController {
                 mainView.tabView.forYouItem
                     .rx.tap.map { TabView.Tab.forYou },
                 
-                mainView.tabView.libraryItem
-                    .rx.tap.map { TabView.Tab.library },
+                mainView.tabView.shoppingItem
+                    .rx.tap.map { TabView.Tab.shopping },
+                
+                mainView.tabView.myRecipesItem
+                    .rx.tap.map { TabView.Tab.myRecipes },
                 
                 mainView.tabView.exploreItem
                     .rx.tap.map { TabView.Tab.explore }

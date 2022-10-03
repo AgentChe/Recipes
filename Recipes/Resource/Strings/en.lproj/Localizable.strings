@@ -81,7 +81,8 @@
 
 // MARK: Main
 "Main.ForYou" = "For you";
-"Main.Library" = "Library";
+"Main.Shopping" = "Shopping";
+"Main.MyRecipes" = "My recipes";
 "Main.Explore" = "Explore";
 
 // MARK: Paygate

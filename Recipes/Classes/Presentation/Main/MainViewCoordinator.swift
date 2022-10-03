@@ -11,7 +11,8 @@ final class MainViewCoordinator {
     weak var parentVC: MainViewController?
     
     lazy var forYouVC = UIViewController()
-    lazy var libraryVC = UIViewController()
+    lazy var shoppingVC = UIViewController()
+    lazy var myRecipesVC = UIViewController()
     lazy var exploreVC = UIViewController()
     
     private var previousVC: UIViewController?
@@ -26,8 +27,10 @@ final class MainViewCoordinator {
         switch tab {
         case .forYou:
             changeVC(on: forYouVC)
-        case .library:
-            changeVC(on: libraryVC)
+        case .shopping:
+            changeVC(on: shoppingVC)
+        case .myRecipes:
+            changeVC(on: myRecipesVC)
         case .explore:
             changeVC(on: exploreVC)
         }
