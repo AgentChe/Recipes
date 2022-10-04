@@ -53,9 +53,8 @@ private extension ODietsView {
             self?.checkEnabled()
         }
         
-        // TODO: forceUpdate false
         contentManager
-            .obtainDiets(forceUpdate: true)
+            .obtainDiets(forceUpdate: false)
             .asDriver(onErrorJustReturn: [])
             .drive(Binder(tableView) { base, diets in
                 let elements = diets.map { diet -> ODietsTableElement in

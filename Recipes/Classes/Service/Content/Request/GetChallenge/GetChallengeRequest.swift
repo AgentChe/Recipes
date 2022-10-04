@@ -6,7 +6,6 @@
 //
 
 import Alamofire
-import RushSDK
 
 struct GetChallengeRequest: APIRequestBody {
     let userToken: String

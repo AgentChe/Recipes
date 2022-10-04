@@ -10,7 +10,7 @@ import UIKit
 final class MainViewCoordinator {
     weak var parentVC: MainViewController?
     
-    lazy var forYouVC = UIViewController()
+    lazy var forYouVC = NavigationController(rootViewController: ForYouViewController.make())
     lazy var shoppingVC = UIViewController()
     lazy var myRecipesVC = UIViewController()
     lazy var exploreVC = UIViewController()

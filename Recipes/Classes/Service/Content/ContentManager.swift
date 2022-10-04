@@ -46,28 +46,84 @@ final class ContentManager: ContentManagerProtocol {
 
 // MARK: Public
 extension ContentManager {
+    // TODO: remove file
     func obtainCategories(forceUpdate: Bool) -> Single<[Category]> {
-        forceUpdate ? loadCategories() : cachedCategories()
+        Single<[Category]>
+            .create { event in
+                let path = Bundle.main.path(forResource: "Categories", ofType: "json")!
+                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
+                
+                let result = GetCategoriesResponse.map(from: jsonResult)
+                
+                event(.success(result))
+                
+                return Disposables.create()
+            }
+        
+//        forceUpdate ? loadCategories() : cachedCategories()
     }
     
+    // TODO: remove file
     func obtainRankings(forceUpdate: Bool) -> Single<[Ranking]> {
-        forceUpdate ? loadRankings() : cachedRankings()
+        Single<[Ranking]>
+            .create { event in
+                let path = Bundle.main.path(forResource: "Rankings", ofType: "json")!
+                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
+                
+                let result = GetRankingResponse.map(from: jsonResult)
+                
+                event(.success(result))
+                
+                return Disposables.create()
+            }
+        
+//        forceUpdate ? loadRankings() : cachedRankings()
     }
     
+    // TODO: remove file
     func obtainDiets(forceUpdate: Bool) -> Single<[Category]> {
-        forceUpdate ? loadDiets() : cachedDiets()
+        Single<[Category]>
+            .create { event in
+                let path = Bundle.main.path(forResource: "Categories", ofType: "json")!
+                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
+                
+                let result = GetCategoriesResponse.map(from: jsonResult)
+                
+                event(.success(result))
+                
+                return Disposables.create()
+            }
+        
+//        forceUpdate ? loadDiets() : cachedDiets()
     }
     
+    // TODO: remove file
     func obtainForYouKit() -> Single<ForYouKit?> {
-        guard let userToken = sessionManager.getSession()?.userToken else {
-            return .error(SignError.tokenNotFound)
-        }
+        Single<ForYouKit?>
+            .create { event in
+                let path = Bundle.main.path(forResource: "ForYouMock", ofType: "json")!
+                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
+                
+                let result = GetForYouResponse.map(from: jsonResult)
+                
+                event(.success(result))
+                
+                return Disposables.create()
+            }
         
-        let request = GetForYouRequest(userToken: userToken)
-        
-        return defaultRequestWrapper
-            .callServerApi(requestBody: request)
-            .map { GetForYouResponse.map(from: $0) }
+//        guard let userToken = sessionManager.getSession()?.userToken else {
+//            return .error(SignError.tokenNotFound)
+//        }
+//
+//        let request = GetForYouRequest(userToken: userToken)
+//
+//        return defaultRequestWrapper
+//            .callServerApi(requestBody: request)
+//            .map { GetForYouResponse.map(from: $0) }
     }
     
     func save(recipe: RecipeCover) -> Single<Bool> {
@@ -140,66 +196,16 @@ extension ContentManager {
             .map { SearchRecipesResponse.map(from: $0) }
     }
     
-    // TODO
     func obtainCategoryRecipesCover(categoryId: Int) -> Single<[RecipeCover]> {
-        Single<[RecipeCover]>
-            .create { event in
-                let recipes = [
-                    RecipeCover(id: 1,
-                              name: "Poke with salmon 1",
-                              time: 10,
-                              author: Author(name: "", photoUrl: URL(string: "www.google.com")!),
-                              imageUrl: URL(string: "https://img.povar.ru/main/71/a7/1b/ab/salat_quotolivequot_klassicheskii_s_kolbasoi-286788.JPG")!,
-                              rankingId: 1,
-                              shareLink: URL(string: "www.google.com")!,
-                              paid: false),
-                    RecipeCover(id: 2,
-                              name: "Poke with salmon 2",
-                              time: 10,
-                              author: Author(name: "", photoUrl: URL(string: "www.google.com")!),
-                              imageUrl: URL(string: "https://img.povar.ru/main/71/a7/1b/ab/salat_quotolivequot_klassicheskii_s_kolbasoi-286788.JPG")!,
-                              rankingId: 1,
-                              shareLink: URL(string: "www.google.com")!,
-                              paid: false),
-                    RecipeCover(id: 3,
-                              name: "Poke with salmon 3",
-                              time: 10,
-                              author: Author(name: "", photoUrl: URL(string: "www.google.com")!),
-                              imageUrl: URL(string: "https://img.povar.ru/main/71/a7/1b/ab/salat_quotolivequot_klassicheskii_s_kolbasoi-286788.JPG")!,
-                              rankingId: 1,
-                              shareLink: URL(string: "www.google.com")!,
-                              paid: false),
-                    RecipeCover(id: 4,
-                              name: "Poke with salmon 4",
-                              time: 10,
-                              author: Author(name: "", photoUrl: URL(string: "www.google.com")!),
-                              imageUrl: URL(string: "https://img.povar.ru/main/71/a7/1b/ab/salat_quotolivequot_klassicheskii_s_kolbasoi-286788.JPG")!,
-                              rankingId: 1,
-                              shareLink: URL(string: "www.google.com")!,
-                              paid: false),
-                    RecipeCover(id: 5,
-                              name: "Poke with salmon 5",
-                              time: 10,
-                              author: Author(name: "", photoUrl: URL(string: "www.google.com")!),
-                              imageUrl: URL(string: "https://img.povar.ru/main/71/a7/1b/ab/salat_quotolivequot_klassicheskii_s_kolbasoi-286788.JPG")!,
-                              rankingId: 1,
-                              shareLink: URL(string: "www.google.com")!,
-                              paid: false)
-                ]
-                event(.success(recipes))
-                
-                return Disposables.create()
-            }
-        
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = GetCategoryRecipesRequest(userToken: userToken, categoryId: categoryId)
-//
-//        return defaultRequestWrapper
-//            .callServerApi(requestBody: request)
-//            .map { GetCategoryRecipesResponse.map(from: $0) }
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+
+        let request = GetCategoryRecipesRequest(userToken: userToken, categoryId: categoryId)
+
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetCategoryRecipesResponse.map(from: $0) }
     }
     
     func obtainRankingRecipesCover(rankingId: Int) -> Single<[RecipeCover]> {
@@ -314,48 +320,23 @@ extension ContentManager {
 
 // MARK: Private
 private extension ContentManager {
-    // TODO
     func loadCategories() -> Single<[Category]> {
-        Single.create { event in
-            let categories = [
-                Category(id: 1, name: "Appetizer", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 2, name: "Basics", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 3, name: "Bread", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 4, name: "Breakfast", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 5, name: "Brunch", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 6, name: "Sandwich", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 7, name: "Dessert", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 8, name: "Drinks", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 9, name: "Dumplings", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 10, name: "Entree", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 11, name: "Salad", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 12, name: "Condiments & Pickles", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 13, name: "Side Dish", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 14, name: "Snacks", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 15, name: "Soups & Stews", imageUrl: URL(string: "www.google.com")!)
-            ]
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-                event(.success(categories))
-            }
-            
-            return Disposables.create()
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
         }
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = GetCategoriesRequest(userToken: userToken)
-//
-//        return defaultRequestWrapper
-//            .callServerApi(requestBody: request)
-//            .map { GetCategoriesResponse.map(from: $0) }
-//            .do(onSuccess: { categories in
-//                guard let data = try? JSONEncoder().encode(categories) else {
-//                    return
-//                }
-//
-//                UserDefaults.standard.set(data, forKey: Constants.categoriesKey)
-//            })
+
+        let request = GetCategoriesRequest(userToken: userToken)
+
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetCategoriesResponse.map(from: $0) }
+            .do(onSuccess: { categories in
+                guard let data = try? JSONEncoder().encode(categories) else {
+                    return
+                }
+
+                UserDefaults.standard.set(data, forKey: Constants.categoriesKey)
+            })
     }
     
     func cachedCategories() -> Single<[Category]> {
@@ -374,36 +355,23 @@ private extension ContentManager {
             }
     }
     
-    // TODO
     func loadRankings() -> Single<[Ranking]> {
-        Single.create { event in
-            let rankings = [
-                Ranking(id: 1, name: "Trending"),
-                Ranking(id: 2, name: "New recipes"),
-                Ranking(id: 3, name: "Top recipes")
-            ]
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-                event(.success(rankings))
-            }
-            
-            return Disposables.create()
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
         }
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = GetRankingRequest(userToken: userToken)
-//
-//        return defaultRequestWrapper
-//            .callServerApi(requestBody: request)
-//            .map { GetRankingResponse.map(from: $0) }
-//            .do(onSuccess: { rankings in
-//                guard let data = try? JSONEncoder().encode(rankings) else {
-//                    return
-//                }
-//
-//                UserDefaults.standard.set(data, forKey: Constants.rankingKey)
-//            })
+
+        let request = GetRankingRequest(userToken: userToken)
+
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetRankingResponse.map(from: $0) }
+            .do(onSuccess: { rankings in
+                guard let data = try? JSONEncoder().encode(rankings) else {
+                    return
+                }
+
+                UserDefaults.standard.set(data, forKey: Constants.rankingKey)
+            })
     }
     
     func cachedRankings() -> Single<[Ranking]> {
@@ -422,42 +390,23 @@ private extension ContentManager {
             }
     }
     
-    // TODO
     func loadDiets() -> Single<[Category]> {
-        Single.create { event in
-            let diets = [
-                Category(id: 1, name: "Dairy-free", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 2, name: "Gluten-free", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 3, name: "Low sugar", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 4, name: "Low-carb", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 5, name: "Low-fat", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 6, name: "Pescatarian", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 7, name: "Vegan", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 8, name: "Vegetarian", imageUrl: URL(string: "www.google.com")!),
-                Category(id: 9, name: "None of these", imageUrl: URL(string: "www.google.com")!)
-            ]
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-                event(.success(diets))
-            }
-            
-            return Disposables.create()
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
         }
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = GetDietsRequest(userToken: userToken)
-//
-//        return defaultRequestWrapper
-//            .callServerApi(requestBody: request)
-//            .map { GetDietsResponse.map(from: $0) }
-//            .do(onSuccess: { diets in
-//                guard let data = try? JSONEncoder().encode(diets) else {
-//                    return
-//                }
-//
-//                UserDefaults.standard.set(data, forKey: Constants.dietsKey)
-//            })
+
+        let request = GetDietsRequest(userToken: userToken)
+
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetDietsResponse.map(from: $0) }
+            .do(onSuccess: { diets in
+                guard let data = try? JSONEncoder().encode(diets) else {
+                    return
+                }
+
+                UserDefaults.standard.set(data, forKey: Constants.dietsKey)
+            })
     }
     
     func cachedDiets() -> Single<[Category]> {

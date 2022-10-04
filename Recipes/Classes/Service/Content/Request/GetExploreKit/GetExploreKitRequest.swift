@@ -6,7 +6,6 @@
 //
 
 import Alamofire
-import RushSDK
 
 struct GetExploreKitRequest: APIRequestBody {
     let userToken: String

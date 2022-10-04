@@ -104,3 +104,21 @@
 "Paygate.Lifetime.BottomDescription" = "once";
 "Paygate.Discount" = "SAVE %i%%";
 "Paygate.Price.Period" = "month";
+
+// MARK: ForYou
+"ForYou.Title" = "For you";
+"ForYou.FreeButton.Free" = "FREE RECIPE";
+"ForYou.Time" = "%i min";
+"ForYou.Title.SeeAll" = "See all";
+"ForYou.TodayHotSummaries" = "Today’s best recipes";
+"ForYou.Challenges" = "Challenges";
+"ForYou.YouMayLike" = "You may like";
+"ForYou.ExploreCategories" = "Explore categories";
+
+// MARK: Settings
+"Settings.Title" = "Settings";
+"Settings.ContactUs" = "Contact us";
+"Settings.PrivacyPolicy" = "Privacy Policy";
+"Settings.TermsOfUse" = "Terms of Use";
+"Settings.GetAccess.Title" = "Get access to all recipes";
+"Settings.GetAccess.Button" = "Start free trial";

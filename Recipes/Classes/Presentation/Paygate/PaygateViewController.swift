@@ -7,7 +7,6 @@
 
 import UIKit
 import RxSwift
-import RushSDK
 
 final class PaygateViewController: UIViewController {
     weak var delegate: PaygateViewControllerDelegate?

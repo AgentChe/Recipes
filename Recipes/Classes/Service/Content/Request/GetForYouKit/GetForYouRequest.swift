@@ -6,7 +6,6 @@
 //
 
 import Alamofire
-import RushSDK
 
 struct GetForYouRequest: APIRequestBody {
     let userToken: String

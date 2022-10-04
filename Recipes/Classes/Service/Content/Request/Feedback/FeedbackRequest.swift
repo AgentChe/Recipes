@@ -6,7 +6,6 @@
 //
 
 import Alamofire
-import RushSDK
 
 struct FeedbackRequest: APIRequestBody {
     let userToken: String

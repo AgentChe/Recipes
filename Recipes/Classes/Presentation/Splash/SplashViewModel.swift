@@ -8,7 +8,6 @@
 import RxSwift
 import RxCocoa
 import OtterScaleiOS
-import RushSDK
 
 final class SplashViewModel {
     enum Step {

@@ -6,7 +6,6 @@
 //
 
 import Alamofire
-import RushSDK
 
 struct GetSavedRecipesRequest: APIRequestBody {
     let userToken: String
