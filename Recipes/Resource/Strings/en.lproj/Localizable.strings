@@ -122,3 +122,7 @@
 "Settings.TermsOfUse" = "Terms of Use";
 "Settings.GetAccess.Title" = "Get access to all recipes";
 "Settings.GetAccess.Button" = "Start free trial";
+
+// MARK: Ranking
+"Ranking.Title" = "Ranking";
+"Ranking.Time" = "%i min";

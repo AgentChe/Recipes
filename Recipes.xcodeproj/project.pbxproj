@@ -163,6 +163,17 @@
 		DE67A85428EC791700369B02 /* GetDietsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE67A85328EC791700369B02 /* GetDietsResponse.swift */; };
 		DE67A85628EC79FE00369B02 /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = DE67A85528EC79FE00369B02 /* Categories.json */; };
 		DE67A85928EC7A3E00369B02 /* Rankings.json in Resources */ = {isa = PBXBuildFile; fileRef = DE67A85828EC7A3E00369B02 /* Rankings.json */; };
+		DEC41AA828EEC9F500280990 /* RankingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41A9A28EEC9F500280990 /* RankingsViewController.swift */; };
+		DEC41AA928EEC9F500280990 /* RankingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41A9B28EEC9F500280990 /* RankingsView.swift */; };
+		DEC41AAA28EEC9F500280990 /* RankingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41A9C28EEC9F500280990 /* RankingsViewModel.swift */; };
+		DEC41AAB28EEC9F500280990 /* RRecipesTableSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AA028EEC9F500280990 /* RRecipesTableSeparatorCell.swift */; };
+		DEC41AAC28EEC9F500280990 /* RRecipesTableRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AA128EEC9F500280990 /* RRecipesTableRecipeCell.swift */; };
+		DEC41AAD28EEC9F500280990 /* RRecipesTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AA228EEC9F500280990 /* RRecipesTableElement.swift */; };
+		DEC41AAE28EEC9F500280990 /* RRecipesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AA328EEC9F500280990 /* RRecipesTableView.swift */; };
+		DEC41AAF28EEC9F500280990 /* RankingsCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AA528EEC9F500280990 /* RankingsCollectionElement.swift */; };
+		DEC41AB028EEC9F500280990 /* RankingsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AA628EEC9F500280990 /* RankingsCollectionCell.swift */; };
+		DEC41AB128EEC9F500280990 /* RankingsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AA728EEC9F500280990 /* RankingsCollectionView.swift */; };
+		DEC41AB328EECFA700280990 /* RankingRecipes.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC41AB228EECFA700280990 /* RankingRecipes.json */; };
 		DEF40C1B28E3509D00C2EB67 /* ContentMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */; };
 		DEF40C1C28E3509D00C2EB67 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE228E3509D00C2EB67 /* ContentManager.swift */; };
 		DEF40C1E28E3509D00C2EB67 /* ChallengeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */; };
@@ -367,6 +378,17 @@
 		DE67A85328EC791700369B02 /* GetDietsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDietsResponse.swift; sourceTree = "<group>"; };
 		DE67A85528EC79FE00369B02 /* Categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Categories.json; sourceTree = "<group>"; };
 		DE67A85828EC7A3E00369B02 /* Rankings.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Rankings.json; sourceTree = "<group>"; };
+		DEC41A9A28EEC9F500280990 /* RankingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsViewController.swift; sourceTree = "<group>"; };
+		DEC41A9B28EEC9F500280990 /* RankingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsView.swift; sourceTree = "<group>"; };
+		DEC41A9C28EEC9F500280990 /* RankingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsViewModel.swift; sourceTree = "<group>"; };
+		DEC41AA028EEC9F500280990 /* RRecipesTableSeparatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRecipesTableSeparatorCell.swift; sourceTree = "<group>"; };
+		DEC41AA128EEC9F500280990 /* RRecipesTableRecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRecipesTableRecipeCell.swift; sourceTree = "<group>"; };
+		DEC41AA228EEC9F500280990 /* RRecipesTableElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRecipesTableElement.swift; sourceTree = "<group>"; };
+		DEC41AA328EEC9F500280990 /* RRecipesTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRecipesTableView.swift; sourceTree = "<group>"; };
+		DEC41AA528EEC9F500280990 /* RankingsCollectionElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsCollectionElement.swift; sourceTree = "<group>"; };
+		DEC41AA628EEC9F500280990 /* RankingsCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsCollectionCell.swift; sourceTree = "<group>"; };
+		DEC41AA728EEC9F500280990 /* RankingsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsCollectionView.swift; sourceTree = "<group>"; };
+		DEC41AB228EECFA700280990 /* RankingRecipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RankingRecipes.json; sourceTree = "<group>"; };
 		DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentMediator.swift; sourceTree = "<group>"; };
 		DEF40BE228E3509D00C2EB67 /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCover.swift; sourceTree = "<group>"; };
@@ -676,6 +698,7 @@
 		DE54ACD228D09F44004F1514 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DEC41A9928EEC9F500280990 /* Rankings */,
 				DE67A80E28EC1F2C00369B02 /* ForYou */,
 				DE54ADDA28D0A2CC004F1514 /* TryAgain */,
 				DE54AD9828D0A011004F1514 /* Main */,
@@ -1074,8 +1097,58 @@
 				DE67A85128EC669A00369B02 /* ForYouMock.json */,
 				DE67A85528EC79FE00369B02 /* Categories.json */,
 				DE67A85828EC7A3E00369B02 /* Rankings.json */,
+				DEC41AB228EECFA700280990 /* RankingRecipes.json */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		DEC41A9928EEC9F500280990 /* Rankings */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41A9D28EEC9F500280990 /* Views */,
+				DEC41A9A28EEC9F500280990 /* RankingsViewController.swift */,
+				DEC41A9B28EEC9F500280990 /* RankingsView.swift */,
+				DEC41A9C28EEC9F500280990 /* RankingsViewModel.swift */,
+			);
+			path = Rankings;
+			sourceTree = "<group>";
+		};
+		DEC41A9D28EEC9F500280990 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41A9E28EEC9F500280990 /* TableView */,
+				DEC41AA428EEC9F500280990 /* CollectionView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEC41A9E28EEC9F500280990 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41A9F28EEC9F500280990 /* Cells */,
+				DEC41AA228EEC9F500280990 /* RRecipesTableElement.swift */,
+				DEC41AA328EEC9F500280990 /* RRecipesTableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEC41A9F28EEC9F500280990 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41AA028EEC9F500280990 /* RRecipesTableSeparatorCell.swift */,
+				DEC41AA128EEC9F500280990 /* RRecipesTableRecipeCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DEC41AA428EEC9F500280990 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41AA528EEC9F500280990 /* RankingsCollectionElement.swift */,
+				DEC41AA628EEC9F500280990 /* RankingsCollectionCell.swift */,
+				DEC41AA728EEC9F500280990 /* RankingsCollectionView.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		DEF40BE028E3509D00C2EB67 /* Content */ = {
@@ -1317,6 +1390,7 @@
 			files = (
 				DE54AC3028D09BFC004F1514 /* LaunchScreen.storyboard in Resources */,
 				DE54AC6A28D09ED9004F1514 /* PlusJakartaSans-Bold.ttf in Resources */,
+				DEC41AB328EECFA700280990 /* RankingRecipes.json in Resources */,
 				DE67A85928EC7A3E00369B02 /* Rankings.json in Resources */,
 				DE54AC6B28D09ED9004F1514 /* PlusJakartaSans-ExtraBold.ttf in Resources */,
 				DE54AC6328D09ED9004F1514 /* Localizable.strings in Resources */,
@@ -1392,9 +1466,11 @@
 				DE54ADAB28D0A011004F1514 /* PaygateInfoCell.swift in Sources */,
 				DEF40C1E28E3509D00C2EB67 /* ChallengeCover.swift in Sources */,
 				DE54ADD828D0A012004F1514 /* MainViewCoordinator.swift in Sources */,
+				DEC41AA928EEC9F500280990 /* RankingsView.swift in Sources */,
 				DEF40C2E28E3509D00C2EB67 /* FeedbackResponse.swift in Sources */,
 				DE54ACAB28D09F25004F1514 /* RxActivityIndicator.swift in Sources */,
 				DEF40C3628E3509D00C2EB67 /* GetRankingRecipesResponse.swift in Sources */,
+				DEC41AB128EEC9F500280990 /* RankingsCollectionView.swift in Sources */,
 				DE54ADD428D0A012004F1514 /* TabItemView.swift in Sources */,
 				DE67A85428EC791700369B02 /* GetDietsResponse.swift in Sources */,
 				DEF40C3228E3509D00C2EB67 /* GetCategoryRecipesResponse.swift in Sources */,
@@ -1411,9 +1487,11 @@
 				DEF40C2928E3509D00C2EB67 /* RecipeStep.swift in Sources */,
 				DEF40C4F28E4545800C2EB67 /* ODietsTableView.swift in Sources */,
 				DE67A84B28EC1F2C00369B02 /* ForYouRecipesCell.swift in Sources */,
+				DEC41AAD28EEC9F500280990 /* RRecipesTableElement.swift in Sources */,
 				DE54ADC128D0A012004F1514 /* OCategoriesCollectionElement.swift in Sources */,
 				DE54ACAF28D09F25004F1514 /* XORRequestWrapper.swift in Sources */,
 				DE54ADB328D0A011004F1514 /* OCombineData.swift in Sources */,
+				DEC41AAC28EEC9F500280990 /* RRecipesTableRecipeCell.swift in Sources */,
 				DE54ADA828D0A011004F1514 /* PaygateView.swift in Sources */,
 				DE67A84128EC1F2C00369B02 /* ForYouChallengesCollectionView.swift in Sources */,
 				DE54ACB028D09F25004F1514 /* APIRequestBody.swift in Sources */,
@@ -1441,19 +1519,23 @@
 				DE54ADA628D0A011004F1514 /* PaygateViewControllerDelegate.swift in Sources */,
 				DE54ADB628D0A012004F1514 /* ONotificationsView.swift in Sources */,
 				DE54ADDE28D0A2CC004F1514 /* TryAgainViewController.swift in Sources */,
+				DEC41AAA28EEC9F500280990 /* RankingsViewModel.swift in Sources */,
 				DEF40C5528E48E1B00C2EB67 /* Recipe.swift in Sources */,
 				DE54ACCB28D09F26004F1514 /* XOREncryption.swift in Sources */,
 				DE54ACB128D09F25004F1514 /* RestAPITransport.swift in Sources */,
 				DE54AD2F28D09F68004F1514 /* IAPActionResult.swift in Sources */,
 				DE54ACBA28D09F26004F1514 /* Spinner.swift in Sources */,
 				DE54ACCF28D09F26004F1514 /* ContentError.swift in Sources */,
+				DEC41AAB28EEC9F500280990 /* RRecipesTableSeparatorCell.swift in Sources */,
 				DE54ADAC28D0A011004F1514 /* SplashViewController.swift in Sources */,
 				DEF40C5328E456BD00C2EB67 /* ODietsTableElement.swift in Sources */,
 				DE67A83A28EC1F2C00369B02 /* SettingsGetAccessCell.swift in Sources */,
 				DE54AD2728D09F68004F1514 /* LoginRequest.swift in Sources */,
+				DEC41AAF28EEC9F500280990 /* RankingsCollectionElement.swift in Sources */,
 				DEF40C1C28E3509D00C2EB67 /* ContentManager.swift in Sources */,
 				DE54AD3228D09F68004F1514 /* IAPErrorHelper.swift in Sources */,
 				DE54ADC228D0A012004F1514 /* OCategoriesCollectionLayout.swift in Sources */,
+				DEC41AB028EEC9F500280990 /* RankingsCollectionCell.swift in Sources */,
 				DE54ACC128D09F26004F1514 /* UIColor+Extension.swift in Sources */,
 				DE54ADD328D0A012004F1514 /* MainView.swift in Sources */,
 				DE54ADBE28D0A012004F1514 /* OAgeButton.swift in Sources */,
@@ -1494,8 +1576,10 @@
 				DE54ADB728D0A012004F1514 /* OCircleProgressView.swift in Sources */,
 				DE54ADC628D0A012004F1514 /* OWelcomeView.swift in Sources */,
 				DEF40C3028E3509D00C2EB67 /* GetRankingRequest.swift in Sources */,
+				DEC41AA828EEC9F500280990 /* RankingsViewController.swift in Sources */,
 				DE54AD2628D09F68004F1514 /* ProfileManager.swift in Sources */,
 				DE54ACB428D09F25004F1514 /* PushNotificationsManager.swift in Sources */,
+				DEC41AAE28EEC9F500280990 /* RRecipesTableView.swift in Sources */,
 				DEF40C4328E3509D00C2EB67 /* GetCategoriesRequest.swift in Sources */,
 				DE67A83D28EC1F2C00369B02 /* SettingsViewController.swift in Sources */,
 				DE54AD3128D09F68004F1514 /* IAPError.swift in Sources */,

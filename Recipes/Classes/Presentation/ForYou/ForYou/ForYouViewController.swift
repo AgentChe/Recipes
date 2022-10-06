@@ -107,8 +107,8 @@ extension ForYouViewController: ForYouTableDelegate {
     }
     
     func forYouTableDidTapped(ranking: Ranking) {
-//        let vc = RankingsViewController.make(start: ranking)
-//        present(vc, animated: true)
+        let vc = RankingsViewController.make(start: ranking)
+        present(vc, animated: true)
     }
     
     func forYouTableDidTapped(category: Category) {

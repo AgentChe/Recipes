@@ -208,16 +208,30 @@ extension ContentManager {
             .map { GetCategoryRecipesResponse.map(from: $0) }
     }
     
+    // TODO: remove file
     func obtainRankingRecipesCover(rankingId: Int) -> Single<[RecipeCover]> {
-        guard let userToken = sessionManager.getSession()?.userToken else {
-            return .error(SignError.tokenNotFound)
-        }
+        Single<[RecipeCover]>
+            .create { event in
+                let path = Bundle.main.path(forResource: "RankingRecipes", ofType: "json")!
+                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
+                
+                let result = GetRankingRecipesResponse.map(from: jsonResult)
+                
+                event(.success(result))
+                
+                return Disposables.create()
+            }
         
-        let request = GetRankingRecipesRequest(userToken: userToken, rankingId: rankingId)
-        
-        return defaultRequestWrapper
-            .callServerApi(requestBody: request)
-            .map { GetRankingRecipesResponse.map(from: $0) }
+//        guard let userToken = sessionManager.getSession()?.userToken else {
+//            return .error(SignError.tokenNotFound)
+//        }
+//
+//        let request = GetRankingRecipesRequest(userToken: userToken, rankingId: rankingId)
+//
+//        return defaultRequestWrapper
+//            .callServerApi(requestBody: request)
+//            .map { GetRankingRecipesResponse.map(from: $0) }
     }
     
     func obtainReadingRecipes() -> Single<[RecipeReadingProgress]> {
