@@ -333,16 +333,30 @@ extension ContentManager {
             .map { FeedbackResponse.map(from: $0) }
     }
     
+    // TODO: remove file
     func obtainChallenge(id: Int) -> Single<Challenge?> {
-        guard let userToken = sessionManager.getSession()?.userToken else {
-            return .error(SignError.tokenNotFound)
-        }
-
-        let request = GetChallengeRequest(userToken: userToken, challengeId: id)
-
-        return defaultRequestWrapper
-            .callServerApi(requestBody: request)
-            .map { GetChallengeResponse.map(from: $0) }
+        Single<Challenge?>
+            .create { event in
+                let path = Bundle.main.path(forResource: "Challenge", ofType: "json")!
+                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
+                
+                let result = GetChallengeResponse.map(from: jsonResult)
+                
+                event(.success(result))
+                
+                return Disposables.create()
+            }
+        
+//        guard let userToken = sessionManager.getSession()?.userToken else {
+//            return .error(SignError.tokenNotFound)
+//        }
+//
+//        let request = GetChallengeRequest(userToken: userToken, challengeId: id)
+//
+//        return defaultRequestWrapper
+//            .callServerApi(requestBody: request)
+//            .map { GetChallengeResponse.map(from: $0) }
     }
 }
 

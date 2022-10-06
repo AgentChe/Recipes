@@ -179,6 +179,23 @@
 		DEC41ABE28EEED8300280990 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AB728EEED8300280990 /* CategoryViewController.swift */; };
 		DEC41ABF28EEED8300280990 /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41ABA28EEED8300280990 /* CategoryCollectionCell.swift */; };
 		DEC41AC028EEED8300280990 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41ABB28EEED8300280990 /* CategoryCollectionView.swift */; };
+		DEC41ADB28EEF2B600280990 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AC428EEF2B600280990 /* ChallengeView.swift */; };
+		DEC41ADC28EEF2B600280990 /* ChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AC528EEF2B600280990 /* ChallengeViewModel.swift */; };
+		DEC41ADD28EEF2B600280990 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AC628EEF2B600280990 /* ChallengeViewController.swift */; };
+		DEC41ADE28EEF2B600280990 /* ChallengeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41ACB28EEF2B600280990 /* ChallengeButton.swift */; };
+		DEC41ADF28EEF2B600280990 /* ChallengeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41ACC28EEF2B600280990 /* ChallengeHeaderCell.swift */; };
+		DEC41AE028EEF2B600280990 /* ChallengeButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41ACD28EEF2B600280990 /* ChallengeButtonsCell.swift */; };
+		DEC41AE128EEF2B600280990 /* ChallengeRecipesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41ACF28EEF2B600280990 /* ChallengeRecipesCell.swift */; };
+		DEC41AE228EEF2B600280990 /* ChallengeRecipesCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AD128EEF2B600280990 /* ChallengeRecipesCollectionCell.swift */; };
+		DEC41AE328EEF2B600280990 /* ChallengeRecipesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AD228EEF2B600280990 /* ChallengeRecipesCollectionView.swift */; };
+		DEC41AE428EEF2B600280990 /* ChallengeBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AD428EEF2B600280990 /* ChallengeBadgeView.swift */; };
+		DEC41AE528EEF2B600280990 /* ChallengeBadgeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AD528EEF2B600280990 /* ChallengeBadgeImageView.swift */; };
+		DEC41AE628EEF2B600280990 /* ChallengeBadgeProgressLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AD628EEF2B600280990 /* ChallengeBadgeProgressLabel.swift */; };
+		DEC41AE728EEF2B600280990 /* ChallengeBadgesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AD728EEF2B600280990 /* ChallengeBadgesCell.swift */; };
+		DEC41AE828EEF2B600280990 /* ChallengeTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AD828EEF2B600280990 /* ChallengeTableElement.swift */; };
+		DEC41AE928EEF2B600280990 /* ChallengeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AD928EEF2B600280990 /* ChallengeTableView.swift */; };
+		DEC41AEA28EEF2B600280990 /* ChallengeProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41ADA28EEF2B600280990 /* ChallengeProgressView.swift */; };
+		DEC41AEC28EEF96700280990 /* Challenge.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC41AEB28EEF96700280990 /* Challenge.json */; };
 		DEF40C1B28E3509D00C2EB67 /* ContentMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */; };
 		DEF40C1C28E3509D00C2EB67 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE228E3509D00C2EB67 /* ContentManager.swift */; };
 		DEF40C1E28E3509D00C2EB67 /* ChallengeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */; };
@@ -399,6 +416,23 @@
 		DEC41AB728EEED8300280990 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		DEC41ABA28EEED8300280990 /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
 		DEC41ABB28EEED8300280990 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
+		DEC41AC428EEF2B600280990 /* ChallengeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
+		DEC41AC528EEF2B600280990 /* ChallengeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewModel.swift; sourceTree = "<group>"; };
+		DEC41AC628EEF2B600280990 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
+		DEC41ACB28EEF2B600280990 /* ChallengeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeButton.swift; sourceTree = "<group>"; };
+		DEC41ACC28EEF2B600280990 /* ChallengeHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeHeaderCell.swift; sourceTree = "<group>"; };
+		DEC41ACD28EEF2B600280990 /* ChallengeButtonsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeButtonsCell.swift; sourceTree = "<group>"; };
+		DEC41ACF28EEF2B600280990 /* ChallengeRecipesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeRecipesCell.swift; sourceTree = "<group>"; };
+		DEC41AD128EEF2B600280990 /* ChallengeRecipesCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeRecipesCollectionCell.swift; sourceTree = "<group>"; };
+		DEC41AD228EEF2B600280990 /* ChallengeRecipesCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeRecipesCollectionView.swift; sourceTree = "<group>"; };
+		DEC41AD428EEF2B600280990 /* ChallengeBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeBadgeView.swift; sourceTree = "<group>"; };
+		DEC41AD528EEF2B600280990 /* ChallengeBadgeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeBadgeImageView.swift; sourceTree = "<group>"; };
+		DEC41AD628EEF2B600280990 /* ChallengeBadgeProgressLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeBadgeProgressLabel.swift; sourceTree = "<group>"; };
+		DEC41AD728EEF2B600280990 /* ChallengeBadgesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeBadgesCell.swift; sourceTree = "<group>"; };
+		DEC41AD828EEF2B600280990 /* ChallengeTableElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeTableElement.swift; sourceTree = "<group>"; };
+		DEC41AD928EEF2B600280990 /* ChallengeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeTableView.swift; sourceTree = "<group>"; };
+		DEC41ADA28EEF2B600280990 /* ChallengeProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeProgressView.swift; sourceTree = "<group>"; };
+		DEC41AEB28EEF96700280990 /* Challenge.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Challenge.json; sourceTree = "<group>"; };
 		DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentMediator.swift; sourceTree = "<group>"; };
 		DEF40BE228E3509D00C2EB67 /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCover.swift; sourceTree = "<group>"; };
@@ -708,6 +742,7 @@
 		DE54ACD228D09F44004F1514 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DEC41AC328EEF2B600280990 /* Challenge */,
 				DEC41AB428EEED8300280990 /* Category */,
 				DEC41A9928EEC9F500280990 /* Rankings */,
 				DE67A80E28EC1F2C00369B02 /* ForYou */,
@@ -1109,6 +1144,7 @@
 				DE67A85528EC79FE00369B02 /* Categories.json */,
 				DE67A85828EC7A3E00369B02 /* Rankings.json */,
 				DEC41AB228EECFA700280990 /* RankingRecipes.json */,
+				DEC41AEB28EEF96700280990 /* Challenge.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1188,6 +1224,85 @@
 				DEC41ABB28EEED8300280990 /* CategoryCollectionView.swift */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		DEC41AC328EEF2B600280990 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41AC728EEF2B600280990 /* Views */,
+				DEC41AC628EEF2B600280990 /* ChallengeViewController.swift */,
+				DEC41AC528EEF2B600280990 /* ChallengeViewModel.swift */,
+				DEC41AC428EEF2B600280990 /* ChallengeView.swift */,
+			);
+			path = Challenge;
+			sourceTree = "<group>";
+		};
+		DEC41AC728EEF2B600280990 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41AC828EEF2B600280990 /* TableView */,
+				DEC41ADA28EEF2B600280990 /* ChallengeProgressView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEC41AC828EEF2B600280990 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41AC928EEF2B600280990 /* Cells */,
+				DEC41AD828EEF2B600280990 /* ChallengeTableElement.swift */,
+				DEC41AD928EEF2B600280990 /* ChallengeTableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEC41AC928EEF2B600280990 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41AD328EEF2B600280990 /* Badges */,
+				DEC41ACE28EEF2B600280990 /* Recipes */,
+				DEC41ACA28EEF2B600280990 /* Atoms */,
+				DEC41ACC28EEF2B600280990 /* ChallengeHeaderCell.swift */,
+				DEC41ACD28EEF2B600280990 /* ChallengeButtonsCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DEC41ACA28EEF2B600280990 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41ACB28EEF2B600280990 /* ChallengeButton.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		DEC41ACE28EEF2B600280990 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41AD028EEF2B600280990 /* CollectionView */,
+				DEC41ACF28EEF2B600280990 /* ChallengeRecipesCell.swift */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		DEC41AD028EEF2B600280990 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41AD128EEF2B600280990 /* ChallengeRecipesCollectionCell.swift */,
+				DEC41AD228EEF2B600280990 /* ChallengeRecipesCollectionView.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		DEC41AD328EEF2B600280990 /* Badges */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41AD428EEF2B600280990 /* ChallengeBadgeView.swift */,
+				DEC41AD528EEF2B600280990 /* ChallengeBadgeImageView.swift */,
+				DEC41AD628EEF2B600280990 /* ChallengeBadgeProgressLabel.swift */,
+				DEC41AD728EEF2B600280990 /* ChallengeBadgesCell.swift */,
+			);
+			path = Badges;
 			sourceTree = "<group>";
 		};
 		DEF40BE028E3509D00C2EB67 /* Content */ = {
@@ -1442,6 +1557,7 @@
 				DE54AC6528D09ED9004F1514 /* Merriweather-Regular.ttf in Resources */,
 				DE54AC6F28D09EE7004F1514 /* API.json in Resources */,
 				DE67A85228EC669A00369B02 /* ForYouMock.json in Resources */,
+				DEC41AEC28EEF96700280990 /* Challenge.json in Resources */,
 				DE54AC6928D09ED9004F1514 /* PlusJakartaSans-Regular.ttf in Resources */,
 				DE54AC6628D09ED9004F1514 /* Merriweather-Black.ttf in Resources */,
 			);
@@ -1512,12 +1628,14 @@
 				DEC41AB128EEC9F500280990 /* RankingsCollectionView.swift in Sources */,
 				DE54ADD428D0A012004F1514 /* TabItemView.swift in Sources */,
 				DE67A85428EC791700369B02 /* GetDietsResponse.swift in Sources */,
+				DEC41AE628EEF2B600280990 /* ChallengeBadgeProgressLabel.swift in Sources */,
 				DEF40C3228E3509D00C2EB67 /* GetCategoryRecipesResponse.swift in Sources */,
 				DE67A83B28EC1F2C00369B02 /* SettingsTableElement.swift in Sources */,
 				DE54ACBB28D09F26004F1514 /* PaddingTextField.swift in Sources */,
 				DE54AD2D28D09F68004F1514 /* PurchaseValidationObserver.swift in Sources */,
 				DE67A84528EC1F2C00369B02 /* ForYouSeparatorCell.swift in Sources */,
 				DE54ADA728D0A011004F1514 /* PaygateInteractor.swift in Sources */,
+				DEC41AE028EEF2B600280990 /* ChallengeButtonsCell.swift in Sources */,
 				DEF40C2A28E3509D00C2EB67 /* RecipeReadingProgress.swift in Sources */,
 				DE54ADD128D0A012004F1514 /* OnboardingViewModel.swift in Sources */,
 				DE54ADB128D0A011004F1514 /* SplashView.swift in Sources */,
@@ -1528,6 +1646,7 @@
 				DE67A84B28EC1F2C00369B02 /* ForYouRecipesCell.swift in Sources */,
 				DEC41AAD28EEC9F500280990 /* RRecipesTableElement.swift in Sources */,
 				DE54ADC128D0A012004F1514 /* OCategoriesCollectionElement.swift in Sources */,
+				DEC41AE228EEF2B600280990 /* ChallengeRecipesCollectionCell.swift in Sources */,
 				DE54ACAF28D09F25004F1514 /* XORRequestWrapper.swift in Sources */,
 				DE54ADB328D0A011004F1514 /* OCombineData.swift in Sources */,
 				DEC41AAC28EEC9F500280990 /* RRecipesTableRecipeCell.swift in Sources */,
@@ -1570,6 +1689,7 @@
 				DE54ADAC28D0A011004F1514 /* SplashViewController.swift in Sources */,
 				DEF40C5328E456BD00C2EB67 /* ODietsTableElement.swift in Sources */,
 				DE67A83A28EC1F2C00369B02 /* SettingsGetAccessCell.swift in Sources */,
+				DEC41AE528EEF2B600280990 /* ChallengeBadgeImageView.swift in Sources */,
 				DE54AD2728D09F68004F1514 /* LoginRequest.swift in Sources */,
 				DEC41AAF28EEC9F500280990 /* RankingsCollectionElement.swift in Sources */,
 				DEF40C1C28E3509D00C2EB67 /* ContentManager.swift in Sources */,
@@ -1592,6 +1712,7 @@
 				DE54ADC828D0A012004F1514 /* OSlideView.swift in Sources */,
 				DE54ADD528D0A012004F1514 /* TabView.swift in Sources */,
 				DEC41AC028EEED8300280990 /* CategoryCollectionView.swift in Sources */,
+				DEC41ADF28EEF2B600280990 /* ChallengeHeaderCell.swift in Sources */,
 				DE54ADC528D0A012004F1514 /* OBriefView.swift in Sources */,
 				DE54ACA728D09F25004F1514 /* AmplitudeManager.swift in Sources */,
 				DE67A83728EC1F2C00369B02 /* SettingsViewModel.swift in Sources */,
@@ -1601,9 +1722,12 @@
 				DE67A84328EC1F2C00369B02 /* ForYouChallengesCell.swift in Sources */,
 				DE54ACC928D09F26004F1514 /* ScreenSize.swift in Sources */,
 				DE54ADBC28D0A012004F1514 /* OTimeButton.swift in Sources */,
+				DEC41AE828EEF2B600280990 /* ChallengeTableElement.swift in Sources */,
 				DE54ACA828D09F25004F1514 /* FirebaseManager.swift in Sources */,
 				DEF40C2D28E3509D00C2EB67 /* FeedbackRequest.swift in Sources */,
 				DEF40C3428E3509D00C2EB67 /* GetChallengeResponse.swift in Sources */,
+				DEC41ADB28EEF2B600280990 /* ChallengeView.swift in Sources */,
+				DEC41AE928EEF2B600280990 /* ChallengeTableView.swift in Sources */,
 				DE54ACBC28D09F26004F1514 /* PaddingLabel.swift in Sources */,
 				DE54ACB528D09F25004F1514 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DEF40C3928E3509D00C2EB67 /* SearchRecipesResponse.swift in Sources */,
@@ -1643,12 +1767,14 @@
 				DE54ADA328D0A011004F1514 /* PaygateViewModel.swift in Sources */,
 				DE67A84828EC1F2C00369B02 /* ForYouCategoriesCollectionView.swift in Sources */,
 				DE67A84728EC1F2C00369B02 /* ForYouRankingCell.swift in Sources */,
+				DEC41AE128EEF2B600280990 /* ChallengeRecipesCell.swift in Sources */,
 				DE54ACD028D09F26004F1514 /* Weak.swift in Sources */,
 				DE54ADBB28D0A012004F1514 /* ORecipeImageCollectionView.swift in Sources */,
 				DE54ADBD28D0A012004F1514 /* ORecipeButton.swift in Sources */,
 				DE54ACB728D09F25004F1514 /* NavigationControllerSettings.swift in Sources */,
 				DE54ACCE28D09F26004F1514 /* NetworkError.swift in Sources */,
 				DE54ACC728D09F26004F1514 /* NumberLaunches.swift in Sources */,
+				DEC41ADD28EEF2B600280990 /* ChallengeViewController.swift in Sources */,
 				DE54ADE028D0AAE4004F1514 /* ODietsView.swift in Sources */,
 				DE54ADB828D0A012004F1514 /* OQuantityButton.swift in Sources */,
 				DE54ADCF28D0A012004F1514 /* OAgeView.swift in Sources */,
@@ -1657,11 +1783,14 @@
 				DE54ADCB28D0A012004F1514 /* OInfoLibraryView.swift in Sources */,
 				DE54ACB628D09F25004F1514 /* PushNotificationsModel.swift in Sources */,
 				DE54ADB528D0A012004F1514 /* OProgressView.swift in Sources */,
+				DEC41ADE28EEF2B600280990 /* ChallengeButton.swift in Sources */,
 				DEF40C2528E3509D00C2EB67 /* Ranking.swift in Sources */,
 				DE54AC2428D09BF9004F1514 /* AppDelegate.swift in Sources */,
 				DE67A83928EC1F2C00369B02 /* SettingsLinkCell.swift in Sources */,
 				DEC41ABC28EEED8300280990 /* CategoryView.swift in Sources */,
 				DEF40C4128E3509D00C2EB67 /* GetSavedRecipesRequest.swift in Sources */,
+				DEC41AE328EEF2B600280990 /* ChallengeRecipesCollectionView.swift in Sources */,
+				DEC41AE428EEF2B600280990 /* ChallengeBadgeView.swift in Sources */,
 				DE67A84028EC1F2C00369B02 /* ForYouViewModel.swift in Sources */,
 				DE54ADCC28D0A012004F1514 /* OCategoriesView.swift in Sources */,
 				DE54ADBA28D0A012004F1514 /* ONotificationsSwitch.swift in Sources */,
@@ -1670,6 +1799,7 @@
 				DEF40C3328E3509D00C2EB67 /* GetChallengeRequest.swift in Sources */,
 				DE54ACAD28D09F25004F1514 /* Toast.swift in Sources */,
 				DE67A84E28EC1F2C00369B02 /* ForYouTableView.swift in Sources */,
+				DEC41ADC28EEF2B600280990 /* ChallengeViewModel.swift in Sources */,
 				DEF40C2628E3509D00C2EB67 /* RecipeCover.swift in Sources */,
 				DE54ADC328D0A012004F1514 /* OGoalButton.swift in Sources */,
 				DE67A84A28EC1F2C00369B02 /* ForYouCategoriesCell.swift in Sources */,
@@ -1680,6 +1810,7 @@
 				DE54ADB028D0A011004F1514 /* SplashViewModel.swift in Sources */,
 				DEF40C2328E3509D00C2EB67 /* ForYouKit.swift in Sources */,
 				DEF40C2228E3509D00C2EB67 /* Author.swift in Sources */,
+				DEC41AEA28EEF2B600280990 /* ChallengeProgressView.swift in Sources */,
 				DE54ADCA28D0A012004F1514 /* OPaceView.swift in Sources */,
 				DE54ACB828D09F25004F1514 /* NavigationController.swift in Sources */,
 				DEF40C4028E3509D00C2EB67 /* GetSavedRecipesResponse.swift in Sources */,
@@ -1689,6 +1820,7 @@
 				DE54ACAC28D09F25004F1514 /* PaginatedDataLoader.swift in Sources */,
 				DE54ACCA28D09F26004F1514 /* ObservableRetrySingle.swift in Sources */,
 				DE67A84928EC1F2C00369B02 /* ForYouCategoriesCollectionCell.swift in Sources */,
+				DEC41AE728EEF2B600280990 /* ChallengeBadgesCell.swift in Sources */,
 				DEF40C3828E3509D00C2EB67 /* GetExploreKitRequest.swift in Sources */,
 				DE67A84F28EC1F2C00369B02 /* ForYouTableElement.swift in Sources */,
 			);

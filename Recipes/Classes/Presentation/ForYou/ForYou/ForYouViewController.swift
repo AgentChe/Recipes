@@ -94,16 +94,16 @@ extension ForYouViewController: ForYouTableDelegate {
     }
     
     func forYouTableDidTapped(challenge: ChallengeCover) {
-//        let vc: UIViewController
-//
-//        let needPayment = !SessionManager().hasActiveSubscriptions()
-//        if needPayment && challenge.paid {
-//            vc = PaygateViewController.make()
-//        } else {
-//            vc = ChallengeViewController.make(challengeId: challenge.id)
-//        }
-//
-//        present(vc, animated: true)
+        let vc: UIViewController
+
+        let needPayment = !SessionManager().hasActiveSubscriptions()
+        if needPayment && challenge.paid {
+            vc = PaygateViewController.make()
+        } else {
+            vc = ChallengeViewController.make(challengeId: challenge.id)
+        }
+
+        present(vc, animated: true)
     }
     
     func forYouTableDidTapped(ranking: Ranking) {

@@ -129,3 +129,12 @@
 
 // MARK: Category
 "Category.Time" = "%i min";
+
+// MARK: Challenge
+"Challenge.Cook" = "Cook";
+"Challenge.Day" = "Day %i";
+"Challenge.Badges" = "Badges";
+"Challenge.Badges.GoodStart" = "Good start";
+"Challenge.Badges.CompleteDay3" = "Complete\nDay 3";
+"Challenge.Badges.CompleteChallenge" = "Complete\nchallenge";
+"Challenge.Time" = "%i min";
