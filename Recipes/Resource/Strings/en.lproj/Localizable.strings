@@ -138,3 +138,11 @@
 "Challenge.Badges.CompleteDay3" = "Complete\nDay 3";
 "Challenge.Badges.CompleteChallenge" = "Complete\nchallenge";
 "Challenge.Time" = "%i min";
+
+// MARK: Explore
+"Explore.Title" = "Explore";
+"Explore.Search.Placeholder" = "Title,author or topic";
+"Explore.ExploreCategories" = "Explore categories";
+"Explore.TrendingSearches" = "Trending searches";
+"Explore.PopularRequests" = "Popular requests";
+"Explore.Time" = "%i min";

@@ -196,6 +196,18 @@
 		DEC41AE928EEF2B600280990 /* ChallengeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AD928EEF2B600280990 /* ChallengeTableView.swift */; };
 		DEC41AEA28EEF2B600280990 /* ChallengeProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41ADA28EEF2B600280990 /* ChallengeProgressView.swift */; };
 		DEC41AEC28EEF96700280990 /* Challenge.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC41AEB28EEF96700280990 /* Challenge.json */; };
+		DEC41AFC28EF203F00280990 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AEE28EF203F00280990 /* ExploreView.swift */; };
+		DEC41AFD28EF203F00280990 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AEF28EF203F00280990 /* ExploreViewModel.swift */; };
+		DEC41AFE28EF203F00280990 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AF028EF203F00280990 /* ExploreViewController.swift */; };
+		DEC41AFF28EF203F00280990 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AF228EF203F00280990 /* SearchView.swift */; };
+		DEC41B0028EF203F00280990 /* ExploreCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AF428EF203F00280990 /* ExploreCollectionView.swift */; };
+		DEC41B0128EF203F00280990 /* ExploreCollectionTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AF628EF203F00280990 /* ExploreCollectionTitleCell.swift */; };
+		DEC41B0228EF203F00280990 /* ExploreCollectionPopularRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AF728EF203F00280990 /* ExploreCollectionPopularRequestCell.swift */; };
+		DEC41B0328EF203F00280990 /* ExploreCollectionRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AF828EF203F00280990 /* ExploreCollectionRecipeCell.swift */; };
+		DEC41B0428EF203F00280990 /* ExploreCollectionSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AF928EF203F00280990 /* ExploreCollectionSeparatorCell.swift */; };
+		DEC41B0528EF203F00280990 /* ExploreCollectionCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AFA28EF203F00280990 /* ExploreCollectionCategoriesCell.swift */; };
+		DEC41B0628EF203F00280990 /* ExploreCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AFB28EF203F00280990 /* ExploreCollectionElement.swift */; };
+		DEC41B0828EF22CC00280990 /* Explore.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC41B0728EF22CC00280990 /* Explore.json */; };
 		DEF40C1B28E3509D00C2EB67 /* ContentMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */; };
 		DEF40C1C28E3509D00C2EB67 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE228E3509D00C2EB67 /* ContentManager.swift */; };
 		DEF40C1E28E3509D00C2EB67 /* ChallengeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */; };
@@ -433,6 +445,18 @@
 		DEC41AD928EEF2B600280990 /* ChallengeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeTableView.swift; sourceTree = "<group>"; };
 		DEC41ADA28EEF2B600280990 /* ChallengeProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeProgressView.swift; sourceTree = "<group>"; };
 		DEC41AEB28EEF96700280990 /* Challenge.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Challenge.json; sourceTree = "<group>"; };
+		DEC41AEE28EF203F00280990 /* ExploreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		DEC41AEF28EF203F00280990 /* ExploreViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		DEC41AF028EF203F00280990 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		DEC41AF228EF203F00280990 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		DEC41AF428EF203F00280990 /* ExploreCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreCollectionView.swift; sourceTree = "<group>"; };
+		DEC41AF628EF203F00280990 /* ExploreCollectionTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreCollectionTitleCell.swift; sourceTree = "<group>"; };
+		DEC41AF728EF203F00280990 /* ExploreCollectionPopularRequestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreCollectionPopularRequestCell.swift; sourceTree = "<group>"; };
+		DEC41AF828EF203F00280990 /* ExploreCollectionRecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreCollectionRecipeCell.swift; sourceTree = "<group>"; };
+		DEC41AF928EF203F00280990 /* ExploreCollectionSeparatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreCollectionSeparatorCell.swift; sourceTree = "<group>"; };
+		DEC41AFA28EF203F00280990 /* ExploreCollectionCategoriesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreCollectionCategoriesCell.swift; sourceTree = "<group>"; };
+		DEC41AFB28EF203F00280990 /* ExploreCollectionElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreCollectionElement.swift; sourceTree = "<group>"; };
+		DEC41B0728EF22CC00280990 /* Explore.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Explore.json; sourceTree = "<group>"; };
 		DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentMediator.swift; sourceTree = "<group>"; };
 		DEF40BE228E3509D00C2EB67 /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCover.swift; sourceTree = "<group>"; };
@@ -742,6 +766,7 @@
 		DE54ACD228D09F44004F1514 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DEC41AED28EF203F00280990 /* Explore */,
 				DEC41AC328EEF2B600280990 /* Challenge */,
 				DEC41AB428EEED8300280990 /* Category */,
 				DEC41A9928EEC9F500280990 /* Rankings */,
@@ -1145,6 +1170,7 @@
 				DE67A85828EC7A3E00369B02 /* Rankings.json */,
 				DEC41AB228EECFA700280990 /* RankingRecipes.json */,
 				DEC41AEB28EEF96700280990 /* Challenge.json */,
+				DEC41B0728EF22CC00280990 /* Explore.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1303,6 +1329,48 @@
 				DEC41AD728EEF2B600280990 /* ChallengeBadgesCell.swift */,
 			);
 			path = Badges;
+			sourceTree = "<group>";
+		};
+		DEC41AED28EF203F00280990 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41AF128EF203F00280990 /* Views */,
+				DEC41AF028EF203F00280990 /* ExploreViewController.swift */,
+				DEC41AEF28EF203F00280990 /* ExploreViewModel.swift */,
+				DEC41AEE28EF203F00280990 /* ExploreView.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		DEC41AF128EF203F00280990 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41AF328EF203F00280990 /* CollectionView */,
+				DEC41AF228EF203F00280990 /* SearchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEC41AF328EF203F00280990 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41AF528EF203F00280990 /* Cells */,
+				DEC41AF428EF203F00280990 /* ExploreCollectionView.swift */,
+				DEC41AFB28EF203F00280990 /* ExploreCollectionElement.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		DEC41AF528EF203F00280990 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41AF628EF203F00280990 /* ExploreCollectionTitleCell.swift */,
+				DEC41AF728EF203F00280990 /* ExploreCollectionPopularRequestCell.swift */,
+				DEC41AF828EF203F00280990 /* ExploreCollectionRecipeCell.swift */,
+				DEC41AF928EF203F00280990 /* ExploreCollectionSeparatorCell.swift */,
+				DEC41AFA28EF203F00280990 /* ExploreCollectionCategoriesCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		DEF40BE028E3509D00C2EB67 /* Content */ = {
@@ -1547,6 +1615,7 @@
 				DEC41AB328EECFA700280990 /* RankingRecipes.json in Resources */,
 				DE67A85928EC7A3E00369B02 /* Rankings.json in Resources */,
 				DE54AC6B28D09ED9004F1514 /* PlusJakartaSans-ExtraBold.ttf in Resources */,
+				DEC41B0828EF22CC00280990 /* Explore.json in Resources */,
 				DE54AC6328D09ED9004F1514 /* Localizable.strings in Resources */,
 				DE54AC6428D09ED9004F1514 /* Merriweather-Bold.ttf in Resources */,
 				DE54AC6D28D09EE1004F1514 /* GoogleService-Info.plist in Resources */,
@@ -1648,6 +1717,7 @@
 				DE54ADC128D0A012004F1514 /* OCategoriesCollectionElement.swift in Sources */,
 				DEC41AE228EEF2B600280990 /* ChallengeRecipesCollectionCell.swift in Sources */,
 				DE54ACAF28D09F25004F1514 /* XORRequestWrapper.swift in Sources */,
+				DEC41AFD28EF203F00280990 /* ExploreViewModel.swift in Sources */,
 				DE54ADB328D0A011004F1514 /* OCombineData.swift in Sources */,
 				DEC41AAC28EEC9F500280990 /* RRecipesTableRecipeCell.swift in Sources */,
 				DE54ADA828D0A011004F1514 /* PaygateView.swift in Sources */,
@@ -1659,6 +1729,7 @@
 				DE54ADAA28D0A011004F1514 /* PaygateProductButton.swift in Sources */,
 				DEF40C3A28E3509D00C2EB67 /* SearchRecipesRequest.swift in Sources */,
 				DE54ACC028D09F26004F1514 /* UIDevice+Extension.swift in Sources */,
+				DEC41B0128EF203F00280990 /* ExploreCollectionTitleCell.swift in Sources */,
 				DEF40C1B28E3509D00C2EB67 /* ContentMediator.swift in Sources */,
 				DE54AD3028D09F68004F1514 /* IAPProduct.swift in Sources */,
 				DE67A83C28EC1F2C00369B02 /* SettingsTableView.swift in Sources */,
@@ -1695,6 +1766,8 @@
 				DEF40C1C28E3509D00C2EB67 /* ContentManager.swift in Sources */,
 				DE54AD3228D09F68004F1514 /* IAPErrorHelper.swift in Sources */,
 				DE54ADC228D0A012004F1514 /* OCategoriesCollectionLayout.swift in Sources */,
+				DEC41B0328EF203F00280990 /* ExploreCollectionRecipeCell.swift in Sources */,
+				DEC41AFE28EF203F00280990 /* ExploreViewController.swift in Sources */,
 				DEC41AB028EEC9F500280990 /* RankingsCollectionCell.swift in Sources */,
 				DE54ACC128D09F26004F1514 /* UIColor+Extension.swift in Sources */,
 				DE54ADD328D0A012004F1514 /* MainView.swift in Sources */,
@@ -1710,6 +1783,7 @@
 				DE54ADC028D0A012004F1514 /* OCategoriesCollectionCell.swift in Sources */,
 				DEF40C5128E454C800C2EB67 /* ODietsTableCell.swift in Sources */,
 				DE54ADC828D0A012004F1514 /* OSlideView.swift in Sources */,
+				DEC41AFF28EF203F00280990 /* SearchView.swift in Sources */,
 				DE54ADD528D0A012004F1514 /* TabView.swift in Sources */,
 				DEC41AC028EEED8300280990 /* CategoryCollectionView.swift in Sources */,
 				DEC41ADF28EEF2B600280990 /* ChallengeHeaderCell.swift in Sources */,
@@ -1730,6 +1804,8 @@
 				DEC41AE928EEF2B600280990 /* ChallengeTableView.swift in Sources */,
 				DE54ACBC28D09F26004F1514 /* PaddingLabel.swift in Sources */,
 				DE54ACB528D09F25004F1514 /* PushNotificationsAuthorizationStatus.swift in Sources */,
+				DEC41B0428EF203F00280990 /* ExploreCollectionSeparatorCell.swift in Sources */,
+				DEC41B0628EF203F00280990 /* ExploreCollectionElement.swift in Sources */,
 				DEF40C3928E3509D00C2EB67 /* SearchRecipesResponse.swift in Sources */,
 				DEF40C3728E3509D00C2EB67 /* GetExploreKitResponse.swift in Sources */,
 				DE54ACAA28D09F25004F1514 /* ImagePicker.swift in Sources */,
@@ -1773,6 +1849,7 @@
 				DE54ADBD28D0A012004F1514 /* ORecipeButton.swift in Sources */,
 				DE54ACB728D09F25004F1514 /* NavigationControllerSettings.swift in Sources */,
 				DE54ACCE28D09F26004F1514 /* NetworkError.swift in Sources */,
+				DEC41B0028EF203F00280990 /* ExploreCollectionView.swift in Sources */,
 				DE54ACC728D09F26004F1514 /* NumberLaunches.swift in Sources */,
 				DEC41ADD28EEF2B600280990 /* ChallengeViewController.swift in Sources */,
 				DE54ADE028D0AAE4004F1514 /* ODietsView.swift in Sources */,
@@ -1782,6 +1859,7 @@
 				DE54ACC228D09F26004F1514 /* Collection+Extension.swift in Sources */,
 				DE54ADCB28D0A012004F1514 /* OInfoLibraryView.swift in Sources */,
 				DE54ACB628D09F25004F1514 /* PushNotificationsModel.swift in Sources */,
+				DEC41B0528EF203F00280990 /* ExploreCollectionCategoriesCell.swift in Sources */,
 				DE54ADB528D0A012004F1514 /* OProgressView.swift in Sources */,
 				DEC41ADE28EEF2B600280990 /* ChallengeButton.swift in Sources */,
 				DEF40C2528E3509D00C2EB67 /* Ranking.swift in Sources */,
@@ -1798,6 +1876,7 @@
 				DEF40C2128E3509D00C2EB67 /* RankingRecipesGroup.swift in Sources */,
 				DEF40C3328E3509D00C2EB67 /* GetChallengeRequest.swift in Sources */,
 				DE54ACAD28D09F25004F1514 /* Toast.swift in Sources */,
+				DEC41AFC28EF203F00280990 /* ExploreView.swift in Sources */,
 				DE67A84E28EC1F2C00369B02 /* ForYouTableView.swift in Sources */,
 				DEC41ADC28EEF2B600280990 /* ChallengeViewModel.swift in Sources */,
 				DEF40C2628E3509D00C2EB67 /* RecipeCover.swift in Sources */,
@@ -1815,6 +1894,7 @@
 				DE54ACB828D09F25004F1514 /* NavigationController.swift in Sources */,
 				DEF40C4028E3509D00C2EB67 /* GetSavedRecipesResponse.swift in Sources */,
 				DE67A84D28EC1F2C00369B02 /* ForYouRecipesCollectionCell.swift in Sources */,
+				DEC41B0228EF203F00280990 /* ExploreCollectionPopularRequestCell.swift in Sources */,
 				DE54ACC528D09F26004F1514 /* UIViewRxExtension.swift in Sources */,
 				DEF40C3528E3509D00C2EB67 /* GetRankingRecipesRequest.swift in Sources */,
 				DE54ACAC28D09F25004F1514 /* PaginatedDataLoader.swift in Sources */,

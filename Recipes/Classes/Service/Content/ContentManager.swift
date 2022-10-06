@@ -172,28 +172,56 @@ extension ContentManager {
             .map { GetSavedRecipesResponse.map(from: $0) }
     }
     
+    // TODO: remove file
     func obtainExploreKit() -> Single<ExploreKit?> {
-        guard let userToken = sessionManager.getSession()?.userToken else {
-            return .error(SignError.tokenNotFound)
-        }
+        Single<ExploreKit?>
+            .create { event in
+                let path = Bundle.main.path(forResource: "Explore", ofType: "json")!
+                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
+                
+                let result = GetExploreKitResponse.map(from: jsonResult)
+                
+                event(.success(result))
+                
+                return Disposables.create()
+            }
         
-        let request = GetExploreKitRequest(userToken: userToken)
-        
-        return defaultRequestWrapper
-            .callServerApi(requestBody: request)
-            .map { GetExploreKitResponse.map(from: $0) }
+//        guard let userToken = sessionManager.getSession()?.userToken else {
+//            return .error(SignError.tokenNotFound)
+//        }
+//
+//        let request = GetExploreKitRequest(userToken: userToken)
+//
+//        return defaultRequestWrapper
+//            .callServerApi(requestBody: request)
+//            .map { GetExploreKitResponse.map(from: $0) }
     }
     
+    // TODO: remove file
     func searchRecipes(at: String) -> Single<[RecipeCover]> {
-        guard let userToken = sessionManager.getSession()?.userToken else {
-            return .error(SignError.tokenNotFound)
-        }
+        Single<[RecipeCover]>
+            .create { event in
+                let path = Bundle.main.path(forResource: "RankingRecipes", ofType: "json")!
+                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
+                
+                let result = SearchRecipesResponse.map(from: jsonResult)
+                
+                event(.success(result))
+                
+                return Disposables.create()
+            }
         
-        let request = SearchRecipesRequest(userToken: userToken, search: at)
-        
-        return defaultRequestWrapper
-            .callServerApi(requestBody: request)
-            .map { SearchRecipesResponse.map(from: $0) }
+//        guard let userToken = sessionManager.getSession()?.userToken else {
+//            return .error(SignError.tokenNotFound)
+//        }
+//
+//        let request = SearchRecipesRequest(userToken: userToken, search: at)
+//
+//        return defaultRequestWrapper
+//            .callServerApi(requestBody: request)
+//            .map { SearchRecipesResponse.map(from: $0) }
     }
     
     // TODO: remove file
