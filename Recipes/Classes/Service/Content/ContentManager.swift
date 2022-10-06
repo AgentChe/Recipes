@@ -196,16 +196,30 @@ extension ContentManager {
             .map { SearchRecipesResponse.map(from: $0) }
     }
     
+    // TODO: remove file
     func obtainCategoryRecipesCover(categoryId: Int) -> Single<[RecipeCover]> {
-        guard let userToken = sessionManager.getSession()?.userToken else {
-            return .error(SignError.tokenNotFound)
-        }
-
-        let request = GetCategoryRecipesRequest(userToken: userToken, categoryId: categoryId)
-
-        return defaultRequestWrapper
-            .callServerApi(requestBody: request)
-            .map { GetCategoryRecipesResponse.map(from: $0) }
+        Single<[RecipeCover]>
+            .create { event in
+                let path = Bundle.main.path(forResource: "RankingRecipes", ofType: "json")!
+                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
+                
+                let result = GetRankingRecipesResponse.map(from: jsonResult)
+                
+                event(.success(result))
+                
+                return Disposables.create()
+            }
+        
+//        guard let userToken = sessionManager.getSession()?.userToken else {
+//            return .error(SignError.tokenNotFound)
+//        }
+//
+//        let request = GetCategoryRecipesRequest(userToken: userToken, categoryId: categoryId)
+//
+//        return defaultRequestWrapper
+//            .callServerApi(requestBody: request)
+//            .map { GetCategoryRecipesResponse.map(from: $0) }
     }
     
     // TODO: remove file

@@ -126,3 +126,6 @@
 // MARK: Ranking
 "Ranking.Title" = "Ranking";
 "Ranking.Time" = "%i min";
+
+// MARK: Category
+"Category.Time" = "%i min";

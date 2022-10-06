@@ -174,6 +174,11 @@
 		DEC41AB028EEC9F500280990 /* RankingsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AA628EEC9F500280990 /* RankingsCollectionCell.swift */; };
 		DEC41AB128EEC9F500280990 /* RankingsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AA728EEC9F500280990 /* RankingsCollectionView.swift */; };
 		DEC41AB328EECFA700280990 /* RankingRecipes.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC41AB228EECFA700280990 /* RankingRecipes.json */; };
+		DEC41ABC28EEED8300280990 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AB528EEED8300280990 /* CategoryView.swift */; };
+		DEC41ABD28EEED8300280990 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AB628EEED8300280990 /* CategoryViewModel.swift */; };
+		DEC41ABE28EEED8300280990 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41AB728EEED8300280990 /* CategoryViewController.swift */; };
+		DEC41ABF28EEED8300280990 /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41ABA28EEED8300280990 /* CategoryCollectionCell.swift */; };
+		DEC41AC028EEED8300280990 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41ABB28EEED8300280990 /* CategoryCollectionView.swift */; };
 		DEF40C1B28E3509D00C2EB67 /* ContentMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */; };
 		DEF40C1C28E3509D00C2EB67 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE228E3509D00C2EB67 /* ContentManager.swift */; };
 		DEF40C1E28E3509D00C2EB67 /* ChallengeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */; };
@@ -389,6 +394,11 @@
 		DEC41AA628EEC9F500280990 /* RankingsCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsCollectionCell.swift; sourceTree = "<group>"; };
 		DEC41AA728EEC9F500280990 /* RankingsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsCollectionView.swift; sourceTree = "<group>"; };
 		DEC41AB228EECFA700280990 /* RankingRecipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RankingRecipes.json; sourceTree = "<group>"; };
+		DEC41AB528EEED8300280990 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		DEC41AB628EEED8300280990 /* CategoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		DEC41AB728EEED8300280990 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		DEC41ABA28EEED8300280990 /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
+		DEC41ABB28EEED8300280990 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
 		DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentMediator.swift; sourceTree = "<group>"; };
 		DEF40BE228E3509D00C2EB67 /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCover.swift; sourceTree = "<group>"; };
@@ -698,6 +708,7 @@
 		DE54ACD228D09F44004F1514 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DEC41AB428EEED8300280990 /* Category */,
 				DEC41A9928EEC9F500280990 /* Rankings */,
 				DE67A80E28EC1F2C00369B02 /* ForYou */,
 				DE54ADDA28D0A2CC004F1514 /* TryAgain */,
@@ -1107,8 +1118,8 @@
 			children = (
 				DEC41A9D28EEC9F500280990 /* Views */,
 				DEC41A9A28EEC9F500280990 /* RankingsViewController.swift */,
-				DEC41A9B28EEC9F500280990 /* RankingsView.swift */,
 				DEC41A9C28EEC9F500280990 /* RankingsViewModel.swift */,
+				DEC41A9B28EEC9F500280990 /* RankingsView.swift */,
 			);
 			path = Rankings;
 			sourceTree = "<group>";
@@ -1147,6 +1158,34 @@
 				DEC41AA528EEC9F500280990 /* RankingsCollectionElement.swift */,
 				DEC41AA628EEC9F500280990 /* RankingsCollectionCell.swift */,
 				DEC41AA728EEC9F500280990 /* RankingsCollectionView.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		DEC41AB428EEED8300280990 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41AB828EEED8300280990 /* Views */,
+				DEC41AB728EEED8300280990 /* CategoryViewController.swift */,
+				DEC41AB628EEED8300280990 /* CategoryViewModel.swift */,
+				DEC41AB528EEED8300280990 /* CategoryView.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		DEC41AB828EEED8300280990 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41AB928EEED8300280990 /* CollectionView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEC41AB928EEED8300280990 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41ABA28EEED8300280990 /* CategoryCollectionCell.swift */,
+				DEC41ABB28EEED8300280990 /* CategoryCollectionView.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -1506,6 +1545,7 @@
 				DE67A83C28EC1F2C00369B02 /* SettingsTableView.swift in Sources */,
 				DE54ACCD28D09F26004F1514 /* SignError.swift in Sources */,
 				DEF40C2028E3509D00C2EB67 /* Challenge.swift in Sources */,
+				DEC41ABF28EEED8300280990 /* CategoryCollectionCell.swift in Sources */,
 				DEF40C3E28E3509D00C2EB67 /* SaveRecipeRequest.swift in Sources */,
 				DE54ADCD28D0A012004F1514 /* OTimeView.swift in Sources */,
 				DE54ACC628D09F26004F1514 /* Scalable.swift in Sources */,
@@ -1551,6 +1591,7 @@
 				DEF40C5128E454C800C2EB67 /* ODietsTableCell.swift in Sources */,
 				DE54ADC828D0A012004F1514 /* OSlideView.swift in Sources */,
 				DE54ADD528D0A012004F1514 /* TabView.swift in Sources */,
+				DEC41AC028EEED8300280990 /* CategoryCollectionView.swift in Sources */,
 				DE54ADC528D0A012004F1514 /* OBriefView.swift in Sources */,
 				DE54ACA728D09F25004F1514 /* AmplitudeManager.swift in Sources */,
 				DE67A83728EC1F2C00369B02 /* SettingsViewModel.swift in Sources */,
@@ -1570,6 +1611,7 @@
 				DE54ACAA28D09F25004F1514 /* ImagePicker.swift in Sources */,
 				DE54AD2C28D09F68004F1514 /* IAPManager.swift in Sources */,
 				DE54ADAF28D0A011004F1514 /* SplashSDKInitialize.swift in Sources */,
+				DEC41ABE28EEED8300280990 /* CategoryViewController.swift in Sources */,
 				DEF40C3B28E3509D00C2EB67 /* GetForYouRequest.swift in Sources */,
 				DE54ACA928D09F25004F1514 /* FacebookManager.swift in Sources */,
 				DE54ADB928D0A012004F1514 /* OBottomProgressView.swift in Sources */,
@@ -1581,6 +1623,7 @@
 				DE54ACB428D09F25004F1514 /* PushNotificationsManager.swift in Sources */,
 				DEC41AAE28EEC9F500280990 /* RRecipesTableView.swift in Sources */,
 				DEF40C4328E3509D00C2EB67 /* GetCategoriesRequest.swift in Sources */,
+				DEC41ABD28EEED8300280990 /* CategoryViewModel.swift in Sources */,
 				DE67A83D28EC1F2C00369B02 /* SettingsViewController.swift in Sources */,
 				DE54AD3128D09F68004F1514 /* IAPError.swift in Sources */,
 				DE67A84C28EC1F2C00369B02 /* ForYouRecipesCollectionView.swift in Sources */,
@@ -1617,6 +1660,7 @@
 				DEF40C2528E3509D00C2EB67 /* Ranking.swift in Sources */,
 				DE54AC2428D09BF9004F1514 /* AppDelegate.swift in Sources */,
 				DE67A83928EC1F2C00369B02 /* SettingsLinkCell.swift in Sources */,
+				DEC41ABC28EEED8300280990 /* CategoryView.swift in Sources */,
 				DEF40C4128E3509D00C2EB67 /* GetSavedRecipesRequest.swift in Sources */,
 				DE67A84028EC1F2C00369B02 /* ForYouViewModel.swift in Sources */,
 				DE54ADCC28D0A012004F1514 /* OCategoriesView.swift in Sources */,
