@@ -12,7 +12,9 @@ final class MainViewCoordinator {
     
     lazy var forYouVC = NavigationController(rootViewController: ForYouViewController.make())
     lazy var shoppingVC = UIViewController()
-    lazy var myRecipesVC = UIViewController()
+    lazy var myRecipesVC = NavigationController(rootViewController: LibraryViewController.make { [weak self] in
+        self?.change(tab: .forYou)
+    })
     lazy var exploreVC = NavigationController(rootViewController: ExploreViewController.make())
     
     private var previousVC: UIViewController?

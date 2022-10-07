@@ -1,0 +1,122 @@
+//
+//  LibraryView.swift
+//  Recipes
+//
+//  Created by Андрей Чернышев on 22.07.2022.
+//
+
+import UIKit
+
+final class LibraryView: UIView {
+    lazy var titleLabel = makeTitleLabel()
+    lazy var filterView = makeFilterView()
+    lazy var tableView = makeTableView()
+    lazy var preloader = makePreloader()
+    lazy var emptyView = makeEmptyView()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        makeConstraints()
+        initialize()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: Private
+private extension LibraryView {
+    func initialize() {
+        backgroundColor = Appearance.background
+    }
+}
+
+// MARK: Make constraints
+private extension LibraryView {
+    func makeConstraints() {
+        NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 91.scale : 61.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            filterView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            filterView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            filterView.heightAnchor.constraint(equalToConstant: 31.scale),
+            filterView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 28.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: filterView.bottomAnchor, constant: 2.scale),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            preloader.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+            preloader.centerYAnchor.constraint(equalTo: tableView.centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            emptyView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            emptyView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            emptyView.heightAnchor.constraint(equalToConstant: 290.scale),
+            emptyView.topAnchor.constraint(equalTo: filterView.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 108.scale : 60.scale)
+        ])
+    }
+}
+
+// MARK: Lazy initialization
+private extension LibraryView {
+    func makeTitleLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(Appearance.black)
+            .font(Fonts.PlusJakartaSans.extraBold(size: 34.scale))
+            .lineHeight(40.8.scale)
+            .letterSpacing(-1.scale)
+        
+        let view = UILabel()
+        view.attributedText = "Library.Title".localized.attributed(with: attrs)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeFilterView() -> LibraryFilterView {
+        let view = LibraryFilterView()
+        view.backgroundColor = UIColor.clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeTableView() -> LibraryTableView {
+        let view = LibraryTableView()
+        view.contentInset = UIEdgeInsets(top: 30.scale, left: 0, bottom: 30.scale, right: 0)
+        view.separatorStyle = .none
+        view.showsVerticalScrollIndicator = false
+        view.contentInsetAdjustmentBehavior = .never
+        view.backgroundColor = UIColor.clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePreloader() -> Spinner {
+        let view = Spinner(size: CGSize(width: 45.scale, height: 45.scale))
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeEmptyView() -> LibraryEmptyView {
+        let view = LibraryEmptyView()
+        view.backgroundColor = UIColor.clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+}

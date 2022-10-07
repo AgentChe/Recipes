@@ -146,3 +146,16 @@
 "Explore.TrendingSearches" = "Trending searches";
 "Explore.PopularRequests" = "Popular requests";
 "Explore.Time" = "%i min";
+
+// MARK: Library
+"Library.Title" = "My Recipes";
+"Library.Saved" = "Saved";
+"Library.History" = "My history";
+"Library.Delete" = "Delete from My Recipes";
+"Library.Share" = "Share";
+"Library.Empty.Saved.Title" = "No saved recipes";
+"Library.Empty.Saved.SubTitle" = "Here will be recipes that you\nsave";
+"Library.Empty.History.Title" = "Looks empty here";
+"Library.Empty.History.SubTitle" = "Here will be recipes that you\ncook";
+"Library.Empty.Button" = "Discover books";
+"Library.Time" = "%i min";
