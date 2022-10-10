@@ -11,13 +11,16 @@ struct Recipe: Codable, Hashable {
     let id: Int
     let name: String
     let imageUrl: URL
-    let author: Author
     let rankingId: Int
-    let time: Int
-    let audioUrl: URL
+    let categoriesIds: [Int]
+    let timePreparing: Int?
+    let timeCooking: Int?
+    let totalTime: Int?
     let shareLink: URL
     let isSaved: Bool
-    let introduction: RecipeStep?
     let steps: [RecipeStep]
-    let whatAbout: String
+    let ingredients: [Ingredient]
+    let carbs: RecipeCPF
+    let protein: RecipeCPF
+    let fats: RecipeCPF
 }

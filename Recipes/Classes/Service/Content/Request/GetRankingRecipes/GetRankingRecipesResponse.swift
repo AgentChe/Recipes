@@ -21,10 +21,6 @@ final class GetRankingRecipesResponse {
                 let id = coverJSON["id"] as? Int,
                 let name = coverJSON["name"] as? String,
                 let time = coverJSON["time_min"] as? Int,
-                let authorJSON = coverJSON["author"] as? [String: Any],
-                let authorName = authorJSON["name"] as? String,
-                let authorImagePath = authorJSON["photo_url"] as? String,
-                let authorImageUrl = URL(string: authorImagePath),
                 let imagePath = coverJSON["image"] as? String,
                 let imageUrl = URL(string: imagePath),
                 let rankingId = coverJSON["ranking_id"] as? Int,
@@ -35,13 +31,9 @@ final class GetRankingRecipesResponse {
                 return nil
             }
             
-            let author = Author(name: authorName,
-                                photoUrl: authorImageUrl)
-            
             return RecipeCover(id: id,
                              name: name,
                              time: time,
-                             author: author,
                              imageUrl: imageUrl,
                              rankingId: rankingId,
                              shareLink: shareLink,

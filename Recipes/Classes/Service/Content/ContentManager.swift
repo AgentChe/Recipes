@@ -29,6 +29,7 @@ protocol ContentManagerProtocol: AnyObject {
                   whatBetter: String?,
                   whatLearn: String?) -> Single<Bool>
     func obtainChallenge(id: Int) -> Single<Challenge?>
+    func obtainRecipeKit(recipeId: Int) -> Single<RecipeKit?>
 }
 
 final class ContentManager: ContentManagerProtocol {
@@ -290,44 +291,20 @@ extension ContentManager {
 //            .map { GetRankingRecipesResponse.map(from: $0) }
     }
     
-    // TODO
     func obtainReadingRecipes() -> Single<[RecipeReadingProgress]> {
         Single<[RecipeReadingProgress]>.create { event in
-            let recipes = [
-                RecipeReadingProgress(recipe: Recipe(id: 1,
-                                                     name: "Poke with salmon",
-                                                     imageUrl: URL(string: "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096")!,
-                                                     author: Author(name: "",
-                                                                    photoUrl: URL(string: "https://google.com")!),
-                                                     rankingId: 1,
-                                                     time: 14,
-                                                     audioUrl: URL(string: "https://google.com")!,
-                                                     shareLink: URL(string: "https://google.com")!,
-                                                     isSaved: true,
-                                                     introduction: nil,
-                                                     steps: [],
-                                                     whatAbout: ""),
-                                      currentStepIndex: 2)
-            ]
-            
+            guard
+                let data = UserDefaults.standard.data(forKey: Constants.readingRecipesKey),
+                let recipes = try? JSONDecoder().decode([RecipeReadingProgress].self, from: data)
+            else {
+                event(.success([]))
+                return Disposables.create()
+            }
+
             event(.success(recipes))
-            
+
             return Disposables.create()
         }
-        
-//        Single<[RecipeReadingProgress]>.create { event in
-//            guard
-//                let data = UserDefaults.standard.data(forKey: Constants.readingRecipesKey),
-//                let recipes = try? JSONDecoder().decode([RecipeReadingProgress].self, from: data)
-//            else {
-//                event(.success([]))
-//                return Disposables.create()
-//            }
-//
-//            event(.success(recipes))
-//
-//            return Disposables.create()
-//        }
     }
     
     func set(recipeReadingProgress: RecipeReadingProgress) -> Single<Void> {
@@ -423,6 +400,32 @@ extension ContentManager {
 //        return defaultRequestWrapper
 //            .callServerApi(requestBody: request)
 //            .map { GetChallengeResponse.map(from: $0) }
+    }
+    
+    // TODO: remove file
+    func obtainRecipeKit(recipeId: Int) -> Single<RecipeKit?> {
+        Single<RecipeKit?>
+            .create { event in
+                let path = Bundle.main.path(forResource: "RecipeKit", ofType: "json")!
+                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
+                
+                let result = GetRecipeKitResponse.map(from: jsonResult)
+                
+                event(.success(result))
+                
+                return Disposables.create()
+            }
+        
+//        guard let userToken = sessionManager.getSession()?.userToken else {
+//            return .error(SignError.tokenNotFound)
+//        }
+//
+//        let request = GetRecipeKitRequest(userToken: userToken, recipeId: recipeId)
+//
+//        return defaultRequestWrapper
+//            .callServerApi(requestBody: request)
+//            .map { GetRecipeKitResponse.map(from: $0) }
     }
 }
 

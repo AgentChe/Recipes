@@ -237,12 +237,11 @@ private extension RecipeCover {
     init(recipe: Recipe) {
         id = recipe.id
         name = recipe.name
-        author = recipe.author
         imageUrl = recipe.imageUrl
         rankingId = recipe.rankingId
         shareLink = recipe.shareLink
         paid = false
-        time = recipe.time
+        time = recipe.totalTime ?? 0
     }
 }
 
@@ -252,14 +251,17 @@ private extension Recipe {
         self.id = id
         name = ""
         imageUrl = URL(string: "www.google.com")!
-        author = Author(name: "", photoUrl: URL(string: "www.google.com")!)
         rankingId = 0
-        time = 0
-        audioUrl = URL(string: "www.google.com")!
+        categoriesIds = []
+        timePreparing = 0
+        timeCooking = 0
+        totalTime = 0
         shareLink = URL(string: "www.google.com")!
         isSaved = false
-        introduction = nil
         steps = []
-        whatAbout = ""
+        ingredients = []
+        carbs = RecipeCPF(gram: 0, percent: 0)
+        protein = RecipeCPF(gram: 0, percent: 0)
+        fats = RecipeCPF(gram: 0, percent: 0)
     }
 }

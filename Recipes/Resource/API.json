@@ -297,26 +297,24 @@
         "name": "Japanese Omurice",
         "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
         "ranking_id": 1,
-        "category_id": 1,
-        "kcal": 345,
+        "categories_ids": [],
+        "time_preparing": 10,
+        "time_cooking": 10,
         "time_min": 13,
         "link": "https://books.korrekted.com/",
         "saved": true,
-        "parts": {
-            "title": "FOR CHICKEN RICE",
-            "parts": [
-                {
-                    "id": 1,
-                    "name": "Chicken breast",
-                    "value": "150 grams"
-                },
-                {
-                    "id": 2,
-                    "name": "Soy sauce",
-                    "value": "1 teaspoon"
-                }
-            ]
-        },
+        "ingredients": [
+            {
+                "id": 1,
+                "name": "Chicken breast",
+                "value": "150 grams"
+            },
+            {
+                "id": 2,
+                "name": "Soy sauce",
+                "value": "1 teaspoon"
+            }
+        ]
         "carbs": {
             "g": 52,
             "percent": 19
@@ -329,6 +327,13 @@
             "g": 24,
             "percent": 6
         },
+        "steps": [
+            {
+                "short_description": "Break the eggs into a bowl along with the cream and salt...",
+                "text": "Break the eggs into a bowl along with the cream and salt. Whisk together until the mixture is uniform in color.",
+                "image": "https://picsum.photos/800/800"
+            }
+        ]
         "similar_units": [
             {
                 "id": 6,

@@ -221,13 +221,18 @@
 		DEC41B2A28EF296300280990 /* LibraryRecipeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B1C28EF296300280990 /* LibraryRecipeMenuView.swift */; };
 		DEC41B2B28EF296300280990 /* LBMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B1E28EF296300280990 /* LBMButton.swift */; };
 		DEC41B2C28EF296300280990 /* LibraryRecipeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B1F28EF296300280990 /* LibraryRecipeMenuViewController.swift */; };
+		DEC41B6728F4498E00280990 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B6628F4498E00280990 /* Ingredient.swift */; };
+		DEC41B6928F449CF00280990 /* RecipeCPF.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B6828F449CF00280990 /* RecipeCPF.swift */; };
+		DEC41B6B28F44AD600280990 /* RecipeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B6A28F44AD600280990 /* RecipeKit.swift */; };
+		DEC41B6E28F44D3500280990 /* GetRecipeKitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B6D28F44D3500280990 /* GetRecipeKitRequest.swift */; };
+		DEC41B7028F44D8100280990 /* GetRecipeKitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B6F28F44D8100280990 /* GetRecipeKitResponse.swift */; };
+		DEC41B7428F4539D00280990 /* RecipeKit.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC41B7328F4539D00280990 /* RecipeKit.json */; };
 		DEF40C1B28E3509D00C2EB67 /* ContentMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */; };
 		DEF40C1C28E3509D00C2EB67 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE228E3509D00C2EB67 /* ContentManager.swift */; };
 		DEF40C1E28E3509D00C2EB67 /* ChallengeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */; };
 		DEF40C1F28E3509D00C2EB67 /* ExploreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE628E3509D00C2EB67 /* ExploreKit.swift */; };
 		DEF40C2028E3509D00C2EB67 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE728E3509D00C2EB67 /* Challenge.swift */; };
 		DEF40C2128E3509D00C2EB67 /* RankingRecipesGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE828E3509D00C2EB67 /* RankingRecipesGroup.swift */; };
-		DEF40C2228E3509D00C2EB67 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE928E3509D00C2EB67 /* Author.swift */; };
 		DEF40C2328E3509D00C2EB67 /* ForYouKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BEA28E3509D00C2EB67 /* ForYouKit.swift */; };
 		DEF40C2528E3509D00C2EB67 /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BEC28E3509D00C2EB67 /* Ranking.swift */; };
 		DEF40C2628E3509D00C2EB67 /* RecipeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BED28E3509D00C2EB67 /* RecipeCover.swift */; };
@@ -483,13 +488,18 @@
 		DEC41B1C28EF296300280990 /* LibraryRecipeMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryRecipeMenuView.swift; sourceTree = "<group>"; };
 		DEC41B1E28EF296300280990 /* LBMButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBMButton.swift; sourceTree = "<group>"; };
 		DEC41B1F28EF296300280990 /* LibraryRecipeMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryRecipeMenuViewController.swift; sourceTree = "<group>"; };
+		DEC41B6628F4498E00280990 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		DEC41B6828F449CF00280990 /* RecipeCPF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCPF.swift; sourceTree = "<group>"; };
+		DEC41B6A28F44AD600280990 /* RecipeKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeKit.swift; sourceTree = "<group>"; };
+		DEC41B6D28F44D3500280990 /* GetRecipeKitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipeKitRequest.swift; sourceTree = "<group>"; };
+		DEC41B6F28F44D8100280990 /* GetRecipeKitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipeKitResponse.swift; sourceTree = "<group>"; };
+		DEC41B7328F4539D00280990 /* RecipeKit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RecipeKit.json; sourceTree = "<group>"; };
 		DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentMediator.swift; sourceTree = "<group>"; };
 		DEF40BE228E3509D00C2EB67 /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCover.swift; sourceTree = "<group>"; };
 		DEF40BE628E3509D00C2EB67 /* ExploreKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreKit.swift; sourceTree = "<group>"; };
 		DEF40BE728E3509D00C2EB67 /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		DEF40BE828E3509D00C2EB67 /* RankingRecipesGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingRecipesGroup.swift; sourceTree = "<group>"; };
-		DEF40BE928E3509D00C2EB67 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		DEF40BEA28E3509D00C2EB67 /* ForYouKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForYouKit.swift; sourceTree = "<group>"; };
 		DEF40BEC28E3509D00C2EB67 /* Ranking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
 		DEF40BED28E3509D00C2EB67 /* RecipeCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCover.swift; sourceTree = "<group>"; };
@@ -1198,6 +1208,7 @@
 				DEC41AB228EECFA700280990 /* RankingRecipes.json */,
 				DEC41AEB28EEF96700280990 /* Challenge.json */,
 				DEC41B0728EF22CC00280990 /* Explore.json */,
+				DEC41B7328F4539D00280990 /* RecipeKit.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1476,6 +1487,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		DEC41B6C28F44D2500280990 /* GetRecipeKit */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41B6D28F44D3500280990 /* GetRecipeKitRequest.swift */,
+				DEC41B6F28F44D8100280990 /* GetRecipeKitResponse.swift */,
+			);
+			path = GetRecipeKit;
+			sourceTree = "<group>";
+		};
 		DEF40BE028E3509D00C2EB67 /* Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -1495,7 +1515,6 @@
 				DEF40BE628E3509D00C2EB67 /* ExploreKit.swift */,
 				DEF40BE728E3509D00C2EB67 /* Challenge.swift */,
 				DEF40BE828E3509D00C2EB67 /* RankingRecipesGroup.swift */,
-				DEF40BE928E3509D00C2EB67 /* Author.swift */,
 				DEF40BEA28E3509D00C2EB67 /* ForYouKit.swift */,
 				DEF40BEC28E3509D00C2EB67 /* Ranking.swift */,
 				DEF40C5428E48E1B00C2EB67 /* Recipe.swift */,
@@ -1503,6 +1522,9 @@
 				DEF40BEE28E3509D00C2EB67 /* Category.swift */,
 				DEF40BF028E3509D00C2EB67 /* RecipeStep.swift */,
 				DEF40BF128E3509D00C2EB67 /* RecipeReadingProgress.swift */,
+				DEC41B6628F4498E00280990 /* Ingredient.swift */,
+				DEC41B6828F449CF00280990 /* RecipeCPF.swift */,
+				DEC41B6A28F44AD600280990 /* RecipeKit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1510,6 +1532,7 @@
 		DEF40BF228E3509D00C2EB67 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				DEC41B6C28F44D2500280990 /* GetRecipeKit */,
 				DEF40C4828E350E600C2EB67 /* GetDiets */,
 				DEF40BF628E3509D00C2EB67 /* Feedback */,
 				DEF40BF928E3509D00C2EB67 /* GetRanking */,
@@ -1731,6 +1754,7 @@
 				DE67A85228EC669A00369B02 /* ForYouMock.json in Resources */,
 				DEC41AEC28EEF96700280990 /* Challenge.json in Resources */,
 				DE54AC6928D09ED9004F1514 /* PlusJakartaSans-Regular.ttf in Resources */,
+				DEC41B7428F4539D00280990 /* RecipeKit.json in Resources */,
 				DE54AC6628D09ED9004F1514 /* Merriweather-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1805,6 +1829,7 @@
 				DEC41AE628EEF2B600280990 /* ChallengeBadgeProgressLabel.swift in Sources */,
 				DEF40C3228E3509D00C2EB67 /* GetCategoryRecipesResponse.swift in Sources */,
 				DE67A83B28EC1F2C00369B02 /* SettingsTableElement.swift in Sources */,
+				DEC41B7028F44D8100280990 /* GetRecipeKitResponse.swift in Sources */,
 				DE54ACBB28D09F26004F1514 /* PaddingTextField.swift in Sources */,
 				DE54AD2D28D09F68004F1514 /* PurchaseValidationObserver.swift in Sources */,
 				DE67A84528EC1F2C00369B02 /* ForYouSeparatorCell.swift in Sources */,
@@ -1815,6 +1840,7 @@
 				DE54ADB128D0A011004F1514 /* SplashView.swift in Sources */,
 				DE54AD2928D09F68004F1514 /* SetRequest.swift in Sources */,
 				DE67A83628EC1F2C00369B02 /* SettingsView.swift in Sources */,
+				DEC41B6E28F44D3500280990 /* GetRecipeKitRequest.swift in Sources */,
 				DEF40C2928E3509D00C2EB67 /* RecipeStep.swift in Sources */,
 				DEF40C4F28E4545800C2EB67 /* ODietsTableView.swift in Sources */,
 				DE67A84B28EC1F2C00369B02 /* ForYouRecipesCell.swift in Sources */,
@@ -1889,6 +1915,7 @@
 				DE54ACA628D09F25004F1514 /* BranchManager.swift in Sources */,
 				DE54ADAE28D0A011004F1514 /* SplashReceiptValidationObserver.swift in Sources */,
 				DEF40C2F28E3509D00C2EB67 /* GetRankingResponse.swift in Sources */,
+				DEC41B6928F449CF00280990 /* RecipeCPF.swift in Sources */,
 				DE54ADC028D0A012004F1514 /* OCategoriesCollectionCell.swift in Sources */,
 				DEF40C5128E454C800C2EB67 /* ODietsTableCell.swift in Sources */,
 				DE54ADC828D0A012004F1514 /* OSlideView.swift in Sources */,
@@ -1938,6 +1965,7 @@
 				DEC41ABD28EEED8300280990 /* CategoryViewModel.swift in Sources */,
 				DE67A83D28EC1F2C00369B02 /* SettingsViewController.swift in Sources */,
 				DE54AD3128D09F68004F1514 /* IAPError.swift in Sources */,
+				DEC41B6B28F44AD600280990 /* RecipeKit.swift in Sources */,
 				DE67A84C28EC1F2C00369B02 /* ForYouRecipesCollectionView.swift in Sources */,
 				DE54AD2528D09F68004F1514 /* TextSize.swift in Sources */,
 				DEC41B2428EF296300280990 /* LibraryTableSeparatorCell.swift in Sources */,
@@ -1986,6 +2014,7 @@
 				DEC41AE328EEF2B600280990 /* ChallengeRecipesCollectionView.swift in Sources */,
 				DEC41AE428EEF2B600280990 /* ChallengeBadgeView.swift in Sources */,
 				DE67A84028EC1F2C00369B02 /* ForYouViewModel.swift in Sources */,
+				DEC41B6728F4498E00280990 /* Ingredient.swift in Sources */,
 				DE54ADCC28D0A012004F1514 /* OCategoriesView.swift in Sources */,
 				DE54ADBA28D0A012004F1514 /* ONotificationsSwitch.swift in Sources */,
 				DEF40C3128E3509D00C2EB67 /* GetCategoryRecipesRequest.swift in Sources */,
@@ -2004,7 +2033,6 @@
 				DEF40C4A28E350FE00C2EB67 /* GetDietsRequest.swift in Sources */,
 				DE54ADB028D0A011004F1514 /* SplashViewModel.swift in Sources */,
 				DEF40C2328E3509D00C2EB67 /* ForYouKit.swift in Sources */,
-				DEF40C2228E3509D00C2EB67 /* Author.swift in Sources */,
 				DEC41AEA28EEF2B600280990 /* ChallengeProgressView.swift in Sources */,
 				DE54ADCA28D0A012004F1514 /* OPaceView.swift in Sources */,
 				DE54ACB828D09F25004F1514 /* NavigationController.swift in Sources */,
