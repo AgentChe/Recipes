@@ -89,19 +89,18 @@ extension RankingsViewController: RankingsCollectionDelegate {
 }
 
 // MARK: RRecipesTableDelegate
-// TODO: Impl
 extension RankingsViewController: RRecipesTableDelegate {
     func rankingRecipesTableDidTapped(recipe: RecipeCover) {
-//        let vc: UIViewController
-//
-//        let needPayment = !SessionManager().hasActiveSubscriptions()
-//        if needPayment && recipe.paid {
-//            vc = PaygateViewController.make()
-//        } else {
-//            vc = RecipeViewController.make(recipeId: recipe.id)
-//        }
-//
-//        present(vc, animated: true)
+        let vc: UIViewController
+
+        let needPayment = !SessionManager().hasActiveSubscriptions()
+        if needPayment && recipe.paid {
+            vc = PaygateViewController.make()
+        } else {
+            vc = RecipeViewController.make(recipeId: recipe.id)
+        }
+
+        present(vc, animated: true)
     }
 }
 

@@ -159,3 +159,6 @@
 "Library.Empty.History.SubTitle" = "Here will be recipes that you\ncook";
 "Library.Empty.Button" = "Discover books";
 "Library.Time" = "%i min";
+
+// MARK: Recipe
+"Recipe.StepButton" = "Step-by-step";

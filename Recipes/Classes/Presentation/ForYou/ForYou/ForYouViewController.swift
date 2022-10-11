@@ -78,19 +78,18 @@ extension ForYouViewController {
 }
 
 // MARK: ForYouTableDelegate
-// TODO: impl
 extension ForYouViewController: ForYouTableDelegate {
     func forYouTableDidTapped(recipe: RecipeCover) {
-//        let vc: UIViewController
-//
-//        let needPayment = !SessionManager().hasActiveSubscriptions()
-//        if needPayment && recipe.paid {
-//            vc = PaygateViewController.make()
-//        } else {
-//            vc = RecipeViewController.make(recipeId: recipe.id)
-//        }
-//
-//        present(vc, animated: true)
+        let vc: UIViewController
+
+        let needPayment = !SessionManager().hasActiveSubscriptions()
+        if needPayment && recipe.paid {
+            vc = PaygateViewController.make()
+        } else {
+            vc = RecipeViewController.make(recipeId: recipe.id)
+        }
+
+        present(vc, animated: true)
     }
     
     func forYouTableDidTapped(challenge: ChallengeCover) {

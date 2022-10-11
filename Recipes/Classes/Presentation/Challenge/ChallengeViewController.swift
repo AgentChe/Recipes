@@ -82,24 +82,22 @@ extension ChallengeViewController {
 
 // MARK: ChallengeTableDelegate
 extension ChallengeViewController: ChallengeTableDelegate {
-    // TODO: Impl
     func challengeTableDidTappedCook(recipeId: Int) {
-//        let vc = RecipeViewController.make(recipeId: recipeId)
-//        present(vc, animated: true)
+        let vc = RecipeViewController.make(recipeId: recipeId)
+        present(vc, animated: true)
     }
     
-    // TODO: Impl
     func challengeTableDidTapped(element: ChallengeRecipeElement) {
-//        let vc: UIViewController
-//
-//        let needPayment = !SessionManager().hasActiveSubscriptions()
-//        if needPayment && element.recipe.paid {
-//            vc = PaygateViewController.make()
-//        } else {
-//            vc = RecipeViewController.make(recipeId: element.recipe.id)
-//        }
-//
-//        present(vc, animated: true)
+        let vc: UIViewController
+
+        let needPayment = !SessionManager().hasActiveSubscriptions()
+        if needPayment && element.recipe.paid {
+            vc = PaygateViewController.make()
+        } else {
+            vc = RecipeViewController.make(recipeId: element.recipe.id)
+        }
+
+        present(vc, animated: true)
     }
 }
 

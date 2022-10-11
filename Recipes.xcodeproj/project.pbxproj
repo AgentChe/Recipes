@@ -227,6 +227,12 @@
 		DEC41B6E28F44D3500280990 /* GetRecipeKitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B6D28F44D3500280990 /* GetRecipeKitRequest.swift */; };
 		DEC41B7028F44D8100280990 /* GetRecipeKitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B6F28F44D8100280990 /* GetRecipeKitResponse.swift */; };
 		DEC41B7428F4539D00280990 /* RecipeKit.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC41B7328F4539D00280990 /* RecipeKit.json */; };
+		DEC41B9028F4599E00280990 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B7728F4599E00280990 /* RecipeViewModel.swift */; };
+		DEC41B9228F4599E00280990 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B7A28F4599E00280990 /* RecipeView.swift */; };
+		DEC41B9328F4599E00280990 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B7B28F4599E00280990 /* RecipeViewController.swift */; };
+		DEC41BA028F4599E00280990 /* RecipeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B8B28F4599E00280990 /* RecipeTableView.swift */; };
+		DEC41BA128F4599E00280990 /* RecipeTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B8C28F4599E00280990 /* RecipeTableElement.swift */; };
+		DEC41BA228F4599E00280990 /* RecipeNavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B8D28F4599E00280990 /* RecipeNavButton.swift */; };
 		DEF40C1B28E3509D00C2EB67 /* ContentMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */; };
 		DEF40C1C28E3509D00C2EB67 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE228E3509D00C2EB67 /* ContentManager.swift */; };
 		DEF40C1E28E3509D00C2EB67 /* ChallengeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */; };
@@ -494,6 +500,12 @@
 		DEC41B6D28F44D3500280990 /* GetRecipeKitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipeKitRequest.swift; sourceTree = "<group>"; };
 		DEC41B6F28F44D8100280990 /* GetRecipeKitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipeKitResponse.swift; sourceTree = "<group>"; };
 		DEC41B7328F4539D00280990 /* RecipeKit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RecipeKit.json; sourceTree = "<group>"; };
+		DEC41B7728F4599E00280990 /* RecipeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
+		DEC41B7A28F4599E00280990 /* RecipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		DEC41B7B28F4599E00280990 /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		DEC41B8B28F4599E00280990 /* RecipeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableView.swift; sourceTree = "<group>"; };
+		DEC41B8C28F4599E00280990 /* RecipeTableElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableElement.swift; sourceTree = "<group>"; };
+		DEC41B8D28F4599E00280990 /* RecipeNavButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeNavButton.swift; sourceTree = "<group>"; };
 		DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentMediator.swift; sourceTree = "<group>"; };
 		DEF40BE228E3509D00C2EB67 /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCover.swift; sourceTree = "<group>"; };
@@ -802,6 +814,7 @@
 		DE54ACD228D09F44004F1514 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DEC41B7528F4599E00280990 /* Recipe */,
 				DEC41B0B28EF296300280990 /* Library */,
 				DEC41AED28EF203F00280990 /* Explore */,
 				DEC41AC328EEF2B600280990 /* Challenge */,
@@ -1496,6 +1509,43 @@
 			path = GetRecipeKit;
 			sourceTree = "<group>";
 		};
+		DEC41B7528F4599E00280990 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41B7628F4599E00280990 /* Recipe */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
+		DEC41B7628F4599E00280990 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41B7C28F4599E00280990 /* Views */,
+				DEC41B7B28F4599E00280990 /* RecipeViewController.swift */,
+				DEC41B7728F4599E00280990 /* RecipeViewModel.swift */,
+				DEC41B7A28F4599E00280990 /* RecipeView.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
+		DEC41B7C28F4599E00280990 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41B7D28F4599E00280990 /* TableView */,
+				DEC41B8D28F4599E00280990 /* RecipeNavButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEC41B7D28F4599E00280990 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41B8B28F4599E00280990 /* RecipeTableView.swift */,
+				DEC41B8C28F4599E00280990 /* RecipeTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		DEF40BE028E3509D00C2EB67 /* Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -1811,8 +1861,10 @@
 				DE54ACC328D09F26004F1514 /* ObservableAndSingle+Extension.swift in Sources */,
 				DEF40C3C28E3509D00C2EB67 /* GetForYouResponse.swift in Sources */,
 				DE54ADBF28D0A012004F1514 /* OCategoriesCollectionView.swift in Sources */,
+				DEC41BA128F4599E00280990 /* RecipeTableElement.swift in Sources */,
 				DE54ACC428D09F26004F1514 /* String+Extension.swift in Sources */,
 				DE54ADDD28D0A2CC004F1514 /* TryAgainView.swift in Sources */,
+				DEC41B9028F4599E00280990 /* RecipeViewModel.swift in Sources */,
 				DEF40C1F28E3509D00C2EB67 /* ExploreKit.swift in Sources */,
 				DEC41B2828EF296300280990 /* LibraryFilterButton.swift in Sources */,
 				DE54ADAB28D0A011004F1514 /* PaygateInfoCell.swift in Sources */,
@@ -1841,6 +1893,7 @@
 				DE54AD2928D09F68004F1514 /* SetRequest.swift in Sources */,
 				DE67A83628EC1F2C00369B02 /* SettingsView.swift in Sources */,
 				DEC41B6E28F44D3500280990 /* GetRecipeKitRequest.swift in Sources */,
+				DEC41BA228F4599E00280990 /* RecipeNavButton.swift in Sources */,
 				DEF40C2928E3509D00C2EB67 /* RecipeStep.swift in Sources */,
 				DEF40C4F28E4545800C2EB67 /* ODietsTableView.swift in Sources */,
 				DE67A84B28EC1F2C00369B02 /* ForYouRecipesCell.swift in Sources */,
@@ -1859,6 +1912,7 @@
 				DE54ADC928D0A012004F1514 /* ORecipesView.swift in Sources */,
 				DE54ADE928D1B936004F1514 /* ODietButton.swift in Sources */,
 				DE54ADAA28D0A011004F1514 /* PaygateProductButton.swift in Sources */,
+				DEC41B9228F4599E00280990 /* RecipeView.swift in Sources */,
 				DEF40C3A28E3509D00C2EB67 /* SearchRecipesRequest.swift in Sources */,
 				DE54ACC028D09F26004F1514 /* UIDevice+Extension.swift in Sources */,
 				DEC41B0128EF203F00280990 /* ExploreCollectionTitleCell.swift in Sources */,
@@ -1892,6 +1946,7 @@
 				DEC41B2128EF296300280990 /* LibraryViewController.swift in Sources */,
 				DE54ACCF28D09F26004F1514 /* ContentError.swift in Sources */,
 				DEC41AAB28EEC9F500280990 /* RRecipesTableSeparatorCell.swift in Sources */,
+				DEC41B9328F4599E00280990 /* RecipeViewController.swift in Sources */,
 				DE54ADAC28D0A011004F1514 /* SplashViewController.swift in Sources */,
 				DEF40C5328E456BD00C2EB67 /* ODietsTableElement.swift in Sources */,
 				DE67A83A28EC1F2C00369B02 /* SettingsGetAccessCell.swift in Sources */,
@@ -1924,6 +1979,7 @@
 				DEC41AC028EEED8300280990 /* CategoryCollectionView.swift in Sources */,
 				DEC41ADF28EEF2B600280990 /* ChallengeHeaderCell.swift in Sources */,
 				DE54ADC528D0A012004F1514 /* OBriefView.swift in Sources */,
+				DEC41BA028F4599E00280990 /* RecipeTableView.swift in Sources */,
 				DE54ACA728D09F25004F1514 /* AmplitudeManager.swift in Sources */,
 				DE67A83728EC1F2C00369B02 /* SettingsViewModel.swift in Sources */,
 				DEC41B2A28EF296300280990 /* LibraryRecipeMenuView.swift in Sources */,

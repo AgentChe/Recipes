@@ -77,19 +77,18 @@ extension CategoryViewController {
 }
 
 // MARK: CategoryCollectionDelegate
-// TODO: Impl
 extension CategoryViewController: CategoryCollectionDelegate {
     func categoryCollectionTapped(recipe: RecipeCover) {
-//        let vc: UIViewController
-//
-//        let needPayment = !SessionManager().hasActiveSubscriptions()
-//        if needPayment && recipe.paid {
-//            vc = PaygateViewController.make()
-//        } else {
-//            vc = RecipeViewController.make(recipeId: recipe.id)
-//        }
-//
-//        present(vc, animated: true)
+        let vc: UIViewController
+
+        let needPayment = !SessionManager().hasActiveSubscriptions()
+        if needPayment && recipe.paid {
+            vc = PaygateViewController.make()
+        } else {
+            vc = RecipeViewController.make(recipeId: recipe.id)
+        }
+
+        present(vc, animated: true)
     }
 }
 

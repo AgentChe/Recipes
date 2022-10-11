@@ -84,18 +84,17 @@ extension ExploreViewController: ExploreCollectionDelegate {
         present(vc, animated: true)
     }
     
-    // TODO: Impl
     func exploreCollectionDidTapped(recipe: RecipeCover) {
-//        let vc: UIViewController
-//        
-//        let needPayment = !SessionManager().hasActiveSubscriptions()
-//        if needPayment && recipe.paid {
-//            vc = PaygateViewController.make()
-//        } else {
-//            vc = RecipeViewController.make(recipeId: recipe.id)
-//        }
-//        
-//        present(vc, animated: true)
+        let vc: UIViewController
+        
+        let needPayment = !SessionManager().hasActiveSubscriptions()
+        if needPayment && recipe.paid {
+            vc = PaygateViewController.make()
+        } else {
+            vc = RecipeViewController.make(recipeId: recipe.id)
+        }
+        
+        present(vc, animated: true)
     }
     
     func exploreCollectionDidTapped(popularRequest: String) {

@@ -82,18 +82,17 @@ extension LibraryViewController {
 
 // MARK: LibraryTableDelegate
 extension LibraryViewController: LibraryTableDelegate {
-    // TODO: Impl
     func libraryTableDidTapped(recipe: RecipeCover) {
-//        let vc: UIViewController
-//
-//        let needPayment = !SessionManager().hasActiveSubscriptions()
-//        if needPayment && recipe.paid {
-//            vc = PaygateViewController.make()
-//        } else {
-//            vc = RecipeViewController.make(recipeId: recipe.id)
-//        }
-//
-//        present(vc, animated: true)
+        let vc: UIViewController
+
+        let needPayment = !SessionManager().hasActiveSubscriptions()
+        if needPayment && recipe.paid {
+            vc = PaygateViewController.make()
+        } else {
+            vc = RecipeViewController.make(recipeId: recipe.id)
+        }
+
+        present(vc, animated: true)
     }
     
     func libraryTableDidTappedMenu(recipe: RecipeCover) {
