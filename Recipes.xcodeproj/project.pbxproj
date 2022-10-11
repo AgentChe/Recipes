@@ -233,6 +233,9 @@
 		DEC41BA028F4599E00280990 /* RecipeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B8B28F4599E00280990 /* RecipeTableView.swift */; };
 		DEC41BA128F4599E00280990 /* RecipeTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B8C28F4599E00280990 /* RecipeTableElement.swift */; };
 		DEC41BA228F4599E00280990 /* RecipeNavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41B8D28F4599E00280990 /* RecipeNavButton.swift */; };
+		DEC41BA728F562E300280990 /* RecipeTableInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BA628F562E300280990 /* RecipeTableInfoCell.swift */; };
+		DEC41BA928F5696F00280990 /* RecipeTableTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BA828F5696F00280990 /* RecipeTableTimeCell.swift */; };
+		DEC41BAC28F56B0B00280990 /* RecipeTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BAB28F56B0B00280990 /* RecipeTimeView.swift */; };
 		DEF40C1B28E3509D00C2EB67 /* ContentMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */; };
 		DEF40C1C28E3509D00C2EB67 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE228E3509D00C2EB67 /* ContentManager.swift */; };
 		DEF40C1E28E3509D00C2EB67 /* ChallengeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */; };
@@ -506,6 +509,9 @@
 		DEC41B8B28F4599E00280990 /* RecipeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableView.swift; sourceTree = "<group>"; };
 		DEC41B8C28F4599E00280990 /* RecipeTableElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableElement.swift; sourceTree = "<group>"; };
 		DEC41B8D28F4599E00280990 /* RecipeNavButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeNavButton.swift; sourceTree = "<group>"; };
+		DEC41BA628F562E300280990 /* RecipeTableInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableInfoCell.swift; sourceTree = "<group>"; };
+		DEC41BA828F5696F00280990 /* RecipeTableTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableTimeCell.swift; sourceTree = "<group>"; };
+		DEC41BAB28F56B0B00280990 /* RecipeTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTimeView.swift; sourceTree = "<group>"; };
 		DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentMediator.swift; sourceTree = "<group>"; };
 		DEF40BE228E3509D00C2EB67 /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCover.swift; sourceTree = "<group>"; };
@@ -1540,10 +1546,29 @@
 		DEC41B7D28F4599E00280990 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				DEC41BA528F562D300280990 /* Cells */,
 				DEC41B8B28F4599E00280990 /* RecipeTableView.swift */,
 				DEC41B8C28F4599E00280990 /* RecipeTableElement.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEC41BA528F562D300280990 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41BAA28F56AFD00280990 /* Atoms */,
+				DEC41BA628F562E300280990 /* RecipeTableInfoCell.swift */,
+				DEC41BA828F5696F00280990 /* RecipeTableTimeCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DEC41BAA28F56AFD00280990 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41BAB28F56B0B00280990 /* RecipeTimeView.swift */,
+			);
+			path = Atoms;
 			sourceTree = "<group>";
 		};
 		DEF40BE028E3509D00C2EB67 /* Content */ = {
@@ -1947,6 +1972,7 @@
 				DE54ACCF28D09F26004F1514 /* ContentError.swift in Sources */,
 				DEC41AAB28EEC9F500280990 /* RRecipesTableSeparatorCell.swift in Sources */,
 				DEC41B9328F4599E00280990 /* RecipeViewController.swift in Sources */,
+				DEC41BA928F5696F00280990 /* RecipeTableTimeCell.swift in Sources */,
 				DE54ADAC28D0A011004F1514 /* SplashViewController.swift in Sources */,
 				DEF40C5328E456BD00C2EB67 /* ODietsTableElement.swift in Sources */,
 				DE67A83A28EC1F2C00369B02 /* SettingsGetAccessCell.swift in Sources */,
@@ -1978,6 +2004,7 @@
 				DE54ADD528D0A012004F1514 /* TabView.swift in Sources */,
 				DEC41AC028EEED8300280990 /* CategoryCollectionView.swift in Sources */,
 				DEC41ADF28EEF2B600280990 /* ChallengeHeaderCell.swift in Sources */,
+				DEC41BAC28F56B0B00280990 /* RecipeTimeView.swift in Sources */,
 				DE54ADC528D0A012004F1514 /* OBriefView.swift in Sources */,
 				DEC41BA028F4599E00280990 /* RecipeTableView.swift in Sources */,
 				DE54ACA728D09F25004F1514 /* AmplitudeManager.swift in Sources */,
@@ -2078,6 +2105,7 @@
 				DEF40C3328E3509D00C2EB67 /* GetChallengeRequest.swift in Sources */,
 				DE54ACAD28D09F25004F1514 /* Toast.swift in Sources */,
 				DEC41AFC28EF203F00280990 /* ExploreView.swift in Sources */,
+				DEC41BA728F562E300280990 /* RecipeTableInfoCell.swift in Sources */,
 				DE67A84E28EC1F2C00369B02 /* ForYouTableView.swift in Sources */,
 				DEC41ADC28EEF2B600280990 /* ChallengeViewModel.swift in Sources */,
 				DEF40C2628E3509D00C2EB67 /* RecipeCover.swift in Sources */,

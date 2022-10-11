@@ -18,9 +18,6 @@ final class GetRecipeKitResponse {
             let imageUrl = URL(string: imagePath),
             let rankingId = data["ranking_id"] as? Int,
             let categoriesIds = data["categories_ids"] as? [Int],
-            let timePreparing = data["time_preparing"] as? Int,
-            let timeCooking = data["time_cooking"] as? Int,
-            let timeTotal = data["time_min"] as? Int,
             let linkPath = data["link"] as? String,
             let linkUrl = URL(string: linkPath),
             let saved = data["saved"] as? Bool,
@@ -33,6 +30,10 @@ final class GetRecipeKitResponse {
         else {
             return nil
         }
+        
+        let timePreparing = data["time_preparing"] as? Int
+        let timeCooking = data["time_cooking"] as? Int
+        let timeTotal = data["time_min"] as? Int
         
         let stepsArray = data["steps"] as? [[String: Any]] ?? []
         let steps = stepsArray.compactMap { stepJSON -> RecipeStep? in

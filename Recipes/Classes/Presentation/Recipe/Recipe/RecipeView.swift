@@ -111,9 +111,7 @@ private extension RecipeView {
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false
         view.contentInsetAdjustmentBehavior = .never
-        view.backgroundColor = Appearance.background
-        view.layer.cornerRadius = 20.scale
-        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

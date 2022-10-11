@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import Kingfisher
 
 final class RecipeViewController: UIViewController {
     lazy var mainView = RecipeView()
@@ -54,6 +55,12 @@ final class RecipeViewController: UIViewController {
         mainView.closeButton.rx.tap
             .bind(to: Binder(self) { base, void in
                 base.dismiss(animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.imageUrl
+            .drive(Binder(mainView.imageView) { base, url in
+                base.kf.setImage(with: url)
             })
             .disposed(by: disposeBag)
         

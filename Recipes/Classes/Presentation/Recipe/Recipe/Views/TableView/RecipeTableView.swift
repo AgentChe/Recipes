@@ -46,9 +46,23 @@ extension RecipeTableView: UITableViewDataSource {
         switch elements[indexPath.row] {
         case .offset:
             let cell = dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self))!
+            cell.backgroundColor = Appearance.background
+            cell.contentView.backgroundColor = Appearance.background
+            cell.selectionStyle = .none
+            return cell
+        case .transparent:
+            let cell = dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self))!
             cell.backgroundColor = UIColor.clear
             cell.contentView.backgroundColor = UIColor.clear
             cell.selectionStyle = .none
+            return cell
+        case .info(let element):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: RecipeTableInfoCell.self)) as! RecipeTableInfoCell
+            cell.setup(element: element)
+            return cell
+        case .time(let element):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: RecipeTableTimeCell.self)) as! RecipeTableTimeCell
+            cell.setup(element: element)
             return cell
         }
     }
@@ -60,6 +74,12 @@ extension RecipeTableView: UITableViewDelegate {
         switch elements[indexPath.row] {
         case .offset(let offset):
             return offset
+        case .transparent:
+            return 373.scale
+        case .time:
+            return 24.scale
+        default:
+            return UITableView.automaticDimension
         }
     }
     
@@ -72,6 +92,8 @@ extension RecipeTableView: UITableViewDelegate {
 private extension RecipeTableView {
     func initialize() {
         register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
+        register(RecipeTableInfoCell.self, forCellReuseIdentifier: String(describing: RecipeTableInfoCell.self))
+        register(RecipeTableTimeCell.self, forCellReuseIdentifier: String(describing: RecipeTableTimeCell.self))
         
         dataSource = self
         delegate = self

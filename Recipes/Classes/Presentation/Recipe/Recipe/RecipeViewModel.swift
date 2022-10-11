@@ -18,6 +18,7 @@ final class RecipeViewModel {
     
     lazy var isSavedRecipe = makeIsSavedRecipe()
     lazy var reader = makeReader()
+    lazy var imageUrl = makeImageUrl()
     lazy var shareLink = makeShareLink()
     lazy var elements = makeElements()
     lazy var activity = RxActivityIndicator()
@@ -107,6 +108,11 @@ private extension RecipeViewModel {
         return Driver.merge(step, read)
     }
     
+    func makeImageUrl() -> Driver<URL> {
+        recipeKit
+            .map { $0.recipe.imageUrl }
+    }
+    
     func makeShareLink() -> Driver<URL> {
         recipeKit
             .map { $0.recipe.shareLink }
@@ -119,6 +125,25 @@ private extension RecipeViewModel {
                 var result = [RecipeTableElement]()
                 
                 let recipe = recipeKit.recipe
+                
+                result.append(.transparent)
+                
+                let recipeCategories = categories
+                    .filter { recipe.categoriesIds.contains($0.id) }
+                    .map { $0.name }
+                let infoElement = RecipeTableInfoElement(name: recipe.name,
+                                                         categories: recipeCategories)
+                result.append(.info(infoElement))
+                
+                let hasTime = (recipe.timePreparing != nil) || (recipe.timeCooking != nil)
+                if hasTime {
+                    let element = RecipeTableTimeElement(timePreparing: recipe.timePreparing,
+                                                         timeCooking: recipe.timeCooking)
+                    result.append(contentsOf: [
+                        .offset(18.scale),
+                        .time(element)
+                    ])
+                }
                 
                 return result
             }

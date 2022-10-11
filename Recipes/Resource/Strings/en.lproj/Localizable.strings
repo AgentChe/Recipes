@@ -162,3 +162,4 @@
 
 // MARK: Recipe
 "Recipe.StepButton" = "Step-by-step";
+"Recipe.Time" = "%i min";
