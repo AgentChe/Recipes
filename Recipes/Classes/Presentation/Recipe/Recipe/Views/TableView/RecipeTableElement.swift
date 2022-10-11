@@ -12,6 +12,9 @@ enum RecipeTableElement {
     case transparent
     case info(RecipeTableInfoElement)
     case time(RecipeTableTimeElement)
+    case title(String)
+    case ingredient(RecipeTableIngredientElement)
+    case shopping
 }
 
 struct RecipeTableInfoElement {
@@ -22,4 +25,14 @@ struct RecipeTableInfoElement {
 struct RecipeTableTimeElement {
     let timePreparing: Int?
     let timeCooking: Int?
+}
+
+final class RecipeTableIngredientElement {
+    let ingredient: Ingredient
+    var marked: Bool
+    
+    init(ingredient: Ingredient, marked: Bool = false) {
+        self.ingredient = ingredient
+        self.marked = marked
+    }
 }

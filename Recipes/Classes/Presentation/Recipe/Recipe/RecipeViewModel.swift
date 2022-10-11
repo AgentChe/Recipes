@@ -145,6 +145,28 @@ private extension RecipeViewModel {
                     ])
                 }
                 
+                if !recipe.ingredients.isEmpty {
+                    result.append(contentsOf: [
+                        .offset(34.scale),
+                        .title("Recipe.Ingredients".localized),
+                        .offset(24.scale)
+                    ])
+                    
+                    recipe.ingredients.enumerated().forEach { index, ingredient in
+                        let element = RecipeTableIngredientElement(ingredient: ingredient)
+                        result.append(.ingredient(element))
+                        
+                        if (recipe.ingredients.count - 1) != index {
+                            result.append(.offset(20.scale))
+                        }
+                    }
+                    
+                    result.append(contentsOf: [
+                        .offset(24.scale),
+                        .shopping
+                    ])
+                }
+                
                 return result
             }
     }

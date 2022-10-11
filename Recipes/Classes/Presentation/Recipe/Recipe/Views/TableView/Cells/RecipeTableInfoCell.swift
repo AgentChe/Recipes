@@ -88,7 +88,7 @@ private extension RecipeTableInfoCell {
     func makeContainer() -> UIView {
         let view = UIView()
         view.backgroundColor = Appearance.background
-        view.layer.cornerRadius = 30.scale
+        view.layer.cornerRadius = 40.scale
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)

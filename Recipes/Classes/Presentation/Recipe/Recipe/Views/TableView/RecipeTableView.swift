@@ -64,6 +64,16 @@ extension RecipeTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: RecipeTableTimeCell.self)) as! RecipeTableTimeCell
             cell.setup(element: element)
             return cell
+        case .title(let element):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: RecipeTitleCell.self)) as! RecipeTitleCell
+            cell.setup(element: element)
+            return cell
+        case .ingredient(let element):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: RecipeIngredientCell.self)) as! RecipeIngredientCell
+            cell.setup(element: element)
+            return cell
+        case .shopping:
+            return dequeueReusableCell(withIdentifier: String(describing: RecipeShoppingButtonCell.self))!
         }
     }
 }
@@ -78,6 +88,8 @@ extension RecipeTableView: UITableViewDelegate {
             return 373.scale
         case .time:
             return 24.scale
+        case .shopping:
+            return 53.scale
         default:
             return UITableView.automaticDimension
         }
@@ -94,6 +106,10 @@ private extension RecipeTableView {
         register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
         register(RecipeTableInfoCell.self, forCellReuseIdentifier: String(describing: RecipeTableInfoCell.self))
         register(RecipeTableTimeCell.self, forCellReuseIdentifier: String(describing: RecipeTableTimeCell.self))
+        register(RecipeTitleCell.self, forCellReuseIdentifier: String(describing: RecipeTitleCell.self))
+        register(RecipeTitleCell.self, forCellReuseIdentifier: String(describing: RecipeTitleCell.self))
+        register(RecipeIngredientCell.self, forCellReuseIdentifier: String(describing: RecipeIngredientCell.self))
+        register(RecipeShoppingButtonCell.self, forCellReuseIdentifier: String(describing: RecipeShoppingButtonCell.self))
         
         dataSource = self
         delegate = self

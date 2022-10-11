@@ -163,3 +163,5 @@
 // MARK: Recipe
 "Recipe.StepButton" = "Step-by-step";
 "Recipe.Time" = "%i min";
+"Recipe.Ingredients" = "Ingredients";
+"Recipe.Shopping.AddAll" = "Add all to Shopping List";

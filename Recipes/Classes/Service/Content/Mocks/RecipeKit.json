@@ -22,7 +22,32 @@
                 "id": 2,
                 "name": "Soy sauce",
                 "value": "1 teaspoon"
-            }
+            },
+            {
+                "id": 3,
+                "name": "Cooked short-grain rice (1 rice cooker cup)",
+                "value": "2 tablespoons"
+            },
+            {
+                "id": 4,
+                "name": "Vegetable oil",
+                "value": "1 teaspoon"
+            },
+            {
+                "id": 5,
+                "name": "Cooked short-grain rice (1 rice cooker cup)",
+                "value": "2 tablespoons"
+            },
+            {
+                "id": 6,
+                "name": "Cooked short-grain rice (1 rice cooker cup)",
+                "value": "1 teaspoon"
+            },
+            {
+                "id": 7,
+                "name": "Cooked short-grain rice (1 rice cooker cup)",
+                "value": "1 teaspoon"
+            },
         ],
         "carbs": {
             "g": 52,
