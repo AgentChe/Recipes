@@ -8,7 +8,8 @@
 import UIKit
 
 final class RecipeShoppingButtonCell: UITableViewCell {
-    lazy var button = makeButton()
+    lazy var container = makeContainer()
+    lazy var label = makeLabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -36,28 +37,42 @@ private extension RecipeShoppingButtonCell {
 private extension RecipeShoppingButtonCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 35.scale),
-            button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -35.scale),
-            button.topAnchor.constraint(equalTo: contentView.topAnchor),
-            button.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 35.scale),
+            container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -35.scale),
+            container.topAnchor.constraint(equalTo: contentView.topAnchor),
+            container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: container.centerYAnchor)
         ])
     }
 }
 
 // MARK: Lazy initialization
 private extension RecipeShoppingButtonCell {
-    func makeButton() -> UIButton {
-        let attrs = TextAttributes()
-            .textColor(Appearance.black)
-            .font(Fonts.PlusJakartaSans.semiBold(size: 16.scale))
-            .letterSpacing(-0.17.scale)
-        
-        let view = UIButton()
-        view.setAttributedTitle("Recipe.Shopping.AddAll".localized.attributed(with: attrs), for: .normal)
+    func makeContainer() -> UIView {
+        let view = UIView()
         view.layer.cornerRadius = 16.scale
         view.backgroundColor = Appearance.secondary5
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
+        return view
+    }
+    
+    func makeLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(Appearance.black)
+            .font(Fonts.PlusJakartaSans.semiBold(size: 16.scale))
+            .lineHeight(20.8.scale)
+            .letterSpacing(-0.17.scale)
+            .textAlignment(.center)
+        
+        let view = UILabel()
+        view.attributedText = "Recipe.Shopping.AddAll".localized.attributed(with: attrs)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        container.addSubview(view)
         return view
     }
 }

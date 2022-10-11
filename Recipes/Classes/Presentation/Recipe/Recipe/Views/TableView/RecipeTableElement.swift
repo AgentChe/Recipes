@@ -15,6 +15,9 @@ enum RecipeTableElement {
     case title(String)
     case ingredient(RecipeTableIngredientElement)
     case shopping
+    case step(RecipeTableStepElement)
+    case separator
+    case seeAll
 }
 
 struct RecipeTableInfoElement {
@@ -35,4 +38,9 @@ final class RecipeTableIngredientElement {
         self.ingredient = ingredient
         self.marked = marked
     }
+}
+
+struct RecipeTableStepElement {
+    let step: RecipeStep
+    let number: String
 }

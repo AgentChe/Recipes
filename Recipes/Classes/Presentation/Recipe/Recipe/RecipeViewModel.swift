@@ -167,6 +167,36 @@ private extension RecipeViewModel {
                     ])
                 }
                 
+                if !recipe.steps.isEmpty {
+                    result.append(contentsOf: [
+                        .offset(30.scale),
+                        .title("Recipe.Steps".localized),
+                        .offset(16.scale)
+                    ])
+                    
+                    let steps = isShowingAll ? recipe.steps : Array(recipe.steps.prefix(5))
+                    steps.enumerated().forEach { index, step in
+                        let element = RecipeTableStepElement(step: step, number: String(index + 1))
+                        result.append(.step(element))
+
+                        if (steps.count - 1) != index {
+                            result.append(contentsOf: [
+                                .offset(16.scale),
+                                .separator,
+                                .offset(16.scale)
+                            ])
+                        }
+                    }
+                }
+                
+                let needShowSeeAll = recipe.steps.count > 5 && !isShowingAll
+                if needShowSeeAll {
+                    result.append(contentsOf: [
+                        .offset(24.scale),
+                        .seeAll
+                    ])
+                }
+                
                 return result
             }
     }

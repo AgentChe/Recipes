@@ -165,3 +165,5 @@
 "Recipe.Time" = "%i min";
 "Recipe.Ingredients" = "Ingredients";
 "Recipe.Shopping.AddAll" = "Add all to Shopping List";
+"Recipe.Steps" = "Steps";
+"Recipe.SeeAll" = "See all";

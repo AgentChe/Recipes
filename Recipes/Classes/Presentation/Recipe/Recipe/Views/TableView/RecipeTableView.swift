@@ -74,6 +74,14 @@ extension RecipeTableView: UITableViewDataSource {
             return cell
         case .shopping:
             return dequeueReusableCell(withIdentifier: String(describing: RecipeShoppingButtonCell.self))!
+        case .step(let element):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: RecipeStepCell.self)) as! RecipeStepCell
+            cell.setup(element: element)
+            return cell
+        case .separator:
+            return dequeueReusableCell(withIdentifier: String(describing: RecipeSeparatorCell.self))!
+        case .seeAll:
+            return dequeueReusableCell(withIdentifier: String(describing: RecipeSeeAllCell.self))!
         }
     }
 }
@@ -88,8 +96,12 @@ extension RecipeTableView: UITableViewDelegate {
             return 373.scale
         case .time:
             return 24.scale
-        case .shopping:
+        case .shopping, .seeAll:
             return 53.scale
+        case .step:
+            return 60.scale
+        case .separator:
+            return 1.scale
         default:
             return UITableView.automaticDimension
         }
@@ -110,6 +122,9 @@ private extension RecipeTableView {
         register(RecipeTitleCell.self, forCellReuseIdentifier: String(describing: RecipeTitleCell.self))
         register(RecipeIngredientCell.self, forCellReuseIdentifier: String(describing: RecipeIngredientCell.self))
         register(RecipeShoppingButtonCell.self, forCellReuseIdentifier: String(describing: RecipeShoppingButtonCell.self))
+        register(RecipeStepCell.self, forCellReuseIdentifier: String(describing: RecipeStepCell.self))
+        register(RecipeSeparatorCell.self, forCellReuseIdentifier: String(describing: RecipeSeparatorCell.self))
+        register(RecipeSeeAllCell.self, forCellReuseIdentifier: String(describing: RecipeSeeAllCell.self))
         
         dataSource = self
         delegate = self
