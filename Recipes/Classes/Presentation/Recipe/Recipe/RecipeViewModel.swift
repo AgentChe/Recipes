@@ -25,6 +25,7 @@ final class RecipeViewModel {
     
     private lazy var isShowingAll = makeIsShowingAll()
     private lazy var categories = makeCategories()
+    private lazy var ingredientsShell = makeIngredientsShell()
     private lazy var recipeKit = makeRecipeKit()
     private lazy var readingRecipes = makeReadingRecipes()
     
@@ -120,8 +121,8 @@ private extension RecipeViewModel {
     
     func makeElements() -> Driver<[RecipeTableElement]> {
         Driver
-            .combineLatest(categories, recipeKit, isShowingAll)
-            .map { categories, recipeKit, isShowingAll -> [RecipeTableElement] in
+            .combineLatest(categories, recipeKit, isShowingAll, ingredientsShell)
+            .map { categories, recipeKit, isShowingAll, ingredientsShell -> [RecipeTableElement] in
                 var result = [RecipeTableElement]()
                 
                 let recipe = recipeKit.recipe
@@ -145,25 +146,24 @@ private extension RecipeViewModel {
                     ])
                 }
                 
-                if !recipe.ingredients.isEmpty {
+                if !ingredientsShell.elements.isEmpty {
                     result.append(contentsOf: [
                         .offset(34.scale),
                         .title("Recipe.Ingredients".localized),
                         .offset(24.scale)
                     ])
                     
-                    recipe.ingredients.enumerated().forEach { index, ingredient in
-                        let element = RecipeTableIngredientElement(ingredient: ingredient)
+                    ingredientsShell.elements.enumerated().forEach { index, element in
                         result.append(.ingredient(element))
                         
-                        if (recipe.ingredients.count - 1) != index {
+                        if (ingredientsShell.elements.count - 1) != index {
                             result.append(.offset(20.scale))
                         }
                     }
                     
                     result.append(contentsOf: [
                         .offset(24.scale),
-                        .shopping
+                        .shopping(ingredientsShell)
                     ])
                 }
                 
@@ -240,6 +240,13 @@ private extension RecipeViewModel {
         contentManager
             .obtainCategories(forceUpdate: false)
             .asDriver(onErrorJustReturn: [])
+    }
+    
+    func makeIngredientsShell() -> Driver<RecipeIngredientsShell> {
+        recipeKit
+            .map { recipeKit -> RecipeIngredientsShell in
+                RecipeIngredientsShell(ingredients: recipeKit.recipe.ingredients)
+            }
     }
     
     func makeRecipeKit() -> Driver<RecipeKit> {

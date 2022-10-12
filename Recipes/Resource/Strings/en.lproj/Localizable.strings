@@ -164,7 +164,6 @@
 "Recipe.StepButton" = "Step-by-step";
 "Recipe.Time" = "%i min";
 "Recipe.Ingredients" = "Ingredients";
-"Recipe.Shopping.AddAll" = "Add all to Shopping List";
 "Recipe.Steps" = "Steps";
 "Recipe.SeeAll" = "See all";
 "Recipe.Carbs" = "Carbs";
@@ -174,3 +173,5 @@
 "Recipe.Percent" = "%i%%";
 "Recipe.SimilarRecipes" = "Similar recipes";
 "Recipe.ExploreCategories" = "Explore categories";
+"Recipe.Shopping.AddAll" = "Add all to Shopping List";
+"Recipe.Shopping.RemoveAll" = "Remove all from Shopping List";

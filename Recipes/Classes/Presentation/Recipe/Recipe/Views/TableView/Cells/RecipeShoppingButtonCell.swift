@@ -23,6 +23,20 @@ final class RecipeShoppingButtonCell: UITableViewCell {
     }
 }
 
+// MARK: Public
+extension RecipeShoppingButtonCell {
+    func setup(element: RecipeIngredientsShell) {
+        let title = element.allSelected ? "Recipe.Shopping.RemoveAll".localized : "Recipe.Shopping.AddAll".localized
+        let attrs = TextAttributes()
+            .textColor(Appearance.black)
+            .font(Fonts.PlusJakartaSans.semiBold(size: 16.scale))
+            .lineHeight(20.8.scale)
+            .letterSpacing(-0.17.scale)
+            .textAlignment(.center)
+        label.attributedText = title.attributed(with: attrs)
+    }
+}
+
 // MARK: Private
 private extension RecipeShoppingButtonCell {
     func initialize() {
@@ -62,15 +76,7 @@ private extension RecipeShoppingButtonCell {
     }
     
     func makeLabel() -> UILabel {
-        let attrs = TextAttributes()
-            .textColor(Appearance.black)
-            .font(Fonts.PlusJakartaSans.semiBold(size: 16.scale))
-            .lineHeight(20.8.scale)
-            .letterSpacing(-0.17.scale)
-            .textAlignment(.center)
-        
         let view = UILabel()
-        view.attributedText = "Recipe.Shopping.AddAll".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
         return view

@@ -14,7 +14,7 @@ enum RecipeTableElement {
     case time(RecipeTableTimeElement)
     case title(String)
     case ingredient(RecipeTableIngredientElement)
-    case shopping
+    case shopping(RecipeIngredientsShell)
     case step(RecipeTableStepElement)
     case separator
     case seeAll

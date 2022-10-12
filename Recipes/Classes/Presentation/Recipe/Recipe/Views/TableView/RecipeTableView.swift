@@ -8,6 +8,7 @@
 import UIKit
 
 protocol RecipeTableDelegate: AnyObject {
+    func recipeTableDidTappedShopping()
     func recipeTableDidTapped(step: RecipeStep)
     func recipeTableDidTappedSeeAll()
     func recipeTableDidTapped(recipe: RecipeCover)
@@ -75,8 +76,10 @@ extension RecipeTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: RecipeIngredientCell.self)) as! RecipeIngredientCell
             cell.setup(element: element)
             return cell
-        case .shopping:
-            return dequeueReusableCell(withIdentifier: String(describing: RecipeShoppingButtonCell.self))!
+        case .shopping(let element):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: RecipeShoppingButtonCell.self)) as! RecipeShoppingButtonCell
+            cell.setup(element: element)
+            return cell
         case .step(let element):
             let cell = dequeueReusableCell(withIdentifier: String(describing: RecipeStepCell.self)) as! RecipeStepCell
             cell.setup(element: element)
@@ -138,6 +141,17 @@ extension RecipeTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch elements[indexPath.row] {
+        case .ingredient(let element):
+            element.marked.toggle()
+            reloadData()
+            
+            mainDelegate?.recipeTableDidTappedShopping()
+        case .shopping(let element):
+            let allSelected = element.allSelected
+            element.elements.forEach { $0.marked = !allSelected }
+            reloadData()
+            
+            mainDelegate?.recipeTableDidTappedShopping()
         case .step(let element):
             mainDelegate?.recipeTableDidTapped(step: element.step)
         case .seeAll:

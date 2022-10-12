@@ -115,6 +115,10 @@ extension RecipeViewController {
 
 // MARK: RecipeTableDelegate
 extension RecipeViewController: RecipeTableDelegate {
+    func recipeTableDidTappedShopping() {
+        // TODO: реализовать сохранение
+    }
+    
     func recipeTableDidTapped(step: RecipeStep) {
         viewModel.didTapStep.accept(step)
     }
