@@ -197,6 +197,34 @@ private extension RecipeViewModel {
                     ])
                 }
                 
+                let cpfElement = RecipeTableCPFElement(carbs: recipe.carbs,
+                                                protein: recipe.protein,
+                                                fats: recipe.fats)
+                result.append(contentsOf: [
+                    .offset(40.scale),
+                    .cpf(cpfElement)
+                ])
+                
+                if !recipeKit.similarRecipes.isEmpty {
+                    result.append(contentsOf: [
+                        .offset(40.scale),
+                        .title("Recipe.SimilarRecipes".localized),
+                        .offset(16.scale),
+                        .recipes(recipeKit.similarRecipes)
+                    ])
+                }
+                
+                if !categories.isEmpty {
+                    result.append(contentsOf: [
+                        .offset(30.scale),
+                        .title("Recipe.ExploreCategories".localized),
+                        .offset(16.scale),
+                        .categories(categories)
+                    ])
+                }
+                
+                result.append(.offset(41.scale))
+                
                 return result
             }
     }

@@ -242,6 +242,9 @@
 		DEC41BB428F5A6AE00280990 /* RecipeStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BB328F5A6AE00280990 /* RecipeStepCell.swift */; };
 		DEC41BB628F5A7B500280990 /* RecipeSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BB528F5A7B500280990 /* RecipeSeparatorCell.swift */; };
 		DEC41BB828F5A82600280990 /* RecipeSeeAllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BB728F5A82600280990 /* RecipeSeeAllCell.swift */; };
+		DEC41BBA28F5B11300280990 /* RecipeCPFCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BB928F5B11300280990 /* RecipeCPFCell.swift */; };
+		DEC41BBC28F5B43000280990 /* RecipeCPFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BBB28F5B43000280990 /* RecipeCPFView.swift */; };
+		DEC41BBE28F5B67000280990 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BBD28F5B66F00280990 /* CircleProgressView.swift */; };
 		DEF40C1B28E3509D00C2EB67 /* ContentMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */; };
 		DEF40C1C28E3509D00C2EB67 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE228E3509D00C2EB67 /* ContentManager.swift */; };
 		DEF40C1E28E3509D00C2EB67 /* ChallengeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */; };
@@ -524,6 +527,9 @@
 		DEC41BB328F5A6AE00280990 /* RecipeStepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStepCell.swift; sourceTree = "<group>"; };
 		DEC41BB528F5A7B500280990 /* RecipeSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSeparatorCell.swift; sourceTree = "<group>"; };
 		DEC41BB728F5A82600280990 /* RecipeSeeAllCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSeeAllCell.swift; sourceTree = "<group>"; };
+		DEC41BB928F5B11300280990 /* RecipeCPFCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCPFCell.swift; sourceTree = "<group>"; };
+		DEC41BBB28F5B43000280990 /* RecipeCPFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCPFView.swift; sourceTree = "<group>"; };
+		DEC41BBD28F5B66F00280990 /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentMediator.swift; sourceTree = "<group>"; };
 		DEF40BE228E3509D00C2EB67 /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCover.swift; sourceTree = "<group>"; };
@@ -766,6 +772,7 @@
 				DE54AC8E28D09F25004F1514 /* PaddingLabel.swift */,
 				DE54AC8F28D09F25004F1514 /* CircleView.swift */,
 				DE54AC9028D09F25004F1514 /* GradientView.swift */,
+				DEC41BBD28F5B66F00280990 /* CircleProgressView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -1577,6 +1584,7 @@
 				DEC41BB328F5A6AE00280990 /* RecipeStepCell.swift */,
 				DEC41BB528F5A7B500280990 /* RecipeSeparatorCell.swift */,
 				DEC41BB728F5A82600280990 /* RecipeSeeAllCell.swift */,
+				DEC41BB928F5B11300280990 /* RecipeCPFCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1585,6 +1593,7 @@
 			isa = PBXGroup;
 			children = (
 				DEC41BAB28F56B0B00280990 /* RecipeTimeView.swift */,
+				DEC41BBB28F5B43000280990 /* RecipeCPFView.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -1985,6 +1994,7 @@
 				DEC41AAA28EEC9F500280990 /* RankingsViewModel.swift in Sources */,
 				DEF40C5528E48E1B00C2EB67 /* Recipe.swift in Sources */,
 				DEC41B2528EF296300280990 /* LibraryTableElement.swift in Sources */,
+				DEC41BBA28F5B11300280990 /* RecipeCPFCell.swift in Sources */,
 				DE54ACCB28D09F26004F1514 /* XOREncryption.swift in Sources */,
 				DE54ACB128D09F25004F1514 /* RestAPITransport.swift in Sources */,
 				DE54AD2F28D09F68004F1514 /* IAPActionResult.swift in Sources */,
@@ -2051,6 +2061,7 @@
 				DEC41B0428EF203F00280990 /* ExploreCollectionSeparatorCell.swift in Sources */,
 				DEC41B0628EF203F00280990 /* ExploreCollectionElement.swift in Sources */,
 				DEF40C3928E3509D00C2EB67 /* SearchRecipesResponse.swift in Sources */,
+				DEC41BBC28F5B43000280990 /* RecipeCPFView.swift in Sources */,
 				DEF40C3728E3509D00C2EB67 /* GetExploreKitResponse.swift in Sources */,
 				DE54ACAA28D09F25004F1514 /* ImagePicker.swift in Sources */,
 				DE54AD2C28D09F68004F1514 /* IAPManager.swift in Sources */,
@@ -2115,6 +2126,7 @@
 				DE54AC2428D09BF9004F1514 /* AppDelegate.swift in Sources */,
 				DE67A83928EC1F2C00369B02 /* SettingsLinkCell.swift in Sources */,
 				DEC41BB428F5A6AE00280990 /* RecipeStepCell.swift in Sources */,
+				DEC41BBE28F5B67000280990 /* CircleProgressView.swift in Sources */,
 				DEC41B2328EF296300280990 /* LibraryTableRecipeCell.swift in Sources */,
 				DEC41ABC28EEED8300280990 /* CategoryView.swift in Sources */,
 				DEF40C4128E3509D00C2EB67 /* GetSavedRecipesRequest.swift in Sources */,

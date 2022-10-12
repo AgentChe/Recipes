@@ -8,7 +8,10 @@
 import UIKit
 
 protocol RecipeTableDelegate: AnyObject {
-    
+    func recipeTableDidTapped(step: RecipeStep)
+    func recipeTableDidTappedSeeAll()
+    func recipeTableDidTapped(recipe: RecipeCover)
+    func recipeTableDidTapped(category: Category)
 }
 
 final class RecipeTableView: UITableView {
@@ -82,6 +85,26 @@ extension RecipeTableView: UITableViewDataSource {
             return dequeueReusableCell(withIdentifier: String(describing: RecipeSeparatorCell.self))!
         case .seeAll:
             return dequeueReusableCell(withIdentifier: String(describing: RecipeSeeAllCell.self))!
+        case .cpf(let element):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: RecipeCPFCell.self)) as! RecipeCPFCell
+            cell.setup(element: element)
+            return cell
+        case .recipes(let elements):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: ForYouRecipesCell.self)) as! ForYouRecipesCell
+            cell.backgroundColor = Appearance.background
+            cell.contentView.backgroundColor = Appearance.background
+            cell.setup(elements: elements, tapped: { [weak self] recipe in
+                self?.mainDelegate?.recipeTableDidTapped(recipe: recipe)
+            })
+            return cell
+        case .categories(let elements):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: ForYouCategoriesCell.self)) as! ForYouCategoriesCell
+            cell.backgroundColor = Appearance.background
+            cell.contentView.backgroundColor = Appearance.background
+            cell.setup(elements: elements, tapped: { [weak self] category in
+                self?.mainDelegate?.recipeTableDidTapped(category: category)
+            })
+            return cell
         }
     }
 }
@@ -102,13 +125,26 @@ extension RecipeTableView: UITableViewDelegate {
             return 60.scale
         case .separator:
             return 1.scale
+        case .cpf:
+            return 114.scale
+        case .recipes:
+            return 221.scale
+        case .categories:
+            return 56.scale
         default:
             return UITableView.automaticDimension
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        switch elements[indexPath.row] {
+        case .step(let element):
+            mainDelegate?.recipeTableDidTapped(step: element.step)
+        case .seeAll:
+            mainDelegate?.recipeTableDidTappedSeeAll()
+        default:
+            break
+        }
     }
 }
 
@@ -125,6 +161,9 @@ private extension RecipeTableView {
         register(RecipeStepCell.self, forCellReuseIdentifier: String(describing: RecipeStepCell.self))
         register(RecipeSeparatorCell.self, forCellReuseIdentifier: String(describing: RecipeSeparatorCell.self))
         register(RecipeSeeAllCell.self, forCellReuseIdentifier: String(describing: RecipeSeeAllCell.self))
+        register(RecipeCPFCell.self, forCellReuseIdentifier: String(describing: RecipeCPFCell.self))
+        register(ForYouRecipesCell.self, forCellReuseIdentifier: String(describing: ForYouRecipesCell.self))
+        register(ForYouCategoriesCell.self, forCellReuseIdentifier: String(describing: ForYouCategoriesCell.self))
         
         dataSource = self
         delegate = self

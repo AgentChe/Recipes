@@ -18,6 +18,9 @@ enum RecipeTableElement {
     case step(RecipeTableStepElement)
     case separator
     case seeAll
+    case cpf(RecipeTableCPFElement)
+    case recipes([RecipeCover])
+    case categories([Category])
 }
 
 struct RecipeTableInfoElement {
@@ -43,4 +46,10 @@ final class RecipeTableIngredientElement {
 struct RecipeTableStepElement {
     let step: RecipeStep
     let number: String
+}
+
+struct RecipeTableCPFElement {
+    let carbs: RecipeCPF
+    let protein: RecipeCPF
+    let fats: RecipeCPF
 }

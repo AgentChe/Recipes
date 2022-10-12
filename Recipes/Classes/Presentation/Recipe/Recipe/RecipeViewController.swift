@@ -115,7 +115,31 @@ extension RecipeViewController {
 
 // MARK: RecipeTableDelegate
 extension RecipeViewController: RecipeTableDelegate {
+    func recipeTableDidTapped(step: RecipeStep) {
+        viewModel.didTapStep.accept(step)
+    }
     
+    func recipeTableDidTappedSeeAll() {
+        viewModel.didTapSeeAll.accept(Void())
+    }
+    
+    func recipeTableDidTapped(recipe: RecipeCover) {
+        let vc: UIViewController
+        
+        let needPayment = !SessionManager().hasActiveSubscriptions()
+        if needPayment && recipe.paid {
+            vc = PaygateViewController.make()
+        } else {
+            vc = RecipeViewController.make(recipeId: recipe.id)
+        }
+        
+        present(vc, animated: true)
+    }
+    
+    func recipeTableDidTapped(category: Category) {
+        let vc = CategoryViewController.make(category: category)
+        present(vc, animated: true)
+    }
 }
 
 // MARK: Private

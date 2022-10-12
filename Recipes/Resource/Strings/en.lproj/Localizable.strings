@@ -167,3 +167,10 @@
 "Recipe.Shopping.AddAll" = "Add all to Shopping List";
 "Recipe.Steps" = "Steps";
 "Recipe.SeeAll" = "See all";
+"Recipe.Carbs" = "Carbs";
+"Recipe.Protein" = "Protein";
+"Recipe.Fats" = "Fats";
+"Recipe.Gram" = "%ig";
+"Recipe.Percent" = "%i%%";
+"Recipe.SimilarRecipes" = "Similar recipes";
+"Recipe.ExploreCategories" = "Explore categories";
