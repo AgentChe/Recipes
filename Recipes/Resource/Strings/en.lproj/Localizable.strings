@@ -175,3 +175,11 @@
 "Recipe.ExploreCategories" = "Explore categories";
 "Recipe.Shopping.AddAll" = "Add all to Shopping List";
 "Recipe.Shopping.RemoveAll" = "Remove all from Shopping List";
+
+// MARK: Steps
+"Steps.Title" = "Steps";
+
+// MARK: Reader
+"Reader.MarkAsFinished" = "Mark as finished";
+"Reader.FinishStep.Title" = "Enjoy your meal!";
+"Reader.FinishStep.SubTitle" = "We hope it looks good as it tastes";

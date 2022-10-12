@@ -70,9 +70,8 @@ final class RecipeViewController: UIViewController {
         
         viewModel.reader
             .drive(Binder(self) { base, reader in
-                // TODO: impl
-//                let vc = ReaderViewController.make(book: reader.0, chapter: reader.1)
-//                base.present(vc, animated: true)
+                let vc = ReaderViewController.make(recipe: reader.0, step: reader.1)
+                base.present(vc, animated: true)
             })
             .disposed(by: disposeBag)
         

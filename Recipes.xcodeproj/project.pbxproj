@@ -246,6 +246,15 @@
 		DEC41BBC28F5B43000280990 /* RecipeCPFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BBB28F5B43000280990 /* RecipeCPFView.swift */; };
 		DEC41BBE28F5B67000280990 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BBD28F5B66F00280990 /* CircleProgressView.swift */; };
 		DEC41BC128F6BF8A00280990 /* RecipeIngredientsShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BC028F6BF8A00280990 /* RecipeIngredientsShell.swift */; };
+		DEC41BCB28F6E68A00280990 /* StepsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BC328F6E68A00280990 /* StepsViewModel.swift */; };
+		DEC41BCC28F6E68A00280990 /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BC428F6E68A00280990 /* StepsViewController.swift */; };
+		DEC41BCD28F6E68A00280990 /* StepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BC528F6E68A00280990 /* StepsView.swift */; };
+		DEC41BCE28F6E68A00280990 /* StepsTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BC828F6E68A00280990 /* StepsTableElement.swift */; };
+		DEC41BCF28F6E68A00280990 /* StepsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BC928F6E68A00280990 /* StepsTableView.swift */; };
+		DEC41BD028F6E68A00280990 /* StepTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BCA28F6E68A00280990 /* StepTableCell.swift */; };
+		DEC41BD728F6EA1200280990 /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BD228F6EA1200280990 /* ReaderViewController.swift */; };
+		DEC41BD828F6EA1200280990 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BD328F6EA1200280990 /* ReaderView.swift */; };
+		DEC41BD928F6EA1200280990 /* ReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BD428F6EA1200280990 /* ReaderViewModel.swift */; };
 		DEF40C1B28E3509D00C2EB67 /* ContentMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */; };
 		DEF40C1C28E3509D00C2EB67 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE228E3509D00C2EB67 /* ContentManager.swift */; };
 		DEF40C1E28E3509D00C2EB67 /* ChallengeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */; };
@@ -532,6 +541,15 @@
 		DEC41BBB28F5B43000280990 /* RecipeCPFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCPFView.swift; sourceTree = "<group>"; };
 		DEC41BBD28F5B66F00280990 /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		DEC41BC028F6BF8A00280990 /* RecipeIngredientsShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientsShell.swift; sourceTree = "<group>"; };
+		DEC41BC328F6E68A00280990 /* StepsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsViewModel.swift; sourceTree = "<group>"; };
+		DEC41BC428F6E68A00280990 /* StepsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
+		DEC41BC528F6E68A00280990 /* StepsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsView.swift; sourceTree = "<group>"; };
+		DEC41BC828F6E68A00280990 /* StepsTableElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsTableElement.swift; sourceTree = "<group>"; };
+		DEC41BC928F6E68A00280990 /* StepsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsTableView.swift; sourceTree = "<group>"; };
+		DEC41BCA28F6E68A00280990 /* StepTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTableCell.swift; sourceTree = "<group>"; };
+		DEC41BD228F6EA1200280990 /* ReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
+		DEC41BD328F6EA1200280990 /* ReaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
+		DEC41BD428F6EA1200280990 /* ReaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderViewModel.swift; sourceTree = "<group>"; };
 		DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentMediator.swift; sourceTree = "<group>"; };
 		DEF40BE228E3509D00C2EB67 /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCover.swift; sourceTree = "<group>"; };
@@ -1539,6 +1557,8 @@
 		DEC41B7528F4599E00280990 /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
+				DEC41BD128F6EA1200280990 /* Reader */,
+				DEC41BC228F6E68900280990 /* Steps */,
 				DEC41B7628F4599E00280990 /* Recipe */,
 			);
 			path = Recipe;
@@ -1607,6 +1627,45 @@
 				DEC41BC028F6BF8A00280990 /* RecipeIngredientsShell.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		DEC41BC228F6E68900280990 /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41BC628F6E68A00280990 /* Views */,
+				DEC41BC428F6E68A00280990 /* StepsViewController.swift */,
+				DEC41BC328F6E68A00280990 /* StepsViewModel.swift */,
+				DEC41BC528F6E68A00280990 /* StepsView.swift */,
+			);
+			path = Steps;
+			sourceTree = "<group>";
+		};
+		DEC41BC628F6E68A00280990 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41BC728F6E68A00280990 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEC41BC728F6E68A00280990 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41BC828F6E68A00280990 /* StepsTableElement.swift */,
+				DEC41BC928F6E68A00280990 /* StepsTableView.swift */,
+				DEC41BCA28F6E68A00280990 /* StepTableCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEC41BD128F6EA1200280990 /* Reader */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41BD228F6EA1200280990 /* ReaderViewController.swift */,
+				DEC41BD428F6EA1200280990 /* ReaderViewModel.swift */,
+				DEC41BD328F6EA1200280990 /* ReaderView.swift */,
+			);
+			path = Reader;
 			sourceTree = "<group>";
 		};
 		DEF40BE028E3509D00C2EB67 /* Content */ = {
@@ -1980,14 +2039,19 @@
 				DE54ADAA28D0A011004F1514 /* PaygateProductButton.swift in Sources */,
 				DEC41B9228F4599E00280990 /* RecipeView.swift in Sources */,
 				DEF40C3A28E3509D00C2EB67 /* SearchRecipesRequest.swift in Sources */,
+				DEC41BD828F6EA1200280990 /* ReaderView.swift in Sources */,
 				DE54ACC028D09F26004F1514 /* UIDevice+Extension.swift in Sources */,
 				DEC41B0128EF203F00280990 /* ExploreCollectionTitleCell.swift in Sources */,
 				DEF40C1B28E3509D00C2EB67 /* ContentMediator.swift in Sources */,
 				DE54AD3028D09F68004F1514 /* IAPProduct.swift in Sources */,
+				DEC41BCB28F6E68A00280990 /* StepsViewModel.swift in Sources */,
+				DEC41BD028F6E68A00280990 /* StepTableCell.swift in Sources */,
 				DE67A83C28EC1F2C00369B02 /* SettingsTableView.swift in Sources */,
 				DE54ACCD28D09F26004F1514 /* SignError.swift in Sources */,
 				DEF40C2028E3509D00C2EB67 /* Challenge.swift in Sources */,
 				DEC41ABF28EEED8300280990 /* CategoryCollectionCell.swift in Sources */,
+				DEC41BCF28F6E68A00280990 /* StepsTableView.swift in Sources */,
+				DEC41BD728F6EA1200280990 /* ReaderViewController.swift in Sources */,
 				DEF40C3E28E3509D00C2EB67 /* SaveRecipeRequest.swift in Sources */,
 				DE54ADCD28D0A012004F1514 /* OTimeView.swift in Sources */,
 				DE54ACC628D09F26004F1514 /* Scalable.swift in Sources */,
@@ -2027,6 +2091,7 @@
 				DE54ADC228D0A012004F1514 /* OCategoriesCollectionLayout.swift in Sources */,
 				DEC41B0328EF203F00280990 /* ExploreCollectionRecipeCell.swift in Sources */,
 				DEC41AFE28EF203F00280990 /* ExploreViewController.swift in Sources */,
+				DEC41BCE28F6E68A00280990 /* StepsTableElement.swift in Sources */,
 				DEC41AB028EEC9F500280990 /* RankingsCollectionCell.swift in Sources */,
 				DE54ACC128D09F26004F1514 /* UIColor+Extension.swift in Sources */,
 				DE54ADD328D0A012004F1514 /* MainView.swift in Sources */,
@@ -2068,12 +2133,14 @@
 				DEC41AE928EEF2B600280990 /* ChallengeTableView.swift in Sources */,
 				DEC41B2028EF296300280990 /* LibraryViewModel.swift in Sources */,
 				DE54ACBC28D09F26004F1514 /* PaddingLabel.swift in Sources */,
+				DEC41BCC28F6E68A00280990 /* StepsViewController.swift in Sources */,
 				DE54ACB528D09F25004F1514 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DEC41B0428EF203F00280990 /* ExploreCollectionSeparatorCell.swift in Sources */,
 				DEC41B0628EF203F00280990 /* ExploreCollectionElement.swift in Sources */,
 				DEF40C3928E3509D00C2EB67 /* SearchRecipesResponse.swift in Sources */,
 				DEC41BBC28F5B43000280990 /* RecipeCPFView.swift in Sources */,
 				DEF40C3728E3509D00C2EB67 /* GetExploreKitResponse.swift in Sources */,
+				DEC41BCD28F6E68A00280990 /* StepsView.swift in Sources */,
 				DE54ACAA28D09F25004F1514 /* ImagePicker.swift in Sources */,
 				DE54AD2C28D09F68004F1514 /* IAPManager.swift in Sources */,
 				DE54ADAF28D0A011004F1514 /* SplashSDKInitialize.swift in Sources */,
@@ -2137,6 +2204,7 @@
 				DE54AC2428D09BF9004F1514 /* AppDelegate.swift in Sources */,
 				DE67A83928EC1F2C00369B02 /* SettingsLinkCell.swift in Sources */,
 				DEC41BB428F5A6AE00280990 /* RecipeStepCell.swift in Sources */,
+				DEC41BD928F6EA1200280990 /* ReaderViewModel.swift in Sources */,
 				DEC41BBE28F5B67000280990 /* CircleProgressView.swift in Sources */,
 				DEC41B2328EF296300280990 /* LibraryTableRecipeCell.swift in Sources */,
 				DEC41ABC28EEED8300280990 /* CategoryView.swift in Sources */,
