@@ -43,7 +43,7 @@ private extension RecipeView {
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             imageView.topAnchor.constraint(equalTo: topAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 434.scale)
+            imageView.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 434.scale : 374.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -57,7 +57,7 @@ private extension RecipeView {
             closeButton.widthAnchor.constraint(equalToConstant: 41.scale),
             closeButton.heightAnchor.constraint(equalToConstant: 41.scale),
             closeButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6.scale),
-            closeButton.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 52.scale : 52.scale)
+            closeButton.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 52.scale : 32.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -78,7 +78,7 @@ private extension RecipeView {
             bottomView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bottomView.trailingAnchor.constraint(equalTo: trailingAnchor),
             bottomView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            bottomView.heightAnchor.constraint(equalToConstant: 139.scale)
+            bottomView.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 139.scale : 99.scale)
         ])
         
         NSLayoutConstraint.activate([

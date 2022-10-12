@@ -119,7 +119,7 @@ extension RecipeTableView: UITableViewDelegate {
         case .offset(let offset):
             return offset
         case .transparent:
-            return 373.scale
+            return ScreenSize.isIphoneXFamily ? 373.scale : 323.scale
         case .time:
             return 24.scale
         case .shopping, .seeAll:
