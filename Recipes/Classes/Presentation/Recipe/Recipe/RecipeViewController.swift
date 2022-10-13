@@ -99,6 +99,10 @@ final class RecipeViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        viewModel.shopping
+            .drive()
+            .disposed(by: disposeBag)
+        
         mainView.tableView.mainDelegate = self
     }
 }
@@ -115,7 +119,7 @@ extension RecipeViewController {
 // MARK: RecipeTableDelegate
 extension RecipeViewController: RecipeTableDelegate {
     func recipeTableDidTappedShopping() {
-        // TODO: реализовать сохранение
+        viewModel.didTapShopping.accept(Void())
     }
     
     func recipeTableDidTapped(step: RecipeStep) {

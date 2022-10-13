@@ -15,6 +15,7 @@ final class RecipeViewModel {
     lazy var didTapSeeAll = PublishRelay<Void>()
     lazy var didTapStep = PublishRelay<RecipeStep>()
     lazy var didTapRead = PublishRelay<Void>()
+    lazy var didTapShopping = PublishRelay<Void>()
     
     lazy var isSavedRecipe = makeIsSavedRecipe()
     lazy var reader = makeReader()
@@ -22,6 +23,7 @@ final class RecipeViewModel {
     lazy var shareLink = makeShareLink()
     lazy var elements = makeElements()
     lazy var activity = RxActivityIndicator()
+    lazy var shopping = makeShopping()
     
     private lazy var isShowingAll = makeIsShowingAll()
     private lazy var categories = makeCategories()
@@ -107,6 +109,30 @@ private extension RecipeViewModel {
             .asDriver(onErrorDriveWith: .never())
         
         return Driver.merge(step, read)
+    }
+    
+    func makeShopping() -> Driver<Void> {
+        didTapShopping
+            .withLatestFrom(ingredientsShell)
+            .withLatestFrom(recipeKit) { ($0, $1) }
+            .map { ingredientsShell, recipeKit -> Shopping in
+                let recipe = RecipeCover(recipe: recipeKit.recipe)
+                let ingredients = ingredientsShell.elements
+                    .filter { $0.marked }
+                    .map { $0.ingredient }
+                
+                return Shopping(recipe: recipe,
+                                ingredients: ingredients)
+            }
+            .flatMapLatest { [weak self] shopping -> Single<Void> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                return self.contentManager
+                    .set(shopping: shopping)
+            }
+            .asDriver(onErrorDriveWith: .never())
     }
     
     func makeImageUrl() -> Driver<URL> {
