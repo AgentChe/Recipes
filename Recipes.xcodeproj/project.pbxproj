@@ -276,6 +276,7 @@
 		DEC41C0E28F7F9AC00280990 /* FeedbackTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BFF28F7F9AC00280990 /* FeedbackTableView.swift */; };
 		DEC41C0F28F7F9AC00280990 /* FeedbackTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41C0028F7F9AC00280990 /* FeedbackTableElement.swift */; };
 		DEC41C1028F7F9AC00280990 /* FeedbackTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41C0128F7F9AC00280990 /* FeedbackTextView.swift */; };
+		DEC41C1228F8012400280990 /* Shopping.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41C1128F8012400280990 /* Shopping.swift */; };
 		DEF40C1B28E3509D00C2EB67 /* ContentMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */; };
 		DEF40C1C28E3509D00C2EB67 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE228E3509D00C2EB67 /* ContentManager.swift */; };
 		DEF40C1E28E3509D00C2EB67 /* ChallengeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */; };
@@ -592,6 +593,7 @@
 		DEC41BFF28F7F9AC00280990 /* FeedbackTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTableView.swift; sourceTree = "<group>"; };
 		DEC41C0028F7F9AC00280990 /* FeedbackTableElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTableElement.swift; sourceTree = "<group>"; };
 		DEC41C0128F7F9AC00280990 /* FeedbackTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTextView.swift; sourceTree = "<group>"; };
+		DEC41C1128F8012400280990 /* Shopping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping.swift; sourceTree = "<group>"; };
 		DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentMediator.swift; sourceTree = "<group>"; };
 		DEF40BE228E3509D00C2EB67 /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCover.swift; sourceTree = "<group>"; };
@@ -1840,6 +1842,7 @@
 				DEC41B6628F4498E00280990 /* Ingredient.swift */,
 				DEC41B6828F449CF00280990 /* RecipeCPF.swift */,
 				DEC41B6A28F44AD600280990 /* RecipeKit.swift */,
+				DEC41C1128F8012400280990 /* Shopping.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2193,6 +2196,7 @@
 				DEC41BCB28F6E68A00280990 /* StepsViewModel.swift in Sources */,
 				DEC41BD028F6E68A00280990 /* StepTableCell.swift in Sources */,
 				DE67A83C28EC1F2C00369B02 /* SettingsTableView.swift in Sources */,
+				DEC41C1228F8012400280990 /* Shopping.swift in Sources */,
 				DE54ACCD28D09F26004F1514 /* SignError.swift in Sources */,
 				DEF40C2028E3509D00C2EB67 /* Challenge.swift in Sources */,
 				DEC41ABF28EEED8300280990 /* CategoryCollectionCell.swift in Sources */,

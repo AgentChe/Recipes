@@ -13,6 +13,8 @@ protocol ContentMediatorDelegate: AnyObject {
     func contentMediatorDidRemovedSaved(recipe: RecipeCover)
     func contentMediatorDidUpdated(recipeReadingProgress: RecipeReadingProgress)
     func contentMediatorDidRemovedProgress(recipeId: Int)
+    func contentMediatorDidUpdated(shopping: Shopping)
+    func contentMediatorDidRemovedShopping(recipeId: Int)
 }
 
 final class ContentMediator {
@@ -24,6 +26,8 @@ final class ContentMediator {
     private lazy var recipeDidRemoveFromSavedTrigger = PublishRelay<RecipeCover>()
     private lazy var recipeReadingProgressUpdatedTrigger = PublishRelay<RecipeReadingProgress>()
     private lazy var recipeDidRemovedProgressTrigger = PublishRelay<Int>()
+    private lazy var shoppingUpdatedTrigger = PublishRelay<Shopping>()
+    private lazy var recipeDidRemovedShoppingTrigger = PublishRelay<Int>()
     
     private init() {}
 }
@@ -69,6 +73,26 @@ extension ContentMediator {
             self?.recipeDidRemovedProgressTrigger.accept(recipeId)
         }
     }
+    
+    func notifyAboutUpdate(shopping: Shopping) {
+        DispatchQueue.main.async { [weak self] in
+            self?.delegates.forEach {
+                $0.weak?.contentMediatorDidUpdated(shopping: shopping)
+            }
+            
+            self?.shoppingUpdatedTrigger.accept(shopping)
+        }
+    }
+    
+    func notifyAboutRemovedShopping(recipeId: Int) {
+        DispatchQueue.main.async { [weak self] in
+            self?.delegates.forEach {
+                $0.weak?.contentMediatorDidRemovedShopping(recipeId: recipeId)
+            }
+            
+            self?.recipeDidRemovedShoppingTrigger.accept(recipeId)
+        }
+    }
 }
 
 // MARK: Public (Triggers)
@@ -87,6 +111,14 @@ extension ContentMediator {
     
     var recipeDidRemovedProgress: Signal<Int> {
         recipeDidRemovedProgressTrigger.asSignal()
+    }
+    
+    var shoppingUpdated: Signal<Shopping> {
+        shoppingUpdatedTrigger.asSignal()
+    }
+    
+    var recipeDidRemovedShopping: Signal<Int> {
+        recipeDidRemovedShoppingTrigger.asSignal()
     }
 }
 

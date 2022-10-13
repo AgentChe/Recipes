@@ -23,6 +23,9 @@ protocol ContentManagerProtocol: AnyObject {
     func obtainReadingRecipes() -> Single<[RecipeReadingProgress]>
     func set(recipeReadingProgress: RecipeReadingProgress) -> Single<Void>
     func removeRecipeProgress(recipeId: Int) -> Single<Void>
+    func obtainShoppings() -> Single<[Shopping]>
+    func set(shopping: Shopping) -> Single<Void>
+    func removeShopping(recipeId: Int) -> Single<Void>
     func feedback(recipeId: Int,
                   rating: Int,
                   improves: [Int],
@@ -37,6 +40,7 @@ final class ContentManager: ContentManagerProtocol {
         static let rankingKey = "content_manager_ranking_key"
         static let dietsKey = "content_manager_diets_key"
         static let readingRecipesKey = "content_manager_reading_recipes_key"
+        static let shoppingsKey = "content_manager_shoppings_key"
     }
     
     private lazy var defaultRequestWrapper = DefaultRequestWrapper()
@@ -344,6 +348,70 @@ extension ContentManager {
                             UserDefaults.standard.set(data, forKey: Constants.readingRecipesKey)
                             
                             ContentMediator.shared.notifyAboutUpdateRemovedProgress(recipeId: recipeId)
+                        }
+                    }
+                    
+                    event(.success(Void()))
+                    
+                    return Disposables.create()
+                }
+            }
+    }
+    
+    func obtainShoppings() -> Single<[Shopping]> {
+        Single<[Shopping]>.create { event in
+            guard
+                let data = UserDefaults.standard.data(forKey: Constants.shoppingsKey),
+                let shoppings = try? JSONDecoder().decode([Shopping].self, from: data)
+            else {
+                event(.success([]))
+                return Disposables.create()
+            }
+
+            event(.success(shoppings))
+
+            return Disposables.create()
+        }
+    }
+    
+    func set(shopping: Shopping) -> Single<Void> {
+        obtainShoppings()
+            .flatMap { shoppings -> Single<Void> in
+                Single<Void>.create { event in
+                    var result = shoppings
+                    
+                    if let index = result.firstIndex(where: { $0.recipe.id == shopping.recipe.id }) {
+                        result[index] = shopping
+                    } else {
+                        result.append(shopping)
+                    }
+                    
+                    if let data = try? JSONEncoder().encode(result) {
+                        UserDefaults.standard.set(data, forKey: Constants.shoppingsKey)
+                        
+                        ContentMediator.shared.notifyAboutUpdate(shopping: shopping)
+                    }
+                    
+                    event(.success(Void()))
+                    
+                    return Disposables.create()
+                }
+            }
+    }
+    
+    func removeShopping(recipeId: Int) -> Single<Void> {
+        obtainShoppings()
+            .flatMap { shoppings -> Single<Void> in
+                Single<Void>.create { event in
+                    var result = shoppings
+                    
+                    if let index = result.firstIndex(where: { $0.recipe.id == recipeId }) {
+                        result.remove(at: index)
+                        
+                        if let data = try? JSONEncoder().encode(result) {
+                            UserDefaults.standard.set(data, forKey: Constants.shoppingsKey)
+                            
+                            ContentMediator.shared.notifyAboutRemovedShopping(recipeId: recipeId)
                         }
                     }
                     
