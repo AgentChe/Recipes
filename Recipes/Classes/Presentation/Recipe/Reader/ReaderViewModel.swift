@@ -15,6 +15,10 @@ final class ReaderViewModel {
     lazy var shareLink = makeShareLink()
     lazy var progress = makeProgress()
     lazy var isLastStep = makeIsLastStep()
+    lazy var elements = makeElements()
+    
+    private lazy var currentStepElements = makeCurrentStepElements()
+    private lazy var lastStepElements = makeLastStepElements()
     
     private lazy var contentManager = ContentManager()
     private lazy var profileManager = ProfileManager()
@@ -72,6 +76,69 @@ private extension ReaderViewModel {
                 }
                 
                 return (recipe.steps.count - 1) == index
+            }
+    }
+    
+    func makeElements() -> Driver<[ReaderTableElement]> {
+        isLastStep
+            .flatMapLatest { [weak self] isLastStep -> Driver<[ReaderTableElement]> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                return isLastStep ? self.lastStepElements : self.currentStepElements
+            }
+    }
+    
+    func makeCurrentStepElements() -> Driver<[ReaderTableElement]> {
+        Driver
+            .combineLatest(
+                recipe.asDriver(),
+                currentStep.asDriver()
+            )
+            .map { recipe, step -> [ReaderTableElement] in
+                guard let index = recipe.steps.firstIndex(of: step) else {
+                    return []
+                }
+                
+                let number = index + 1
+                
+                var result = [ReaderTableElement]()
+                
+                result.append(contentsOf: [
+                    .title(String(format: "Reader.StepNumber".localized, number)),
+                    .offset(16.scale),
+                    .text(step.text)
+                ])
+                
+                if let imageUrl = step.imageUrl {
+                    result.append(contentsOf: [
+                        .offset(16.scale),
+                        .image(imageUrl)
+                    ])
+                }
+                
+                result.append(.offset(24.scale))
+                
+                return result
+            }
+    }
+    
+    func makeLastStepElements() -> Driver<[ReaderTableElement]> {
+        recipe
+            .asDriver()
+            .map { recipe -> [ReaderTableElement] in
+                var result = [ReaderTableElement]()
+                
+                result.append(contentsOf: [
+                    .lastStepTitle(recipe.name),
+                    .offset(18.scale),
+                    .image(recipe.imageUrl),
+                    .offset(30.scale),
+                    .lastStepText
+                ])
+                
+                return result
             }
     }
 }

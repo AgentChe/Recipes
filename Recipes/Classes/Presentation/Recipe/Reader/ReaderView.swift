@@ -117,8 +117,8 @@ private extension ReaderView {
         return view
     }
     
-    func makeTableView() -> UITableView {
-        let view = UITableView()
+    func makeTableView() -> ReaderTableView {
+        let view = ReaderTableView()
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false
         view.contentInsetAdjustmentBehavior = .never

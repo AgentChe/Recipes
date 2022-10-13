@@ -181,5 +181,6 @@
 
 // MARK: Reader
 "Reader.MarkAsFinished" = "Mark as finished";
+"Reader.StepNumber" = "Step %i";
 "Reader.FinishStep.Title" = "Enjoy your meal!";
 "Reader.FinishStep.SubTitle" = "We hope it looks good as it tastes";

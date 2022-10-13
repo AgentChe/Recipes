@@ -41,6 +41,12 @@ final class ReaderViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        viewModel.elements
+            .drive(Binder(mainView.tableView) { base, elements in
+                base.setup(elements: elements)
+            })
+            .disposed(by: disposeBag)
+        
         mainView.stepsButton.rx.tap
             .withLatestFrom(viewModel.recipe)
             .withLatestFrom(viewModel.currentStep) { ($0, $1) }

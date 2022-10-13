@@ -255,6 +255,13 @@
 		DEC41BD728F6EA1200280990 /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BD228F6EA1200280990 /* ReaderViewController.swift */; };
 		DEC41BD828F6EA1200280990 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BD328F6EA1200280990 /* ReaderView.swift */; };
 		DEC41BD928F6EA1200280990 /* ReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BD428F6EA1200280990 /* ReaderViewModel.swift */; };
+		DEC41BDE28F7EA5D00280990 /* ReaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BDD28F7EA5D00280990 /* ReaderTableView.swift */; };
+		DEC41BE028F7EA6800280990 /* ReaderTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BDF28F7EA6800280990 /* ReaderTableElement.swift */; };
+		DEC41BE328F7EB7800280990 /* ReaderTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BE228F7EB7800280990 /* ReaderTitleCell.swift */; };
+		DEC41BE528F7ED8A00280990 /* ReaderTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BE428F7ED8A00280990 /* ReaderTextCell.swift */; };
+		DEC41BE728F7EDDC00280990 /* ReaderImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BE628F7EDDC00280990 /* ReaderImageCell.swift */; };
+		DEC41BE928F7F06300280990 /* ReaderLastStepTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BE828F7F06300280990 /* ReaderLastStepTextCell.swift */; };
+		DEC41BEB28F7F59D00280990 /* ReaderLastStepTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BEA28F7F59D00280990 /* ReaderLastStepTitleCell.swift */; };
 		DEF40C1B28E3509D00C2EB67 /* ContentMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */; };
 		DEF40C1C28E3509D00C2EB67 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE228E3509D00C2EB67 /* ContentManager.swift */; };
 		DEF40C1E28E3509D00C2EB67 /* ChallengeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */; };
@@ -550,6 +557,13 @@
 		DEC41BD228F6EA1200280990 /* ReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
 		DEC41BD328F6EA1200280990 /* ReaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		DEC41BD428F6EA1200280990 /* ReaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderViewModel.swift; sourceTree = "<group>"; };
+		DEC41BDD28F7EA5D00280990 /* ReaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTableView.swift; sourceTree = "<group>"; };
+		DEC41BDF28F7EA6800280990 /* ReaderTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTableElement.swift; sourceTree = "<group>"; };
+		DEC41BE228F7EB7800280990 /* ReaderTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTitleCell.swift; sourceTree = "<group>"; };
+		DEC41BE428F7ED8A00280990 /* ReaderTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTextCell.swift; sourceTree = "<group>"; };
+		DEC41BE628F7EDDC00280990 /* ReaderImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderImageCell.swift; sourceTree = "<group>"; };
+		DEC41BE828F7F06300280990 /* ReaderLastStepTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderLastStepTextCell.swift; sourceTree = "<group>"; };
+		DEC41BEA28F7F59D00280990 /* ReaderLastStepTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderLastStepTitleCell.swift; sourceTree = "<group>"; };
 		DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentMediator.swift; sourceTree = "<group>"; };
 		DEF40BE228E3509D00C2EB67 /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCover.swift; sourceTree = "<group>"; };
@@ -1661,11 +1675,42 @@
 		DEC41BD128F6EA1200280990 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				DEC41BDB28F7EA4C00280990 /* Views */,
 				DEC41BD228F6EA1200280990 /* ReaderViewController.swift */,
 				DEC41BD428F6EA1200280990 /* ReaderViewModel.swift */,
 				DEC41BD328F6EA1200280990 /* ReaderView.swift */,
 			);
 			path = Reader;
+			sourceTree = "<group>";
+		};
+		DEC41BDB28F7EA4C00280990 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41BDC28F7EA5000280990 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEC41BDC28F7EA5000280990 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41BE128F7EB6C00280990 /* Cells */,
+				DEC41BDD28F7EA5D00280990 /* ReaderTableView.swift */,
+				DEC41BDF28F7EA6800280990 /* ReaderTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEC41BE128F7EB6C00280990 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41BE228F7EB7800280990 /* ReaderTitleCell.swift */,
+				DEC41BE428F7ED8A00280990 /* ReaderTextCell.swift */,
+				DEC41BE628F7EDDC00280990 /* ReaderImageCell.swift */,
+				DEC41BEA28F7F59D00280990 /* ReaderLastStepTitleCell.swift */,
+				DEC41BE828F7F06300280990 /* ReaderLastStepTextCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		DEF40BE028E3509D00C2EB67 /* Content */ = {
@@ -2058,6 +2103,7 @@
 				DE54ADCE28D0A012004F1514 /* OGoalView.swift in Sources */,
 				DEF40C4228E3509D00C2EB67 /* GetCategoriesResponse.swift in Sources */,
 				DE54ADD228D0A012004F1514 /* MainViewController.swift in Sources */,
+				DEC41BDE28F7EA5D00280990 /* ReaderTableView.swift in Sources */,
 				DEF40C3D28E3509D00C2EB67 /* RemoveSavedRecipeRequest.swift in Sources */,
 				DE54ACAE28D09F25004F1514 /* DefaultRequestWrapper.swift in Sources */,
 				DEC41B2728EF296300280990 /* LibraryEmptyView.swift in Sources */,
@@ -2070,6 +2116,7 @@
 				DEF40C5528E48E1B00C2EB67 /* Recipe.swift in Sources */,
 				DEC41B2528EF296300280990 /* LibraryTableElement.swift in Sources */,
 				DEC41BBA28F5B11300280990 /* RecipeCPFCell.swift in Sources */,
+				DEC41BE928F7F06300280990 /* ReaderLastStepTextCell.swift in Sources */,
 				DE54ACCB28D09F26004F1514 /* XOREncryption.swift in Sources */,
 				DE54ACB128D09F25004F1514 /* RestAPITransport.swift in Sources */,
 				DE54AD2F28D09F68004F1514 /* IAPActionResult.swift in Sources */,
@@ -2100,6 +2147,7 @@
 				DE54AD2828D09F68004F1514 /* SyncTokensRequest.swift in Sources */,
 				DE54ACBE28D09F26004F1514 /* GradientView.swift in Sources */,
 				DE54ACBD28D09F26004F1514 /* CircleView.swift in Sources */,
+				DEC41BE328F7EB7800280990 /* ReaderTitleCell.swift in Sources */,
 				DE54ADAD28D0A011004F1514 /* SplashActivity.swift in Sources */,
 				DE54ACA628D09F25004F1514 /* BranchManager.swift in Sources */,
 				DE54ADAE28D0A011004F1514 /* SplashReceiptValidationObserver.swift in Sources */,
@@ -2128,6 +2176,7 @@
 				DEC41B2C28EF296300280990 /* LibraryRecipeMenuViewController.swift in Sources */,
 				DE54ACA828D09F25004F1514 /* FirebaseManager.swift in Sources */,
 				DEF40C2D28E3509D00C2EB67 /* FeedbackRequest.swift in Sources */,
+				DEC41BE728F7EDDC00280990 /* ReaderImageCell.swift in Sources */,
 				DEF40C3428E3509D00C2EB67 /* GetChallengeResponse.swift in Sources */,
 				DEC41ADB28EEF2B600280990 /* ChallengeView.swift in Sources */,
 				DEC41AE928EEF2B600280990 /* ChallengeTableView.swift in Sources */,
@@ -2175,6 +2224,7 @@
 				DE54ADA528D0A011004F1514 /* PaygatePrice.swift in Sources */,
 				DE54AD2E28D09F68004F1514 /* ProductPrice.swift in Sources */,
 				DE54AD2B28D09F68004F1514 /* SessionManager.swift in Sources */,
+				DEC41BE028F7EA6800280990 /* ReaderTableElement.swift in Sources */,
 				DE54ADA328D0A011004F1514 /* PaygateViewModel.swift in Sources */,
 				DE67A84828EC1F2C00369B02 /* ForYouCategoriesCollectionView.swift in Sources */,
 				DE67A84728EC1F2C00369B02 /* ForYouRankingCell.swift in Sources */,
@@ -2183,6 +2233,7 @@
 				DE54ACD028D09F26004F1514 /* Weak.swift in Sources */,
 				DE54ADBB28D0A012004F1514 /* ORecipeImageCollectionView.swift in Sources */,
 				DE54ADBD28D0A012004F1514 /* ORecipeButton.swift in Sources */,
+				DEC41BE528F7ED8A00280990 /* ReaderTextCell.swift in Sources */,
 				DE54ACB728D09F25004F1514 /* NavigationControllerSettings.swift in Sources */,
 				DE54ACCE28D09F26004F1514 /* NetworkError.swift in Sources */,
 				DEC41B0028EF203F00280990 /* ExploreCollectionView.swift in Sources */,
@@ -2223,6 +2274,7 @@
 				DEC41BA728F562E300280990 /* RecipeTableInfoCell.swift in Sources */,
 				DE67A84E28EC1F2C00369B02 /* ForYouTableView.swift in Sources */,
 				DEC41ADC28EEF2B600280990 /* ChallengeViewModel.swift in Sources */,
+				DEC41BEB28F7F59D00280990 /* ReaderLastStepTitleCell.swift in Sources */,
 				DEF40C2628E3509D00C2EB67 /* RecipeCover.swift in Sources */,
 				DE54ADC328D0A012004F1514 /* OGoalButton.swift in Sources */,
 				DE67A84A28EC1F2C00369B02 /* ForYouCategoriesCell.swift in Sources */,
