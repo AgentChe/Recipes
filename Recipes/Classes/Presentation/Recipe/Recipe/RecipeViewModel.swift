@@ -30,6 +30,7 @@ final class RecipeViewModel {
     private lazy var ingredientsShell = makeIngredientsShell()
     private lazy var recipeKit = makeRecipeKit()
     private lazy var readingRecipes = makeReadingRecipes()
+    private lazy var currentShopping = makeCurrentShopping()
     
     private lazy var contentManager = ContentManager()
     
@@ -269,9 +270,11 @@ private extension RecipeViewModel {
     }
     
     func makeIngredientsShell() -> Driver<RecipeIngredientsShell> {
-        recipeKit
-            .map { recipeKit -> RecipeIngredientsShell in
-                RecipeIngredientsShell(ingredients: recipeKit.recipe.ingredients)
+        Driver
+            .combineLatest(recipeKit, currentShopping)
+            .map { recipeKit, currentShopping -> RecipeIngredientsShell in
+                RecipeIngredientsShell(ingredients: recipeKit.recipe.ingredients,
+                                       markedIngredients: currentShopping?.ingredients ?? [])
             }
     }
     
@@ -327,6 +330,20 @@ private extension RecipeViewModel {
             }
         
         return Driver.merge(initial, updated)
+    }
+    
+    func makeCurrentShopping() -> Driver<Shopping?> {
+        let shoppings = contentManager
+            .obtainShoppings()
+            .asDriver(onErrorJustReturn: [])
+        
+        return Driver
+            .combineLatest(recipeKit, shoppings)
+            .map { recipeKit, shoppings -> Shopping? in
+                let recipeId = recipeKit.recipe.id
+                
+                return shoppings.first(where: { $0.recipe.id == recipeId })
+            }
     }
 }
 

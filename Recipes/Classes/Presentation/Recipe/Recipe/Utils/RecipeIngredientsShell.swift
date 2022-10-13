@@ -8,11 +8,10 @@
 final class RecipeIngredientsShell {
     let elements: [RecipeTableIngredientElement]
     
-    // TODO: реализовать marked
-    init(ingredients: [Ingredient]) {
+    init(ingredients: [Ingredient], markedIngredients: [Ingredient]) {
         elements = ingredients.map { ingredient -> RecipeTableIngredientElement in
             RecipeTableIngredientElement(ingredient: ingredient,
-                                         marked: false)
+                                         marked: markedIngredients.contains(where: { $0.id == ingredient.id }))
         }
     }
 }
