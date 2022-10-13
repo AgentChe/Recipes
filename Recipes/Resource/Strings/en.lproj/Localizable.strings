@@ -184,3 +184,18 @@
 "Reader.StepNumber" = "Step %i";
 "Reader.FinishStep.Title" = "Enjoy your meal!";
 "Reader.FinishStep.SubTitle" = "We hope it looks good as it tastes";
+
+// MARK: Feedback
+"Feedback.Title" = "What did you think of\n%@\nrecipe?";
+"Feedback.Rating" = "Rating the recipe helps us to further\npersonalize your experience";
+"Feedback.Improve.Title" = "What could we improve?";
+"Feedback.Improve1" = "Topic/opininons presented";
+"Feedback.Improve2" = "Lenght - too short";
+"Feedback.Improve3" = "Lenght - too long";
+"Feedback.Improve4" = "Level of detail";
+"Feedback.Improve5" = "Writing style";
+"Feedback.Improve6" = "Narrator";
+"Feedback.Improve7" = "Hard to follow";
+"Feedback.WhatCanBetter" = "What can we do better?";
+"Feedback.WhatCanBetter.Placeholder" = "Type here...";
+"Feedback.SubmitFeedback" = "Submit feedback";

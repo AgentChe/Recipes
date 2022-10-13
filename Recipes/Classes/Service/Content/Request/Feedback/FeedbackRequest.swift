@@ -13,7 +13,6 @@ struct FeedbackRequest: APIRequestBody {
     let rating: Int
     let improves: [Int]
     let whatBetter: String?
-    let whatLearn: String?
     
     var url: String {
         GlobalDefinitions.domain + "/api/feedback"
@@ -34,10 +33,6 @@ struct FeedbackRequest: APIRequestBody {
         
         if let whatBetter = whatBetter {
             params["what_better"] = whatBetter
-        }
-        
-        if let whatLearn = whatLearn {
-            params["what_learn"] = whatLearn
         }
         
         return params

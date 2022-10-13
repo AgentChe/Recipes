@@ -26,8 +26,7 @@ protocol ContentManagerProtocol: AnyObject {
     func feedback(recipeId: Int,
                   rating: Int,
                   improves: [Int],
-                  whatBetter: String?,
-                  whatLearn: String?) -> Single<Bool>
+                  whatBetter: String?) -> Single<Bool>
     func obtainChallenge(id: Int) -> Single<Challenge?>
     func obtainRecipeKit(recipeId: Int) -> Single<RecipeKit?>
 }
@@ -358,8 +357,7 @@ extension ContentManager {
     func feedback(recipeId: Int,
                   rating: Int,
                   improves: [Int],
-                  whatBetter: String?,
-                  whatLearn: String?) -> Single<Bool> {
+                  whatBetter: String?) -> Single<Bool> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
@@ -368,8 +366,7 @@ extension ContentManager {
                                       recipeId: recipeId,
                                       rating: rating,
                                       improves: improves,
-                                      whatBetter: whatBetter,
-                                      whatLearn: whatLearn)
+                                      whatBetter: whatBetter)
         
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
