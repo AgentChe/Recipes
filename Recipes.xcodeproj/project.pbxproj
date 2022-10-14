@@ -277,6 +277,7 @@
 		DEC41C0F28F7F9AC00280990 /* FeedbackTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41C0028F7F9AC00280990 /* FeedbackTableElement.swift */; };
 		DEC41C1028F7F9AC00280990 /* FeedbackTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41C0128F7F9AC00280990 /* FeedbackTextView.swift */; };
 		DEC41C1228F8012400280990 /* Shopping.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41C1128F8012400280990 /* Shopping.swift */; };
+		DEC41C1528F9447400280990 /* Splash.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC41C1428F9447400280990 /* Splash.Animation.json */; };
 		DEF40C1B28E3509D00C2EB67 /* ContentMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */; };
 		DEF40C1C28E3509D00C2EB67 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE228E3509D00C2EB67 /* ContentManager.swift */; };
 		DEF40C1E28E3509D00C2EB67 /* ChallengeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */; };
@@ -594,6 +595,7 @@
 		DEC41C0028F7F9AC00280990 /* FeedbackTableElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTableElement.swift; sourceTree = "<group>"; };
 		DEC41C0128F7F9AC00280990 /* FeedbackTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTextView.swift; sourceTree = "<group>"; };
 		DEC41C1128F8012400280990 /* Shopping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping.swift; sourceTree = "<group>"; };
+		DEC41C1428F9447400280990 /* Splash.Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Splash.Animation.json; sourceTree = "<group>"; };
 		DEF40BE128E3509D00C2EB67 /* ContentMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentMediator.swift; sourceTree = "<group>"; };
 		DEF40BE228E3509D00C2EB67 /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		DEF40BE528E3509D00C2EB67 /* ChallengeCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCover.swift; sourceTree = "<group>"; };
@@ -1037,6 +1039,7 @@
 		DE54AD6A28D0A011004F1514 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				DEC41C1328F9446C00280990 /* Source */,
 				DE54AD6C28D0A011004F1514 /* Utils */,
 				DE54AD6B28D0A011004F1514 /* SplashViewController.swift */,
 				DE54AD7028D0A011004F1514 /* SplashViewModel.swift */,
@@ -1813,6 +1816,14 @@
 			path = Improve;
 			sourceTree = "<group>";
 		};
+		DEC41C1328F9446C00280990 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DEC41C1428F9447400280990 /* Splash.Animation.json */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		DEF40BE028E3509D00C2EB67 /* Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -2069,6 +2080,7 @@
 				DE67A85628EC79FE00369B02 /* Categories.json in Resources */,
 				DE54AC6528D09ED9004F1514 /* Merriweather-Regular.ttf in Resources */,
 				DE54AC6F28D09EE7004F1514 /* API.json in Resources */,
+				DEC41C1528F9447400280990 /* Splash.Animation.json in Resources */,
 				DE67A85228EC669A00369B02 /* ForYouMock.json in Resources */,
 				DEC41AEC28EEF96700280990 /* Challenge.json in Resources */,
 				DE54AC6928D09ED9004F1514 /* PlusJakartaSans-Regular.ttf in Resources */,

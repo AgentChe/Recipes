@@ -58,6 +58,8 @@ final class SplashViewController: UIViewController {
                 self.viewModel.validationComplete.accept(Void())
             }
         }
+        
+        mainView.animationView.play()
     }
 }
 
@@ -94,7 +96,7 @@ private extension SplashViewController {
         state == .none ? mainView.preloader.stopAnimating() : mainView.preloader.startAnimating()
         
         let attrs = TextAttributes()
-            .textColor(Appearance.secondary5)
+            .textColor(Appearance.black)
             .font(Fonts.PlusJakartaSans.regular(size: 14.scale))
             .lineHeight(19.6.scale)
             .letterSpacing(-0.17.scale)

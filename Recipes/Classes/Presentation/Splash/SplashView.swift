@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import Lottie
 
-// TODO: Figma
 final class SplashView: UIView {
+    lazy var animationView = makeAnimationView()
     lazy var preloader = makePreloader()
     lazy var preloaderLabel = makeLabel()
     
@@ -35,6 +36,13 @@ private extension SplashView {
 private extension SplashView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
+            animationView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            animationView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            animationView.heightAnchor.constraint(equalToConstant: 290.scale),
+            animationView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 261.scale : 170.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
             preloader.centerXAnchor.constraint(equalTo: centerXAnchor),
             preloader.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -54.scale : -34.scale)
         ])
@@ -49,8 +57,18 @@ private extension SplashView {
 
 // MARK: Lazy initialization
 private extension SplashView {
+    func makeAnimationView() -> AnimationView {
+        let view = AnimationView()
+        view.animation = Animation.named("Splash.Animation")
+        view.contentMode = .scaleAspectFill
+        view.loopMode = .loop
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
     func makePreloader() -> Spinner {
-        let view = Spinner(size: CGSize(width: 32.scale, height: 32.scale), color: .white)
+        let view = Spinner(size: CGSize(width: 32.scale, height: 32.scale), color: .secondary)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
