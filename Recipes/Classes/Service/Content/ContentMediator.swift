@@ -15,6 +15,7 @@ protocol ContentMediatorDelegate: AnyObject {
     func contentMediatorDidRemovedProgress(recipeId: Int)
     func contentMediatorDidUpdated(shopping: Shopping)
     func contentMediatorDidRemovedShopping(recipeId: Int)
+    func contentMediatorDidRemovedAllShoppings()
 }
 
 final class ContentMediator {
@@ -28,6 +29,7 @@ final class ContentMediator {
     private lazy var recipeDidRemovedProgressTrigger = PublishRelay<Int>()
     private lazy var shoppingUpdatedTrigger = PublishRelay<Shopping>()
     private lazy var recipeDidRemovedShoppingTrigger = PublishRelay<Int>()
+    private lazy var recipeDidRemovedAllShoppingsTrigger = PublishRelay<Void>()
     
     private init() {}
 }
@@ -93,6 +95,16 @@ extension ContentMediator {
             self?.recipeDidRemovedShoppingTrigger.accept(recipeId)
         }
     }
+    
+    func notifyAboutRemovedAllShoppings() {
+        DispatchQueue.main.async { [weak self] in
+            self?.delegates.forEach {
+                $0.weak?.contentMediatorDidRemovedAllShoppings()
+            }
+            
+            self?.recipeDidRemovedAllShoppingsTrigger.accept(Void())
+        }
+    }
 }
 
 // MARK: Public (Triggers)
@@ -119,6 +131,10 @@ extension ContentMediator {
     
     var recipeDidRemovedShopping: Signal<Int> {
         recipeDidRemovedShoppingTrigger.asSignal()
+    }
+    
+    var recipeDidRemovedAllShoppings: Signal<Void> {
+        recipeDidRemovedAllShoppingsTrigger.asSignal()
     }
 }
 

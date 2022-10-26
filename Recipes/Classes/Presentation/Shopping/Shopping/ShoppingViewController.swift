@@ -91,7 +91,7 @@ extension ShoppingViewController: ShoppingTableDelegate {
     }
     
     func shoppingTableDidTappedRemoveAllIngredients() {
-        print("shoppingTableDidTappedRemoveAllIngredients")
+        viewModel.didTapRemoveAllShoppings.accept(Void())
     }
     
     func shoppingTableDidTapped(shopping: Shopping) {

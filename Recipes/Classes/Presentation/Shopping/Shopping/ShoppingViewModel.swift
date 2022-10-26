@@ -13,6 +13,7 @@ final class ShoppingViewModel {
     
     lazy var filter = BehaviorRelay<ShoppingFilterView.Filter>(value: .allIngredients)
     lazy var didTapRemoveShopping = PublishRelay<Shopping>()
+    lazy var didTapRemoveAllShoppings = PublishRelay<Void>()
     
     lazy var elements = makeElements()
     lazy var emptyState = makeEmptyState()
@@ -22,6 +23,7 @@ final class ShoppingViewModel {
     private lazy var recipeElements = makeRecipeElements()
     private lazy var shoppings = makeShoppings()
     private lazy var removeShopping = makeRemoveShopping()
+    private lazy var removeAllShoppings = makeRemoveAllShoppings()
     
     private lazy var contentManager = ContentManager()
     
@@ -112,7 +114,10 @@ private extension ShoppingViewModel {
     
     func makeShoppings() -> Driver<[Shopping]> {
         let nonActiveTriggers = Observable
-            .merge(removeShopping.flatMap { Observable<Void>.never() })
+            .merge(
+                removeShopping.flatMap { Observable<Void>.never() },
+                removeAllShoppings.flatMap { Observable<Void>.never() }
+            )
         
         let activeTriggers = Observable
             .merge(
@@ -121,7 +126,9 @@ private extension ShoppingViewModel {
                     .mapToVoid(),
                 ContentMediator.shared.recipeDidRemovedShopping
                     .asObservable()
-                    .mapToVoid()
+                    .mapToVoid(),
+                ContentMediator.shared.recipeDidRemovedAllShoppings
+                    .asObservable()
             )
         
         let triggers = Observable
@@ -149,6 +156,18 @@ private extension ShoppingViewModel {
                 
                 return self.contentManager
                     .removeShopping(recipeId: shopping.recipe.id)
+            }
+    }
+    
+    func makeRemoveAllShoppings() -> Observable<Void> {
+        didTapRemoveAllShoppings
+            .flatMapLatest { [weak self] void -> Single<Void> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                return self.contentManager
+                    .removeAllShoppings()
             }
     }
 }

@@ -26,6 +26,7 @@ protocol ContentManagerProtocol: AnyObject {
     func obtainShoppings() -> Single<[Shopping]>
     func set(shopping: Shopping) -> Single<Void>
     func removeShopping(recipeId: Int) -> Single<Void>
+    func removeAllShoppings() -> Single<Void>
     func feedback(recipeId: Int,
                   rating: Int,
                   improves: [Int],
@@ -420,6 +421,18 @@ extension ContentManager {
                     return Disposables.create()
                 }
             }
+    }
+    
+    func removeAllShoppings() -> Single<Void> {
+        Single<Void>.create { event in
+            UserDefaults.standard.removeObject(forKey: Constants.shoppingsKey)
+            
+            ContentMediator.shared.notifyAboutRemovedAllShoppings()
+            
+            event(.success(Void()))
+            
+            return Disposables.create()
+        }
     }
     
     func feedback(recipeId: Int,
