@@ -62,6 +62,7 @@ private extension SplashView {
         view.animation = Animation.named("Splash.Animation")
         view.contentMode = .scaleAspectFill
         view.loopMode = .loop
+        view.layer.masksToBounds = false
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

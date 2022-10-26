@@ -199,3 +199,17 @@
 "Feedback.WhatCanBetter" = "What can we do better?";
 "Feedback.WhatCanBetter.Placeholder" = "Type here...";
 "Feedback.SubmitFeedback" = "Submit feedback";
+
+// MARK: Shopping
+"Shopping.Title" = "Shopping List";
+"Shopping.AllIngredients" = "All ingredients";
+"Shopping.ByRecipe" = "By recipe";
+"Shopping.Empty.AllIngredients.Title" = "Start adding to your Shopping List";
+"Shopping.Empty.AllIngredients.SubTitle" = "Tap the ‘Add all to Shopping List’\nbutton to add the required\ningredients ";
+"Shopping.Empty.ByRecipe.Title" = "Start adding to your Shopping List";
+"Shopping.Empty.ByRecipe.SubTitle" = "Tap the ‘Add all to Shopping List’\nbutton to add the required\ningredients ";
+"Shopping.Empty.Button" = "Discover recipes";
+"Shopping.RemoveAllIngredients" = "Remove all ingredients";
+"Shopping.IngredientsCount" = "%i ingredients";
+"Shopping.Delete" = "Remove recipe";
+"Shopping.Share" = "Share";

@@ -11,7 +11,9 @@ final class MainViewCoordinator {
     weak var parentVC: MainViewController?
     
     lazy var forYouVC = NavigationController(rootViewController: ForYouViewController.make())
-    lazy var shoppingVC = UIViewController()
+    lazy var shoppingVC = NavigationController(rootViewController: ShoppingViewController.make { [weak self] in
+        self?.change(tab: .forYou)
+    })
     lazy var myRecipesVC = NavigationController(rootViewController: LibraryViewController.make { [weak self] in
         self?.change(tab: .forYou)
     })

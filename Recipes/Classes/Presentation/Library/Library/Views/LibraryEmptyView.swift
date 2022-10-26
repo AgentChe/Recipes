@@ -107,7 +107,7 @@ private extension LibraryEmptyView {
     
     func makeButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.black)
             .font(Fonts.PlusJakartaSans.semiBold(size: 16.scale))
             .letterSpacing(-0.17.scale)
         
