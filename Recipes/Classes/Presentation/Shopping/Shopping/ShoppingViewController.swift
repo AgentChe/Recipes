@@ -82,12 +82,12 @@ extension ShoppingViewController {
 
 // MARK: ShoppingTableDelegate
 extension ShoppingViewController: ShoppingTableDelegate {
-    func shoppingTableDidTapped(ingredient: Ingredient) {
-        print(ingredient.name)
+    func shoppingTableDidTapped(ingredient: (ShoppingTableIngredientElement)) {
+        // TODO
     }
     
-    func shoppingTableDidTappedRemove(ingredient: Ingredient) {
-        print("remove" + ingredient.name)
+    func shoppingTableDidTappedRemove(ingredient: (ShoppingTableIngredientElement)) {
+        viewModel.didTapRemoveIngredient.accept((ingredient.ingredient, ingredient.shopping))
     }
     
     func shoppingTableDidTappedRemoveAllIngredients() {
@@ -95,7 +95,7 @@ extension ShoppingViewController: ShoppingTableDelegate {
     }
     
     func shoppingTableDidTapped(shopping: Shopping) {
-        print(shopping.recipe.name)
+        // TODO
     }
     
     func shoppingTableDidTappedMenu(shopping: Shopping) {

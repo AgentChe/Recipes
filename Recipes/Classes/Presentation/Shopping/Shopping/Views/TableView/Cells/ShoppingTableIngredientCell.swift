@@ -31,7 +31,9 @@ final class ShoppingTableIngredientCell: UITableViewCell {
 
 // MARK: Public
 extension ShoppingTableIngredientCell {
-    func setup(element: Ingredient) {
+    func setup(element: ShoppingTableIngredientElement) {
+        let ingredient = element.ingredient
+        
         checkedView.image = UIImage(named: "Shopping.Checkbox.Uncheck")
         
         let titleAttrs = TextAttributes()
@@ -39,14 +41,14 @@ extension ShoppingTableIngredientCell {
             .font(Fonts.PlusJakartaSans.bold(size: 16.scale))
             .lineHeight(19.2.scale)
             .letterSpacing(-0.17.scale)
-        titleLabel.attributedText = element.name.attributed(with: titleAttrs)
+        titleLabel.attributedText = ingredient.name.attributed(with: titleAttrs)
         
         let valueAttrs = TextAttributes()
             .textColor(Appearance.black.withAlphaComponent(0.5))
             .font(Fonts.PlusJakartaSans.regular(size: 16.scale))
             .lineHeight(24.scale)
             .letterSpacing(-0.17.scale)
-        valueLabel.attributedText = element.value.attributed(with: valueAttrs)
+        valueLabel.attributedText = ingredient.value.attributed(with: valueAttrs)
     }
 }
 

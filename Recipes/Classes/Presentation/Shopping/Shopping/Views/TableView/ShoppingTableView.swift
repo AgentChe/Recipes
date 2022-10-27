@@ -8,8 +8,8 @@
 import UIKit
 
 protocol ShoppingTableDelegate: AnyObject {
-    func shoppingTableDidTapped(ingredient: Ingredient)
-    func shoppingTableDidTappedRemove(ingredient: Ingredient)
+    func shoppingTableDidTapped(ingredient: (ShoppingTableIngredientElement))
+    func shoppingTableDidTappedRemove(ingredient: (ShoppingTableIngredientElement))
     func shoppingTableDidTappedRemoveAllIngredients()
     func shoppingTableDidTapped(shopping: Shopping)
     func shoppingTableDidTappedMenu(shopping: Shopping)

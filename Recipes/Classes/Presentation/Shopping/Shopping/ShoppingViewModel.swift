@@ -14,6 +14,7 @@ final class ShoppingViewModel {
     lazy var filter = BehaviorRelay<ShoppingFilterView.Filter>(value: .allIngredients)
     lazy var didTapRemoveShopping = PublishRelay<Shopping>()
     lazy var didTapRemoveAllShoppings = PublishRelay<Void>()
+    lazy var didTapRemoveIngredient = PublishRelay<(Ingredient, Shopping)>()
     
     lazy var elements = makeElements()
     lazy var emptyState = makeEmptyState()
@@ -24,6 +25,7 @@ final class ShoppingViewModel {
     private lazy var shoppings = makeShoppings()
     private lazy var removeShopping = makeRemoveShopping()
     private lazy var removeAllShoppings = makeRemoveAllShoppings()
+    private lazy var removeIngredient = makeRemoveIngredient()
     
     private lazy var contentManager = ContentManager()
     
@@ -70,25 +72,21 @@ private extension ShoppingViewModel {
     func makeIngredientElements() -> Driver<[ShoppingTableElement]> {
         shoppings
             .map { shoppings -> [ShoppingTableElement] in
-                let ingredients = shoppings.reduce([]) { result, shopping -> [Ingredient] in
-                    result + shopping.ingredients
-                }
-                
                 var result = [ShoppingTableElement]()
                 
-                ingredients.enumerated().forEach { index, ingredient in
-                    result.append(.ingredient(ingredient))
-                    
-                    if (ingredients.count - 1) != index {
-                        result.append(.offset(20.scale))
+                shoppings.forEach { shopping in
+                    shopping.ingredients.forEach { ingredient in
+                        let element = ShoppingTableIngredientElement(ingredient: ingredient,
+                                                                     shopping: shopping)
+                        result.append(contentsOf: [
+                            .ingredient(element),
+                            .offset(20.scale)
+                        ])
                     }
                 }
                 
                 if !result.isEmpty {
-                    result.append(contentsOf: [
-                        .offset(24.scale),
-                        .removeAllIngredients
-                    ])
+                    result.append(.removeAllIngredients)
                 }
                 
                 return result
@@ -116,7 +114,8 @@ private extension ShoppingViewModel {
         let nonActiveTriggers = Observable
             .merge(
                 removeShopping.flatMap { Observable<Void>.never() },
-                removeAllShoppings.flatMap { Observable<Void>.never() }
+                removeAllShoppings.flatMap { Observable<Void>.never() },
+                removeIngredient.flatMapLatest { Observable<Void>.never() }
             )
         
         let activeTriggers = Observable
@@ -168,6 +167,25 @@ private extension ShoppingViewModel {
                 
                 return self.contentManager
                     .removeAllShoppings()
+            }
+    }
+    
+    func makeRemoveIngredient() -> Observable<Void> {
+        didTapRemoveIngredient
+            .flatMapLatest { [weak self] ingredient, shopping -> Single<Void> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                var ingredients = shopping.ingredients
+                if let index = ingredients.firstIndex(where: { $0.id == ingredient.id }) {
+                    ingredients.remove(at: index)
+                }
+                
+                let updated = Shopping(recipe: shopping.recipe, ingredients: ingredients)
+                
+                return self.contentManager
+                    .set(shopping: updated)
             }
     }
 }
