@@ -87,9 +87,9 @@
 
 // MARK: Paygate
 "Paygate.Title" = "Unlock Premium Status";
-"Paygate.Cell1" = "200+ book summaries";
-"Paygate.Cell2" = "Offline reading";
-"Paygate.Cell3" = "Listen or read anytime & anywhere";
+"Paygate.Cell1" = "200+ recipes";
+"Paygate.Cell2" = "Step-by-step instructions";
+"Paygate.Cell3" = "Any diet plans to fit nutritional needs";
 "Paygate.Info" = "Secured by the App Store. Cancel anytime.";
 "Paygate.TermsOfUse" = "Terms of use";
 "Paygate.PrivacyPolicy" = "Privacy Policy";
