@@ -83,7 +83,7 @@ extension ShoppingViewController {
 // MARK: ShoppingTableDelegate
 extension ShoppingViewController: ShoppingTableDelegate {
     func shoppingTableDidTapped(ingredient: (ShoppingTableIngredientElement)) {
-        // TODO
+        viewModel.didTapMarkIngredient.accept((ingredient.ingredient, ingredient.shopping))
     }
     
     func shoppingTableDidTappedRemove(ingredient: (ShoppingTableIngredientElement)) {

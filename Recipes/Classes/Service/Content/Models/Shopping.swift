@@ -8,4 +8,5 @@
 struct Shopping: Codable, Hashable {
     let recipe: RecipeCover
     let ingredients: [Ingredient]
+    let markedIngredients: [Ingredient]
 }

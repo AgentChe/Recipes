@@ -123,7 +123,8 @@ private extension RecipeViewModel {
                     .map { $0.ingredient }
                 
                 return Shopping(recipe: recipe,
-                                ingredients: ingredients)
+                                ingredients: ingredients,
+                                markedIngredients: ingredientsShell.shoppingMarkedIngredients)
             }
             .flatMapLatest { [weak self] shopping -> Single<Void> in
                 guard let self = self else {
@@ -274,7 +275,8 @@ private extension RecipeViewModel {
             .combineLatest(recipeKit, currentShopping)
             .map { recipeKit, currentShopping -> RecipeIngredientsShell in
                 RecipeIngredientsShell(ingredients: recipeKit.recipe.ingredients,
-                                       markedIngredients: currentShopping?.ingredients ?? [])
+                                       markedIngredients: currentShopping?.ingredients ?? [],
+                                       shoppingMarkedIngredients: currentShopping?.markedIngredients ?? [])
             }
     }
     

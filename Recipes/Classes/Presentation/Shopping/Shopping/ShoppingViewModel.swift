@@ -15,6 +15,7 @@ final class ShoppingViewModel {
     lazy var didTapRemoveShopping = PublishRelay<Shopping>()
     lazy var didTapRemoveAllShoppings = PublishRelay<Void>()
     lazy var didTapRemoveIngredient = PublishRelay<(Ingredient, Shopping)>()
+    lazy var didTapMarkIngredient = PublishRelay<(Ingredient, Shopping)>()
     
     lazy var elements = makeElements()
     lazy var emptyState = makeEmptyState()
@@ -26,6 +27,7 @@ final class ShoppingViewModel {
     private lazy var removeShopping = makeRemoveShopping()
     private lazy var removeAllShoppings = makeRemoveAllShoppings()
     private lazy var removeIngredient = makeRemoveIngredient()
+    private lazy var markIngredient = makeMarkIngredient()
     
     private lazy var contentManager = ContentManager()
     
@@ -115,7 +117,8 @@ private extension ShoppingViewModel {
             .merge(
                 removeShopping.flatMap { Observable<Void>.never() },
                 removeAllShoppings.flatMap { Observable<Void>.never() },
-                removeIngredient.flatMapLatest { Observable<Void>.never() }
+                removeIngredient.flatMapLatest { Observable<Void>.never() },
+                markIngredient.flatMapLatest { Observable<Void>.never() }
             )
         
         let activeTriggers = Observable
@@ -182,7 +185,38 @@ private extension ShoppingViewModel {
                     ingredients.remove(at: index)
                 }
                 
-                let updated = Shopping(recipe: shopping.recipe, ingredients: ingredients)
+                var markedIngredients = shopping.markedIngredients
+                if let index = markedIngredients.firstIndex(where: { $0.id == ingredient.id }) {
+                    markedIngredients.remove(at: index)
+                }
+                
+                let updated = Shopping(recipe: shopping.recipe,
+                                       ingredients: ingredients,
+                                       markedIngredients: markedIngredients)
+                
+                return self.contentManager
+                    .set(shopping: updated)
+            }
+    }
+    
+    func makeMarkIngredient() -> Observable<Void> {
+        didTapMarkIngredient
+            .flatMapLatest { [weak self] ingredient, shopping -> Single<Void> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                var markedIngredients = shopping.markedIngredients
+                
+                if let index = markedIngredients.firstIndex(where: { $0.id == ingredient.id }) {
+                    markedIngredients.remove(at: index)
+                } else {
+                    markedIngredients.append(ingredient)
+                }
+                
+                let updated = Shopping(recipe: shopping.recipe,
+                                       ingredients: shopping.ingredients,
+                                       markedIngredients: markedIngredients)
                 
                 return self.contentManager
                     .set(shopping: updated)

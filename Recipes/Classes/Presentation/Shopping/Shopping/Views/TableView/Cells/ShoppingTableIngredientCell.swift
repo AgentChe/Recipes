@@ -34,7 +34,8 @@ extension ShoppingTableIngredientCell {
     func setup(element: ShoppingTableIngredientElement) {
         let ingredient = element.ingredient
         
-        checkedView.image = UIImage(named: "Shopping.Checkbox.Uncheck")
+        let marked = element.shopping.markedIngredients.contains(where: { $0.id == ingredient.id })
+        checkedView.image = UIImage(named: marked ? "Shopping.Checkbox.Check" : "Shopping.Checkbox.Uncheck")
         
         let titleAttrs = TextAttributes()
             .textColor(Appearance.black)
