@@ -9,8 +9,6 @@ import RxSwift
 import RxCocoa
 
 final class ShoppingViewModel {
-    var tryAgain: ((Error) -> (Observable<Void>))?
-    
     lazy var filter = BehaviorRelay<ShoppingFilterView.Filter>(value: .allIngredients)
     lazy var didTapRemoveShopping = PublishRelay<Shopping>()
     lazy var didTapRemoveAllShoppings = PublishRelay<Void>()
@@ -19,7 +17,6 @@ final class ShoppingViewModel {
     
     lazy var elements = makeElements()
     lazy var emptyState = makeEmptyState()
-    lazy var activity = RxActivityIndicator()
     
     private lazy var ingredientsElements = makeIngredientElements()
     private lazy var recipeElements = makeRecipeElements()
@@ -30,8 +27,6 @@ final class ShoppingViewModel {
     private lazy var markIngredient = makeMarkIngredient()
     
     private lazy var contentManager = ContentManager()
-    
-    private lazy var observableRetrySingle = ObservableRetrySingle()
 }
 
 // MARK: Private

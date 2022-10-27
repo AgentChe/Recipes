@@ -34,20 +34,6 @@ final class ShoppingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.tryAgain = { [weak self] error -> Observable<Void> in
-            guard let self = self else {
-                return .never()
-            }
-            
-            return self.openError()
-        }
-        
-        viewModel.activity
-            .drive(Binder(self) { base, activity in
-                base.activity(activity)
-            })
-            .disposed(by: disposeBag)
-        
         viewModel.elements
             .drive(Binder(mainView.tableView) { base, elements in
                 base.setup(elements: elements)
@@ -95,7 +81,8 @@ extension ShoppingViewController: ShoppingTableDelegate {
     }
     
     func shoppingTableDidTapped(shopping: Shopping) {
-        // TODO
+        let vc = ShoppingIngredientsViewController.make(shopping: shopping)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func shoppingTableDidTappedMenu(shopping: Shopping) {
@@ -143,30 +130,6 @@ private extension ShoppingViewController {
                 base.mainView.emptyView.update(at: state)
             })
             .disposed(by: disposeBag)
-    }
-    
-    func openError() -> Observable<Void> {
-        Observable<Void>
-            .create { [weak self] observe in
-                guard let self = self else {
-                    return Disposables.create()
-                }
-                
-                let vc = TryAgainViewController.make {
-                    observe.onNext(())
-                }
-                self.present(vc, animated: true)
-                
-                return Disposables.create()
-            }
-    }
-    
-    func activity(_ activity: Bool) {
-        if activity {
-            mainView.emptyView.isHidden = true
-        }
-        mainView.tableView.isHidden = activity
-        activity ? mainView.preloader.startAnimating() : mainView.preloader.stopAnimating()
     }
     
     func empty(state: ShoppingEmptyView.State?) {

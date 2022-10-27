@@ -170,6 +170,13 @@
 		DE918C6F29091C1500443765 /* ShoppingTableRemoveAllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C6E29091C1500443765 /* ShoppingTableRemoveAllCell.swift */; };
 		DE918C732909707700443765 /* ShoppingMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C722909707700443765 /* ShoppingMenuViewController.swift */; };
 		DE918C752909707F00443765 /* ShoppingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C742909707F00443765 /* ShoppingMenuView.swift */; };
+		DE918C79290AA7CA00443765 /* ShoppingIngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C78290AA7CA00443765 /* ShoppingIngredientsViewController.swift */; };
+		DE918C7B290AA7D500443765 /* ShoppingIngredientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C7A290AA7D500443765 /* ShoppingIngredientsViewModel.swift */; };
+		DE918C7D290AA7DB00443765 /* ShoppingIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C7C290AA7DB00443765 /* ShoppingIngredientsView.swift */; };
+		DE918C81290AA8EF00443765 /* ShoppingIngredientsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C80290AA8EF00443765 /* ShoppingIngredientsTableView.swift */; };
+		DE918C83290AA90600443765 /* ShoppingIngredientsTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C82290AA90600443765 /* ShoppingIngredientsTableElement.swift */; };
+		DE918C86290AA91C00443765 /* ShoppingIngredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C85290AA91C00443765 /* ShoppingIngredientsCell.swift */; };
+		DE918C88290AA92400443765 /* ShoppingIngredientsRemoveAllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C87290AA92400443765 /* ShoppingIngredientsRemoveAllCell.swift */; };
 		DEC41AA828EEC9F500280990 /* RankingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41A9A28EEC9F500280990 /* RankingsViewController.swift */; };
 		DEC41AA928EEC9F500280990 /* RankingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41A9B28EEC9F500280990 /* RankingsView.swift */; };
 		DEC41AAA28EEC9F500280990 /* RankingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41A9C28EEC9F500280990 /* RankingsViewModel.swift */; };
@@ -501,6 +508,13 @@
 		DE918C6E29091C1500443765 /* ShoppingTableRemoveAllCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableRemoveAllCell.swift; sourceTree = "<group>"; };
 		DE918C722909707700443765 /* ShoppingMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingMenuViewController.swift; sourceTree = "<group>"; };
 		DE918C742909707F00443765 /* ShoppingMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingMenuView.swift; sourceTree = "<group>"; };
+		DE918C78290AA7CA00443765 /* ShoppingIngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingIngredientsViewController.swift; sourceTree = "<group>"; };
+		DE918C7A290AA7D500443765 /* ShoppingIngredientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingIngredientsViewModel.swift; sourceTree = "<group>"; };
+		DE918C7C290AA7DB00443765 /* ShoppingIngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingIngredientsView.swift; sourceTree = "<group>"; };
+		DE918C80290AA8EF00443765 /* ShoppingIngredientsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingIngredientsTableView.swift; sourceTree = "<group>"; };
+		DE918C82290AA90600443765 /* ShoppingIngredientsTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingIngredientsTableElement.swift; sourceTree = "<group>"; };
+		DE918C85290AA91C00443765 /* ShoppingIngredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingIngredientsCell.swift; sourceTree = "<group>"; };
+		DE918C87290AA92400443765 /* ShoppingIngredientsRemoveAllCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingIngredientsRemoveAllCell.swift; sourceTree = "<group>"; };
 		DEC41A9A28EEC9F500280990 /* RankingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsViewController.swift; sourceTree = "<group>"; };
 		DEC41A9B28EEC9F500280990 /* RankingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsView.swift; sourceTree = "<group>"; };
 		DEC41A9C28EEC9F500280990 /* RankingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsViewModel.swift; sourceTree = "<group>"; };
@@ -1385,6 +1399,44 @@
 			path = ShoppingMenu;
 			sourceTree = "<group>";
 		};
+		DE918C77290AA7AA00443765 /* ShoppingIngredients */ = {
+			isa = PBXGroup;
+			children = (
+				DE918C7E290AA7DE00443765 /* Views */,
+				DE918C78290AA7CA00443765 /* ShoppingIngredientsViewController.swift */,
+				DE918C7A290AA7D500443765 /* ShoppingIngredientsViewModel.swift */,
+				DE918C7C290AA7DB00443765 /* ShoppingIngredientsView.swift */,
+			);
+			path = ShoppingIngredients;
+			sourceTree = "<group>";
+		};
+		DE918C7E290AA7DE00443765 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE918C7F290AA7FB00443765 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE918C7F290AA7FB00443765 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DE918C84290AA90900443765 /* Cells */,
+				DE918C80290AA8EF00443765 /* ShoppingIngredientsTableView.swift */,
+				DE918C82290AA90600443765 /* ShoppingIngredientsTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DE918C84290AA90900443765 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DE918C85290AA91C00443765 /* ShoppingIngredientsCell.swift */,
+				DE918C87290AA92400443765 /* ShoppingIngredientsRemoveAllCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DEC41A9928EEC9F500280990 /* Rankings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1894,6 +1946,7 @@
 		DEC41C1628F955BF00280990 /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				DE918C77290AA7AA00443765 /* ShoppingIngredients */,
 				DE918C712909706800443765 /* ShoppingMenu */,
 				DE918C702909705400443765 /* Shopping */,
 			);
@@ -2298,6 +2351,7 @@
 				DE54ADAA28D0A011004F1514 /* PaygateProductButton.swift in Sources */,
 				DEC41B9228F4599E00280990 /* RecipeView.swift in Sources */,
 				DEF40C3A28E3509D00C2EB67 /* SearchRecipesRequest.swift in Sources */,
+				DE918C7D290AA7DB00443765 /* ShoppingIngredientsView.swift in Sources */,
 				DEC41BD828F6EA1200280990 /* ReaderView.swift in Sources */,
 				DE918C6D2909150B00443765 /* ShoppingTableRecipeCell.swift in Sources */,
 				DE54ACC028D09F26004F1514 /* UIDevice+Extension.swift in Sources */,
@@ -2360,6 +2414,7 @@
 				DEC41AB028EEC9F500280990 /* RankingsCollectionCell.swift in Sources */,
 				DE54ACC128D09F26004F1514 /* UIColor+Extension.swift in Sources */,
 				DEC41C0A28F7F9AC00280990 /* FeedbackTableRecipeCell.swift in Sources */,
+				DE918C83290AA90600443765 /* ShoppingIngredientsTableElement.swift in Sources */,
 				DE54ADD328D0A012004F1514 /* MainView.swift in Sources */,
 				DE54ADBE28D0A012004F1514 /* OAgeButton.swift in Sources */,
 				DE54ADA928D0A011004F1514 /* PaygateViewController.swift in Sources */,
@@ -2415,6 +2470,7 @@
 				DEC41BBC28F5B43000280990 /* RecipeCPFView.swift in Sources */,
 				DEF40C3728E3509D00C2EB67 /* GetExploreKitResponse.swift in Sources */,
 				DEC41C1A28F955DE00280990 /* ShoppingViewModel.swift in Sources */,
+				DE918C86290AA91C00443765 /* ShoppingIngredientsCell.swift in Sources */,
 				DEC41C2228F958E400280990 /* ShoppingFilterButton.swift in Sources */,
 				DEC41BCD28F6E68A00280990 /* StepsView.swift in Sources */,
 				DE54ACAA28D09F25004F1514 /* ImagePicker.swift in Sources */,
@@ -2460,6 +2516,7 @@
 				DE67A84828EC1F2C00369B02 /* ForYouCategoriesCollectionView.swift in Sources */,
 				DE67A84728EC1F2C00369B02 /* ForYouRankingCell.swift in Sources */,
 				DEC41B2628EF296300280990 /* LibraryTableView.swift in Sources */,
+				DE918C81290AA8EF00443765 /* ShoppingIngredientsTableView.swift in Sources */,
 				DEC41AE128EEF2B600280990 /* ChallengeRecipesCell.swift in Sources */,
 				DE54ACD028D09F26004F1514 /* Weak.swift in Sources */,
 				DE54ADBB28D0A012004F1514 /* ORecipeImageCollectionView.swift in Sources */,
@@ -2481,6 +2538,7 @@
 				DE54ACB628D09F25004F1514 /* PushNotificationsModel.swift in Sources */,
 				DEC41B0528EF203F00280990 /* ExploreCollectionCategoriesCell.swift in Sources */,
 				DE54ADB528D0A012004F1514 /* OProgressView.swift in Sources */,
+				DE918C79290AA7CA00443765 /* ShoppingIngredientsViewController.swift in Sources */,
 				DEC41C0E28F7F9AC00280990 /* FeedbackTableView.swift in Sources */,
 				DEC41C0F28F7F9AC00280990 /* FeedbackTableElement.swift in Sources */,
 				DEC41ADE28EEF2B600280990 /* ChallengeButton.swift in Sources */,
@@ -2489,6 +2547,7 @@
 				DE54AC2428D09BF9004F1514 /* AppDelegate.swift in Sources */,
 				DE67A83928EC1F2C00369B02 /* SettingsLinkCell.swift in Sources */,
 				DEC41BB428F5A6AE00280990 /* RecipeStepCell.swift in Sources */,
+				DE918C7B290AA7D500443765 /* ShoppingIngredientsViewModel.swift in Sources */,
 				DEC41C2428F95A5600280990 /* ShoppingEmptyView.swift in Sources */,
 				DEC41BD928F6EA1200280990 /* ReaderViewModel.swift in Sources */,
 				DEC41BBE28F5B67000280990 /* CircleProgressView.swift in Sources */,
@@ -2530,6 +2589,7 @@
 				DE54ACC528D09F26004F1514 /* UIViewRxExtension.swift in Sources */,
 				DEF40C3528E3509D00C2EB67 /* GetRankingRecipesRequest.swift in Sources */,
 				DE54ACAC28D09F25004F1514 /* PaginatedDataLoader.swift in Sources */,
+				DE918C88290AA92400443765 /* ShoppingIngredientsRemoveAllCell.swift in Sources */,
 				DE54ACCA28D09F26004F1514 /* ObservableRetrySingle.swift in Sources */,
 				DE67A84928EC1F2C00369B02 /* ForYouCategoriesCollectionCell.swift in Sources */,
 				DEC41AE728EEF2B600280990 /* ChallengeBadgesCell.swift in Sources */,
