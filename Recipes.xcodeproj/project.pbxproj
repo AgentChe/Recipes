@@ -89,9 +89,7 @@
 		DE54ADAA28D0A011004F1514 /* PaygateProductButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD6828D0A011004F1514 /* PaygateProductButton.swift */; };
 		DE54ADAB28D0A011004F1514 /* PaygateInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD6928D0A011004F1514 /* PaygateInfoCell.swift */; };
 		DE54ADAC28D0A011004F1514 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD6B28D0A011004F1514 /* SplashViewController.swift */; };
-		DE54ADAD28D0A011004F1514 /* SplashActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD6D28D0A011004F1514 /* SplashActivity.swift */; };
 		DE54ADAE28D0A011004F1514 /* SplashReceiptValidationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD6E28D0A011004F1514 /* SplashReceiptValidationObserver.swift */; };
-		DE54ADAF28D0A011004F1514 /* SplashSDKInitialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD6F28D0A011004F1514 /* SplashSDKInitialize.swift */; };
 		DE54ADB028D0A011004F1514 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD7028D0A011004F1514 /* SplashViewModel.swift */; };
 		DE54ADB128D0A011004F1514 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD7128D0A011004F1514 /* SplashView.swift */; };
 		DE54ADB328D0A011004F1514 /* OCombineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AD7628D0A011004F1514 /* OCombineData.swift */; };
@@ -177,6 +175,8 @@
 		DE918C83290AA90600443765 /* ShoppingIngredientsTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C82290AA90600443765 /* ShoppingIngredientsTableElement.swift */; };
 		DE918C86290AA91C00443765 /* ShoppingIngredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C85290AA91C00443765 /* ShoppingIngredientsCell.swift */; };
 		DE918C88290AA92400443765 /* ShoppingIngredientsRemoveAllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C87290AA92400443765 /* ShoppingIngredientsRemoveAllCell.swift */; };
+		DE918C8A290AC24F00443765 /* SplashActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C89290AC24F00443765 /* SplashActivity.swift */; };
+		DE918C8C290AC30300443765 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C8B290AC30300443765 /* UIApplication+Extension.swift */; };
 		DEC41AA828EEC9F500280990 /* RankingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41A9A28EEC9F500280990 /* RankingsViewController.swift */; };
 		DEC41AA928EEC9F500280990 /* RankingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41A9B28EEC9F500280990 /* RankingsView.swift */; };
 		DEC41AAA28EEC9F500280990 /* RankingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41A9C28EEC9F500280990 /* RankingsViewModel.swift */; };
@@ -426,9 +426,7 @@
 		DE54AD6828D0A011004F1514 /* PaygateProductButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateProductButton.swift; sourceTree = "<group>"; };
 		DE54AD6928D0A011004F1514 /* PaygateInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateInfoCell.swift; sourceTree = "<group>"; };
 		DE54AD6B28D0A011004F1514 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		DE54AD6D28D0A011004F1514 /* SplashActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashActivity.swift; sourceTree = "<group>"; };
 		DE54AD6E28D0A011004F1514 /* SplashReceiptValidationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashReceiptValidationObserver.swift; sourceTree = "<group>"; };
-		DE54AD6F28D0A011004F1514 /* SplashSDKInitialize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashSDKInitialize.swift; sourceTree = "<group>"; };
 		DE54AD7028D0A011004F1514 /* SplashViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		DE54AD7128D0A011004F1514 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DE54AD7628D0A011004F1514 /* OCombineData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCombineData.swift; sourceTree = "<group>"; };
@@ -515,6 +513,8 @@
 		DE918C82290AA90600443765 /* ShoppingIngredientsTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingIngredientsTableElement.swift; sourceTree = "<group>"; };
 		DE918C85290AA91C00443765 /* ShoppingIngredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingIngredientsCell.swift; sourceTree = "<group>"; };
 		DE918C87290AA92400443765 /* ShoppingIngredientsRemoveAllCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingIngredientsRemoveAllCell.swift; sourceTree = "<group>"; };
+		DE918C89290AC24F00443765 /* SplashActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashActivity.swift; sourceTree = "<group>"; };
+		DE918C8B290AC30300443765 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		DEC41A9A28EEC9F500280990 /* RankingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsViewController.swift; sourceTree = "<group>"; };
 		DEC41A9B28EEC9F500280990 /* RankingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsView.swift; sourceTree = "<group>"; };
 		DEC41A9C28EEC9F500280990 /* RankingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsViewModel.swift; sourceTree = "<group>"; };
@@ -901,6 +901,7 @@
 				DE54AC9628D09F25004F1514 /* ObservableAndSingle+Extension.swift */,
 				DE54AC9728D09F25004F1514 /* String+Extension.swift */,
 				DE54AC9828D09F25004F1514 /* UIViewRxExtension.swift */,
+				DE918C8B290AC30300443765 /* UIApplication+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1092,9 +1093,8 @@
 		DE54AD6C28D0A011004F1514 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DE54AD6D28D0A011004F1514 /* SplashActivity.swift */,
 				DE54AD6E28D0A011004F1514 /* SplashReceiptValidationObserver.swift */,
-				DE54AD6F28D0A011004F1514 /* SplashSDKInitialize.swift */,
+				DE918C89290AC24F00443765 /* SplashActivity.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -2332,6 +2332,7 @@
 				DEF40C4F28E4545800C2EB67 /* ODietsTableView.swift in Sources */,
 				DE67A84B28EC1F2C00369B02 /* ForYouRecipesCell.swift in Sources */,
 				DEC41C2028F958CE00280990 /* ShoppingFilterView.swift in Sources */,
+				DE918C8C290AC30300443765 /* UIApplication+Extension.swift in Sources */,
 				DEC41AAD28EEC9F500280990 /* RRecipesTableElement.swift in Sources */,
 				DE54ADC128D0A012004F1514 /* OCategoriesCollectionElement.swift in Sources */,
 				DEC41AE228EEF2B600280990 /* ChallengeRecipesCollectionCell.swift in Sources */,
@@ -2422,7 +2423,6 @@
 				DE54ACBE28D09F26004F1514 /* GradientView.swift in Sources */,
 				DE54ACBD28D09F26004F1514 /* CircleView.swift in Sources */,
 				DEC41BE328F7EB7800280990 /* ReaderTitleCell.swift in Sources */,
-				DE54ADAD28D0A011004F1514 /* SplashActivity.swift in Sources */,
 				DE54ACA628D09F25004F1514 /* BranchManager.swift in Sources */,
 				DE54ADAE28D0A011004F1514 /* SplashReceiptValidationObserver.swift in Sources */,
 				DEF40C2F28E3509D00C2EB67 /* GetRankingResponse.swift in Sources */,
@@ -2458,6 +2458,7 @@
 				DEF40C2D28E3509D00C2EB67 /* FeedbackRequest.swift in Sources */,
 				DEC41BE728F7EDDC00280990 /* ReaderImageCell.swift in Sources */,
 				DEF40C3428E3509D00C2EB67 /* GetChallengeResponse.swift in Sources */,
+				DE918C8A290AC24F00443765 /* SplashActivity.swift in Sources */,
 				DEC41ADB28EEF2B600280990 /* ChallengeView.swift in Sources */,
 				DEC41AE928EEF2B600280990 /* ChallengeTableView.swift in Sources */,
 				DEC41B2028EF296300280990 /* LibraryViewModel.swift in Sources */,
@@ -2475,7 +2476,6 @@
 				DEC41BCD28F6E68A00280990 /* StepsView.swift in Sources */,
 				DE54ACAA28D09F25004F1514 /* ImagePicker.swift in Sources */,
 				DE54AD2C28D09F68004F1514 /* IAPManager.swift in Sources */,
-				DE54ADAF28D0A011004F1514 /* SplashSDKInitialize.swift in Sources */,
 				DEC41ABE28EEED8300280990 /* CategoryViewController.swift in Sources */,
 				DEF40C3B28E3509D00C2EB67 /* GetForYouRequest.swift in Sources */,
 				DE54ACA928D09F25004F1514 /* FacebookManager.swift in Sources */,
@@ -2746,6 +2746,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M73NH26C3Q;
+				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recipes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2753,7 +2754,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2777,6 +2778,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M73NH26C3Q;
+				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Recipes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2784,7 +2786,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

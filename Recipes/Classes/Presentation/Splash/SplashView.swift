@@ -57,9 +57,9 @@ private extension SplashView {
 
 // MARK: Lazy initialization
 private extension SplashView {
-    func makeAnimationView() -> AnimationView {
-        let view = AnimationView()
-        view.animation = Animation.named("Splash.Animation")
+    func makeAnimationView() -> LottieAnimationView {
+        let view = LottieAnimationView()
+        view.animation = LottieAnimation.named("Splash.Animation")
         view.contentMode = .scaleAspectFill
         view.loopMode = .loop
         view.layer.masksToBounds = false

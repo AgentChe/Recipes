@@ -7,15 +7,12 @@
 
 import UIKit
 import OtterScaleiOS
-import RushSDK
 
 // TODO: GoogleService-Info
 // TODO: GlobalDefinitions
 // TODO: info.plist
 @main
 final class AppDelegate: UIResponder, UIApplicationDelegate {
-    lazy var sdkProvider = SDKProvider()
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         NumberLaunches().launch()
         
@@ -28,8 +25,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         PurchaseValidationObserver.shared.startObserve()
         
         IAPManager.initialize()
-        
-        sdkProvider.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
     }

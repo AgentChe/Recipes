@@ -14,11 +14,7 @@ enum ScreenSize {
     static let maxLength: CGFloat = (max(width, height))
     static let minLength: CGFloat = (min(width, height))
     
-    static let isIphone = (UI_USER_INTERFACE_IDIOM() == .phone)
+    static let isIphone = UIDevice.current.userInterfaceIdiom == .phone
     static let isRetina = (UIScreen.main.scale >= 2.0)
-    static let isIphone6 = (isIphone && maxLength == 667.0)
-    static let isIphone6Plus = (isIphone && maxLength == 736.0)
-    static let isIphoneX = (isIphone && maxLength == 812.0)
-    static let isIphoneXMax = (isIphone && maxLength == 896.0)
     static let isIphoneXFamily = (isIphone && maxLength / minLength > 2.0)
 }
