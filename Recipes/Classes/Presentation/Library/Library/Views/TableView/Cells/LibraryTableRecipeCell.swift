@@ -15,6 +15,7 @@ final class LibraryTableRecipeCell: UITableViewCell {
     lazy var timeLabel = makeLabel()
     lazy var progressView = makeProgressView()
     lazy var menuButton = makeMenuButton()
+    lazy var undeterminedTimeLabel = makeUndeterminedTimeLabel()
     
     private lazy var nameLabelTopConstraint = NSLayoutConstraint()
     private lazy var timeLabelTopConstraint = NSLayoutConstraint()
@@ -45,9 +46,11 @@ extension LibraryTableRecipeCell {
     func setup(element: LibraryTableRecipeElement, menuTapped: @escaping () -> Void) {
         self.menuTapped = menuTapped
         
-        recipeImageView.kf.setImage(with: element.recipe.imageUrl)
+        let recipe = element.recipe
         
-        nameLabel.attributedText = element.recipe.name
+        recipeImageView.kf.setImage(with: recipe.imageUrl)
+        
+        nameLabel.attributedText = recipe.name
             .attributed(with: TextAttributes()
                             .textColor(Appearance.black)
                             .font(Fonts.PlusJakartaSans.semiBold(size: 16.scale))
@@ -55,7 +58,13 @@ extension LibraryTableRecipeCell {
                             .letterSpacing(-0.17.scale)
                             .lineBreakMode(.byTruncatingTail))
         
-        let time = String(format: "Library.Time".localized, element.recipe.time)
+        let totalTime = (recipe.timePreparing ?? 0) + (recipe.timeCooking ?? 0)
+        
+        timeIconView.isHidden = totalTime == 0
+        timeLabel.isHidden = totalTime == 0
+        undeterminedTimeLabel.isHidden = totalTime != 0
+        
+        let time = String(format: "Library.Time".localized, totalTime)
         timeLabel.attributedText = time
             .attributed(with: TextAttributes()
                             .textColor(Appearance.black.withAlphaComponent(0.5))
@@ -129,6 +138,11 @@ private extension LibraryTableRecipeCell {
         ])
         
         NSLayoutConstraint.activate([
+            undeterminedTimeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 130.scale),
+            undeterminedTimeLabel.topAnchor.constraint(equalTo: timeLabel.topAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
             progressView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 106.scale),
             progressView.widthAnchor.constraint(equalToConstant: 140.scale),
             progressView.heightAnchor.constraint(equalToConstant: 6.scale),
@@ -167,6 +181,21 @@ private extension LibraryTableRecipeCell {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
         view.image = UIImage(named: "Library.Time")
+        view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(view)
+        return view
+    }
+    
+    func makeUndeterminedTimeLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(Appearance.black.withAlphaComponent(0.5))
+            .font(Fonts.PlusJakartaSans.regular(size: 16.scale))
+            .lineHeight(24.scale)
+            .letterSpacing(-0.17.scale)
+            .lineBreakMode(.byTruncatingTail)
+        
+        let view = UILabel()
+        view.attributedText = "Library.Time.Undetermined".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

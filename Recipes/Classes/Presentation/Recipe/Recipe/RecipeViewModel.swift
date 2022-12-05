@@ -354,7 +354,8 @@ private extension RecipeCover {
     init(recipe: Recipe) {
         id = recipe.id
         name = recipe.name
-        time = recipe.totalTime ?? 0
+        timePreparing = recipe.timePreparing
+        timeCooking = recipe.timeCooking
         imageUrl = recipe.imageUrl
         rankingId = recipe.rankingId
         shareLink = recipe.shareLink

@@ -15,8 +15,10 @@ final class ORecipesView: OSlideView {
     lazy var titleLabel = makeTitleLabel()
     lazy var imagesCollectionView = makeImagesCollectionView()
     lazy var nameLabel = makeLabel()
+    lazy var timeContainerView = makeTimeContainerView()
     lazy var timeIconView = makeTimeIconView()
-    lazy var timeLabel = makeLabel()
+    lazy var timeLabel = makeTimeLabel()
+    lazy var undeterminedTimeLabel = makeUndeterminedTimeLabel()
     lazy var dislikeButton = makeDislikeButton()
     lazy var likeButton = makeLikeButton()
     lazy var preloader = makePreloader()
@@ -73,13 +75,19 @@ extension ORecipesView: ORecipeImageCollectionViewDelegate {
             .textAlignment(.center)
         nameLabel.attributedText = frontRecipe.name.attributed(with: nameAttrs)
         
+        let totalTime = (frontRecipe.timePreparing ?? 0) + (frontRecipe.timeCooking ?? 0)
+        
+        timeIconView.isHidden = totalTime == 0
+        timeLabel.isHidden = totalTime == 0
+        undeterminedTimeLabel.isHidden = totalTime != 0
+        
         let timeAttrs = TextAttributes()
             .textColor(Appearance.black.withAlphaComponent(0.5))
             .font(Fonts.PlusJakartaSans.regular(size: 16.scale))
             .lineHeight(24.scale)
             .letterSpacing(-0.17.scale)
             .textAlignment(.center)
-        let time = String(format: "Onboarding.Recipe.min".localized, frontRecipe.time)
+        let time = String(format: "Onboarding.Recipe.min".localized, totalTime)
         timeLabel.attributedText = time.attributed(with: timeAttrs)
     }
 }
@@ -98,8 +106,7 @@ private extension ORecipesView {
                     base.dislikeButton,
                     base.likeButton,
                     base.nameLabel,
-                    base.timeIconView,
-                    base.timeLabel
+                    base.timeContainerView
                 ]
                 hiddenViews.forEach { $0.isHidden = activity }
             })
@@ -233,15 +240,27 @@ private extension ORecipesView {
         ])
         
         NSLayoutConstraint.activate([
+            timeContainerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            timeContainerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            timeContainerView.heightAnchor.constraint(equalToConstant: 24.scale),
+            timeContainerView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 16.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
             timeIconView.widthAnchor.constraint(equalToConstant: 24.scale),
             timeIconView.heightAnchor.constraint(equalToConstant: 24.scale),
-            timeIconView.centerYAnchor.constraint(equalTo: timeLabel.centerYAnchor),
-            timeIconView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 152.scale)
+            timeIconView.centerYAnchor.constraint(equalTo: timeContainerView.centerYAnchor),
+            timeIconView.leadingAnchor.constraint(equalTo: timeContainerView.leadingAnchor, constant: 152.scale)
         ])
         
         NSLayoutConstraint.activate([
             timeLabel.leadingAnchor.constraint(equalTo: timeIconView.trailingAnchor, constant: 3.scale),
-            timeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 16.scale)
+            timeLabel.centerYAnchor.constraint(equalTo: timeContainerView.centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            undeterminedTimeLabel.centerXAnchor.constraint(equalTo: timeContainerView.centerXAnchor),
+            undeterminedTimeLabel.centerYAnchor.constraint(equalTo: timeContainerView.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -300,12 +319,41 @@ private extension ORecipesView {
         return view
     }
     
+    func makeTimeContainerView() -> UIView {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeTimeLabel() -> UILabel {
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        timeContainerView.addSubview(view)
+        return view
+    }
+    
     func makeTimeIconView() -> UIImageView {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
         view.image = UIImage(named: "Onboarding.Recipe.Time")
         view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
+        timeContainerView.addSubview(view)
+        return view
+    }
+    
+    func makeUndeterminedTimeLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(Appearance.black.withAlphaComponent(0.5))
+            .font(Fonts.PlusJakartaSans.regular(size: 16.scale))
+            .lineHeight(24.scale)
+            .letterSpacing(-0.17.scale)
+            .lineBreakMode(.byTruncatingTail)
+        
+        let view = UILabel()
+        view.attributedText = "Onboarding.Recipe.TimeUndetermined".localized.attributed(with: attrs)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        timeContainerView.addSubview(view)
         return view
     }
     

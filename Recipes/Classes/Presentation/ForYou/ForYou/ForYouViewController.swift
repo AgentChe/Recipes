@@ -92,19 +92,6 @@ extension ForYouViewController: ForYouTableDelegate {
         present(vc, animated: true)
     }
     
-    func forYouTableDidTapped(challenge: ChallengeCover) {
-        let vc: UIViewController
-
-        let needPayment = !SessionManager().hasActiveSubscriptions()
-        if needPayment && challenge.paid {
-            vc = PaygateViewController.make()
-        } else {
-            vc = ChallengeViewController.make(challengeId: challenge.id)
-        }
-
-        present(vc, animated: true)
-    }
-    
     func forYouTableDidTapped(ranking: Ranking) {
         let vc = RankingsViewController.make(start: ranking)
         present(vc, animated: true)

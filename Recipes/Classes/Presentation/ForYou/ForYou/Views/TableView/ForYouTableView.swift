@@ -9,7 +9,6 @@ import UIKit
 
 protocol ForYouTableDelegate: AnyObject {
     func forYouTableDidTapped(recipe: RecipeCover)
-    func forYouTableDidTapped(challenge: ChallengeCover)
     func forYouTableDidTapped(ranking: Ranking)
     func forYouTableDidTapped(category: Category)
 }
@@ -67,12 +66,6 @@ extension ForYouTableView: UITableViewDataSource {
                 self?.mainDelegate?.forYouTableDidTapped(recipe: recipe)
             })
             return cell
-        case .challenges(let elements):
-            let cell = dequeueReusableCell(withIdentifier: String(describing: ForYouChallengesCell.self)) as! ForYouChallengesCell
-            cell.setup(elements: elements, tapped: { [weak self] challenge in
-                self?.mainDelegate?.forYouTableDidTapped(challenge: challenge)
-            })
-            return cell
         case .rankingTitle(let element):
             let cell = dequeueReusableCell(withIdentifier: String(describing: ForYouTitleCell.self)) as! ForYouTitleCell
             cell.setup(title: element.name, seeAllHidden: false)
@@ -105,8 +98,6 @@ extension ForYouTableView: UITableViewDelegate {
             return 24.scale
         case .recipes:
             return 221.scale
-        case .challenges:
-            return 284.scale
         case .rankingRecipe:
             return 65.scale
         case .separator:
@@ -137,7 +128,6 @@ private extension ForYouTableView {
         register(ForYouFreeRecipeCell.self, forCellReuseIdentifier: String(describing: ForYouFreeRecipeCell.self))
         register(ForYouTitleCell.self, forCellReuseIdentifier: String(describing: ForYouTitleCell.self))
         register(ForYouRecipesCell.self, forCellReuseIdentifier: String(describing: ForYouRecipesCell.self))
-        register(ForYouChallengesCell.self, forCellReuseIdentifier: String(describing: ForYouChallengesCell.self))
         register(ForYouRankingCell.self, forCellReuseIdentifier: String(describing: ForYouRankingCell.self))
         register(ForYouSeparatorCell.self, forCellReuseIdentifier: String(describing: ForYouSeparatorCell.self))
         register(ForYouCategoriesCell.self, forCellReuseIdentifier: String(describing: ForYouCategoriesCell.self))

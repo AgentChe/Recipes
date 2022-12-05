@@ -11,93 +11,77 @@
             },
             "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
             "ranking_id": 1,
-            "link": "https://recipes.korrekted.com/",
-            "paid": false,
-            "time_min": 10
+            "link": "https://books.korrekted.com/",
+            "paid": false
         },
         "todays_hot_summaries": [
             {
-                "id": 2,
-                "name": "Unlimited Memory",
-                "author": {
-                    "name": "Daniel Kahneman",
-                    "photo_url": "https://picsum.photos/800/800"
-                },
-                "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
-                "ranking_id": 1,
-                "link": "https://recipes.korrekted.com/",
-                "paid": true,
-                "time_min": 10
-            },
-            {
-                "id": 3,
-                "name": "The Law of Success",
-                "author": {
-                    "name": "Daniel Kahneman",
-                    "photo_url": "https://picsum.photos/800/800"
-                },
-                "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
-                "ranking_id": 1,
-                "link": "https://recipes.korrekted.com/",
-                "paid": true,
-                "time_min": 10
-            },
-            {
-                "id": 6,
-                "name": "Poke with Salmon and Teri",
-                "author": {
-                    "name": "Daniel Kahneman",
-                    "photo_url": "https://picsum.photos/800/800"
-                },
-                "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
-                "ranking_id": 1,
-                "link": "https://recipes.korrekted.com/",
-                "paid": true,
-                "time_min": 10
-            },
-        ],
-        "challenges": [
-            {
                 "id": 1,
-                "name": "40 day challenge",
-                "title": "Self-confidence",
+                "name": "Thinking Fast and Slow",
+                "author": {
+                    "name": "Daniel Kahneman",
+                    "photo_url": "https://picsum.photos/800/800"
+                },
                 "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
+                "ranking_id": 1,
+                "link": "https://books.korrekted.com/",
                 "paid": false
             },
             {
-                "id": 2,
-                "name": "80 day challenge",
-                "title": "Something else",
+                "id": 1,
+                "name": "Thinking Fast and Slow",
+                "author": {
+                    "name": "Daniel Kahneman",
+                    "photo_url": "https://picsum.photos/800/800"
+                },
                 "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
-                "paid": true
-            }
+                "ranking_id": 1,
+                "link": "https://books.korrekted.com/",
+                "paid": false
+            },
+            {
+                "id": 1,
+                "name": "Thinking Fast and Slow",
+                "author": {
+                    "name": "Daniel Kahneman",
+                    "photo_url": "https://picsum.photos/800/800"
+                },
+                "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
+                "ranking_id": 1,
+                "link": "https://books.korrekted.com/",
+                "paid": false,
+                "time_preparing": 10,
+                "time_cooking": 10
+            },
         ],
         "you_may_like": [
             {
-                "id": 4,
-                "name": "Unlimited Memory",
+                "id": 1,
+                "name": "Thinking Fast and Slow",
                 "author": {
                     "name": "Daniel Kahneman",
                     "photo_url": "https://picsum.photos/800/800"
                 },
                 "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
                 "ranking_id": 1,
-                "link": "https://recipes.korrekted.com/",
-                "paid": true,
-                "time_min": 10
+                "link": "https://books.korrekted.com/",
+                "paid": false,
+                "time_preparing": 10,
+                "time_cooking": 10
             },
             {
-                "id": 5,
-                "name": "The Law of Success",
+                "id": 1,
+                "name": "Thinking Fast and Slow",
                 "author": {
                     "name": "Daniel Kahneman",
                     "photo_url": "https://picsum.photos/800/800"
                 },
                 "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
                 "ranking_id": 1,
-                "link": "https://recipes.korrekted.com/",
-                "paid": true,
-                "time_min": 10
+                "link": "https://books.korrekted.com/",
+                "paid": false,
+                "time_preparing": 10,
+                "time_cooking": 10
             }
         ],
         "ranking": [
@@ -105,30 +89,30 @@
                 "ranking_id": 21,
                 "units": [
                     {
-                        "id": 8,
-                        "name": "Unlimited Memory",
+                        "id": 1,
+                        "name": "Thinking Fast and Slow",
                         "author": {
                             "name": "Daniel Kahneman",
                             "photo_url": "https://picsum.photos/800/800"
                         },
                         "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
                         "ranking_id": 1,
-                        "link": "https://recipes.korrekted.com/",
-                        "paid": true,
-                        "time_min": 10
+                        "link": "https://books.korrekted.com/",
+                        "paid": false
                     },
                     {
-                        "id": 9,
-                        "name": "The Law of Success",
+                        "id": 1,
+                        "name": "Thinking Fast and Slow",
                         "author": {
                             "name": "Daniel Kahneman",
                             "photo_url": "https://picsum.photos/800/800"
                         },
                         "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
                         "ranking_id": 1,
-                        "link": "https://recipes.korrekted.com/",
-                        "paid": true,
-                        "time_min": 10
+                        "link": "https://books.korrekted.com/",
+                        "paid": false,
+                        "time_preparing": 10,
+                        "time_cooking": 10
                     }
                 ]
             },
@@ -136,30 +120,32 @@
                 "ranking_id": 22,
                 "units": [
                     {
-                        "id": 10,
-                        "name": "Unlimited Memory",
+                        "id": 1,
+                        "name": "Thinking Fast and Slow",
                         "author": {
                             "name": "Daniel Kahneman",
                             "photo_url": "https://picsum.photos/800/800"
                         },
                         "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
                         "ranking_id": 1,
-                        "link": "https://recipes.korrekted.com/",
-                        "paid": true,
-                        "time_min": 10
+                        "link": "https://books.korrekted.com/",
+                        "paid": false,
+                        "time_preparing": 10,
+                        "time_cooking": 10
                     },
                     {
-                        "id": 11,
-                        "name": "The Law of Success",
+                        "id": 1,
+                        "name": "Thinking Fast and Slow",
                         "author": {
                             "name": "Daniel Kahneman",
                             "photo_url": "https://picsum.photos/800/800"
                         },
                         "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
                         "ranking_id": 1,
-                        "link": "https://recipes.korrekted.com/",
-                        "paid": true,
-                        "time_min": 10
+                        "link": "https://books.korrekted.com/",
+                        "paid": false,
+                        "time_preparing": 10,
+                        "time_cooking": 10
                     }
                 ]
             }

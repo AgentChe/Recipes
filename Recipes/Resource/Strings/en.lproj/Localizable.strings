@@ -72,6 +72,7 @@
 "Onboarding.InfoLibrary.Button" = "Got it";
 "Onboarding.Recipe.Title" = "Does this recipe\ninterest you?";
 "Onboarding.Recipe.min" = "%i min";
+"Onboarding.Recipe.TimeUndetermined" = "Undetermined";
 "Onboarding.Progress.Title1" = "Analyzing your\nprofile...";
 "Onboarding.Progress.Title2" = "Identifying your\npreferences ...";
 "Onboarding.Progress.Title3" = "Creating your\npersonalized library...";
@@ -109,9 +110,9 @@
 "ForYou.Title" = "For you";
 "ForYou.FreeButton.Free" = "FREE RECIPE";
 "ForYou.Time" = "%i min";
+"ForYou.Time.Undetermined" = "Undetermined";
 "ForYou.Title.SeeAll" = "See all";
 "ForYou.TodayHotSummaries" = "Today’s best recipes";
-"ForYou.Challenges" = "Challenges";
 "ForYou.YouMayLike" = "You may like";
 "ForYou.ExploreCategories" = "Explore categories";
 
@@ -126,18 +127,11 @@
 // MARK: Ranking
 "Ranking.Title" = "Ranking";
 "Ranking.Time" = "%i min";
+"Ranking.Time.Undetermined" = "Undetermined";
 
 // MARK: Category
 "Category.Time" = "%i min";
-
-// MARK: Challenge
-"Challenge.Cook" = "Cook";
-"Challenge.Day" = "Day %i";
-"Challenge.Badges" = "Badges";
-"Challenge.Badges.GoodStart" = "Good start";
-"Challenge.Badges.CompleteDay3" = "Complete\nDay 3";
-"Challenge.Badges.CompleteChallenge" = "Complete\nchallenge";
-"Challenge.Time" = "%i min";
+"Category.Time.Undetermined" = "Undetermined";
 
 // MARK: Explore
 "Explore.Title" = "Explore";
@@ -146,6 +140,7 @@
 "Explore.TrendingSearches" = "Trending searches";
 "Explore.PopularRequests" = "Popular requests";
 "Explore.Time" = "%i min";
+"Explore.Time.Undetermined" = "Undetermined";
 
 // MARK: Library
 "Library.Title" = "My Recipes";
@@ -159,6 +154,7 @@
 "Library.Empty.History.SubTitle" = "Here will be recipes that you\ncook";
 "Library.Empty.Button" = "Discover books";
 "Library.Time" = "%i min";
+"Library.Time.Undetermined" = "Undetermined";
 
 // MARK: Recipe
 "Recipe.StepButton" = "Step-by-step";

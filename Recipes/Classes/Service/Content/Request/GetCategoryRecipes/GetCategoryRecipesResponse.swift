@@ -20,7 +20,6 @@ final class GetCategoryRecipesResponse {
             guard
                 let id = coverJSON["id"] as? Int,
                 let name = coverJSON["name"] as? String,
-                let time = coverJSON["time_min"] as? Int,
                 let imagePath = coverJSON["image"] as? String,
                 let imageUrl = URL(string: imagePath),
                 let rankingId = coverJSON["ranking_id"] as? Int,
@@ -31,13 +30,17 @@ final class GetCategoryRecipesResponse {
                 return nil
             }
             
+            let timePreparing = coverJSON["time_preparing"] as? Int
+            let timeCooking = coverJSON["time_cooking"] as? Int
+            
             return RecipeCover(id: id,
-                             name: name,
-                             time: time,
-                             imageUrl: imageUrl,
-                             rankingId: rankingId,
-                             shareLink: shareLink,
-                             paid: paid)
+                               name: name,
+                               timePreparing: timePreparing,
+                               timeCooking: timeCooking,
+                               imageUrl: imageUrl,
+                               rankingId: rankingId,
+                               shareLink: shareLink,
+                               paid: paid)
         }
     }
 }

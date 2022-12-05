@@ -23,26 +23,6 @@ final class GetForYouResponse {
             map(coverJSON: coverJSON)
         }
         
-        let challengesArray = data["challenges"] as? [[String: Any]] ?? []
-        let challenges = challengesArray.compactMap { challengeJSON -> ChallengeCover? in
-            guard
-                let id = challengeJSON["id"] as? Int,
-                let name = challengeJSON["name"] as? String,
-                let title = challengeJSON["title"] as? String,
-                let imagePath = challengeJSON["image"] as? String,
-                let imageUrl = URL(string: imagePath),
-                let paid = challengeJSON["paid"] as? Bool
-            else {
-                return nil
-            }
-            
-            return ChallengeCover(id: id,
-                                  name: name,
-                                  title: title,
-                                  imageUrl: imageUrl,
-                                  paid: paid)
-        }
-        
         let youMayLikeArray = data["you_may_like"] as? [[String: Any]] ?? []
         let youMayLike = youMayLikeArray.compactMap { coverJSON -> RecipeCover? in
             map(coverJSON: coverJSON)
@@ -66,7 +46,6 @@ final class GetForYouResponse {
         
         return ForYouKit(freeRecipe: freeRecipe,
                          todaysHotSummaries: todaysHotSummaries,
-                         challenges: challenges,
                          youMayLike: youMayLike,
                          rankings: rankings)
     }
@@ -78,7 +57,6 @@ private extension GetForYouResponse {
         guard
             let id = coverJSON["id"] as? Int,
             let name = coverJSON["name"] as? String,
-            let time = coverJSON["time_min"] as? Int,
             let imagePath = coverJSON["image"] as? String,
             let imageUrl = URL(string: imagePath),
             let rankingId = coverJSON["ranking_id"] as? Int,
@@ -89,12 +67,16 @@ private extension GetForYouResponse {
             return nil
         }
         
+        let timePreparing = coverJSON["time_preparing"] as? Int
+        let timeCooking = coverJSON["time_cooking"] as? Int
+        
         return RecipeCover(id: id,
-                         name: name,
-                         time: time,
-                         imageUrl: imageUrl,
-                         rankingId: rankingId,
-                         shareLink: shareLink,
-                         paid: paid)
+                           name: name,
+                           timePreparing: timePreparing,
+                           timeCooking: timeCooking,
+                           imageUrl: imageUrl,
+                           rankingId: rankingId,
+                           shareLink: shareLink,
+                           paid: paid)
     }
 }

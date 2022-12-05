@@ -10,7 +10,8 @@ import Foundation
 struct RecipeCover: Codable, Hashable {
     let id: Int
     let name: String
-    let time: Int
+    let timePreparing: Int?
+    let timeCooking: Int?
     let imageUrl: URL
     let rankingId: Int
     let shareLink: URL

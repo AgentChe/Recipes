@@ -14,6 +14,7 @@ final class RRecipesTableRecipeCell: UITableViewCell {
     lazy var nameLabel = makeLabel()
     lazy var timeIconView = makeTimeIconView()
     lazy var timeLabel = makeLabel()
+    lazy var undeterminedTimeLabel = makeUndeterminedTimeLabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -39,6 +40,8 @@ extension RRecipesTableRecipeCell {
     func setup(element: RRecipesTableRecipeElement) {
         recipeImageView.kf.setImage(with: element.recipe.imageUrl)
         
+        let recipe = element.recipe
+        
         numberLabel.attributedText = element.number
             .attributed(with: TextAttributes()
                             .textColor(Appearance.black)
@@ -46,7 +49,7 @@ extension RRecipesTableRecipeCell {
                             .lineHeight(24.scale)
                             .letterSpacing(-0.17.scale))
         
-        nameLabel.attributedText = element.recipe.name
+        nameLabel.attributedText = recipe.name
             .attributed(with: TextAttributes()
                             .textColor(Appearance.black)
                             .font(Fonts.PlusJakartaSans.semiBold(size: 16.scale))
@@ -54,7 +57,13 @@ extension RRecipesTableRecipeCell {
                             .letterSpacing(-0.17.scale)
                             .lineBreakMode(.byTruncatingTail))
         
-        let time = String(format: "Ranking.Time".localized, element.recipe.time)
+        let totalTime = (recipe.timePreparing ?? 0) + (recipe.timeCooking ?? 0)
+        
+        timeIconView.isHidden = totalTime == 0
+        timeLabel.isHidden = totalTime == 0
+        undeterminedTimeLabel.isHidden = totalTime != 0
+        
+        let time = String(format: "Ranking.Time".localized, totalTime)
         timeLabel.attributedText = time
             .attributed(with: TextAttributes()
                             .textColor(Appearance.black.withAlphaComponent(0.5))
@@ -107,6 +116,11 @@ private extension RRecipesTableRecipeCell {
             timeLabel.leadingAnchor.constraint(equalTo: timeIconView.trailingAnchor),
             timeLabel.centerYAnchor.constraint(equalTo: timeIconView.centerYAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            undeterminedTimeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 143.scale),
+            undeterminedTimeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5.scale)
+        ])
     }
 }
 
@@ -133,6 +147,21 @@ private extension RRecipesTableRecipeCell {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
         view.image = UIImage(named: "Ranking.Time")
+        view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(view)
+        return view
+    }
+    
+    func makeUndeterminedTimeLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(Appearance.black.withAlphaComponent(0.5))
+            .font(Fonts.PlusJakartaSans.regular(size: 16.scale))
+            .lineHeight(24.scale)
+            .letterSpacing(-0.17.scale)
+            .lineBreakMode(.byTruncatingTail)
+        
+        let view = UILabel()
+        view.attributedText = "Ranking.Time.Undetermined".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

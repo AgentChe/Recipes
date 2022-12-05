@@ -6,8 +6,8 @@
 //
 
 final class GlobalDefinitions {
-    static let domain = "https://books.korrekted.com"
-    static let apiKey = "BeV3sSdfVixSJQFP"
+    static let domain = "https://recipes.mustname.com"
+    static let apiKey = "un9W56kzWA3K6fv3kILK"
     
     static let otterScaleHost = "https://api.korrekted.com"
     static let otterScaleApiKey = "nLcxrPTkFUCO8orL"

@@ -241,7 +241,8 @@ private extension RecipeCover {
         rankingId = recipe.rankingId
         shareLink = recipe.shareLink
         paid = false
-        time = recipe.totalTime ?? 0
+        timePreparing = recipe.timePreparing
+        timeCooking = recipe.timeCooking
     }
 }
 

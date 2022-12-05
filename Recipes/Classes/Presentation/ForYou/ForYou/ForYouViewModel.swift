@@ -47,15 +47,6 @@ private extension ForYouViewModel {
                     ])
                 }
                 
-                if !kit.challenges.isEmpty {
-                    result.append(contentsOf: [
-                        .offset(23.scale),
-                        .title("ForYou.Challenges".localized),
-                        .offset(16.scale),
-                        .challenges(kit.challenges)
-                    ])
-                }
-                
                 if !kit.youMayLike.isEmpty {
                     result.append(contentsOf: [
                         .offset(30.scale),

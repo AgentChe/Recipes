@@ -12,7 +12,6 @@ enum ForYouTableElement {
     case freeRecipe(RecipeCover)
     case title(String)
     case recipes([RecipeCover])
-    case challenges([ChallengeCover])
     case rankingTitle(Ranking)
     case rankingRecipe(RecipeCover)
     case separator

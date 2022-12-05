@@ -31,7 +31,6 @@ protocol ContentManagerProtocol: AnyObject {
                   rating: Int,
                   improves: [Int],
                   whatBetter: String?) -> Single<Bool>
-    func obtainChallenge(id: Int) -> Single<Challenge?>
     func obtainRecipeKit(recipeId: Int) -> Single<RecipeKit?>
 }
 
@@ -452,32 +451,6 @@ extension ContentManager {
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
             .map { FeedbackResponse.map(from: $0) }
-    }
-    
-    // TODO: remove file
-    func obtainChallenge(id: Int) -> Single<Challenge?> {
-        Single<Challenge?>
-            .create { event in
-                let path = Bundle.main.path(forResource: "Challenge", ofType: "json")!
-                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
-                
-                let result = GetChallengeResponse.map(from: jsonResult)
-                
-                event(.success(result))
-                
-                return Disposables.create()
-            }
-        
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = GetChallengeRequest(userToken: userToken, challengeId: id)
-//
-//        return defaultRequestWrapper
-//            .callServerApi(requestBody: request)
-//            .map { GetChallengeResponse.map(from: $0) }
     }
     
     // TODO: remove file
