@@ -20,7 +20,7 @@ struct Recipe: Codable, Hashable {
     let isSaved: Bool
     let steps: [RecipeStep]
     let ingredients: [Ingredient]
-    let carbs: RecipeCPF
-    let protein: RecipeCPF
-    let fats: RecipeCPF
+    let carbs: RecipeCPF?
+    let protein: RecipeCPF?
+    let fats: RecipeCPF?
 }

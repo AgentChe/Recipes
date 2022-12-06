@@ -36,7 +36,18 @@ final class RecipeCPFView: UIView {
 
 // MARK: Public
 extension RecipeCPFView {
-    func setup(cgp: RecipeCPF) {
+    func setup(cgp: RecipeCPF?) {
+        if let cgp = cgp {
+            fill(cgp: cgp)
+        } else {
+            fillAsEmpty()
+        }
+    }
+}
+
+// MARK: Private
+private extension RecipeCPFView {
+    func fill(cgp: RecipeCPF) {
         progressView.setup(progress: cgp.percent)
         
         let gramAttrs = TextAttributes()
@@ -56,6 +67,29 @@ extension RecipeCPFView {
             .textAlignment(.center)
         let percent = String(format: "Recipe.Percent".localized, cgp.percent)
         percentLabel.attributedText = percent.attributed(with: percentAttrs)
+        
+        let nameAttrs = TextAttributes()
+            .textColor(Appearance.black)
+            .font(Fonts.PlusJakartaSans.regular(size: 16.scale))
+            .lineHeight(24.scale)
+            .letterSpacing(-0.17.scale)
+            .textAlignment(.center)
+        nameLabel.attributedText = name.attributed(with: nameAttrs)
+    }
+    
+    func fillAsEmpty() {
+        progressView.setup(progress: 0)
+        
+        gramLabel.attributedText = nil
+        percentLabel.attributedText = nil
+        
+        let attrs = TextAttributes()
+            .textColor(Appearance.black)
+            .font(Fonts.PlusJakartaSans.regular(size: 16.scale))
+            .lineHeight(24.scale)
+            .letterSpacing(-0.17.scale)
+            .textAlignment(.center)
+        nameLabel.attributedText = "Recipe.Undetermined".localized.attributed(with: attrs)
     }
 }
 
@@ -101,15 +135,7 @@ private extension RecipeCPFView {
     }
     
     func makeNameLabel() -> UILabel {
-        let attrs = TextAttributes()
-            .textColor(Appearance.black)
-            .font(Fonts.PlusJakartaSans.regular(size: 16.scale))
-            .lineHeight(24.scale)
-            .letterSpacing(-0.17.scale)
-            .textAlignment(.center)
-        
         let view = UILabel()
-        view.attributedText = name.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

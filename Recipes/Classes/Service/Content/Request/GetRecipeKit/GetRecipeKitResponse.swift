@@ -20,13 +20,7 @@ final class GetRecipeKitResponse {
             let categoriesIds = data["categories_ids"] as? [Int],
             let linkPath = data["link"] as? String,
             let linkUrl = URL(string: linkPath),
-            let saved = data["saved"] as? Bool,
-            let carbsJSON = data["carbs"] as? [String: Any],
-            let carbs = map(cpfJSON: carbsJSON),
-            let proteinJSON = data["protein"] as? [String: Any],
-            let protein = map(cpfJSON: proteinJSON),
-            let fatsJSON = data["fats"] as? [String: Any],
-            let fats = map(cpfJSON: fatsJSON)
+            let saved = data["saved"] as? Bool
         else {
             return nil
         }
@@ -63,6 +57,13 @@ final class GetRecipeKitResponse {
             return Ingredient(id: id,
                               name: name)
         }
+        
+        let carbsJSON = data["carbs"] as? [String: Any] ?? [:]
+        let carbs = map(cpfJSON: carbsJSON)
+        let proteinJSON = data["protein"] as? [String: Any] ?? [:]
+        let protein = map(cpfJSON: proteinJSON)
+        let fatsJSON = data["fats"] as? [String: Any] ?? [:]
+        let fats = map(cpfJSON: fatsJSON)
         
         let recipe = Recipe(id: id,
                             name: name,

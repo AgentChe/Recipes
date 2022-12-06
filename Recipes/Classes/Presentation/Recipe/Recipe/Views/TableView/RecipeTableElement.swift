@@ -49,7 +49,7 @@ struct RecipeTableStepElement {
 }
 
 struct RecipeTableCPFElement {
-    let carbs: RecipeCPF
-    let protein: RecipeCPF
-    let fats: RecipeCPF
+    let carbs: RecipeCPF?
+    let protein: RecipeCPF?
+    let fats: RecipeCPF?
 }

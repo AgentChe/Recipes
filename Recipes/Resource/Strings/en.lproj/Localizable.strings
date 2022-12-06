@@ -166,6 +166,7 @@
 "Recipe.Protein" = "Protein";
 "Recipe.Fats" = "Fats";
 "Recipe.Gram" = "%ig";
+"Recipe.Undetermined" = "Undetermined";
 "Recipe.Percent" = "%i%%";
 "Recipe.SimilarRecipes" = "Similar recipes";
 "Recipe.ExploreCategories" = "Explore categories";

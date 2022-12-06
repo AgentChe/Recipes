@@ -225,13 +225,15 @@ private extension RecipeViewModel {
                     ])
                 }
                 
-                let cpfElement = RecipeTableCPFElement(carbs: recipe.carbs,
-                                                protein: recipe.protein,
-                                                fats: recipe.fats)
-                result.append(contentsOf: [
-                    .offset(40.scale),
-                    .cpf(cpfElement)
-                ])
+                if !(recipe.carbs == nil && recipe.protein == nil && recipe.fats == nil) {
+                    let cpfElement = RecipeTableCPFElement(carbs: recipe.carbs,
+                                                           protein: recipe.protein,
+                                                           fats: recipe.fats)
+                    result.append(contentsOf: [
+                        .offset(40.scale),
+                        .cpf(cpfElement)
+                    ])
+                }
                 
                 if !recipeKit.similarRecipes.isEmpty {
                     result.append(contentsOf: [
