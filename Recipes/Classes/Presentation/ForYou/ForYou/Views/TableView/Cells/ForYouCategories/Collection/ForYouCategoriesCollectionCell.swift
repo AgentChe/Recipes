@@ -6,11 +6,9 @@
 //
 
 import UIKit
-import Kingfisher
 
 final class ForYouCategoriesCollectionCell: UICollectionViewCell {
     lazy var container = makeContainer()
-    lazy var imageView = makeImageView()
     lazy var nameLabel = makeLabel()
     
     override init(frame: CGRect) {
@@ -23,13 +21,6 @@ final class ForYouCategoriesCollectionCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        imageView.kf.cancelDownloadTask()
-        imageView.image = nil
-    }
 }
 
 // MARK: Public
@@ -40,12 +31,10 @@ extension ForYouCategoriesCollectionCell {
             .lineHeight(20.8.scale)
             .letterSpacing(-0.17.scale)
         let size = element.name.attributed(with: attrs).size()
-        return size.width + 50.scale + 23.scale
+        return size.width + 32.scale
     }
     
     func setup(element: Category) {
-        imageView.kf.setImage(with: element.imageUrl)
-        
         nameLabel.attributedText = element.name
             .attributed(with: TextAttributes()
                             .textColor(Appearance.black)
@@ -78,14 +67,7 @@ private extension ForYouCategoriesCollectionCell {
         ])
         
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 24.scale),
-            imageView.heightAnchor.constraint(equalToConstant: 24.scale),
-            imageView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16.scale),
-            imageView.centerYAnchor.constraint(equalTo: container.centerYAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            nameLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 50.scale),
+            nameLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16.scale),
             nameLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor)
         ])
     }
@@ -99,15 +81,6 @@ private extension ForYouCategoriesCollectionCell {
         view.layer.cornerRadius = 16.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
-        return view
-    }
-    
-    func makeImageView() -> UIImageView {
-        let view = UIImageView()
-        view.contentMode = .scaleAspectFill
-        view.clipsToBounds = true
-        view.translatesAutoresizingMaskIntoConstraints = false
-        container.addSubview(view)
         return view
     }
     

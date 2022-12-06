@@ -16,7 +16,7 @@ protocol ContentManagerProtocol: AnyObject {
     func save(recipe: RecipeCover) -> Single<Bool>
     func removeSaved(recipe: RecipeCover) -> Single<Bool>
     func obtainSavedRecipesCover() -> Single<[RecipeCover]>
-    func obtainExploreKit() -> Single<ExploreKit?>
+    func obtainExploreKit() -> Single<[RecipeCover]>
     func searchRecipes(at: String) -> Single<[RecipeCover]>
     func obtainCategoryRecipesCover(categoryId: Int) -> Single<[RecipeCover]>
     func obtainRankingRecipesCover(rankingId: Int) -> Single<[RecipeCover]>
@@ -50,84 +50,28 @@ final class ContentManager: ContentManagerProtocol {
 
 // MARK: Public
 extension ContentManager {
-    // TODO: remove file
     func obtainCategories(forceUpdate: Bool) -> Single<[Category]> {
-        Single<[Category]>
-            .create { event in
-                let path = Bundle.main.path(forResource: "Categories", ofType: "json")!
-                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
-                
-                let result = GetCategoriesResponse.map(from: jsonResult)
-                
-                event(.success(result))
-                
-                return Disposables.create()
-            }
-        
-//        forceUpdate ? loadCategories() : cachedCategories()
+        forceUpdate ? loadCategories() : cachedCategories()
     }
     
-    // TODO: remove file
     func obtainRankings(forceUpdate: Bool) -> Single<[Ranking]> {
-        Single<[Ranking]>
-            .create { event in
-                let path = Bundle.main.path(forResource: "Rankings", ofType: "json")!
-                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
-                
-                let result = GetRankingResponse.map(from: jsonResult)
-                
-                event(.success(result))
-                
-                return Disposables.create()
-            }
-        
-//        forceUpdate ? loadRankings() : cachedRankings()
+        forceUpdate ? loadRankings() : cachedRankings()
     }
     
-    // TODO: remove file
     func obtainDiets(forceUpdate: Bool) -> Single<[Category]> {
-        Single<[Category]>
-            .create { event in
-                let path = Bundle.main.path(forResource: "Categories", ofType: "json")!
-                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
-                
-                let result = GetCategoriesResponse.map(from: jsonResult)
-                
-                event(.success(result))
-                
-                return Disposables.create()
-            }
-        
-//        forceUpdate ? loadDiets() : cachedDiets()
+        forceUpdate ? loadDiets() : cachedDiets()
     }
     
-    // TODO: remove file
     func obtainForYouKit() -> Single<ForYouKit?> {
-        Single<ForYouKit?>
-            .create { event in
-                let path = Bundle.main.path(forResource: "ForYouMock", ofType: "json")!
-                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
-                
-                let result = GetForYouResponse.map(from: jsonResult)
-                
-                event(.success(result))
-                
-                return Disposables.create()
-            }
-        
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = GetForYouRequest(userToken: userToken)
-//
-//        return defaultRequestWrapper
-//            .callServerApi(requestBody: request)
-//            .map { GetForYouResponse.map(from: $0) }
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+
+        let request = GetForYouRequest(userToken: userToken)
+
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetForYouResponse.map(from: $0) }
     }
     
     func save(recipe: RecipeCover) -> Single<Bool> {
@@ -139,7 +83,7 @@ extension ContentManager {
         
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
-            .map { SaveRemoveRecipeResponse.map(from: $0) }
+            .map { respone in return true }
             .do(onSuccess: { success in
                 if success {
                     ContentMediator.shared.notifyAboutSaved(recipe: recipe)
@@ -156,7 +100,7 @@ extension ContentManager {
         
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
-            .map { SaveRemoveRecipeResponse.map(from: $0) }
+            .map { respone in return true }
             .do(onSuccess: { success in
                 if success {
                     ContentMediator.shared.notifyAboutRemoveSaved(recipe: recipe)
@@ -164,134 +108,64 @@ extension ContentManager {
             })
     }
     
-    // TODO: remove file
     func obtainSavedRecipesCover() -> Single<[RecipeCover]> {
-        Single<[RecipeCover]>
-            .create { event in
-                let path = Bundle.main.path(forResource: "RankingRecipes", ofType: "json")!
-                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
-                
-                let result = SearchRecipesResponse.map(from: jsonResult)
-                
-                event(.success(result))
-                
-                return Disposables.create()
-            }
-        
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = GetSavedRecipesRequest(userToken: userToken)
-//
-//        return defaultRequestWrapper
-//            .callServerApi(requestBody: request)
-//            .map { GetSavedRecipesResponse.map(from: $0) }
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+
+        let request = GetSavedRecipesRequest(userToken: userToken)
+
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetSavedRecipesResponse.map(from: $0) }
     }
     
-    // TODO: remove file
-    func obtainExploreKit() -> Single<ExploreKit?> {
-        Single<ExploreKit?>
-            .create { event in
-                let path = Bundle.main.path(forResource: "Explore", ofType: "json")!
-                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
-                
-                let result = GetExploreKitResponse.map(from: jsonResult)
-                
-                event(.success(result))
-                
-                return Disposables.create()
-            }
-        
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = GetExploreKitRequest(userToken: userToken)
-//
-//        return defaultRequestWrapper
-//            .callServerApi(requestBody: request)
-//            .map { GetExploreKitResponse.map(from: $0) }
+    func obtainExploreKit() -> Single<[RecipeCover]> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+
+        let request = GetExploreKitRequest(userToken: userToken)
+
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetExploreKitResponse.map(from: $0) }
     }
     
-    // TODO: remove file
     func searchRecipes(at: String) -> Single<[RecipeCover]> {
-        Single<[RecipeCover]>
-            .create { event in
-                let path = Bundle.main.path(forResource: "RankingRecipes", ofType: "json")!
-                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
-                
-                let result = SearchRecipesResponse.map(from: jsonResult)
-                
-                event(.success(result))
-                
-                return Disposables.create()
-            }
-        
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = SearchRecipesRequest(userToken: userToken, search: at)
-//
-//        return defaultRequestWrapper
-//            .callServerApi(requestBody: request)
-//            .map { SearchRecipesResponse.map(from: $0) }
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+
+        let request = SearchRecipesRequest(userToken: userToken, search: at)
+
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { SearchRecipesResponse.map(from: $0) }
     }
     
-    // TODO: remove file
     func obtainCategoryRecipesCover(categoryId: Int) -> Single<[RecipeCover]> {
-        Single<[RecipeCover]>
-            .create { event in
-                let path = Bundle.main.path(forResource: "RankingRecipes", ofType: "json")!
-                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
-                
-                let result = GetRankingRecipesResponse.map(from: jsonResult)
-                
-                event(.success(result))
-                
-                return Disposables.create()
-            }
-        
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = GetCategoryRecipesRequest(userToken: userToken, categoryId: categoryId)
-//
-//        return defaultRequestWrapper
-//            .callServerApi(requestBody: request)
-//            .map { GetCategoryRecipesResponse.map(from: $0) }
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+
+        let request = GetCategoryRecipesRequest(userToken: userToken, categoryId: categoryId)
+
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetCategoryRecipesResponse.map(from: $0) }
     }
     
-    // TODO: remove file
     func obtainRankingRecipesCover(rankingId: Int) -> Single<[RecipeCover]> {
-        Single<[RecipeCover]>
-            .create { event in
-                let path = Bundle.main.path(forResource: "RankingRecipes", ofType: "json")!
-                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
-                
-                let result = GetRankingRecipesResponse.map(from: jsonResult)
-                
-                event(.success(result))
-                
-                return Disposables.create()
-            }
-        
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = GetRankingRecipesRequest(userToken: userToken, rankingId: rankingId)
-//
-//        return defaultRequestWrapper
-//            .callServerApi(requestBody: request)
-//            .map { GetRankingRecipesResponse.map(from: $0) }
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+
+        let request = GetRankingRecipesRequest(userToken: userToken, rankingId: rankingId)
+
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetRankingRecipesResponse.map(from: $0) }
     }
     
     func obtainReadingRecipes() -> Single<[RecipeReadingProgress]> {
@@ -453,30 +327,16 @@ extension ContentManager {
             .map { FeedbackResponse.map(from: $0) }
     }
     
-    // TODO: remove file
     func obtainRecipeKit(recipeId: Int) -> Single<RecipeKit?> {
-        Single<RecipeKit?>
-            .create { event in
-                let path = Bundle.main.path(forResource: "RecipeKit", ofType: "json")!
-                let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
-                
-                let result = GetRecipeKitResponse.map(from: jsonResult)
-                
-                event(.success(result))
-                
-                return Disposables.create()
-            }
-        
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = GetRecipeKitRequest(userToken: userToken, recipeId: recipeId)
-//
-//        return defaultRequestWrapper
-//            .callServerApi(requestBody: request)
-//            .map { GetRecipeKitResponse.map(from: $0) }
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+
+        let request = GetRecipeKitRequest(userToken: userToken, recipeId: recipeId)
+
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetRecipeKitResponse.map(from: $0) }
     }
 }
 

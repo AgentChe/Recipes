@@ -12,6 +12,5 @@ enum ExploreCollectionElement {
     case title(String, large: Bool)
     case categories([Category])
     case recipe(RecipeCover)
-    case popularRequest(String)
     case separator
 }

@@ -67,10 +67,6 @@ extension ExploreCollectionView: UICollectionViewDataSource {
             let cell = dequeueReusableCell(withReuseIdentifier: String(describing: ExploreCollectionRecipeCell.self), for: indexPath) as! ExploreCollectionRecipeCell
             cell.setup(element: element)
             return cell
-        case let .popularRequest(element):
-            let cell = dequeueReusableCell(withReuseIdentifier: String(describing: ExploreCollectionPopularRequestCell.self), for: indexPath) as! ExploreCollectionPopularRequestCell
-            cell.setup(element: element)
-            return cell
         case .separator:
             return dequeueReusableCell(withReuseIdentifier: String(describing: ExploreCollectionSeparatorCell.self), for: indexPath)
         }
@@ -83,8 +79,6 @@ extension ExploreCollectionView: UICollectionViewDelegateFlowLayout {
         switch elements[indexPath.row] {
         case .recipe(let element):
             mainDelegate?.exploreCollectionDidTapped(recipe: element)
-        case .popularRequest(let element):
-            mainDelegate?.exploreCollectionDidTapped(popularRequest: element)
         default:
             break
         }
@@ -100,8 +94,6 @@ extension ExploreCollectionView: UICollectionViewDelegateFlowLayout {
             return CGSize(width: 343.scale, height: 56.scale)
         case .recipe:
             return CGSize(width: 163.scale, height: 237.scale)
-        case .popularRequest:
-            return CGSize(width: 343.scale, height: 24.scale)
         case .separator:
             return CGSize(width: 343.scale, height: 1.scale)
         }
@@ -115,7 +107,6 @@ private extension ExploreCollectionView {
         register(ExploreCollectionTitleCell.self, forCellWithReuseIdentifier: String(describing: ExploreCollectionTitleCell.self))
         register(ExploreCollectionCategoriesCell.self, forCellWithReuseIdentifier: String(describing: ExploreCollectionCategoriesCell.self))
         register(ExploreCollectionRecipeCell.self, forCellWithReuseIdentifier: String(describing: ExploreCollectionRecipeCell.self))
-        register(ExploreCollectionPopularRequestCell.self, forCellWithReuseIdentifier: String(describing: ExploreCollectionPopularRequestCell.self))
         register(ExploreCollectionSeparatorCell.self, forCellWithReuseIdentifier: String(describing: ExploreCollectionSeparatorCell.self))
         
         dataSource = self

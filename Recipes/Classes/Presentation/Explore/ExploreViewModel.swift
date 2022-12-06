@@ -19,9 +19,8 @@ final class ExploreViewModel {
     lazy var activity = RxActivityIndicator()
     
     private lazy var defaultsElements = makeDefaultElements()
-    private lazy var popularRequestsElements = makePopularRequestsElements()
     private lazy var source = makeSource()
-    private lazy var exploreKit = makeExploreKit()
+    private lazy var defaultCovers = makeDefaultCovers()
     private lazy var categories = makeCategories()
     
     private lazy var contentManager = ContentManager()
@@ -33,14 +32,14 @@ final class ExploreViewModel {
 private extension ExploreViewModel {
     enum Source: Equatable {
         case `default`
-        case popularRequests
         case search(String)
+        case empty
     }
     
     func makeElements() -> Driver<[ExploreCollectionElement]> {
         Driver
-            .combineLatest(defaultsElements, popularRequestsElements, source)
-            .flatMapLatest { [weak self] defaultsElements, popularRequestsElements, source -> Driver<[ExploreCollectionElement]> in
+            .combineLatest(defaultsElements, source)
+            .flatMapLatest { [weak self] defaultsElements, source -> Driver<[ExploreCollectionElement]> in
                 guard let self = self else {
                     return .never()
                 }
@@ -48,10 +47,10 @@ private extension ExploreViewModel {
                 switch source {
                 case .default:
                     return .just(defaultsElements)
-                case .popularRequests:
-                    return .just(popularRequestsElements)
                 case .search(let text):
                     return self.makeSearchElements(text: text)
+                case .empty:
+                    return .just([])
                 }
             }
     }
@@ -65,15 +64,15 @@ private extension ExploreViewModel {
                     return .default
                 }
                 
-                return search.isEmpty ? .popularRequests : .search(search)
+                return search.isEmpty ? .empty : .search(search)
             }
             .distinctUntilChanged()
     }
     
     func makeDefaultElements() -> Driver<[ExploreCollectionElement]> {
         Driver
-            .combineLatest(categories, exploreKit)
-            .map { categories, kit -> [ExploreCollectionElement] in
+            .combineLatest(categories, defaultCovers)
+            .map { categories, defaultCovers -> [ExploreCollectionElement] in
                 var result = [ExploreCollectionElement]()
                 
                 result.append(contentsOf: [
@@ -84,35 +83,9 @@ private extension ExploreViewModel {
                     .title("Explore.TrendingSearches".localized, large: true)
                 ])
                 
-                if !kit.trendingSearches.isEmpty {
-                    kit.trendingSearches.forEach {
+                if !defaultCovers.isEmpty {
+                    defaultCovers.forEach {
                         result.append(.recipe($0))
-                    }
-                }
-                
-                return result
-            }
-    }
-    
-    func makePopularRequestsElements() -> Driver<[ExploreCollectionElement]> {
-        exploreKit
-            .map { kit -> [ExploreCollectionElement] in
-                var result = [ExploreCollectionElement]()
-                
-                result.append(contentsOf: [
-                    .title("Explore.PopularRequests".localized, large: false),
-                    .verticalOffset(30.scale)
-                ])
-                
-                kit.popularRequests.enumerated().forEach { index, request in
-                    result.append(.popularRequest(request))
-                    
-                    if (kit.popularRequests.count - 1) != index {
-                        result.append(contentsOf: [
-                            .verticalOffset(20.scale),
-                            .separator,
-                            .verticalOffset(20.scale)
-                        ])
                     }
                 }
                 
@@ -144,17 +117,10 @@ private extension ExploreViewModel {
             .asDriver(onErrorDriveWith: .never())
     }
     
-    func makeExploreKit() -> Driver<ExploreKit> {
-        func source() -> Single<ExploreKit> {
+    func makeDefaultCovers() -> Driver<[RecipeCover]> {
+        func source() -> Single<[RecipeCover]> {
             contentManager
                 .obtainExploreKit()
-                .flatMap { kit -> Single<ExploreKit> in
-                    guard let kit = kit else {
-                        return .error(ContentError(.notContent))
-                    }
-                    
-                    return .just(kit)
-                }
         }
         
         func trigger(error: Error) -> Observable<Void> {

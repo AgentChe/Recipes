@@ -19,16 +19,13 @@ final class GetCategoriesResponse {
         return data.compactMap { categoryJSON -> Category? in
             guard
                 let id = categoryJSON["id"] as? Int,
-                let name = categoryJSON["name"] as? String,
-                let imagePath = categoryJSON["image"] as? String,
-                let imageUrl = URL(string: imagePath)
+                let name = categoryJSON["name"] as? String
             else {
                 return nil
             }
             
             return Category(id: id,
-                            name: name,
-                            imageUrl: imageUrl)
+                            name: name)
         }
     }
 }
