@@ -56,10 +56,8 @@ final class ReaderViewController: UIViewController {
             .disposed(by: disposeBag)
         
         mainView.markFinishButton.rx.tap
-            .withLatestFrom(viewModel.recipe)
-            .bind(to: Binder(self) { base, recipe in
-                let vc = FeedbackViewController.make(recipe: recipe)
-                base.present(vc, animated: true)
+            .bind(to: Binder(self) { base, void in
+                base.dismiss(animated: true)
             })
             .disposed(by: disposeBag)
         

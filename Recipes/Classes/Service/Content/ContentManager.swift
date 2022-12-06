@@ -27,10 +27,6 @@ protocol ContentManagerProtocol: AnyObject {
     func set(shopping: Shopping) -> Single<Void>
     func removeShopping(recipeId: Int) -> Single<Void>
     func removeAllShoppings() -> Single<Void>
-    func feedback(recipeId: Int,
-                  rating: Int,
-                  improves: [Int],
-                  whatBetter: String?) -> Single<Bool>
     func obtainRecipeKit(recipeId: Int) -> Single<RecipeKit?>
 }
 
@@ -306,25 +302,6 @@ extension ContentManager {
             
             return Disposables.create()
         }
-    }
-    
-    func feedback(recipeId: Int,
-                  rating: Int,
-                  improves: [Int],
-                  whatBetter: String?) -> Single<Bool> {
-        guard let userToken = sessionManager.getSession()?.userToken else {
-            return .error(SignError.tokenNotFound)
-        }
-        
-        let request = FeedbackRequest(userToken: userToken,
-                                      recipeId: recipeId,
-                                      rating: rating,
-                                      improves: improves,
-                                      whatBetter: whatBetter)
-        
-        return defaultRequestWrapper
-            .callServerApi(requestBody: request)
-            .map { FeedbackResponse.map(from: $0) }
     }
     
     func obtainRecipeKit(recipeId: Int) -> Single<RecipeKit?> {

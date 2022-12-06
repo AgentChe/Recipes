@@ -249,20 +249,6 @@
 		DEC41BE728F7EDDC00280990 /* ReaderImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BE628F7EDDC00280990 /* ReaderImageCell.swift */; };
 		DEC41BE928F7F06300280990 /* ReaderLastStepTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BE828F7F06300280990 /* ReaderLastStepTextCell.swift */; };
 		DEC41BEB28F7F59D00280990 /* ReaderLastStepTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BEA28F7F59D00280990 /* ReaderLastStepTitleCell.swift */; };
-		DEC41C0228F7F9AC00280990 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BED28F7F9AC00280990 /* FeedbackViewModel.swift */; };
-		DEC41C0328F7F9AC00280990 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BEE28F7F9AC00280990 /* FeedbackViewController.swift */; };
-		DEC41C0428F7F9AC00280990 /* FeedbackCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BF028F7F9AC00280990 /* FeedbackCollector.swift */; };
-		DEC41C0528F7F9AC00280990 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BF128F7F9AC00280990 /* FeedbackView.swift */; };
-		DEC41C0728F7F9AC00280990 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BF728F7F9AC00280990 /* RatingView.swift */; };
-		DEC41C0828F7F9AC00280990 /* FeedbackTableRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BF828F7F9AC00280990 /* FeedbackTableRatingCell.swift */; };
-		DEC41C0928F7F9AC00280990 /* FeedbackTableWhatBetterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BF928F7F9AC00280990 /* FeedbackTableWhatBetterCell.swift */; };
-		DEC41C0A28F7F9AC00280990 /* FeedbackTableRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BFA28F7F9AC00280990 /* FeedbackTableRecipeCell.swift */; };
-		DEC41C0B28F7F9AC00280990 /* FeedbackImproveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BFC28F7F9AC00280990 /* FeedbackImproveButton.swift */; };
-		DEC41C0C28F7F9AC00280990 /* FeedbackImprovesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BFD28F7F9AC00280990 /* FeedbackImprovesView.swift */; };
-		DEC41C0D28F7F9AC00280990 /* FeedbackTableImproveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BFE28F7F9AC00280990 /* FeedbackTableImproveCell.swift */; };
-		DEC41C0E28F7F9AC00280990 /* FeedbackTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41BFF28F7F9AC00280990 /* FeedbackTableView.swift */; };
-		DEC41C0F28F7F9AC00280990 /* FeedbackTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41C0028F7F9AC00280990 /* FeedbackTableElement.swift */; };
-		DEC41C1028F7F9AC00280990 /* FeedbackTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41C0128F7F9AC00280990 /* FeedbackTextView.swift */; };
 		DEC41C1228F8012400280990 /* Shopping.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41C1128F8012400280990 /* Shopping.swift */; };
 		DEC41C1528F9447400280990 /* Splash.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC41C1428F9447400280990 /* Splash.Animation.json */; };
 		DEC41C1828F955D100280990 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC41C1728F955D100280990 /* ShoppingViewController.swift */; };
@@ -280,8 +266,6 @@
 		DEF40C2728E3509D00C2EB67 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BEE28E3509D00C2EB67 /* Category.swift */; };
 		DEF40C2928E3509D00C2EB67 /* RecipeStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BF028E3509D00C2EB67 /* RecipeStep.swift */; };
 		DEF40C2A28E3509D00C2EB67 /* RecipeReadingProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BF128E3509D00C2EB67 /* RecipeReadingProgress.swift */; };
-		DEF40C2D28E3509D00C2EB67 /* FeedbackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BF728E3509D00C2EB67 /* FeedbackRequest.swift */; };
-		DEF40C2E28E3509D00C2EB67 /* FeedbackResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BF828E3509D00C2EB67 /* FeedbackResponse.swift */; };
 		DEF40C2F28E3509D00C2EB67 /* GetRankingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BFA28E3509D00C2EB67 /* GetRankingResponse.swift */; };
 		DEF40C3028E3509D00C2EB67 /* GetRankingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BFB28E3509D00C2EB67 /* GetRankingRequest.swift */; };
 		DEF40C3128E3509D00C2EB67 /* GetCategoryRecipesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF40BFD28E3509D00C2EB67 /* GetCategoryRecipesRequest.swift */; };
@@ -554,20 +538,6 @@
 		DEC41BE628F7EDDC00280990 /* ReaderImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderImageCell.swift; sourceTree = "<group>"; };
 		DEC41BE828F7F06300280990 /* ReaderLastStepTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderLastStepTextCell.swift; sourceTree = "<group>"; };
 		DEC41BEA28F7F59D00280990 /* ReaderLastStepTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderLastStepTitleCell.swift; sourceTree = "<group>"; };
-		DEC41BED28F7F9AC00280990 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
-		DEC41BEE28F7F9AC00280990 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
-		DEC41BF028F7F9AC00280990 /* FeedbackCollector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackCollector.swift; sourceTree = "<group>"; };
-		DEC41BF128F7F9AC00280990 /* FeedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
-		DEC41BF728F7F9AC00280990 /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
-		DEC41BF828F7F9AC00280990 /* FeedbackTableRatingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTableRatingCell.swift; sourceTree = "<group>"; };
-		DEC41BF928F7F9AC00280990 /* FeedbackTableWhatBetterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTableWhatBetterCell.swift; sourceTree = "<group>"; };
-		DEC41BFA28F7F9AC00280990 /* FeedbackTableRecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTableRecipeCell.swift; sourceTree = "<group>"; };
-		DEC41BFC28F7F9AC00280990 /* FeedbackImproveButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackImproveButton.swift; sourceTree = "<group>"; };
-		DEC41BFD28F7F9AC00280990 /* FeedbackImprovesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackImprovesView.swift; sourceTree = "<group>"; };
-		DEC41BFE28F7F9AC00280990 /* FeedbackTableImproveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTableImproveCell.swift; sourceTree = "<group>"; };
-		DEC41BFF28F7F9AC00280990 /* FeedbackTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTableView.swift; sourceTree = "<group>"; };
-		DEC41C0028F7F9AC00280990 /* FeedbackTableElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTableElement.swift; sourceTree = "<group>"; };
-		DEC41C0128F7F9AC00280990 /* FeedbackTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTextView.swift; sourceTree = "<group>"; };
 		DEC41C1128F8012400280990 /* Shopping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping.swift; sourceTree = "<group>"; };
 		DEC41C1428F9447400280990 /* Splash.Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Splash.Animation.json; sourceTree = "<group>"; };
 		DEC41C1728F955D100280990 /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
@@ -585,8 +555,6 @@
 		DEF40BEE28E3509D00C2EB67 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		DEF40BF028E3509D00C2EB67 /* RecipeStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeStep.swift; sourceTree = "<group>"; };
 		DEF40BF128E3509D00C2EB67 /* RecipeReadingProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeReadingProgress.swift; sourceTree = "<group>"; };
-		DEF40BF728E3509D00C2EB67 /* FeedbackRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackRequest.swift; sourceTree = "<group>"; };
-		DEF40BF828E3509D00C2EB67 /* FeedbackResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackResponse.swift; sourceTree = "<group>"; };
 		DEF40BFA28E3509D00C2EB67 /* GetRankingResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRankingResponse.swift; sourceTree = "<group>"; };
 		DEF40BFB28E3509D00C2EB67 /* GetRankingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRankingRequest.swift; sourceTree = "<group>"; };
 		DEF40BFD28E3509D00C2EB67 /* GetCategoryRecipesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCategoryRecipesRequest.swift; sourceTree = "<group>"; };
@@ -1543,7 +1511,6 @@
 		DEC41B7528F4599E00280990 /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
-				DEC41BEC28F7F9AC00280990 /* Feedback */,
 				DEC41BD128F6EA1200280990 /* Reader */,
 				DEC41BC228F6E68900280990 /* Steps */,
 				DEC41B7628F4599E00280990 /* Recipe */,
@@ -1686,75 +1653,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		DEC41BEC28F7F9AC00280990 /* Feedback */ = {
-			isa = PBXGroup;
-			children = (
-				DEC41BEF28F7F9AC00280990 /* Utils */,
-				DEC41BF228F7F9AC00280990 /* Views */,
-				DEC41BEE28F7F9AC00280990 /* FeedbackViewController.swift */,
-				DEC41BED28F7F9AC00280990 /* FeedbackViewModel.swift */,
-				DEC41BF128F7F9AC00280990 /* FeedbackView.swift */,
-			);
-			path = Feedback;
-			sourceTree = "<group>";
-		};
-		DEC41BEF28F7F9AC00280990 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				DEC41BF028F7F9AC00280990 /* FeedbackCollector.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		DEC41BF228F7F9AC00280990 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DEC41BF328F7F9AC00280990 /* TableView */,
-				DEC41C0128F7F9AC00280990 /* FeedbackTextView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		DEC41BF328F7F9AC00280990 /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				DEC41BF428F7F9AC00280990 /* Cells */,
-				DEC41BFF28F7F9AC00280990 /* FeedbackTableView.swift */,
-				DEC41C0028F7F9AC00280990 /* FeedbackTableElement.swift */,
-			);
-			path = TableView;
-			sourceTree = "<group>";
-		};
-		DEC41BF428F7F9AC00280990 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				DEC41BFB28F7F9AC00280990 /* Improve */,
-				DEC41BF628F7F9AC00280990 /* Rating */,
-				DEC41BF928F7F9AC00280990 /* FeedbackTableWhatBetterCell.swift */,
-				DEC41BFA28F7F9AC00280990 /* FeedbackTableRecipeCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		DEC41BF628F7F9AC00280990 /* Rating */ = {
-			isa = PBXGroup;
-			children = (
-				DEC41BF728F7F9AC00280990 /* RatingView.swift */,
-				DEC41BF828F7F9AC00280990 /* FeedbackTableRatingCell.swift */,
-			);
-			path = Rating;
-			sourceTree = "<group>";
-		};
-		DEC41BFB28F7F9AC00280990 /* Improve */ = {
-			isa = PBXGroup;
-			children = (
-				DEC41BFC28F7F9AC00280990 /* FeedbackImproveButton.swift */,
-				DEC41BFD28F7F9AC00280990 /* FeedbackImprovesView.swift */,
-				DEC41BFE28F7F9AC00280990 /* FeedbackTableImproveCell.swift */,
-			);
-			path = Improve;
-			sourceTree = "<group>";
-		};
 		DEC41C1328F9446C00280990 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -1827,7 +1725,6 @@
 			children = (
 				DEC41B6C28F44D2500280990 /* GetRecipeKit */,
 				DEF40C4828E350E600C2EB67 /* GetDiets */,
-				DEF40BF628E3509D00C2EB67 /* Feedback */,
 				DEF40BF928E3509D00C2EB67 /* GetRanking */,
 				DEF40BFC28E3509D00C2EB67 /* GetCategoryRecipes */,
 				DEF40C0228E3509D00C2EB67 /* GetRankingRecipes */,
@@ -1839,15 +1736,6 @@
 				DEF40C1528E3509D00C2EB67 /* GetCategories */,
 			);
 			path = Request;
-			sourceTree = "<group>";
-		};
-		DEF40BF628E3509D00C2EB67 /* Feedback */ = {
-			isa = PBXGroup;
-			children = (
-				DEF40BF728E3509D00C2EB67 /* FeedbackRequest.swift */,
-				DEF40BF828E3509D00C2EB67 /* FeedbackResponse.swift */,
-			);
-			path = Feedback;
 			sourceTree = "<group>";
 		};
 		DEF40BF928E3509D00C2EB67 /* GetRanking */ = {
@@ -2096,8 +1984,6 @@
 				DE54ADAB28D0A011004F1514 /* PaygateInfoCell.swift in Sources */,
 				DE54ADD828D0A012004F1514 /* MainViewCoordinator.swift in Sources */,
 				DEC41AA928EEC9F500280990 /* RankingsView.swift in Sources */,
-				DEF40C2E28E3509D00C2EB67 /* FeedbackResponse.swift in Sources */,
-				DEC41C1028F7F9AC00280990 /* FeedbackTextView.swift in Sources */,
 				DE54ACAB28D09F25004F1514 /* RxActivityIndicator.swift in Sources */,
 				DEF40C3628E3509D00C2EB67 /* GetRankingRecipesResponse.swift in Sources */,
 				DEC41B2228EF296300280990 /* LibraryView.swift in Sources */,
@@ -2119,7 +2005,6 @@
 				DE54AD2928D09F68004F1514 /* SetRequest.swift in Sources */,
 				DE67A83628EC1F2C00369B02 /* SettingsView.swift in Sources */,
 				DEC41B6E28F44D3500280990 /* GetRecipeKitRequest.swift in Sources */,
-				DEC41C0D28F7F9AC00280990 /* FeedbackTableImproveCell.swift in Sources */,
 				DEC41BA228F4599E00280990 /* RecipeNavButton.swift in Sources */,
 				DEC41BAE28F5968700280990 /* RecipeTitleCell.swift in Sources */,
 				DEF40C2928E3509D00C2EB67 /* RecipeStep.swift in Sources */,
@@ -2139,7 +2024,6 @@
 				DE54ACB028D09F25004F1514 /* APIRequestBody.swift in Sources */,
 				DE54ADA428D0A011004F1514 /* PaygateProductInfo.swift in Sources */,
 				DE54ADC928D0A012004F1514 /* ORecipesView.swift in Sources */,
-				DEC41C0328F7F9AC00280990 /* FeedbackViewController.swift in Sources */,
 				DE54ADE928D1B936004F1514 /* ODietButton.swift in Sources */,
 				DE54ADAA28D0A011004F1514 /* PaygateProductButton.swift in Sources */,
 				DEC41B9228F4599E00280990 /* RecipeView.swift in Sources */,
@@ -2168,7 +2052,6 @@
 				DEC41BDE28F7EA5D00280990 /* ReaderTableView.swift in Sources */,
 				DEF40C3D28E3509D00C2EB67 /* RemoveSavedRecipeRequest.swift in Sources */,
 				DE54ACAE28D09F25004F1514 /* DefaultRequestWrapper.swift in Sources */,
-				DEC41C0728F7F9AC00280990 /* RatingView.swift in Sources */,
 				DEC41B2728EF296300280990 /* LibraryEmptyView.swift in Sources */,
 				DE54ACB928D09F25004F1514 /* TapAreaButton.swift in Sources */,
 				DE67A84628EC1F2C00369B02 /* ForYouFreeRecipeCell.swift in Sources */,
@@ -2181,7 +2064,6 @@
 				DEC41BBA28F5B11300280990 /* RecipeCPFCell.swift in Sources */,
 				DEC41BE928F7F06300280990 /* ReaderLastStepTextCell.swift in Sources */,
 				DE54ACCB28D09F26004F1514 /* XOREncryption.swift in Sources */,
-				DEC41C0228F7F9AC00280990 /* FeedbackViewModel.swift in Sources */,
 				DE54ACB128D09F25004F1514 /* RestAPITransport.swift in Sources */,
 				DE54AD2F28D09F68004F1514 /* IAPActionResult.swift in Sources */,
 				DE54ACBA28D09F26004F1514 /* Spinner.swift in Sources */,
@@ -2204,7 +2086,6 @@
 				DEC41BCE28F6E68A00280990 /* StepsTableElement.swift in Sources */,
 				DEC41AB028EEC9F500280990 /* RankingsCollectionCell.swift in Sources */,
 				DE54ACC128D09F26004F1514 /* UIColor+Extension.swift in Sources */,
-				DEC41C0A28F7F9AC00280990 /* FeedbackTableRecipeCell.swift in Sources */,
 				DE918C83290AA90600443765 /* ShoppingIngredientsTableElement.swift in Sources */,
 				DE54ADD328D0A012004F1514 /* MainView.swift in Sources */,
 				DE54ADBE28D0A012004F1514 /* OAgeButton.swift in Sources */,
@@ -2217,14 +2098,12 @@
 				DE54ADAE28D0A011004F1514 /* SplashReceiptValidationObserver.swift in Sources */,
 				DEF40C2F28E3509D00C2EB67 /* GetRankingResponse.swift in Sources */,
 				DEC41B6928F449CF00280990 /* RecipeCPF.swift in Sources */,
-				DEC41C0B28F7F9AC00280990 /* FeedbackImproveButton.swift in Sources */,
 				DE54ADC028D0A012004F1514 /* OCategoriesCollectionCell.swift in Sources */,
 				DEF40C5128E454C800C2EB67 /* ODietsTableCell.swift in Sources */,
 				DE54ADC828D0A012004F1514 /* OSlideView.swift in Sources */,
 				DEC41AFF28EF203F00280990 /* SearchView.swift in Sources */,
 				DE54ADD528D0A012004F1514 /* TabView.swift in Sources */,
 				DEC41AC028EEED8300280990 /* CategoryCollectionView.swift in Sources */,
-				DEC41C0C28F7F9AC00280990 /* FeedbackImprovesView.swift in Sources */,
 				DEC41C1828F955D100280990 /* ShoppingViewController.swift in Sources */,
 				DEC41BAC28F56B0B00280990 /* RecipeTimeView.swift in Sources */,
 				DE54ADC528D0A012004F1514 /* OBriefView.swift in Sources */,
@@ -2237,12 +2116,10 @@
 				DE67A84428EC1F2C00369B02 /* ForYouTitleCell.swift in Sources */,
 				DE54ADB428D0A011004F1514 /* OnboardingViewController.swift in Sources */,
 				DE918C732909707700443765 /* ShoppingMenuViewController.swift in Sources */,
-				DEC41C0528F7F9AC00280990 /* FeedbackView.swift in Sources */,
 				DE54ACC928D09F26004F1514 /* ScreenSize.swift in Sources */,
 				DE54ADBC28D0A012004F1514 /* OTimeButton.swift in Sources */,
 				DEC41B2C28EF296300280990 /* LibraryRecipeMenuViewController.swift in Sources */,
 				DE54ACA828D09F25004F1514 /* FirebaseManager.swift in Sources */,
-				DEF40C2D28E3509D00C2EB67 /* FeedbackRequest.swift in Sources */,
 				DEC41BE728F7EDDC00280990 /* ReaderImageCell.swift in Sources */,
 				DE918C8A290AC24F00443765 /* SplashActivity.swift in Sources */,
 				DEC41B2028EF296300280990 /* LibraryViewModel.swift in Sources */,
@@ -2270,8 +2147,6 @@
 				DEC41AA828EEC9F500280990 /* RankingsViewController.swift in Sources */,
 				DE54AD2628D09F68004F1514 /* ProfileManager.swift in Sources */,
 				DE54ACB428D09F25004F1514 /* PushNotificationsManager.swift in Sources */,
-				DEC41C0928F7F9AC00280990 /* FeedbackTableWhatBetterCell.swift in Sources */,
-				DEC41C0428F7F9AC00280990 /* FeedbackCollector.swift in Sources */,
 				DEC41C1C28F955E500280990 /* ShoppingView.swift in Sources */,
 				DEC41AAE28EEC9F500280990 /* RRecipesTableView.swift in Sources */,
 				DEF40C4328E3509D00C2EB67 /* GetCategoriesRequest.swift in Sources */,
@@ -2319,8 +2194,6 @@
 				DEC41B0528EF203F00280990 /* ExploreCollectionCategoriesCell.swift in Sources */,
 				DE54ADB528D0A012004F1514 /* OProgressView.swift in Sources */,
 				DE918C79290AA7CA00443765 /* ShoppingIngredientsViewController.swift in Sources */,
-				DEC41C0E28F7F9AC00280990 /* FeedbackTableView.swift in Sources */,
-				DEC41C0F28F7F9AC00280990 /* FeedbackTableElement.swift in Sources */,
 				DEC41BB628F5A7B500280990 /* RecipeSeparatorCell.swift in Sources */,
 				DEF40C2528E3509D00C2EB67 /* Ranking.swift in Sources */,
 				DE54AC2428D09BF9004F1514 /* AppDelegate.swift in Sources */,
@@ -2343,7 +2216,6 @@
 				DEC41AFC28EF203F00280990 /* ExploreView.swift in Sources */,
 				DEC41BA728F562E300280990 /* RecipeTableInfoCell.swift in Sources */,
 				DE67A84E28EC1F2C00369B02 /* ForYouTableView.swift in Sources */,
-				DEC41C0828F7F9AC00280990 /* FeedbackTableRatingCell.swift in Sources */,
 				DEC41BEB28F7F59D00280990 /* ReaderLastStepTitleCell.swift in Sources */,
 				DEF40C2628E3509D00C2EB67 /* RecipeCover.swift in Sources */,
 				DE54ADC328D0A012004F1514 /* OGoalButton.swift in Sources */,
