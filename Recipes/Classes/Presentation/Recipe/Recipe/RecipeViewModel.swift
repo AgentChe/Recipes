@@ -267,9 +267,20 @@ private extension RecipeViewModel {
     }
     
     func makeCategories() -> Driver<[Category]> {
-        contentManager
-            .obtainCategories(forceUpdate: false)
-            .asDriver(onErrorJustReturn: [])
+        Driver
+            .combineLatest(
+                recipeKit,
+                
+                contentManager
+                    .obtainCategories(forceUpdate: false)
+                    .asDriver(onErrorJustReturn: [])
+            ) { recipeKit, categories -> [Category] in
+                let ids = recipeKit.recipe.categoriesIds
+                
+                return categories.filter {
+                    ids.contains($0.id)
+                }
+            }
     }
     
     func makeIngredientsShell() -> Driver<RecipeIngredientsShell> {
