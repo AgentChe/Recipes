@@ -98,7 +98,7 @@ private extension RankingsView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 20.scale
+        layout.minimumInteritemSpacing = 16.scale
         layout.sectionInset = UIEdgeInsets(top: 0, left: 16.scale, bottom: 0, right: 16.scale)
         
         let view = RankingsCollectionView(frame: .zero, collectionViewLayout: layout)
