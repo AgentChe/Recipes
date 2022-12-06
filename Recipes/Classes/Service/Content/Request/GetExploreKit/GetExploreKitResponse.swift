@@ -11,12 +11,13 @@ final class GetExploreKitResponse {
     static func map(from response: Any) -> [RecipeCover] {
         guard
             let json = response as? [String: Any],
-            let data = json["_data"] as? [[String: Any]]
+            let data = json["_data"] as? [String: Any],
+            let trendingSearchesArray = data["trending_searches"] as? [[String: Any]]
         else {
             return []
         }
         
-        return data.compactMap { coverJSON -> RecipeCover? in
+        return trendingSearchesArray.compactMap { coverJSON -> RecipeCover? in
             guard
                 let id = coverJSON["id"] as? Int,
                 let name = coverJSON["name"] as? String,

@@ -6,10 +6,6 @@
         "free_unit": {
             "id": 1,
             "name": "Thinking Fast and Slow",
-            "author": {
-                "name": "Daniel Kahneman",
-                "photo_url": "https://picsum.photos/800/800"
-            },
             "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
             "ranking_id": 1,
             "link": "https://books.korrekted.com/",
@@ -21,10 +17,6 @@
             {
                 "id": 1,
                 "name": "Thinking Fast and Slow",
-                "author": {
-                    "name": "Daniel Kahneman",
-                    "photo_url": "https://picsum.photos/800/800"
-                },
                 "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
                 "ranking_id": 1,
                 "link": "https://books.korrekted.com/",
@@ -37,10 +29,6 @@
             {
                 "id": 1,
                 "name": "Thinking Fast and Slow",
-                "author": {
-                    "name": "Daniel Kahneman",
-                    "photo_url": "https://picsum.photos/800/800"
-                },
                 "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
                 "ranking_id": 1,
                 "link": "https://books.korrekted.com/",
@@ -56,10 +44,6 @@
                     {
                         "id": 1,
                         "name": "Thinking Fast and Slow",
-                        "author": {
-                            "name": "Daniel Kahneman",
-                            "photo_url": "https://picsum.photos/800/800"
-                        },
                         "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
                         "ranking_id": 1,
                         "link": "https://books.korrekted.com/",
@@ -75,10 +59,6 @@
                     {
                         "id": 1,
                         "name": "Thinking Fast and Slow",
-                        "author": {
-                            "name": "Daniel Kahneman",
-                            "photo_url": "https://picsum.photos/800/800"
-                        },
                         "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
                         "ranking_id": 1,
                         "link": "https://books.korrekted.com/",
@@ -116,10 +96,6 @@
         {
             "id": 1,
             "name": "Thinking Fast and Slow",
-            "author": {
-                "name": "Daniel Kahneman",
-                "photo_url": "https://picsum.photos/800/800"
-            },
             "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
             "ranking_id": 1,
             "link": "https://books.korrekted.com/",
@@ -154,10 +130,6 @@
         {
             "id": 1,
             "name": "Thinking Fast and Slow",
-            "author": {
-                "name": "Daniel Kahneman",
-                "photo_url": "https://picsum.photos/800/800"
-            },
             "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
             "ranking_id": 1,
             "link": "https://books.korrekted.com/",
@@ -184,7 +156,6 @@
 /api/units/show - контент для экрана с детальной информацией о единице контента
 -> {
     "unit_id": 7,
-    "mode": 2, // 1 - для книг, 2 - для рецептов
 }
 
 <- {
@@ -235,10 +206,6 @@
             {
                 "id": 1,
                 "name": "Thinking Fast and Slow",
-                "author": {
-                    "name": "Daniel Kahneman",
-                    "photo_url": "https://picsum.photos/800/800"
-                },
                 "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
                 "ranking_id": 1,
                 "link": "https://books.korrekted.com/",
@@ -308,10 +275,6 @@
         {
             "id": 1,
             "name": "Thinking Fast and Slow",
-            "author": {
-                "name": "Daniel Kahneman",
-                "photo_url": "https://picsum.photos/800/800"
-            },
             "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
             "ranking_id": 1,
             "link": "https://books.korrekted.com/",
@@ -328,10 +291,6 @@
         {
             "id": 1,
             "name": "Thinking Fast and Slow",
-            "author": {
-                "name": "Daniel Kahneman",
-                "photo_url": "https://picsum.photos/800/800"
-            },
             "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
             "ranking_id": 1,
             "link": "https://books.korrekted.com/",
@@ -339,13 +298,6 @@
             "time_preparing": 10,
             "time_cooking": 10
         }
-    ],
-    "popular_requests": [
-        "Character",
-        "Why does my brain do this",
-        "Wellbeing",
-        "Emotions",
-        "How do I prioritize myself?"
     ]
 }
 
@@ -358,10 +310,6 @@
     {
         "id": 1,
         "name": "Thinking Fast and Slow",
-        "author": {
-            "name": "Daniel Kahneman",
-            "photo_url": "https://picsum.photos/800/800"
-        },
         "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
         "ranking_id": 1,
         "link": "https://books.korrekted.com/",
