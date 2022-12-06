@@ -8,5 +8,4 @@
 struct Ingredient: Codable, Hashable {
     let id: Int
     let name: String
-    let value: String
 }

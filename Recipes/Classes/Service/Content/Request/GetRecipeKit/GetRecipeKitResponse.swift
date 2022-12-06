@@ -55,15 +55,13 @@ final class GetRecipeKitResponse {
         let ingredients = ingredientsArray.compactMap { ingredientJSON -> Ingredient? in
             guard
                 let id = ingredientJSON["id"] as? Int,
-                let name = ingredientJSON["name"] as? String,
-                let value = ingredientJSON["value"] as? String
+                let name = ingredientJSON["name"] as? String
             else {
                 return nil
             }
             
             return Ingredient(id: id,
-                              name: name,
-                              value: value)
+                              name: name)
         }
         
         let recipe = Recipe(id: id,

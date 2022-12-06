@@ -10,7 +10,6 @@ import UIKit
 final class RecipeIngredientCell: UITableViewCell {
     lazy var checkedView = makeCheckedView()
     lazy var titleLabel = makeTitleLabel()
-    lazy var valueLabel = makeValueLabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -35,13 +34,6 @@ extension RecipeIngredientCell {
             .lineHeight(19.2.scale)
             .letterSpacing(-0.17.scale)
         titleLabel.attributedText = element.ingredient.name.attributed(with: titleAttrs)
-        
-        let valueAttrs = TextAttributes()
-            .textColor(Appearance.black.withAlphaComponent(0.5))
-            .font(Fonts.PlusJakartaSans.regular(size: 16.scale))
-            .lineHeight(24.scale)
-            .letterSpacing(-0.17.scale)
-        valueLabel.attributedText = element.ingredient.value.attributed(with: valueAttrs)
     }
 }
 
@@ -67,14 +59,9 @@ private extension RecipeIngredientCell {
         
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 50.scale),
-            titleLabel.trailingAnchor.constraint(equalTo: valueLabel.leadingAnchor, constant: -16.scale),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.scale),
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2.5.scale),
             titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2.5.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            valueLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.scale),
-            valueLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
     }
 }
@@ -94,15 +81,6 @@ private extension RecipeIngredientCell {
         view.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .horizontal)
         view.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 0), for: .horizontal)
         view.numberOfLines = 0
-        view.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(view)
-        return view
-    }
-    
-    func makeValueLabel() -> UILabel {
-        let view = UILabel()
-        view.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
-        view.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: .horizontal)
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view
