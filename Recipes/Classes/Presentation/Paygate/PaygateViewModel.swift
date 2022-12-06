@@ -11,8 +11,8 @@ import OtterScaleiOS
 
 final class PaygateViewModel {
     enum Constants {
-        static let monthly = "app.books.month"
-        static let lifetime = "app.books.forever"
+        static let monthly = "app.recipes.month"
+        static let lifetime = "app.recipes.forever"
     }
     
     let buy = PublishRelay<String>()

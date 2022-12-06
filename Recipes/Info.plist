@@ -9,7 +9,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb296859475549711</string>
+				<string>fb875089766994045</string>
 			</array>
 		</dict>
 		<dict>
@@ -17,16 +17,16 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>booksummaries</string>
+				<string>recipesapp</string>
 			</array>
 		</dict>
 	</array>
 	<key>FacebookAppID</key>
-	<string>296859475549711</string>
+	<string>875089766994045</string>
 	<key>FacebookClientToken</key>
-	<string>0351b03a952d17dccd165548a0f47c01</string>
+	<string>982a5be82f14e21a0aee8d64fcdebeaf</string>
 	<key>FacebookDisplayName</key>
-	<string>Reading Summaries</string>
+	<string>Recipes</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -61,6 +61,6 @@
 		</dict>
 	</dict>
 	<key>branch_key</key>
-	<string>key_live_ejYuDhcTb9c69Rc25GnDpoohtvjWIr6w</string>
+	<string>key_live_jjZ5JIKC9D6sKIVZY2Bv7fncBqmXrQgM</string>
 </dict>
 </plist>

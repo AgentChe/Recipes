@@ -6,21 +6,18 @@
 //
 
 final class GlobalDefinitions {
-    static let domain = "https://recipes.mustname.com"
+    static let domain = "https://recipes.thinkaboutapps.com"
     static let apiKey = "un9W56kzWA3K6fv3kILK"
     
     static let otterScaleHost = "https://api.korrekted.com"
     static let otterScaleApiKey = "nLcxrPTkFUCO8orL"
     
-    static let rushSDKHost = "https://analytics.korrekted.com"
-    static let rushSDKApiKey = "EQHUB7YfpuzXzjOk"
+    static let appleAppID = "1658311060"
     
-    static let appleAppID = "1585629405"
+    static let applicationTag = "RECIPES"
+    static let amplitudeApiKey = "1336d08d429ceb343970fd360e3253f6"
     
-    static let applicationTag = "BOOK_SUMMARIES"
-    static let amplitudeApiKey = "b503251969f4b1d7901d2f7d1388d476"
-    
-    static let termsOfServiceUrl = "https://books.thinkaboutapps.com/terms"
-    static let privacyPolicyUrl = "https://books.thinkaboutapps.com/policy"
-    static let contactUsUrl = "https://books.thinkaboutapps.com/contact"
+    static let termsOfServiceUrl = "https://thinkaboutapps.com/terms"
+    static let privacyPolicyUrl = "https://thinkaboutapps.com/policy"
+    static let contactUsUrl = "https://thinkaboutapps.com/contact"
 }

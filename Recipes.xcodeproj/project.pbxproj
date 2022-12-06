@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7BF94A8711468E62E0982E89 /* Pods_Recipes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E029B31C0DE5343E733C14 /* Pods_Recipes.framework */; };
+		DE2CB7A1293F875000AC2372 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2CB7A0293F875000AC2372 /* GoogleService-Info.plist */; };
 		DE54AC2428D09BF9004F1514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC2328D09BF9004F1514 /* AppDelegate.swift */; };
 		DE54AC2628D09BF9004F1514 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC2528D09BF9004F1514 /* SceneDelegate.swift */; };
 		DE54AC2D28D09BFC004F1514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE54AC2C28D09BFC004F1514 /* Assets.xcassets */; };
@@ -21,7 +22,6 @@
 		DE54AC6928D09ED9004F1514 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE54AC6028D09ED9004F1514 /* PlusJakartaSans-Regular.ttf */; };
 		DE54AC6A28D09ED9004F1514 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE54AC6128D09ED9004F1514 /* PlusJakartaSans-Bold.ttf */; };
 		DE54AC6B28D09ED9004F1514 /* PlusJakartaSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE54AC6228D09ED9004F1514 /* PlusJakartaSans-ExtraBold.ttf */; };
-		DE54AC6D28D09EE1004F1514 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE54AC6C28D09EE1004F1514 /* GoogleService-Info.plist */; };
 		DE54AC6F28D09EE7004F1514 /* API.json in Resources */ = {isa = PBXBuildFile; fileRef = DE54AC6E28D09EE7004F1514 /* API.json */; };
 		DE54ACA628D09F25004F1514 /* BranchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC7128D09F25004F1514 /* BranchManager.swift */; };
 		DE54ACA728D09F25004F1514 /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC7228D09F25004F1514 /* AmplitudeManager.swift */; };
@@ -294,6 +294,7 @@
 /* Begin PBXFileReference section */
 		84E029B31C0DE5343E733C14 /* Pods_Recipes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3212EA19A986B201D999AF7 /* Pods-Recipes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipes.debug.xcconfig"; path = "Target Support Files/Pods-Recipes/Pods-Recipes.debug.xcconfig"; sourceTree = "<group>"; };
+		DE2CB7A0293F875000AC2372 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE54AC2028D09BF9004F1514 /* Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE54AC2328D09BF9004F1514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE54AC2528D09BF9004F1514 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -309,7 +310,6 @@
 		DE54AC6028D09ED9004F1514 /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
 		DE54AC6128D09ED9004F1514 /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
 		DE54AC6228D09ED9004F1514 /* PlusJakartaSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-ExtraBold.ttf"; sourceTree = "<group>"; };
-		DE54AC6C28D09EE1004F1514 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE54AC6E28D09EE7004F1514 /* API.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = API.json; sourceTree = "<group>"; };
 		DE54AC7128D09F25004F1514 /* BranchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchManager.swift; sourceTree = "<group>"; };
 		DE54AC7228D09F25004F1514 /* AmplitudeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
@@ -648,7 +648,7 @@
 				DE54AC2C28D09BFC004F1514 /* Assets.xcassets */,
 				DE54AC2E28D09BFC004F1514 /* LaunchScreen.storyboard */,
 				DE54AC3128D09BFC004F1514 /* Info.plist */,
-				DE54AC6C28D09EE1004F1514 /* GoogleService-Info.plist */,
+				DE2CB7A0293F875000AC2372 /* GoogleService-Info.plist */,
 				DE54AC6E28D09EE7004F1514 /* API.json */,
 			);
 			path = Resource;
@@ -1911,7 +1911,6 @@
 				DE54AC6B28D09ED9004F1514 /* PlusJakartaSans-ExtraBold.ttf in Resources */,
 				DE54AC6328D09ED9004F1514 /* Localizable.strings in Resources */,
 				DE54AC6428D09ED9004F1514 /* Merriweather-Bold.ttf in Resources */,
-				DE54AC6D28D09EE1004F1514 /* GoogleService-Info.plist in Resources */,
 				DE54AC6828D09ED9004F1514 /* PlusJakartaSans-SemiBold.ttf in Resources */,
 				DE54AC6728D09ED9004F1514 /* PlusJakartaSans-Medium.ttf in Resources */,
 				DE54AC2D28D09BFC004F1514 /* Assets.xcassets in Resources */,
@@ -1920,6 +1919,7 @@
 				DEC41C1528F9447400280990 /* Splash.Animation.json in Resources */,
 				DE54AC6928D09ED9004F1514 /* PlusJakartaSans-Regular.ttf in Resources */,
 				DE54AC6628D09ED9004F1514 /* Merriweather-Black.ttf in Resources */,
+				DE2CB7A1293F875000AC2372 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
