@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7BF94A8711468E62E0982E89 /* Pods_Recipes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E029B31C0DE5343E733C14 /* Pods_Recipes.framework */; };
 		DE2CB7A1293F875000AC2372 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2CB7A0293F875000AC2372 /* GoogleService-Info.plist */; };
+		DE2CB7FF29421CB900AC2372 /* RequestReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2CB7FE29421CB900AC2372 /* RequestReview.swift */; };
 		DE54AC2428D09BF9004F1514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC2328D09BF9004F1514 /* AppDelegate.swift */; };
 		DE54AC2628D09BF9004F1514 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC2528D09BF9004F1514 /* SceneDelegate.swift */; };
 		DE54AC2D28D09BFC004F1514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE54AC2C28D09BFC004F1514 /* Assets.xcassets */; };
@@ -295,6 +296,7 @@
 		84E029B31C0DE5343E733C14 /* Pods_Recipes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3212EA19A986B201D999AF7 /* Pods-Recipes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipes.debug.xcconfig"; path = "Target Support Files/Pods-Recipes/Pods-Recipes.debug.xcconfig"; sourceTree = "<group>"; };
 		DE2CB7A0293F875000AC2372 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE2CB7FE29421CB900AC2372 /* RequestReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestReview.swift; sourceTree = "<group>"; };
 		DE54AC2028D09BF9004F1514 /* Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE54AC2328D09BF9004F1514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE54AC2528D09BF9004F1514 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -729,6 +731,7 @@
 				DE54AC7728D09F25004F1514 /* RxActivityIndicator.swift */,
 				DE54AC7828D09F25004F1514 /* PaginatedDataLoader.swift */,
 				DE54AC7928D09F25004F1514 /* Toast.swift */,
+				DE2CB7FE29421CB900AC2372 /* RequestReview.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -2213,6 +2216,7 @@
 				DEF40C3128E3509D00C2EB67 /* GetCategoryRecipesRequest.swift in Sources */,
 				DEF40C2128E3509D00C2EB67 /* RankingRecipesGroup.swift in Sources */,
 				DE54ACAD28D09F25004F1514 /* Toast.swift in Sources */,
+				DE2CB7FF29421CB900AC2372 /* RequestReview.swift in Sources */,
 				DEC41AFC28EF203F00280990 /* ExploreView.swift in Sources */,
 				DEC41BA728F562E300280990 /* RecipeTableInfoCell.swift in Sources */,
 				DE67A84E28EC1F2C00369B02 /* ForYouTableView.swift in Sources */,
@@ -2389,7 +2393,7 @@
 				CODE_SIGN_ENTITLEMENTS = Recipes/Recipes.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AY43JM5PH6;
 				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2404,7 +2408,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = app.recipes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Recipes AppStore";
@@ -2423,7 +2427,7 @@
 				CODE_SIGN_ENTITLEMENTS = Recipes/Recipes.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AY43JM5PH6;
 				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2438,7 +2442,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = app.recipes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Recipes AppStore";
