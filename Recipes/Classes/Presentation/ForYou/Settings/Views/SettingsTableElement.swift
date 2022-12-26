@@ -11,7 +11,7 @@ enum SettingsTableElement {
     case offset(CGFloat)
     case contactUs(String)
     case privacyPolicy(String)
-    case termsOfUser(String)
+    case termsOfUse(String)
     case separator
     case getAccess
 }

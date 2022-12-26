@@ -131,7 +131,9 @@ private extension ODietsView {
     
     func makeTableView() -> ODietsTableView {
         let view = ODietsTableView()
+        view.separatorStyle = .none
         view.contentInset = UIEdgeInsets(top: 24.scale, left: 0, bottom: 24.scale, right: 0)
+        view.contentInsetAdjustmentBehavior = .never
         view.backgroundColor = UIColor.clear
         view.showsVerticalScrollIndicator = false
         view.translatesAutoresizingMaskIntoConstraints = false

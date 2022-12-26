@@ -53,7 +53,7 @@ extension SettingsTableView: UITableViewDataSource {
             cell.contentView.backgroundColor = UIColor.clear
             cell.selectionStyle = .none
             return cell
-        case .contactUs(let element), .privacyPolicy(let element), .termsOfUser(let element):
+        case .contactUs(let element), .privacyPolicy(let element), .termsOfUse(let element):
             let cell = dequeueReusableCell(withIdentifier: String(describing: SettingsLinkCell.self)) as! SettingsLinkCell
             cell.setup(title: element)
             return cell
@@ -71,7 +71,7 @@ extension SettingsTableView: UITableViewDelegate {
         switch elements[indexPath.row] {
         case .offset(let offset):
             return offset
-        case .contactUs, .privacyPolicy, .termsOfUser:
+        case .contactUs, .privacyPolicy, .termsOfUse:
             return 21.scale
         case .separator:
             return 1.scale
@@ -86,7 +86,7 @@ extension SettingsTableView: UITableViewDelegate {
             mainDelegate?.settingsTableDidTappedContactUs()
         case .privacyPolicy:
             mainDelegate?.settingsTableDidTappedPrivacyPolicy()
-        case .termsOfUser:
+        case .termsOfUse:
             mainDelegate?.settingsTableDidTappedTermsOfUse()
         case .getAccess:
             mainDelegate?.settingsTableDidTappedGetAccess()

@@ -26,11 +26,11 @@ private extension SettingsViewModel {
                     .offset(20.scale),
                     .separator,
                     .offset(20.scale),
-                    .contactUs("Settings.PrivacyPolicy".localized),
+                    .privacyPolicy("Settings.PrivacyPolicy".localized),
                     .offset(20.scale),
                     .separator,
                     .offset(20.scale),
-                    .contactUs("Settings.TermsOfUse".localized),
+                    .termsOfUse("Settings.TermsOfUse".localized),
                 ]
                 
                 if !activeSubscription {

@@ -58,7 +58,7 @@ private extension ExploreViewModel {
     func makeSource() -> Driver<Source> {
         Driver
             .combineLatest(userSearching.asDriver(),
-                           search.asDriver().debounce(RxTimeInterval.milliseconds(500)))
+                           search.asDriver().debounce(RxTimeInterval.milliseconds(1000)))
             .map { userSearching, search -> Source in
                 guard userSearching else {
                     return .default

@@ -31,7 +31,7 @@
 "Onboarding.Welcome.Title" = "Secret recipe stash at\nyour fingertips";
 "Onboarding.Welcome.SubTitle" = "Save time searching for recipes while\nimproving your cooking skills in the\nprocess.";
 "Onboarding.Welcome.Button" = "Start now";
-"Onboarding.Info.Title" = "Now let’s get to know\nyou.";
+"Onboarding.Info.Title" = "Now let’s get to know\nyou better";
 "Onboarding.Info.SubTitle" = "We need some  information to build a\ncustom cooking plan";
 "Onboarding.Goal.Title" = "What’s your goal?";
 "Onboarding.Goal.1.Title" = "Discover";
@@ -48,7 +48,7 @@
 "Onboarding.Age.5" = "60+";
 "Onboarding.Brief.Title" = "Less stress - more delicious\nmeals";
 "Onboarding.Brief.SubTitle" = " Lots of inventive recipes for breakfast,\nlunch, and dinner will inspire you to try\ncooking a new dish, or try cooking a\nfamiliar dish in a new way.";
-"Onboarding.Categories.Title" = "What would you like\ncook more?";
+"Onboarding.Categories.Title" = "What would you like to\ncook more?";
 "Onboarding.Diets.Title" = "Do you follow any of\nthese dietary\napproaches?";
 "Onboarding.Pace.Title" = "How would you\ndescribe your cooking\nexperience?";
 "Onboarding.Pace1" = "Beginner";
@@ -64,20 +64,20 @@
 "Onboarding.Notifications.Cell1.Title" = "Stay motivated";
 "Onboarding.Notifications.Cell1.SubTitle" = "\nSupportive reminders to keep your\ncooking going";
 "Onboarding.Notifications.Cell2.Title" = "Dive deeper";
-"Onboarding.Notifications.Cell2.SubTitle" = "\nGet to know more other recipes for\nevery taste";
+"Onboarding.Notifications.Cell2.SubTitle" = "\nGet to know other recipes for every taste";
 "Onboarding.Notifications.SaveButton" = "Save";
 "Onboarding.Notifications.SkipButton" = "Not now";
 "Onboarding.InfoLibrary.Title" = "Let’s create your\nperfect cookbook";
-"Onboarding.InfoLibrary.SubTitle" = "Please pick recipes based on your interests\nand  then you can see them in your selection";
+"Onboarding.InfoLibrary.SubTitle" = "Please pick recipes based on your tastes\nand  then you can see them in your selection";
 "Onboarding.InfoLibrary.Button" = "Got it";
 "Onboarding.Recipe.Title" = "Does this recipe\ninterest you?";
 "Onboarding.Recipe.min" = "%i min";
 "Onboarding.Recipe.TimeUndetermined" = "Undetermined";
 "Onboarding.Progress.Title1" = "Analyzing your\nprofile...";
 "Onboarding.Progress.Title2" = "Identifying your\npreferences ...";
-"Onboarding.Progress.Title3" = "Creating your\npersonalized library...";
+"Onboarding.Progress.Title3" = "Creating your\npersonalised\ncookbook...";
 "Onboarding.Progress.Bottom1" = "Your profile %i%%";
-"Onboarding.Progress.Bottom2" = "Book preferences %i%%";
+"Onboarding.Progress.Bottom2" = "Recipe preferences %i%%";
 "Onboarding.Progress.Bottom3" = "Creating your plan %i%%";
 
 // MARK: Main
@@ -88,7 +88,7 @@
 
 // MARK: Paygate
 "Paygate.Title" = "Unlock Premium Status";
-"Paygate.Cell1" = "200+ recipes";
+"Paygate.Cell1" = "1100+ recipes";
 "Paygate.Cell2" = "Step-by-step instructions";
 "Paygate.Cell3" = "Any diet plans to fit nutritional needs";
 "Paygate.Info" = "Secured by the App Store. Cancel anytime.";
@@ -152,7 +152,7 @@
 "Library.Empty.Saved.SubTitle" = "Here will be recipes that you\nsave";
 "Library.Empty.History.Title" = "Looks empty here";
 "Library.Empty.History.SubTitle" = "Here will be recipes that you\ncook";
-"Library.Empty.Button" = "Discover books";
+"Library.Empty.Button" = "Discover recipes";
 "Library.Time" = "%i min";
 "Library.Time.Undetermined" = "Undetermined";
 

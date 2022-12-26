@@ -48,11 +48,7 @@ extension ODietsTableView: UITableViewDataSource {
 // MARK: UITableViewDelegate
 extension ODietsTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard (elements.count - 1) == indexPath.row else {
-            return 88.scale
-        }
-        
-        return 72.scale
+        88.scale
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

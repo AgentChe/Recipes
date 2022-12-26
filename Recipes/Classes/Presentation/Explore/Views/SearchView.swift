@@ -52,7 +52,9 @@ extension SearchView {
     }
     
     var changedText: Signal<String> {
-        text.asSignal(onErrorSignalWith: .never())
+        text
+            .asSignal(onErrorSignalWith: .never())
+            .filter { $0.count >= 5 }
     }
 }
 

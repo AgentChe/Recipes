@@ -55,7 +55,7 @@ private extension ODietsTableCell {
         NSLayoutConstraint.activate([
             container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 35.scale),
             container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -35.scale),
-            container.topAnchor.constraint(equalTo: container.topAnchor),
+            container.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16.scale),
             container.heightAnchor.constraint(equalToConstant: 72.scale)
         ])
         

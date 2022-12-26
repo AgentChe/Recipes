@@ -243,7 +243,7 @@ private extension ORecipesView {
             timeContainerView.leadingAnchor.constraint(equalTo: leadingAnchor),
             timeContainerView.trailingAnchor.constraint(equalTo: trailingAnchor),
             timeContainerView.heightAnchor.constraint(equalToConstant: 24.scale),
-            timeContainerView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 16.scale)
+            timeContainerView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10.scale)
         ])
         
         NSLayoutConstraint.activate([
