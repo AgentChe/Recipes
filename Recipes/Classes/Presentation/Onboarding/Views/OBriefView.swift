@@ -29,7 +29,7 @@ final class OBriefView: OSlideView {
         super.moveToThis()
         
         AmplitudeManager.shared
-            .logEvent(name: "Onboarding Screen 2")
+            .logEvent(name: "Info Screen 2")
     }
 }
 

@@ -40,7 +40,7 @@ final class ODietsView: OSlideView {
         super.moveToThis()
         
         AmplitudeManager.shared
-            .logEvent(name: "Onboarding Diets Screen")
+            .logEvent(name: "Diet Screen")
     }
 }
 

@@ -54,6 +54,9 @@ final class RecipeViewController: UIViewController {
         
         mainView.closeButton.rx.tap
             .bind(to: Binder(self) { base, void in
+                AmplitudeManager.shared
+                    .logEvent(name: "Recipe Tap", parameters: ["what": "back"])
+                
                 base.dismiss(animated: true)
             })
             .disposed(by: disposeBag)
@@ -65,6 +68,10 @@ final class RecipeViewController: UIViewController {
             .disposed(by: disposeBag)
         
         mainView.stepButton.rx.tap
+            .do(onNext: {
+                AmplitudeManager.shared
+                    .logEvent(name: "Recipe Tap", parameters: ["what": "step by step"])
+            })
             .bind(to: viewModel.didTapRead)
             .disposed(by: disposeBag)
         
@@ -76,6 +83,10 @@ final class RecipeViewController: UIViewController {
             .disposed(by: disposeBag)
         
         mainView.shareButton.rx.tap
+            .do(onNext: {
+                AmplitudeManager.shared
+                    .logEvent(name: "Recipe Tap", parameters: ["what": "share"])
+            })
             .withLatestFrom(viewModel.shareLink)
             .bind(to: Binder(self) { base, url in
                 base.share(url: url)
@@ -83,6 +94,10 @@ final class RecipeViewController: UIViewController {
             .disposed(by: disposeBag)
         
         mainView.favoriteButton.rx.tap
+            .do(onNext: {
+                AmplitudeManager.shared
+                    .logEvent(name: "Recipe Tap", parameters: ["what": "bookmark"])
+            })
             .withLatestFrom(viewModel.isSavedRecipe)
             .bind(to: viewModel.didTapMark)
             .disposed(by: disposeBag)

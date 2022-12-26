@@ -34,6 +34,9 @@ final class ShoppingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        AmplitudeManager.shared
+            .logEvent(name: "Shopping List Screen")
+        
         viewModel.elements
             .drive(Binder(mainView.tableView) { base, elements in
                 base.setup(elements: elements)
@@ -151,10 +154,10 @@ private extension ShoppingViewController {
         switch filter {
         case .allIngredients:
             AmplitudeManager.shared
-                .logEvent(name: "All Ingredients Screen")
+                .logEvent(name: "Shopping List Tap", parameters: ["what": "all ingredients"])
         case .byRecipe:
             AmplitudeManager.shared
-                .logEvent(name: "By Recipe Screen")
+                .logEvent(name: "Shopping List Tap", parameters: ["what": "by recipe"])
         }
     }
 }

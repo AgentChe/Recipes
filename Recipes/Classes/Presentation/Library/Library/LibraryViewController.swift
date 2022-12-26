@@ -34,6 +34,9 @@ final class LibraryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        AmplitudeManager.shared
+            .logEvent(name: "My Recipes Screen")
+        
         viewModel.tryAgain = { [weak self] error -> Observable<Void> in
             guard let self = self else {
                 return .never()
@@ -185,10 +188,10 @@ private extension LibraryViewController {
         switch filter {
         case .saved:
             AmplitudeManager.shared
-                .logEvent(name: "Saved Screen")
+                .logEvent(name: "My Recipes Tap", parameters: ["what": "saved"])
         case .history:
             AmplitudeManager.shared
-                .logEvent(name: "My History Screen")
+                .logEvent(name: "My Recipes Tap", parameters: ["what": "my history"])
         }
     }
 }

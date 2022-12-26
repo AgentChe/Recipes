@@ -33,10 +33,13 @@ final class ReaderViewController: UIViewController {
         super.viewDidLoad()
         
         AmplitudeManager.shared
-            .logEvent(name: "Read Screen")
+            .logEvent(name: "Recipe Step Screen")
         
         mainView.closeButton.rx.tap
             .bind(to: Binder(self) { base, void in
+                AmplitudeManager.shared
+                    .logEvent(name: "Recipe Step Tap", parameters: ["what": "close"])
+                
                 base.dismiss(animated: true)
             })
             .disposed(by: disposeBag)
@@ -51,12 +54,18 @@ final class ReaderViewController: UIViewController {
             .withLatestFrom(viewModel.recipe)
             .withLatestFrom(viewModel.currentStep) { ($0, $1) }
             .bind(to: Binder(self) { base, args in
+                AmplitudeManager.shared
+                    .logEvent(name: "Recipe Step Tap", parameters: ["what": "steps"])
+                
                 base.open(steps: args.0.steps, currentStep: args.1)
             })
             .disposed(by: disposeBag)
         
         mainView.markFinishButton.rx.tap
             .bind(to: Binder(self) { base, void in
+                AmplitudeManager.shared
+                    .logEvent(name: "Recipe Step Tap", parameters: ["what": "mark as finished"])
+                
                 base.dismiss(animated: true)
             })
             .disposed(by: disposeBag)
@@ -64,6 +73,9 @@ final class ReaderViewController: UIViewController {
         mainView.shareButton.rx.tap
             .withLatestFrom(viewModel.shareLink)
             .bind(to: Binder(self) { base, url in
+                AmplitudeManager.shared
+                    .logEvent(name: "Recipe Step Tap", parameters: ["what": "share"])
+                
                 base.share(url: url)
             })
             .disposed(by: disposeBag)

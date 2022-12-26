@@ -28,7 +28,7 @@ final class OInfoView: OSlideView {
         super.moveToThis()
         
         AmplitudeManager.shared
-            .logEvent(name: "Onboarding Screen 1")
+            .logEvent(name: "Info Screen")
     }
 }
 

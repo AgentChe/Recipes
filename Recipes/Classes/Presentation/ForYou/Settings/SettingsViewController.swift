@@ -47,6 +47,9 @@ extension SettingsViewController {
 // MARK: SettingsTableDelegate
 extension SettingsViewController: SettingsTableDelegate {
     func settingsTableDidTappedContactUs() {
+        AmplitudeManager.shared
+            .logEvent(name: "Settings Tap", parameters: ["what": "contact us"])
+        
         guard let url = URL(string: GlobalDefinitions.contactUsUrl) else {
             return
         }
@@ -55,6 +58,9 @@ extension SettingsViewController: SettingsTableDelegate {
     }
     
     func settingsTableDidTappedPrivacyPolicy() {
+        AmplitudeManager.shared
+            .logEvent(name: "Settings Tap", parameters: ["what": "privacy policy"])
+        
         guard let url = URL(string: GlobalDefinitions.privacyPolicyUrl) else {
             return
         }
@@ -63,6 +69,9 @@ extension SettingsViewController: SettingsTableDelegate {
     }
     
     func settingsTableDidTappedTermsOfUse() {
+        AmplitudeManager.shared
+            .logEvent(name: "Settings Tap", parameters: ["what": "terms of use"])
+        
         guard let url = URL(string: GlobalDefinitions.termsOfServiceUrl) else {
             return
         }
@@ -71,6 +80,9 @@ extension SettingsViewController: SettingsTableDelegate {
     }
     
     func settingsTableDidTappedGetAccess() {
+        AmplitudeManager.shared
+            .logEvent(name: "Settings Tap", parameters: ["what": "start free trial"])
+        
         let vc = PaygateViewController.make()
         present(vc, animated: true)
     }

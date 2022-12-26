@@ -52,7 +52,7 @@ final class ORecipesView: OSlideView {
         super.moveToThis()
         
         AmplitudeManager.shared
-            .logEvent(name: "Onboarding Recipes Screen")
+            .logEvent(name: "Personalisation Screen")
     }
 }
 
