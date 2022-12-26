@@ -91,6 +91,8 @@ final class ReaderViewController: UIViewController {
                 base.bottomView(hidden: !isLastStep)
             })
             .disposed(by: disposeBag)
+        
+        addSwipeActions()
     }
 }
 
@@ -105,6 +107,27 @@ extension ReaderViewController {
 
 // MARK: Private
 private extension ReaderViewController {
+    func addSwipeActions() {
+        let leftSwipe = UISwipeGestureRecognizer()
+        leftSwipe.direction = .left
+        
+        let rightSwipe = UISwipeGestureRecognizer()
+        rightSwipe.direction = .right
+        
+        leftSwipe.rx.event
+            .withLatestFrom(viewModel.currentStep)
+            .bind(to: viewModel.didSwipeToNextStep)
+            .disposed(by: disposeBag)
+        
+        rightSwipe.rx.event
+            .withLatestFrom(viewModel.currentStep)
+            .bind(to: viewModel.didSwipeToPreviousStep)
+            .disposed(by: disposeBag)
+        
+        mainView.tableView.addGestureRecognizer(leftSwipe)
+        mainView.tableView.addGestureRecognizer(rightSwipe)
+    }
+    
     func share(url: URL) {
         let vc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         present(vc, animated: true)
@@ -112,7 +135,7 @@ private extension ReaderViewController {
     
     func open(steps: [RecipeStep], currentStep: RecipeStep) {
         let vc = StepsViewController.make(steps: steps, selectedStep: currentStep) { [weak self] step in
-            self?.viewModel.currentStep.accept(step)
+            self?.viewModel.didSelectStep.accept(step)
         }
         present(vc, animated: true)
     }

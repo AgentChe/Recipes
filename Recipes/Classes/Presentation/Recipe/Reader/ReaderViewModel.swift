@@ -10,22 +10,26 @@ import RxCocoa
 
 final class ReaderViewModel {
     let recipe: BehaviorRelay<Recipe>
-    let currentStep: BehaviorRelay<RecipeStep>
+    lazy var didSelectStep = PublishRelay<RecipeStep>()
+    lazy var didSwipeToPreviousStep = PublishRelay<RecipeStep>()
+    lazy var didSwipeToNextStep = PublishRelay<RecipeStep>()
     
     lazy var shareLink = makeShareLink()
     lazy var progress = makeProgress()
     lazy var isLastStep = makeIsLastStep()
     lazy var elements = makeElements()
+    lazy var currentStep = makeCurrentStep()
     
     private lazy var currentStepElements = makeCurrentStepElements()
     private lazy var lastStepElements = makeLastStepElements()
+    private let startStep: BehaviorRelay<RecipeStep>
     
     private lazy var contentManager = ContentManager()
     private lazy var profileManager = ProfileManager()
     
     init(recipe: Recipe, startStep: RecipeStep) {
         self.recipe = BehaviorRelay(value: recipe)
-        self.currentStep = BehaviorRelay(value: startStep)
+        self.startStep = BehaviorRelay(value: startStep)
     }
 }
 
@@ -41,7 +45,7 @@ private extension ReaderViewModel {
         Driver
             .combineLatest(
                 recipe.asDriver(),
-                currentStep.asDriver()
+                currentStep
             )
             .flatMapLatest { [weak self] recipe, step -> Driver<RecipeReadingProgress> in
                 guard let self = self else {
@@ -68,7 +72,7 @@ private extension ReaderViewModel {
         Driver
             .combineLatest(
                 recipe.asDriver(),
-                currentStep.asDriver()
+                currentStep
             )
             .map { recipe, step -> Bool in
                 guard let index = recipe.steps.firstIndex(of: step) else {
@@ -94,7 +98,7 @@ private extension ReaderViewModel {
         Driver
             .combineLatest(
                 recipe.asDriver(),
-                currentStep.asDriver()
+                currentStep
             )
             .map { recipe, step -> [ReaderTableElement] in
                 guard let index = recipe.steps.firstIndex(of: step) else {
@@ -140,5 +144,43 @@ private extension ReaderViewModel {
                 
                 return result
             }
+    }
+    
+    func makeCurrentStep() -> Driver<RecipeStep> {
+        let previous = didSwipeToPreviousStep
+            .withLatestFrom(recipe) { ($0, $1) }
+            .compactMap { currentStep, recipe -> RecipeStep? in
+                let steps = recipe.steps
+                
+                guard let currentIndex = steps.firstIndex(of: currentStep) else {
+                    return nil
+                }
+                
+                let previousIndex = currentIndex - 1
+                
+                return steps[safe: previousIndex]
+            }
+        
+        let next = didSwipeToNextStep
+            .withLatestFrom(recipe) { ($0, $1) }
+            .compactMap { currentStep, recipe -> RecipeStep? in
+                let steps = recipe.steps
+                
+                guard let currentIndex = steps.firstIndex(of: currentStep) else {
+                    return nil
+                }
+                
+                let nextIndex = currentIndex + 1
+                
+                return steps[safe: nextIndex]
+            }
+        
+        return Driver
+            .merge(
+                startStep.asDriver(),
+                didSelectStep.asDriver(onErrorDriveWith: .never()),
+                previous.asDriver(onErrorDriveWith: .never()),
+                next.asDriver(onErrorDriveWith: .never())
+            )
     }
 }
