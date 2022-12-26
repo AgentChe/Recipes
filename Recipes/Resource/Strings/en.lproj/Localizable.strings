@@ -17,7 +17,7 @@
 "ImagePicker.PhotoLibrary" = "Photo library";
 
 // MARK: TryAgain
-"TryAgain.Title" = "The app failed to perfom a request";
+"TryAgain.Title" = "The app failed to perform a request";
 "TryAgain.SubTitle" = "If there’s a connection issue on your side try one more time. If the connection is fine and the error keeps on repeating please get in touch with the support";
 "TryAgain.Button" = "Try again";
 "TryAgain.Contact" = "Contact the support";
@@ -28,26 +28,26 @@
 "Splash.Preloader3" = "Setting up your account...";
 
 // MARK: Onboarding
-"Onboarding.Welcome.Title" = "Secret recipe stash\nat your fingertips";
-"Onboarding.Welcome.SubTitle" = "Don’t waste much time on searching\nreсipes. Get recipes while making you a\nbetter cook.";
+"Onboarding.Welcome.Title" = "Secret recipe stash at\nyour fingertips";
+"Onboarding.Welcome.SubTitle" = "Save time searching for recipes while\nimproving your cooking skills in the\nprocess.";
 "Onboarding.Welcome.Button" = "Start now";
 "Onboarding.Info.Title" = "Now let’s get to know\nyou.";
 "Onboarding.Info.SubTitle" = "We need some  information to build a\ncustom cooking plan";
-"Onboarding.Goal.Title" = "How do you want to\nuse app?";
+"Onboarding.Goal.Title" = "What’s your goal?";
 "Onboarding.Goal.1.Title" = "Discover";
 "Onboarding.Goal.1.SubTitle" = "\ninteresting recipes";
 "Onboarding.Goal.2.Title" = "Review";
-"Onboarding.Goal.2.SubTitle" = "\nrecipes you cook previously";
+"Onboarding.Goal.2.SubTitle" = "\nrecipes you cooked";
 "Onboarding.Goal.3.Title" = "Develop";
-"Onboarding.Goal.3.SubTitle" = "\na cooking habit quicker";
+"Onboarding.Goal.3.SubTitle" = "\na cooking habit faster";
 "Onboarding.Age.Title" = "What is your age?";
 "Onboarding.Age.1" = "18-24";
 "Onboarding.Age.2" = "25-34";
 "Onboarding.Age.3" = "35-44";
 "Onboarding.Age.4" = "45-60";
 "Onboarding.Age.5" = "60+";
-"Onboarding.Brief.Title" = "Read in brief - learn more";
-"Onboarding.Brief.SubTitle" = "Book summaries enables learners to\ndigest bite-sized pieces of information\nto enhance data processing skills";
+"Onboarding.Brief.Title" = "Less stress - more delicious\nmeals";
+"Onboarding.Brief.SubTitle" = " Lots of inventive recipes for breakfast,\nlunch, and dinner will inspire you to try\ncooking a new dish, or try cooking a\nfamiliar dish in a new way.";
 "Onboarding.Categories.Title" = "What would you like\ncook more?";
 "Onboarding.Diets.Title" = "Do you follow any of\nthese dietary\napproaches?";
 "Onboarding.Pace.Title" = "How would you\ndescribe your cooking\nexperience?";

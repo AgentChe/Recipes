@@ -168,7 +168,7 @@ extension RecipeViewController: RecipeTableDelegate {
 private extension RecipeViewController {
     func update(favorite: Bool) {
         let image = UIImage(named: favorite ? "Recipe.Mark.Check" : "Recipe.Mark.Uncheck")
-        mainView.favoriteButton.setImage(image, for: .normal)
+        mainView.favoriteButton.iconView.image = image
     }
     
     func openError() -> Observable<Void> {

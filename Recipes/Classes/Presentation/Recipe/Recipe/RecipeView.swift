@@ -120,7 +120,7 @@ private extension RecipeView {
     func makeCloseButton() -> RecipeNavButton {
         let view = RecipeNavButton()
         view.backgroundColor = Appearance.secondary5
-        view.setImage(UIImage(named: "Recipe.Close"), for: .normal)
+        view.iconView.image = UIImage(named: "Recipe.Close")
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
