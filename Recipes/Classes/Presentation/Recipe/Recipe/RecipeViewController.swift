@@ -46,6 +46,12 @@ final class RecipeViewController: UIViewController {
             return self.openError()
         }
         
+        mainView.tableView.rx.contentOffset
+            .bind(to: Binder(mainView) { base, offset in
+                base.update(tableContentOffset: offset.y)
+            })
+            .disposed(by: disposeBag)
+        
         viewModel.activity
             .drive(Binder(self) { base, activity in
                 base.activity(activity)

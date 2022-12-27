@@ -10,12 +10,15 @@ import UIKit
 final class RecipeView: UIView {
     lazy var imageView = makeImageView()
     lazy var tableView = makeTableView()
+    lazy var navView = makeNavView()
     lazy var closeButton = makeCloseButton()
     lazy var shareButton = makeShareButton()
     lazy var favoriteButton = makeFavoriteButton()
     lazy var bottomView = makeBottomView()
     lazy var stepButton = makeStepButton()
     lazy var preloader = makePreloader()
+    
+    private lazy var navViewHeightConstraint = NSLayoutConstraint()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +29,21 @@ final class RecipeView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: Public
+extension RecipeView {
+    func update(tableContentOffset: CGFloat) {
+        let maxHeight = ScreenSize.isIphoneXFamily ? 99.scale : 79.scale
+        let offsetHeight = max(0, tableContentOffset / 2)
+        let height = min(maxHeight, offsetHeight)
+        
+        navViewHeightConstraint.isActive = false
+        navViewHeightConstraint.constant = height
+        navViewHeightConstraint.isActive = true
+        
+        layoutIfNeeded()
     }
 }
 
@@ -51,6 +69,14 @@ private extension RecipeView {
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.topAnchor.constraint(equalTo: topAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomView.topAnchor)
+        ])
+        
+        navViewHeightConstraint = navView.heightAnchor.constraint(equalToConstant: 0)
+        NSLayoutConstraint.activate([
+            navView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            navView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            navView.topAnchor.constraint(equalTo: topAnchor),
+            navViewHeightConstraint
         ])
         
         NSLayoutConstraint.activate([
@@ -114,6 +140,14 @@ private extension RecipeView {
         view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
+        return view
+    }
+    
+    func makeNavView() -> UIView {
+        let view = UIView()
+        view.backgroundColor = Appearance.background
+        addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }
     
