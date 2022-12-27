@@ -7,13 +7,15 @@
 
 import UIKit
 
-final class ORecipeButton: UIButton {
+class ORecipeButton: UIButton {
     lazy var iconView = makeIconView()
     
-    private let imageName: String
+    private let primaryImage: String
+    private let highlitedImage: String
     
-    init(imageName: String) {
-        self.imageName = imageName
+    init(primaryImage: String, highlitedImage: String) {
+        self.primaryImage = primaryImage
+        self.highlitedImage = highlitedImage
         
         super.init(frame: .zero)
         
@@ -22,6 +24,13 @@ final class ORecipeButton: UIButton {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override open var isHighlighted: Bool {
+        didSet {
+            backgroundColor = isHighlighted ? Appearance.secondary1 : Appearance.white
+            iconView.image = UIImage(named: isHighlighted ? highlitedImage : primaryImage)
+        }
     }
 }
 
@@ -42,7 +51,6 @@ private extension ORecipeButton {
     func makeIconView() -> UIImageView {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
-        view.image = UIImage(named: imageName)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

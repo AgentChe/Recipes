@@ -122,6 +122,9 @@ private extension ORecipesView {
         
         liked
             .drive(Binder(self) { base, void in
+                // хак, чтобы не было мерцания с оставшимися рецептами
+                base.imagesCollectionView.removeFromSuperview()
+                
                 base.onNext()
             })
             .disposed(by: disposeBag)
@@ -358,8 +361,10 @@ private extension ORecipesView {
     }
     
     func makeDislikeButton() -> ORecipeButton {
-        let view = ORecipeButton(imageName: "Onboarding.Recipe.Dislike")
+        let view = ORecipeButton(primaryImage: "Onboarding.Recipe.Primary.Dislike",
+                                 highlitedImage: "Onboarding.Recipe.White.Dislike")
         view.backgroundColor = Appearance.white
+        view.isHighlighted = false
         view.layer.cornerRadius = 20.scale
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 0.08
@@ -372,8 +377,10 @@ private extension ORecipesView {
     }
     
     func makeLikeButton() -> ORecipeButton {
-        let view = ORecipeButton(imageName: "Onboarding.Recipe.Like")
+        let view = ORecipeButton(primaryImage: "Onboarding.Recipe.Primary.Like",
+                                 highlitedImage: "Onboarding.Recipe.White.Like")
         view.backgroundColor = Appearance.white
+        view.isHighlighted = false
         view.layer.cornerRadius = 20.scale
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 0.08
