@@ -77,7 +77,7 @@ private extension OProgressView {
         }
         
         func error(err: Error) -> Observable<Void> {
-            openError()
+            open(error: err)
         }
         
         observableRetrySingle
@@ -148,14 +148,14 @@ private extension OProgressView {
         onNext()
     }
     
-    func openError() -> Observable<Void> {
+    func open(error: Error) -> Observable<Void> {
         Observable<Void>
             .create { [weak self] observe in
                 guard let self = self else {
                     return Disposables.create()
                 }
                 
-                let vc = TryAgainViewController.make {
+                let vc = TryAgainViewController.make(error: error) {
                     observe.onNext(())
                 }
                 self.vc?.present(vc, animated: true)

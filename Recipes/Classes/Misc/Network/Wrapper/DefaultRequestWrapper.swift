@@ -1,6 +1,6 @@
 //
 //  DefaultRequestWrapper.swift
-//  ITExams
+//  Recipes
 //
 //  Created by Андрей Чернышев on 22.03.2022.
 //
@@ -17,32 +17,48 @@ final class DefaultRequestWrapper {
 // MARK: Private
 private extension DefaultRequestWrapper {
     func execute(request: APIRequestBody, attempt: Int = 1, maxCount: Int = 3) -> Single<Any> {
-        guard attempt <= maxCount else {
-            return .deferred { .error(NSError(domain: "Request wrapper attempt limited", code: 404)) }
-        }
-        
-        return RestAPITransport()
+        RestAPITransport()
             .callServerApi(requestBody: request)
-            .catchAndReturn(["_code": 500])
+            .catch { [weak self] error -> Single<Any> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                let isLastAttempt = attempt == maxCount
+                
+                return isLastAttempt ? .error(error) : self.execute(request: request, attempt: attempt + 1)
+            }
             .flatMap { [weak self] response -> Single<Any> in
                 guard let self = self else {
                     return .never()
                 }
                 
-                let success = self.success(response: response)
+                guard let error = self.error(response: response) else {
+                    return .just(response)
+                }
                 
-                return success ? .just(response) : self.execute(request: request, attempt: attempt + 1)
+                let isLastAttempt = attempt == maxCount
+                
+                return isLastAttempt ? .error(error) : self.execute(request: request, attempt: attempt + 1)
             }
     }
     
-    func success(response: Any) -> Bool {
+    func error(response: Any) -> Error? {
         guard
             let json = response as? [String: Any],
             let code = json["_code"] as? Int
         else {
-            return false
+            return NetworkError(.serverNotAvailable)
         }
         
-        return code == 200
+        if code == 200 {
+            return nil
+        }
+        
+        if let errorMessage = json["_msg"] as? String {
+            return NetworkError(.logical(errorMessage))
+        }
+        
+        return NetworkError(.serverNotAvailable)
     }
 }

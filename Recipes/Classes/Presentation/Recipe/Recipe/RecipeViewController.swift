@@ -43,7 +43,7 @@ final class RecipeViewController: UIViewController {
                 return .never()
             }
             
-            return self.openError()
+            return self.open(error: error)
         }
         
         mainView.tableView.rx.contentOffset
@@ -177,14 +177,14 @@ private extension RecipeViewController {
         mainView.favoriteButton.iconView.image = image
     }
     
-    func openError() -> Observable<Void> {
+    func open(error: Error) -> Observable<Void> {
         Observable<Void>
             .create { [weak self] observe in
                 guard let self = self else {
                     return Disposables.create()
                 }
                 
-                let vc = TryAgainViewController.make {
+                let vc = TryAgainViewController.make(error: error) {
                     observe.onNext(())
                 }
                 self.present(vc, animated: true)

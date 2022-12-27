@@ -14,8 +14,12 @@ final class TryAgainView: UIView {
     lazy var tryAgainButton = makeButton()
     lazy var contactButton = makeContactButton()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private let error: Error
+    
+    init(error: Error) {
+        self.error = error
+        
+        super.init(frame: .zero)
         
         makeConstraints()
         initialize()
@@ -23,13 +27,6 @@ final class TryAgainView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-// MARK: Private
-private extension TryAgainView {
-    func initialize() {
-        backgroundColor = Appearance.background
     }
 }
 
@@ -71,6 +68,26 @@ private extension TryAgainView {
     }
 }
 
+// MARK: Private
+private extension TryAgainView {
+    func initialize() {
+        backgroundColor = Appearance.background
+    }
+    
+    func errorMessage() -> String {
+        guard let networkError = error as? NetworkError else {
+            return "TryAgain.SubTitle".localized
+        }
+        
+        switch networkError.code {
+        case .serverNotAvailable:
+            return "TryAgain.SubTitle".localized
+        case .logical(let message):
+            return message
+        }
+    }
+}
+
 // MARK: Lazy initialization
 private extension TryAgainView {
     func makeImageView() -> UIImageView {
@@ -108,7 +125,7 @@ private extension TryAgainView {
         
         let view = UILabel()
         view.numberOfLines = 0
-        view.attributedText = "TryAgain.SubTitle".localized.attributed(with: attrs)
+        view.attributedText = errorMessage().attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

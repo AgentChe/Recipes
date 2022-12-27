@@ -15,13 +15,15 @@ protocol TryAgainViewControllerDelegate: AnyObject {
 final class TryAgainViewController: UIViewController {
     weak var delegate: TryAgainViewControllerDelegate?
     
-    lazy var mainView = TryAgainView()
+    lazy var mainView = TryAgainView(error: error)
     
     private lazy var disposeBag = DisposeBag()
     
+    private let error: Error
     private let tryAgain: (() -> Void)?
     
-    private init(tryAgain: (() -> Void)?) {
+    private init(error: Error, tryAgain: (() -> Void)?) {
+        self.error = error
         self.tryAgain = tryAgain
         
         super.init(nibName: nil, bundle: nil)
@@ -65,7 +67,7 @@ final class TryAgainViewController: UIViewController {
 
 // MARK: Make
 extension TryAgainViewController {
-    static func make(tryAgain: (() -> Void)? = nil) -> TryAgainViewController {
-        TryAgainViewController(tryAgain: tryAgain)
+    static func make(error: Error, tryAgain: (() -> Void)? = nil) -> TryAgainViewController {
+        TryAgainViewController(error: error, tryAgain: tryAgain)
     }
 }

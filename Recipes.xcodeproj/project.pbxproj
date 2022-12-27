@@ -33,7 +33,6 @@
 		DE54ACAC28D09F25004F1514 /* PaginatedDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC7828D09F25004F1514 /* PaginatedDataLoader.swift */; };
 		DE54ACAD28D09F25004F1514 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC7928D09F25004F1514 /* Toast.swift */; };
 		DE54ACAE28D09F25004F1514 /* DefaultRequestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC7C28D09F25004F1514 /* DefaultRequestWrapper.swift */; };
-		DE54ACAF28D09F25004F1514 /* XORRequestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC7D28D09F25004F1514 /* XORRequestWrapper.swift */; };
 		DE54ACB028D09F25004F1514 /* APIRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC7E28D09F25004F1514 /* APIRequestBody.swift */; };
 		DE54ACB128D09F25004F1514 /* RestAPITransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC7F28D09F25004F1514 /* RestAPITransport.swift */; };
 		DE54ACB228D09F25004F1514 /* GlobalDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC8028D09F25004F1514 /* GlobalDefinitions.swift */; };
@@ -322,7 +321,6 @@
 		DE54AC7828D09F25004F1514 /* PaginatedDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatedDataLoader.swift; sourceTree = "<group>"; };
 		DE54AC7928D09F25004F1514 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		DE54AC7C28D09F25004F1514 /* DefaultRequestWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultRequestWrapper.swift; sourceTree = "<group>"; };
-		DE54AC7D28D09F25004F1514 /* XORRequestWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XORRequestWrapper.swift; sourceTree = "<group>"; };
 		DE54AC7E28D09F25004F1514 /* APIRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestBody.swift; sourceTree = "<group>"; };
 		DE54AC7F28D09F25004F1514 /* RestAPITransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestAPITransport.swift; sourceTree = "<group>"; };
 		DE54AC8028D09F25004F1514 /* GlobalDefinitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalDefinitions.swift; sourceTree = "<group>"; };
@@ -750,7 +748,6 @@
 			isa = PBXGroup;
 			children = (
 				DE54AC7C28D09F25004F1514 /* DefaultRequestWrapper.swift */,
-				DE54AC7D28D09F25004F1514 /* XORRequestWrapper.swift */,
 			);
 			path = Wrapper;
 			sourceTree = "<group>";
@@ -2018,7 +2015,6 @@
 				DEC41AAD28EEC9F500280990 /* RRecipesTableElement.swift in Sources */,
 				DE54ADC128D0A012004F1514 /* OCategoriesCollectionElement.swift in Sources */,
 				DEC41B2B28EF296300280990 /* LBMButton.swift in Sources */,
-				DE54ACAF28D09F25004F1514 /* XORRequestWrapper.swift in Sources */,
 				DEC41AFD28EF203F00280990 /* ExploreViewModel.swift in Sources */,
 				DE54ADB328D0A011004F1514 /* OCombineData.swift in Sources */,
 				DEC41AAC28EEC9F500280990 /* RRecipesTableRecipeCell.swift in Sources */,
