@@ -48,7 +48,7 @@ extension ForYouRecipesCollectionView: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegateFlowLayout
 extension ForYouRecipesCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 164.scale, height: 221.scale)
+        CGSize(width: 150.scale, height: 221.scale)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

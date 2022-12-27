@@ -138,7 +138,7 @@ private extension LibraryTableRecipeCell {
         ])
         
         NSLayoutConstraint.activate([
-            undeterminedTimeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 130.scale),
+            undeterminedTimeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 106.scale),
             undeterminedTimeLabel.topAnchor.constraint(equalTo: timeLabel.topAnchor)
         ])
         
