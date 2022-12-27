@@ -10,11 +10,6 @@ import RxCocoa
 import OtterScaleiOS
 
 final class PaygateViewModel {
-    enum Constants {
-        static let monthly = "app.recipes.month"
-        static let lifetime = "app.recipes.forever"
-    }
-    
     let buy = PublishRelay<String>()
     let restore = PublishRelay<Void>()
 
@@ -25,9 +20,13 @@ final class PaygateViewModel {
     
     let activityIndicator = RxActivityIndicator()
     
+    private lazy var prices = makePrices()
+    private lazy var paygate = makePaygate()
+    
     private lazy var iapManager = IAPManager()
     private lazy var purchaseInteractor = PaygateInteractor()
     private lazy var profileManager = ProfileManager()
+    private lazy var paygateManager = PaygateManager()
 }
 
 // MARK: Private
@@ -37,26 +36,24 @@ private extension PaygateViewModel {
     }
     
     func makeProducts() -> Driver<[PaygateProduct]> {
-        iapManager
-            .obtainPrices(for: [
-                Constants.lifetime, Constants.monthly
-            ])
-            .map { prices -> [PaygateProduct] in
+        Driver
+            .combineLatest(paygate, prices)
+            .map { paygate, prices -> [PaygateProduct] in
                 prices.compactMap { price -> PaygateProduct? in
                     switch price.id {
-                    case Constants.lifetime:
-                        let lifetimePrice = prices.first(where: { $0.id == Constants.lifetime })
-                        let monthlyPrice = prices.first(where: { $0.id == Constants.monthly })
+                    case paygate.lifetime:
+                        let lifetimePrice = prices.first(where: { $0.id == paygate.lifetime })
+                        let monthlyPrice = prices.first(where: { $0.id == paygate.monthly })
                         
                         guard let lifetimePrice = lifetimePrice, let monthlyPrice = monthlyPrice else {
                             return nil
                         }
                         
                         return PaygateProduct.lifetime(lifetimePrice: lifetimePrice, monthlyPrice: monthlyPrice)
-                    case Constants.monthly:
+                    case paygate.monthly:
                         let usedProducts = OtterScale.shared.getUsedProducts()
                             .map { $0.appleAppStore } ?? []
-                        let withTrial = !usedProducts.contains(PaygateViewModel.Constants.monthly)
+                        let withTrial = !usedProducts.contains(paygate.monthly)
                         
                         return PaygateProduct.monthly(price: price, withTrial: withTrial)
                     default:
@@ -116,5 +113,24 @@ private extension PaygateViewModel {
         
         return purchase
             .asSignal(onErrorJustReturn: false)
+    }
+    
+    func makePrices() -> Driver<[ProductPrice]> {
+        paygate
+            .flatMapLatest { [weak self] paygate -> Driver<[ProductPrice]> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                return self.iapManager
+                    .obtainPrices(for: [paygate.monthly, paygate.lifetime])
+                    .asDriver(onErrorJustReturn: [])
+            }
+    }
+    
+    func makePaygate() -> Driver<Paygate> {
+        paygateManager
+            .obtainPaygate(forceUpdate: false)
+            .asDriver(onErrorDriveWith: .never())
     }
 }
