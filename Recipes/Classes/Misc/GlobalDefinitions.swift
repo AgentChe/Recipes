@@ -16,6 +16,7 @@ final class GlobalDefinitions {
     
     static let applicationTag = "RECIPES"
     static let amplitudeApiKey = "1336d08d429ceb343970fd360e3253f6"
+    static let appsFlyerApiKey = "DCciCfYXjMQ8QnkdCg8qzk"
     
     static let termsOfServiceUrl = "https://thinkaboutapps.com/terms"
     static let privacyPolicyUrl = "https://thinkaboutapps.com/policy"
