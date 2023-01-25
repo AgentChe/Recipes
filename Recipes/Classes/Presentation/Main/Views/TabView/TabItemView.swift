@@ -21,10 +21,17 @@ final class TabItemView: UIButton {
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private let iconName: String
+    private let name: String
+    
+    init(iconName: String, name: String) {
+        self.iconName = iconName
+        self.name = name
+        
+        super.init(frame: .zero)
         
         makeConstraints()
+        update()
     }
     
     required init?(coder: NSCoder) {
@@ -36,20 +43,31 @@ final class TabItemView: UIButton {
 private extension TabItemView {
     func update() {
         let color: UIColor
+        let font: UIFont
+        let icon: UIImage?
         
         switch mode {
         case .selected:
             color = Appearance.primaryYellow
+            font = Fonts.PlusJakartaSans.bold(size: 12.scale)
+            icon = UIImage(named: iconName + ".Selected")
             alpha = 1
         case .deselected:
             color = Appearance.black
+            font = Fonts.PlusJakartaSans.semiBold(size: 12.scale)
+            icon = UIImage(named: iconName + ".Deselected")
             alpha = 0.5
         }
         
-        label.textColor = color
+        let attrs = TextAttributes()
+            .textColor(color)
+            .font(font)
+            .lineHeight(14.4.scale)
+            .letterSpacing(-0.17.scale)
+            .textAlignment(.center)
+        label.attributedText = name.localized.attributed(with: attrs)
         
-        iconView.image = iconView.image?.withRenderingMode(.alwaysTemplate)
-        iconView.tintColor = color
+        iconView.image = icon
     }
 }
 
@@ -60,7 +78,7 @@ private extension TabItemView {
             iconView.widthAnchor.constraint(equalToConstant: 24.scale),
             iconView.heightAnchor.constraint(equalToConstant: 24.scale),
             iconView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            iconView.topAnchor.constraint(equalTo: topAnchor, constant: 5.scale)
+            iconView.topAnchor.constraint(equalTo: topAnchor, constant: 4.scale)
         ])
         
         NSLayoutConstraint.activate([

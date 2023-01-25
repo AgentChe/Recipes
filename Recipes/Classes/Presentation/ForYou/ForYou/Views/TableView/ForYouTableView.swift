@@ -97,7 +97,7 @@ extension ForYouTableView: UITableViewDelegate {
         case .title, .rankingTitle:
             return 24.scale
         case .recipes:
-            return 221.scale
+            return 215.scale
         case .rankingRecipe:
             return 65.scale
         case .separator:

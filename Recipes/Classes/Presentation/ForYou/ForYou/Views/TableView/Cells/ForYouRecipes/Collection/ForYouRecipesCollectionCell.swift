@@ -89,13 +89,13 @@ private extension ForYouRecipesCollectionCell {
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            nameLabel.topAnchor.constraint(equalTo: recipeImageView.bottomAnchor, constant: 16.scale)
+            nameLabel.topAnchor.constraint(equalTo: recipeImageView.bottomAnchor, constant: 10.scale)
         ])
         
         NSLayoutConstraint.activate([
             timeIconView.widthAnchor.constraint(equalToConstant: 24.scale),
             timeIconView.heightAnchor.constraint(equalToConstant: 24.scale),
-            timeIconView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10.scale),
+            timeIconView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5.scale),
             timeIconView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
         ])
         
@@ -106,7 +106,7 @@ private extension ForYouRecipesCollectionCell {
         
         NSLayoutConstraint.activate([
             undeterminedTimeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            undeterminedTimeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10.scale)
+            undeterminedTimeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5.scale)
         ])
     }
 }
