@@ -86,9 +86,7 @@ private extension OBottomProgressView {
         constraint.constant = -40.scale
         constraint.isActive = true
         
-        UIView.animate(withDuration: 0.3, animations: { [weak self] in
-            self?.layoutIfNeeded()
-        })
+        layoutIfNeeded()
     }
     
     func upCurrentLabel(at stage: Stage, totalPercent: Int) {
@@ -114,7 +112,7 @@ private extension OBottomProgressView {
             stageTotalProgress = 33
             stageCurrentProgress = totalPercent
         case .recipePreferences:
-            stageTotalProgress = 33
+            stageTotalProgress = 63
             stageCurrentProgress = totalPercent - 33
         case .plan:
             stageTotalProgress = 34

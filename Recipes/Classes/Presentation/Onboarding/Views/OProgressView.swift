@@ -175,7 +175,7 @@ private extension OProgressView {
         
         NSLayoutConstraint.activate([
             progressView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            progressView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 78.scale)
+            progressView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 318.scale : 260.scale)
         ])
         
         NSLayoutConstraint.activate([
