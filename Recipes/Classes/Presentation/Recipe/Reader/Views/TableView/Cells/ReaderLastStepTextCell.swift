@@ -77,6 +77,7 @@ private extension ReaderLastStepTextCell {
             .textAlignment(.center)
         
         let view = UILabel()
+        view.numberOfLines = 0
         view.attributedText = "Reader.FinishStep.SubTitle".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)

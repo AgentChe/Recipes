@@ -45,8 +45,9 @@ final class ReaderViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel.elements
-            .drive(Binder(mainView.tableView) { base, elements in
-                base.setup(elements: elements)
+            .withLatestFrom(viewModel.currentStep) { ($0, $1) }
+            .drive(Binder(mainView.collectionView) { base, args in
+                base.setup(elements: args.0, scrollTo: args.1)
             })
             .disposed(by: disposeBag)
         
@@ -87,12 +88,17 @@ final class ReaderViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel.isLastStep
-            .drive(Binder(mainView) { base, isLastStep in
-                base.bottomView(hidden: !isLastStep)
+            .map { !$0 }
+            .drive(mainView.bottomView.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        viewModel.currentStep
+            .drive(Binder(mainView.collectionView) { base, step in
+                base.scroll(to: step)
             })
             .disposed(by: disposeBag)
         
-        addSwipeActions()
+        mainView.collectionView.mainDelegate = self
     }
 }
 
@@ -105,29 +111,15 @@ extension ReaderViewController {
     }
 }
 
+// MARK: ReaderCollectionDelegate
+extension ReaderViewController: ReaderCollectionDelegate {
+    func readerCollectionDidChanged(step: RecipeStep) {
+        viewModel.didSelectStep.accept(step)
+    }
+}
+
 // MARK: Private
 private extension ReaderViewController {
-    func addSwipeActions() {
-        let leftSwipe = UISwipeGestureRecognizer()
-        leftSwipe.direction = .left
-        
-        let rightSwipe = UISwipeGestureRecognizer()
-        rightSwipe.direction = .right
-        
-        leftSwipe.rx.event
-            .withLatestFrom(viewModel.currentStep)
-            .bind(to: viewModel.didSwipeToNextStep)
-            .disposed(by: disposeBag)
-        
-        rightSwipe.rx.event
-            .withLatestFrom(viewModel.currentStep)
-            .bind(to: viewModel.didSwipeToPreviousStep)
-            .disposed(by: disposeBag)
-        
-        mainView.tableView.addGestureRecognizer(leftSwipe)
-        mainView.tableView.addGestureRecognizer(rightSwipe)
-    }
-    
     func share(url: URL) {
         let vc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         present(vc, animated: true)

@@ -10,7 +10,7 @@ import UIKit
 final class ReaderView: UIView {
     lazy var closeButton = makeCloseButton()
     lazy var stepsButton = makeStepsButton()
-    lazy var tableView = makeTableView()
+    lazy var collectionView = makeCollectionView()
     lazy var bottomView = makeBottomView()
     lazy var shareButton = makeShareButton()
     lazy var markFinishButton = makeMarkFinishButton()
@@ -25,16 +25,6 @@ final class ReaderView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-// MARK: Public
-extension ReaderView {
-    func bottomView(hidden: Bool) {
-        bottomView.isHidden = hidden
-        
-        let inset = ScreenSize.isIphoneXFamily ? 123.scale : 93.scale
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: hidden ? 0 : inset, right: 0)
     }
 }
 
@@ -63,10 +53,10 @@ private extension ReaderView {
         ])
         
         NSLayoutConstraint.activate([
-            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.topAnchor.constraint(equalTo: topAnchor, constant: 75.scale),
-            tableView.bottomAnchor.constraint(equalTo: progressView.topAnchor)
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 75.scale),
+            collectionView.bottomAnchor.constraint(equalTo: progressView.topAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -117,12 +107,17 @@ private extension ReaderView {
         return view
     }
     
-    func makeTableView() -> ReaderTableView {
-        let view = ReaderTableView()
-        view.separatorStyle = .none
-        view.showsVerticalScrollIndicator = false
-        view.contentInsetAdjustmentBehavior = .never
+    func makeCollectionView() -> ReaderCollectionView {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.sectionInset = UIEdgeInsets.zero
+        
+        let view = ReaderCollectionView(frame: .zero, collectionViewLayout: layout)
         view.backgroundColor = UIColor.clear
+        view.isPagingEnabled = true
+        view.showsHorizontalScrollIndicator = false
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

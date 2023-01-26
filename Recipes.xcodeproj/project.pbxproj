@@ -155,6 +155,9 @@
 		DE67A84E28EC1F2C00369B02 /* ForYouTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE67A83428EC1F2C00369B02 /* ForYouTableView.swift */; };
 		DE67A84F28EC1F2C00369B02 /* ForYouTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE67A83528EC1F2C00369B02 /* ForYouTableElement.swift */; };
 		DE67A85428EC791700369B02 /* GetDietsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE67A85328EC791700369B02 /* GetDietsResponse.swift */; };
+		DE8029A02983034D00537FA6 /* ReaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80299F2983034D00537FA6 /* ReaderCollectionView.swift */; };
+		DE8029A22983035300537FA6 /* ReaderCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8029A12983035300537FA6 /* ReaderCollectionCell.swift */; };
+		DE8029A429830AA400537FA6 /* ReaderCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8029A329830AA400537FA6 /* ReaderCollectionElement.swift */; };
 		DE918C66290914D700443765 /* ShoppingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C65290914D700443765 /* ShoppingTableView.swift */; };
 		DE918C68290914E100443765 /* ShoppingTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C67290914E100443765 /* ShoppingTableElement.swift */; };
 		DE918C6B2909150300443765 /* ShoppingTableIngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C6A2909150300443765 /* ShoppingTableIngredientCell.swift */; };
@@ -449,6 +452,9 @@
 		DE67A83428EC1F2C00369B02 /* ForYouTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForYouTableView.swift; sourceTree = "<group>"; };
 		DE67A83528EC1F2C00369B02 /* ForYouTableElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForYouTableElement.swift; sourceTree = "<group>"; };
 		DE67A85328EC791700369B02 /* GetDietsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDietsResponse.swift; sourceTree = "<group>"; };
+		DE80299F2983034D00537FA6 /* ReaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderCollectionView.swift; sourceTree = "<group>"; };
+		DE8029A12983035300537FA6 /* ReaderCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderCollectionCell.swift; sourceTree = "<group>"; };
+		DE8029A329830AA400537FA6 /* ReaderCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderCollectionElement.swift; sourceTree = "<group>"; };
 		DE918C65290914D700443765 /* ShoppingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableView.swift; sourceTree = "<group>"; };
 		DE918C67290914E100443765 /* ShoppingTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableElement.swift; sourceTree = "<group>"; };
 		DE918C6A2909150300443765 /* ShoppingTableIngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableIngredientCell.swift; sourceTree = "<group>"; };
@@ -1239,6 +1245,16 @@
 			path = Collection;
 			sourceTree = "<group>";
 		};
+		DE80299E2983033F00537FA6 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DE80299F2983034D00537FA6 /* ReaderCollectionView.swift */,
+				DE8029A12983035300537FA6 /* ReaderCollectionCell.swift */,
+				DE8029A329830AA400537FA6 /* ReaderCollectionElement.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
 		DE918C64290914C800443765 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1673,6 +1689,7 @@
 		DEC41BDB28F7EA4C00280990 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE80299E2983033F00537FA6 /* CollectionView */,
 				DEC41BDC28F7EA5000280990 /* TableView */,
 			);
 			path = Views;
@@ -2093,6 +2110,7 @@
 				DEC41BD728F6EA1200280990 /* ReaderViewController.swift in Sources */,
 				DEF40C3E28E3509D00C2EB67 /* SaveRecipeRequest.swift in Sources */,
 				DE54ADCD28D0A012004F1514 /* OTimeView.swift in Sources */,
+				DE8029A22983035300537FA6 /* ReaderCollectionCell.swift in Sources */,
 				DE54ACC628D09F26004F1514 /* Scalable.swift in Sources */,
 				DE54ADCE28D0A012004F1514 /* OGoalView.swift in Sources */,
 				DEF40C4228E3509D00C2EB67 /* GetCategoriesResponse.swift in Sources */,
@@ -2104,6 +2122,7 @@
 				DE54ACB928D09F25004F1514 /* TapAreaButton.swift in Sources */,
 				DE67A84628EC1F2C00369B02 /* ForYouFreeRecipeCell.swift in Sources */,
 				DE54ADA628D0A011004F1514 /* PaygateViewControllerDelegate.swift in Sources */,
+				DE8029A429830AA400537FA6 /* ReaderCollectionElement.swift in Sources */,
 				DE54ADB628D0A012004F1514 /* ONotificationsView.swift in Sources */,
 				DE54ADDE28D0A2CC004F1514 /* TryAgainViewController.swift in Sources */,
 				DEC41AAA28EEC9F500280990 /* RankingsViewModel.swift in Sources */,
@@ -2270,6 +2289,7 @@
 				DEC1F707295B44E100FBBA65 /* GetPaygateRequest.swift in Sources */,
 				DEC41BEB28F7F59D00280990 /* ReaderLastStepTitleCell.swift in Sources */,
 				DEF40C2628E3509D00C2EB67 /* RecipeCover.swift in Sources */,
+				DE8029A02983034D00537FA6 /* ReaderCollectionView.swift in Sources */,
 				DE54ADC328D0A012004F1514 /* OGoalButton.swift in Sources */,
 				DE67A84A28EC1F2C00369B02 /* ForYouCategoriesCell.swift in Sources */,
 				DE54AC2628D09BF9004F1514 /* SceneDelegate.swift in Sources */,

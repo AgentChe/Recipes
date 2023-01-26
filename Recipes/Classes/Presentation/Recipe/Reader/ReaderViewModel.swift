@@ -11,8 +11,6 @@ import RxCocoa
 final class ReaderViewModel {
     let recipe: BehaviorRelay<Recipe>
     lazy var didSelectStep = PublishRelay<RecipeStep>()
-    lazy var didSwipeToPreviousStep = PublishRelay<RecipeStep>()
-    lazy var didSwipeToNextStep = PublishRelay<RecipeStep>()
     
     lazy var shareLink = makeShareLink()
     lazy var progress = makeProgress()
@@ -20,8 +18,6 @@ final class ReaderViewModel {
     lazy var elements = makeElements()
     lazy var currentStep = makeCurrentStep()
     
-    private lazy var currentStepElements = makeCurrentStepElements()
-    private lazy var lastStepElements = makeLastStepElements()
     private let startStep: BehaviorRelay<RecipeStep>
     
     private lazy var contentManager = ContentManager()
@@ -81,106 +77,69 @@ private extension ReaderViewModel {
                 
                 return (recipe.steps.count - 1) == index
             }
-    }
-    
-    func makeElements() -> Driver<[ReaderTableElement]> {
-        isLastStep
-            .flatMapLatest { [weak self] isLastStep -> Driver<[ReaderTableElement]> in
-                guard let self = self else {
-                    return .never()
-                }
-                
-                return isLastStep ? self.lastStepElements : self.currentStepElements
-            }
-    }
-    
-    func makeCurrentStepElements() -> Driver<[ReaderTableElement]> {
-        Driver
-            .combineLatest(
-                recipe.asDriver(),
-                currentStep
-            )
-            .map { recipe, step -> [ReaderTableElement] in
-                guard let index = recipe.steps.firstIndex(of: step) else {
-                    return []
-                }
-                
-                let number = index + 1
-                
-                var result = [ReaderTableElement]()
-                
-                result.append(contentsOf: [
-                    .title(String(format: "Reader.StepNumber".localized, number)),
-                    .offset(16.scale),
-                    .text(step.text)
-                ])
-                
-                if let imageUrl = step.imageUrl {
-                    result.append(contentsOf: [
-                        .offset(16.scale),
-                        .image(imageUrl)
-                    ])
-                }
-                
-                result.append(.offset(24.scale))
-                
-                return result
-            }
-    }
-    
-    func makeLastStepElements() -> Driver<[ReaderTableElement]> {
-        recipe
-            .asDriver()
-            .map { recipe -> [ReaderTableElement] in
-                var result = [ReaderTableElement]()
-                
-                result.append(contentsOf: [
-                    .lastStepTitle(recipe.name),
-                    .offset(18.scale),
-                    .image(recipe.imageUrl),
-                    .offset(30.scale),
-                    .lastStepText
-                ])
-                
-                return result
-            }
+            .distinctUntilChanged()
     }
     
     func makeCurrentStep() -> Driver<RecipeStep> {
-        let previous = didSwipeToPreviousStep
-            .withLatestFrom(recipe) { ($0, $1) }
-            .compactMap { currentStep, recipe -> RecipeStep? in
-                let steps = recipe.steps
-                
-                guard let currentIndex = steps.firstIndex(of: currentStep) else {
-                    return nil
-                }
-                
-                let previousIndex = currentIndex - 1
-                
-                return steps[safe: previousIndex]
-            }
-        
-        let next = didSwipeToNextStep
-            .withLatestFrom(recipe) { ($0, $1) }
-            .compactMap { currentStep, recipe -> RecipeStep? in
-                let steps = recipe.steps
-                
-                guard let currentIndex = steps.firstIndex(of: currentStep) else {
-                    return nil
-                }
-                
-                let nextIndex = currentIndex + 1
-                
-                return steps[safe: nextIndex]
-            }
-        
-        return Driver
+        Driver
             .merge(
                 startStep.asDriver(),
-                didSelectStep.asDriver(onErrorDriveWith: .never()),
-                previous.asDriver(onErrorDriveWith: .never()),
-                next.asDriver(onErrorDriveWith: .never())
+                didSelectStep.asDriver(onErrorDriveWith: .never())
             )
+            .distinctUntilChanged()
+    }
+    
+    func makeElements() -> Driver<[ReaderCollectionElement]> {
+        recipe.asDriver()
+            .map { [weak self] recipe -> [ReaderCollectionElement] in
+                guard let self = self else {
+                    return []
+                }
+                
+                return recipe.steps.enumerated().map { index, step -> ReaderCollectionElement in
+                    let isLast = (recipe.steps.count - 1) == index
+                    return isLast ? self.createLastStepElement(recipe: recipe, step: step) : self.createStepElement(index: index, step: step)
+                }
+            }
+    }
+}
+
+// MARK: Private(Additional)
+private extension ReaderViewModel {
+    func createLastStepElement(recipe: Recipe, step: RecipeStep) -> ReaderCollectionElement {
+        var elements = [ReaderTableElement]()
+        
+        elements.append(contentsOf: [
+            .lastStepTitle(recipe.name),
+            .offset(18.scale),
+            .image(recipe.imageUrl),
+            .offset(30.scale),
+            .lastStepText
+        ])
+        
+        return ReaderCollectionElement(step: step, elements: elements)
+    }
+    
+    func createStepElement(index: Int, step: RecipeStep) -> ReaderCollectionElement {
+        let number = index + 1
+        
+        var elements = [ReaderTableElement]()
+        
+        elements.append(contentsOf: [
+            .title(String(format: "Reader.StepNumber".localized, number)),
+            .offset(16.scale),
+            .text(step.text)
+        ])
+
+        if let imageUrl = step.imageUrl {
+            elements.append(contentsOf: [
+                .offset(16.scale),
+                .image(imageUrl)
+            ])
+        }
+
+        elements.append(.offset(24.scale))
+        
+        return ReaderCollectionElement(step: step, elements: elements)
     }
 }
