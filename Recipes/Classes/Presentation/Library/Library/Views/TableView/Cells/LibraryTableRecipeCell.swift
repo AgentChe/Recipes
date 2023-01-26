@@ -162,6 +162,9 @@ private extension LibraryTableRecipeCell {
 private extension LibraryTableRecipeCell {
     func makeImageView() -> UIImageView {
         let view = UIImageView()
+        view.backgroundColor = Appearance.secondary5
+        view.layer.borderColor = UIColor(integralRed: 239, green: 234, blue: 220).cgColor
+        view.layer.borderWidth = 1.scale
         view.contentMode = .scaleAspectFill
         view.layer.cornerRadius = 10.scale
         view.layer.masksToBounds = true
