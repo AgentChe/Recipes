@@ -37,6 +37,66 @@
                 "time_cooking": 10
             }
         ],
+        "breakfast": [
+            {
+                "id": 1,
+                "name": "Thinking Fast and Slow",
+                "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
+                "ranking_id": 1,
+                "link": "https://books.korrekted.com/",
+                "paid": false,
+                "time_preparing": 10,
+                "time_cooking": 10
+            }
+        ],
+        "lunch": [
+            {
+                "id": 1,
+                "name": "Thinking Fast and Slow",
+                "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
+                "ranking_id": 1,
+                "link": "https://books.korrekted.com/",
+                "paid": false,
+                "time_preparing": 10,
+                "time_cooking": 10
+            }
+        ],
+        "dinner": [
+            {
+                "id": 1,
+                "name": "Thinking Fast and Slow",
+                "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
+                "ranking_id": 1,
+                "link": "https://books.korrekted.com/",
+                "paid": false,
+                "time_preparing": 10,
+                "time_cooking": 10
+            }
+        ],
+        "snack": [
+            {
+                "id": 1,
+                "name": "Thinking Fast and Slow",
+                "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
+                "ranking_id": 1,
+                "link": "https://books.korrekted.com/",
+                "paid": false,
+                "time_preparing": 10,
+                "time_cooking": 10
+            }
+        ],
+        "quickly_prepared": [
+            {
+                "id": 1,
+                "name": "Thinking Fast and Slow",
+                "image": "https://klopotenko.com/wp-content/uploads/2018/03/tom-yam_siteweb-1-1000x600.jpg?v=1619002096",
+                "ranking_id": 1,
+                "link": "https://books.korrekted.com/",
+                "paid": false,
+                "time_preparing": 10,
+                "time_cooking": 10
+            }
+        ],
         "ranking": [
             {
                 "ranking_id": 1,

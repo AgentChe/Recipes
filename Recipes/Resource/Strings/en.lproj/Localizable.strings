@@ -114,6 +114,11 @@
 "ForYou.Title.SeeAll" = "See all";
 "ForYou.TodayHotSummaries" = "Today’s best recipes";
 "ForYou.YouMayLike" = "You may like";
+"ForYou.Breakfast" = "Breakfast";
+"ForYou.Lunch" = "Lunch";
+"ForYou.Dinner" = "Dinner";
+"ForYou.Snack" = "Snack";
+"ForYou.QuicklyPrepared" = "Quickly Prepared";
 "ForYou.ExploreCategories" = "Explore categories";
 
 // MARK: Settings

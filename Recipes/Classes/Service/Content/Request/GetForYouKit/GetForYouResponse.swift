@@ -28,6 +28,31 @@ final class GetForYouResponse {
             map(coverJSON: coverJSON)
         }
         
+        let breakfastArray = data["breakfast"] as? [[String: Any]] ?? []
+        let breakfast = breakfastArray.compactMap { coverJSON -> RecipeCover? in
+            map(coverJSON: coverJSON)
+        }
+        
+        let lunchArray = data["lunch"] as? [[String: Any]] ?? []
+        let lunch = lunchArray.compactMap { coverJSON -> RecipeCover? in
+            map(coverJSON: coverJSON)
+        }
+        
+        let dinnerArray = data["dinner"] as? [[String: Any]] ?? []
+        let dinner = dinnerArray.compactMap { coverJSON -> RecipeCover? in
+            map(coverJSON: coverJSON)
+        }
+        
+        let snackArray = data["snack"] as? [[String: Any]] ?? []
+        let snack = snackArray.compactMap { coverJSON -> RecipeCover? in
+            map(coverJSON: coverJSON)
+        }
+        
+        let quicklyPreparedArray = data["quickly_prepared"] as? [[String: Any]] ?? []
+        let quicklyPrepared = quicklyPreparedArray.compactMap { coverJSON -> RecipeCover? in
+            map(coverJSON: coverJSON)
+        }
+        
         let rankingArray = data["ranking"] as? [[String: Any]] ?? []
         let rankings = rankingArray.compactMap { rankingJSON -> RankingRecipesGroup? in
             guard
@@ -47,6 +72,11 @@ final class GetForYouResponse {
         return ForYouKit(freeRecipe: freeRecipe,
                          todaysHotSummaries: todaysHotSummaries,
                          youMayLike: youMayLike,
+                         breakfast: breakfast,
+                         lunch: lunch,
+                         dinner: dinner,
+                         snack: snack,
+                         quicklyPrepared: quicklyPrepared,
                          rankings: rankings)
     }
 }

@@ -56,6 +56,51 @@ private extension ForYouViewModel {
                     ])
                 }
                 
+                if !kit.breakfast.isEmpty {
+                    result.append(contentsOf: [
+                        .offset(30.scale),
+                        .title("ForYou.Breakfast".localized),
+                        .offset(16.scale),
+                        .recipes(kit.breakfast)
+                    ])
+                }
+                
+                if !kit.lunch.isEmpty {
+                    result.append(contentsOf: [
+                        .offset(30.scale),
+                        .title("ForYou.Lunch".localized),
+                        .offset(16.scale),
+                        .recipes(kit.lunch)
+                    ])
+                }
+                
+                if !kit.dinner.isEmpty {
+                    result.append(contentsOf: [
+                        .offset(30.scale),
+                        .title("ForYou.Dinner".localized),
+                        .offset(16.scale),
+                        .recipes(kit.dinner)
+                    ])
+                }
+                
+                if !kit.snack.isEmpty {
+                    result.append(contentsOf: [
+                        .offset(30.scale),
+                        .title("ForYou.Snack".localized),
+                        .offset(16.scale),
+                        .recipes(kit.snack)
+                    ])
+                }
+                
+                if !kit.quicklyPrepared.isEmpty {
+                    result.append(contentsOf: [
+                        .offset(30.scale),
+                        .title("ForYou.QuicklyPrepared".localized),
+                        .offset(16.scale),
+                        .recipes(kit.quicklyPrepared)
+                    ])
+                }
+                
                 var kitRankings = kit.rankings
                 
                 if !kitRankings.isEmpty {
