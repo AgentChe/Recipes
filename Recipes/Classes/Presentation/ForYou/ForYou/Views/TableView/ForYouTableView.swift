@@ -103,7 +103,7 @@ extension ForYouTableView: UITableViewDelegate {
         case .separator:
             return 1.scale
         case .categories:
-            return 56.scale
+            return 45.scale
         }
     }
     

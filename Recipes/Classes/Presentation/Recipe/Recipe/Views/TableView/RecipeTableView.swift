@@ -133,7 +133,7 @@ extension RecipeTableView: UITableViewDelegate {
         case .recipes:
             return 221.scale
         case .categories:
-            return 56.scale
+            return 45.scale
         default:
             return UITableView.automaticDimension
         }

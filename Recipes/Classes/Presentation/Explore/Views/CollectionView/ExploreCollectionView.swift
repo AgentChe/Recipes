@@ -91,7 +91,7 @@ extension ExploreCollectionView: UICollectionViewDelegateFlowLayout {
         case let .title(_, large):
             return CGSize(width: 343.scale, height: large ? 24.scale : 19.scale)
         case .categories:
-            return CGSize(width: 343.scale, height: 56.scale)
+            return CGSize(width: 343.scale, height: 45.scale)
         case .recipe:
             return CGSize(width: 163.scale, height: 237.scale)
         case .separator:

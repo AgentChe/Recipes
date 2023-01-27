@@ -50,7 +50,7 @@ extension ForYouCategoriesCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let element = elements[indexPath.row]
         let width = ForYouCategoriesCollectionCell.width(for: element)
-        return CGSize(width: width, height: 56.scale)
+        return CGSize(width: width, height: 45.scale)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
