@@ -61,8 +61,8 @@ private extension ShoppingFilterView {
 
 // MARK: Lazy initialization
 private extension ShoppingFilterView {
-    func makeButton(title: String) -> LibraryFilterButton {
-        let view = LibraryFilterButton(title: title)
+    func makeButton(title: String) -> ShoppingFilterButton {
+        let view = ShoppingFilterButton(title: title)
         view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

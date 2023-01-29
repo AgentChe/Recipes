@@ -6,12 +6,23 @@
 //
 
 import UIKit
+import RxSwift
 
 final class ShoppingView: UIView {
     lazy var titleLabel = makeTitleLabel()
-    lazy var filterView = makeFilterView()
     lazy var tableView = makeTableView()
+    lazy var filterView = makeFilterView()
     lazy var emptyView = makeEmptyView()
+    
+    private lazy var disposeBag = DisposeBag()
+    
+    private lazy var titleLabelTopConstraint = titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: titleLabelMaxTopConstant)
+    private lazy var filterTopConstraint = filterView.topAnchor.constraint(equalTo: topAnchor, constant: filterMaxTopConstant)
+    
+    private lazy var titleLabelMaxTopConstant = ScreenSize.isIphoneXFamily ? 91.scale : 61.scale
+    private lazy var titleLabelMinTopConstant = titleLabelMaxTopConstant / 2
+    private lazy var filterMaxTopConstant = ScreenSize.isIphoneXFamily ? 160.scale : 130.scale
+    private lazy var filterMinTopConstant = filterMaxTopConstant / 2
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,6 +40,18 @@ final class ShoppingView: UIView {
 private extension ShoppingView {
     func initialize() {
         backgroundColor = Appearance.background
+        
+        tableView.rx.contentOffset
+            .bind(to: Binder(self) { base, offset in
+                let bias = max(base.tableView.contentInset.top + offset.y, 0)
+                
+                let titleLabelConstant = max(base.titleLabelMaxTopConstant - bias, base.titleLabelMinTopConstant)
+                base.titleLabelTopConstraint.constant = titleLabelConstant
+                base.titleLabel.isHidden = titleLabelConstant == base.titleLabelMinTopConstant
+                
+                base.filterTopConstraint.constant = max(base.filterMaxTopConstant - bias, base.filterMinTopConstant)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -37,21 +60,21 @@ private extension ShoppingView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 91.scale : 61.scale)
+            titleLabelTopConstraint
+        ])
+        
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: topAnchor, constant: filterMinTopConstant + 31.scale),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
             filterView.leadingAnchor.constraint(equalTo: leadingAnchor),
             filterView.trailingAnchor.constraint(equalTo: trailingAnchor),
             filterView.heightAnchor.constraint(equalToConstant: 31.scale),
-            filterView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 28.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.topAnchor.constraint(equalTo: filterView.bottomAnchor, constant: 2.scale),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            filterTopConstraint
         ])
         
         NSLayoutConstraint.activate([
@@ -88,8 +111,11 @@ private extension ShoppingView {
     }
     
     func makeTableView() -> ShoppingTableView {
+        let topInset = filterMaxTopConstant - filterMinTopConstant + 30.scale
+        
         let view = ShoppingTableView()
-        view.contentInset = UIEdgeInsets(top: 30.scale, left: 0, bottom: 30.scale, right: 0)
+        view.contentInset = UIEdgeInsets(top: topInset, left: 0, bottom: 30.scale, right: 0)
+        view.setContentOffset(CGPoint(x: 0, y: -topInset), animated: false)
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false
         view.contentInsetAdjustmentBehavior = .never
