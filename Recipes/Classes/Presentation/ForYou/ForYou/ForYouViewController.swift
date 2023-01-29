@@ -45,7 +45,7 @@ final class ForYouViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        mainView.settingsButton.rx.tap
+        mainView.headerView.settingsButton.rx.tap
             .bind(to: Binder(self) { base, void in
                 let vc = SettingsViewController.make()
                 base.navigationController?.pushViewController(vc, animated: true)

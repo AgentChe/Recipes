@@ -10,12 +10,10 @@ import RxSwift
 
 final class ForYouView: UIView {
     lazy var headerView = makeHeaderView()
-    lazy var settingsButton = makeSettingsButton()
-    lazy var titleLabel = makeTitleLabel()
     lazy var tableView = makeTableView()
     lazy var preloader = makePreloader()
     
-    private lazy var headerHeightConstraint = NSLayoutConstraint()
+    lazy var headerHeightConstraint = NSLayoutConstraint()
     
     private lazy var disposeBag = DisposeBag()
     
@@ -39,10 +37,14 @@ private extension ForYouView {
         tableView.rx.contentOffset
             .bind(to: Binder(self) { base, offset in
                 let max = ScreenSize.isIphoneXFamily ? 354.scale : 324.scale
-                let min = ScreenSize.isIphoneXFamily ? 135.scale : 105.scale
+                let min = ScreenSize.isIphoneXFamily ? 88.scale : 68.scale
                 let bias = (max - offset.y - base.tableView.contentInset.top)
                 let height = bias < min ? min : (bias > max ? max : bias)
                 base.headerHeightConstraint.constant = height
+                
+                let labelHiddenY = base.tableView.contentInset.top + offset.y
+                let labelMode: ForYouHeaderView.Mode = labelHiddenY > 15.scale ? .navTitle : .leadingTitle
+                base.headerView.updateTitle(by: labelMode)
             })
             .disposed(by: disposeBag)
     }
@@ -60,22 +62,10 @@ private extension ForYouView {
         ])
         
         NSLayoutConstraint.activate([
-            settingsButton.widthAnchor.constraint(equalToConstant: 24.scale),
-            settingsButton.heightAnchor.constraint(equalToConstant: 24.scale),
-            settingsButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -19.scale),
-            settingsButton.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 54.scale : 34.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 91.scale : 61.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2.scale)
+            tableView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 88.scale : 68.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -87,31 +77,9 @@ private extension ForYouView {
 
 // MARK: Lazy initialization
 private extension ForYouView {
-    func makeHeaderView() -> UIView {
-        let view = UIView()
+    func makeHeaderView() -> ForYouHeaderView {
+        let view = ForYouHeaderView()
         view.backgroundColor = Appearance.primaryYellow
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
-    func makeSettingsButton() -> TapAreaButton {
-        let view = TapAreaButton()
-        view.setImage(UIImage(named: "ForYou.Settings"), for: .normal)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
-    func makeTitleLabel() -> UILabel {
-        let attrs = TextAttributes()
-            .textColor(Appearance.black)
-            .font(Fonts.PlusJakartaSans.extraBold(size: 34.scale))
-            .lineHeight(40.8.scale)
-            .letterSpacing(-1.scale)
-        
-        let view = UILabel()
-        view.attributedText = "ForYou.Title".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -119,7 +87,7 @@ private extension ForYouView {
     
     func makeTableView() -> ForYouTableView {
         let view = ForYouTableView()
-        view.contentInset = UIEdgeInsets(top: 28.scale, left: 0, bottom: 28.scale, right: 0)
+        view.contentInset = UIEdgeInsets(top: 72.scale, left: 0, bottom: 28.scale, right: 0)
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false
         view.contentInsetAdjustmentBehavior = .never
