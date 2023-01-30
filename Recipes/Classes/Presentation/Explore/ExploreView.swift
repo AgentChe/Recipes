@@ -6,12 +6,23 @@
 //
 
 import UIKit
+import RxSwift
 
 final class ExploreView: UIView {
     lazy var titleLabel = makeTitleLabel()
     lazy var searchView = makeSearchView()
     lazy var collectionView = makeCollectionView()
     lazy var preloader = makePreloader()
+    
+    private lazy var disposeBag = DisposeBag()
+    
+    private lazy var titleLabelTopConstraint = titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: titleLabelMaxTopConstant)
+    private lazy var searchViewTopConstraint = searchView.topAnchor.constraint(equalTo: topAnchor, constant: searchMaxTopConstant)
+    
+    private lazy var titleLabelMaxTopConstant = ScreenSize.isIphoneXFamily ? 91.scale : 61.scale
+    private lazy var titleLabelMinTopConstant = titleLabelMaxTopConstant / 2
+    private lazy var searchMaxTopConstant = ScreenSize.isIphoneXFamily ? 160.scale : 130.scale
+    private lazy var searchMinTopConstant = searchMaxTopConstant / 2
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,6 +40,18 @@ final class ExploreView: UIView {
 private extension ExploreView {
     func initialize() {
         backgroundColor = Appearance.background
+        
+        collectionView.rx.contentOffset
+            .bind(to: Binder(self) { base, offset in
+                let bias = max(base.collectionView.contentInset.top + offset.y, 0)
+                
+                let titleLabelConstant = max(base.titleLabelMaxTopConstant - bias, base.titleLabelMinTopConstant)
+                base.titleLabelTopConstraint.constant = titleLabelConstant
+                base.titleLabel.isHidden = titleLabelConstant == base.titleLabelMinTopConstant
+                
+                base.searchViewTopConstraint.constant = max(base.searchMaxTopConstant - bias, base.searchMinTopConstant)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -37,21 +60,21 @@ private extension ExploreView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 91.scale : 61.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            searchView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            searchView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            searchView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 28.scale),
-            searchView.heightAnchor.constraint(equalToConstant: 44.scale)
+            titleLabelTopConstraint
         ])
         
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: 2.scale),
+            collectionView.topAnchor.constraint(equalTo: topAnchor, constant: searchMinTopConstant + 44.scale),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            searchView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            searchView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            searchViewTopConstraint,
+            searchView.heightAnchor.constraint(equalToConstant: 44.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -76,7 +99,7 @@ private extension ExploreView {
         addSubview(view)
         return view
     }
-
+    
     func makeSearchView() -> SearchView {
         let view = SearchView()
         view.backgroundColor = UIColor.clear
@@ -86,14 +109,18 @@ private extension ExploreView {
     }
     
     func makeCollectionView() -> ExploreCollectionView {
+        let topInset = searchMaxTopConstant - searchMinTopConstant + 30.scale
+        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 16.scale
-        layout.sectionInset = UIEdgeInsets(top: 30.scale, left: 16, bottom: 30.scale, right: 16)
+        layout.sectionInset = UIEdgeInsets.zero
         
         let view = ExploreCollectionView(frame: .zero, collectionViewLayout: layout)
         view.backgroundColor = UIColor.clear
+        view.contentInset = UIEdgeInsets(top: topInset, left: 16.scale, bottom: 30.scale, right: 16.scale)
+        view.setContentOffset(CGPoint(x: 0, y: -topInset), animated: false)
         view.showsVerticalScrollIndicator = false
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
