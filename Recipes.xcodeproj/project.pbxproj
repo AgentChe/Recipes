@@ -24,7 +24,6 @@
 		DE54AC6A28D09ED9004F1514 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE54AC6128D09ED9004F1514 /* PlusJakartaSans-Bold.ttf */; };
 		DE54AC6B28D09ED9004F1514 /* PlusJakartaSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE54AC6228D09ED9004F1514 /* PlusJakartaSans-ExtraBold.ttf */; };
 		DE54AC6F28D09EE7004F1514 /* API.json in Resources */ = {isa = PBXBuildFile; fileRef = DE54AC6E28D09EE7004F1514 /* API.json */; };
-		DE54ACA628D09F25004F1514 /* BranchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC7128D09F25004F1514 /* BranchManager.swift */; };
 		DE54ACA728D09F25004F1514 /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC7228D09F25004F1514 /* AmplitudeManager.swift */; };
 		DE54ACA828D09F25004F1514 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC7328D09F25004F1514 /* FirebaseManager.swift */; };
 		DE54ACA928D09F25004F1514 /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54AC7428D09F25004F1514 /* FacebookManager.swift */; };
@@ -175,7 +174,6 @@
 		DE918C88290AA92400443765 /* ShoppingIngredientsRemoveAllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C87290AA92400443765 /* ShoppingIngredientsRemoveAllCell.swift */; };
 		DE918C8A290AC24F00443765 /* SplashActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C89290AC24F00443765 /* SplashActivity.swift */; };
 		DE918C8C290AC30300443765 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE918C8B290AC30300443765 /* UIApplication+Extension.swift */; };
-		DEAD9001296F01D10093658A /* AppsFlyerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD9000296F01D10093658A /* AppsFlyerManager.swift */; };
 		DEC1F705295B44E100FBBA65 /* Paygate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC1F6FF295B44E100FBBA65 /* Paygate.swift */; };
 		DEC1F706295B44E100FBBA65 /* GetPaygateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC1F702295B44E100FBBA65 /* GetPaygateResponse.swift */; };
 		DEC1F707295B44E100FBBA65 /* GetPaygateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC1F703295B44E100FBBA65 /* GetPaygateRequest.swift */; };
@@ -321,7 +319,6 @@
 		DE54AC6128D09ED9004F1514 /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
 		DE54AC6228D09ED9004F1514 /* PlusJakartaSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		DE54AC6E28D09EE7004F1514 /* API.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = API.json; sourceTree = "<group>"; };
-		DE54AC7128D09F25004F1514 /* BranchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchManager.swift; sourceTree = "<group>"; };
 		DE54AC7228D09F25004F1514 /* AmplitudeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
 		DE54AC7328D09F25004F1514 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DE54AC7428D09F25004F1514 /* FacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
@@ -473,7 +470,6 @@
 		DE918C87290AA92400443765 /* ShoppingIngredientsRemoveAllCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingIngredientsRemoveAllCell.swift; sourceTree = "<group>"; };
 		DE918C89290AC24F00443765 /* SplashActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashActivity.swift; sourceTree = "<group>"; };
 		DE918C8B290AC30300443765 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
-		DEAD9000296F01D10093658A /* AppsFlyerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsFlyerManager.swift; sourceTree = "<group>"; };
 		DEC1F6FF295B44E100FBBA65 /* Paygate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paygate.swift; sourceTree = "<group>"; };
 		DEC1F702295B44E100FBBA65 /* GetPaygateResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPaygateResponse.swift; sourceTree = "<group>"; };
 		DEC1F703295B44E100FBBA65 /* GetPaygateRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPaygateRequest.swift; sourceTree = "<group>"; };
@@ -732,11 +728,9 @@
 		DE54AC7028D09F25004F1514 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				DE54AC7128D09F25004F1514 /* BranchManager.swift */,
 				DE54AC7228D09F25004F1514 /* AmplitudeManager.swift */,
 				DE54AC7328D09F25004F1514 /* FirebaseManager.swift */,
 				DE54AC7428D09F25004F1514 /* FacebookManager.swift */,
-				DEAD9000296F01D10093658A /* AppsFlyerManager.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -2105,7 +2099,6 @@
 				DEC41BD028F6E68A00280990 /* StepTableCell.swift in Sources */,
 				DE67A83C28EC1F2C00369B02 /* SettingsTableView.swift in Sources */,
 				DEC41C1228F8012400280990 /* Shopping.swift in Sources */,
-				DEAD9001296F01D10093658A /* AppsFlyerManager.swift in Sources */,
 				DE54ACCD28D09F26004F1514 /* SignError.swift in Sources */,
 				DEC1F706295B44E100FBBA65 /* GetPaygateResponse.swift in Sources */,
 				DEC41ABF28EEED8300280990 /* CategoryCollectionCell.swift in Sources */,
@@ -2166,7 +2159,6 @@
 				DE54ACBE28D09F26004F1514 /* GradientView.swift in Sources */,
 				DE54ACBD28D09F26004F1514 /* CircleView.swift in Sources */,
 				DEC41BE328F7EB7800280990 /* ReaderTitleCell.swift in Sources */,
-				DE54ACA628D09F25004F1514 /* BranchManager.swift in Sources */,
 				DE54ADAE28D0A011004F1514 /* SplashReceiptValidationObserver.swift in Sources */,
 				DEF40C2F28E3509D00C2EB67 /* GetRankingResponse.swift in Sources */,
 				DEC41B6928F449CF00280990 /* RecipeCPF.swift in Sources */,
@@ -2465,7 +2457,7 @@
 				CODE_SIGN_ENTITLEMENTS = Recipes/Recipes.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = AY43JM5PH6;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AY43JM5PH6;
 				ENABLE_BITCODE = NO;
@@ -2481,7 +2473,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = app.recipes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Recipes AppStore";
@@ -2501,7 +2493,7 @@
 				CODE_SIGN_ENTITLEMENTS = Recipes/Recipes.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = AY43JM5PH6;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AY43JM5PH6;
 				ENABLE_BITCODE = NO;
@@ -2517,7 +2509,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = app.recipes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Recipes AppStore";
